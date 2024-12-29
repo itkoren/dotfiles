@@ -41,6 +41,7 @@ function is_not_tty() {
 }
 
 function is_ci_or_not_tty() {
+    echo "CI: ${is_ci}, Is TTY: $(! is_not_tty)"
     is_ci || is_not_tty
 }
 
@@ -297,9 +298,6 @@ function main() {
     echo "🤚  This script will setup .dotfiles for you."
     sudo -v || { echo "sudo failed!"; exit 1; }
 
-    echo "CI: $( [[ "${CI:-false}" == "true" ]] )"
-    echo "Is TTY: $( [ -t 0 ] && echo 'Yes' || echo 'No' )"
-    
     if ! is_ci_or_not_tty; then
         echo "Interactive terminal detected, waiting for input."
         read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
