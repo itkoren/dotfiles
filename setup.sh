@@ -147,6 +147,7 @@ function initialize_os_macos() {
 
     # Instal Homebrew if needed.
     if ! is_homebrew_exists; then
+        echo '🍺  Installing Homebrew'
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
         echo "Homebrew is already installed"
@@ -192,6 +193,7 @@ function run_chezmoi() {
             chezmoi_cmd="./bin/chezmoi"
         else
             # Install chezmoi using brew
+            echo '👊  Installing chezmoi'
             brew install chezmoi
             chezmoi_cmd=$(which chezmoi)
         fi
@@ -202,6 +204,12 @@ function run_chezmoi() {
     else
         no_tty_option="" # /dev/tty is available OR not in the CI
     fi
+    if [ -d "$HOME/.local/share/chezmoi/.git" ]; then
+      echo "🚸  chezmoi already initialized"
+    else
+      echo "🚀  Initialize dotfiles with:"
+    fi
+
     # run `chezmoi init` to setup the source directory,
     # generate the config file, and optionally update the destination directory
     # to match the target state.
@@ -283,6 +291,9 @@ function restart_shell() {
 }
 
 function main() {
+    echo "🤚  This script will setup .dotfiles for you."
+    read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
+
     echo "$DOTFILES_LOGO"
 
     initialize_os_env
