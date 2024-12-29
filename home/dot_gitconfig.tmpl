@@ -18,10 +18,15 @@
 
 [core]
   editor = "{{ .editor }}"
-  autocrlf = input
   longpaths = true
   pager = "delta"
   excludesFile = ~/.gitignore
+  {{- if eq .chezmoi.os "windows" }}
+	autocrlf = true
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+  {{- else }}
+  autocrlf = input
+  {{- end }}
 
 [init]
   defaultBranch = "master"
@@ -34,6 +39,9 @@
 [push]
   default = upstream
   autoSetupRemote = true
+
+[pull]
+	ff = only
 
 [gitreview]
   remote = "origin"
