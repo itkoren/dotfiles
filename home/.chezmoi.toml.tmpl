@@ -117,7 +117,7 @@ progress: true
   # general script debug
   TRACE = "0"
   VERBOSE = "0"
-  DOT_ENVIRONMENT = {{ $environment | quote }}
+  DOT_ENVIRONMENT = {{ $hosttype | quote }}
   
 {{ if eq .chezmoi.os "windows" -}}
 [interpreters.ps1]
