@@ -2,12 +2,12 @@
 {{- if $codespaces }}{{ /* Codespaces dotfiles setup is non-interactive, so set name and an email address */ }}
 {{- $name := "Itai Koren" -}}
 {{- $email := "your@email.com" -}}
-{{- $downloadssh := true -}}
+{{- $opsecret := "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
 {{- $brewcasks := true -}}{{ /* true to install brew casks on macOS */ }}
 {{- else }}{{           /* Interactive setup, so prompt for an email address */ }}
 {{- $name := promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
-{{- $downloadssh := promptBoolOnce . "downloadSign" "Download Git SSH Sign Key from 1Password?" -}}
+{{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
 {{- $brewcasks = promptBool "Install brew casks" true -}}
 {{- end }}
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
@@ -46,7 +46,7 @@ progress: true
   device_type = {{ $chassisType | quote }}
   osid = {{ $osID | quote }}
   codespaces = {{ $codespaces }}
-  downloadssh = {{ $downloadssh }}
+  opsecret = {{ $opsecret }}
   brewcasks = {{ $brewcasks }}
   {{ if $powershellPath  }}
   powershellPath = {{ $powershellPath | quote }}
@@ -77,7 +77,7 @@ progress: true
   work = {{ eq $hosttype "work" }}
 
 [hooks.read-source-state.pre]
-    command = ".local/share/chezmoi/.install-prerequisites.sh"
+  command = ".local/share/chezmoi/.install-prerequisites.sh"
 
 [hooks.init.pre]
   command = "task"
@@ -87,8 +87,8 @@ progress: true
   ]
 
 [git]
-    autoCommit = true
-    autoPush = true
+  autoCommit = true
+  autoPush = true
 
 [diff]
   pager = "delta"
