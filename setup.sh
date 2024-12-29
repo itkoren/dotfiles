@@ -259,6 +259,12 @@ function run_chezmoi() {
         fi
     fi    
 
+    echo "Checking chezmoi_cmd: $chezmoi_cmd"
+    if [ -z "$chezmoi_cmd" ]; then
+        echo "Error: chezmoi_cmd is not set properly." >&2
+        exit 1
+    fi
+    
     if is_ci_or_not_tty; then
         no_tty_option="--no-tty" # /dev/tty is not available (especially in the CI)
     else
