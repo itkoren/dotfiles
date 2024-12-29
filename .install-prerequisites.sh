@@ -16,5 +16,5 @@ else
     esac
 fi
 
-read -p "Please open 1Password, log into all accounts and set under Settings>CLI activate Integrate with 1Password CLI. Press any key to continue." -n 1 -r
+read -p "Please open 1Password, log into all accounts and set under Settings>Developer>CLI activate Integrate with 1Password CLI. Press any key to continue." -n 1 -r
 echo
