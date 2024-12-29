@@ -1,12 +1,14 @@
 {{- $codespaces := env "CODESPACES" | not | not -}}
-{{- if $codespaces }}{{ /* Codespaces dotfiles setup is non-interactive, so set name and an email address */}}
+{{- if $codespaces }}{{ /* Codespaces dotfiles setup is non-interactive, so set name and an email address */ }}
 {{- $name := "Itai Koren" -}}
 {{- $email := "your@email.com" -}}
-{{- $downloadSign := true -}}
-{{- else }}{{           /* Interactive setup, so prompt for an email address */}}
+{{- $downloadssh := true -}}
+{{- $brewcasks := true -}}{{ /* true to install brew casks on macOS */ }}
+{{- else }}{{           /* Interactive setup, so prompt for an email address */ }}
 {{- $name := promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
-{{- $downloadSign := promptBoolOnce . "downloadSign" "Download Git SSH Sign Key from 1Password?" -}}
+{{- $downloadssh := promptBoolOnce . "downloadSign" "Download Git SSH Sign Key from 1Password?" -}}
+{{- $brewcasks = promptBool "Install brew casks" true -}}
 {{- end }}
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
 {{- $osID := .chezmoi.os -}}
@@ -44,7 +46,8 @@ progress: true
   device_type = {{ $chassisType | quote }}
   osid = {{ $osID | quote }}
   codespaces = {{ $codespaces }}
-  downloadSign = {{ $downloadSign }}
+  downloadssh = {{ $downloadssh }}
+  brewcasks = {{ $brewcasks }}
   {{ if $powershellPath  }}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
