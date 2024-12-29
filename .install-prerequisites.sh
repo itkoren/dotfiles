@@ -6,6 +6,7 @@ if type op >/dev/null 2>&1; then
 else
     case "$(uname -s)" in
     Darwin)
+        brew tap "1password/tap"
         brew install --cask 1password
         brew install 1password-cli
         ;;
