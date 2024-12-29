@@ -1,0 +1,58 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.darwin.universal.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.darwin.universal.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ if .brewcasks -}}
+{{ range .packages.darwin.universal.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.universal.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ end -}}
+
+{{ if .environment.home -}}
+HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}' brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.darwin.work.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.darwin.work.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ if .brewcasks -}}
+{{ range .packages.darwin.work.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.work.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ end -}}
+
+{{ if .environment.personal -}}
+HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}' brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.darwin.work.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.darwin.work.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ if .brewcasks -}}
+{{ range .packages.darwin.work.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.work.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ end -}}
