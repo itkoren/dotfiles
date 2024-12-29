@@ -232,13 +232,18 @@ function initialize_os_env() {
 }
 
 function run_chezmoi() {
+    function is_chezmoi_exists() {
+        command -v chezmoi &>/dev/null
+    }
+
     local chezmoi_cmd
     echo "going to check chezmoi requirements"
-    if [ ! "$(command -v chezmoi)" ]; then
+    if ! is_chezmoi_exists; then
         # install chezmoi via brew or download the chezmoi binary from the URL
         read -p "Do you wish to skip install chezmoi? (y/n): " yn
         if [[ "$yn" =~ ^[Yy]$ ]]; then
             # Download chezmoi binary
+            echo '👊  Temporary downloading chezmoi binary'
             sh -c "$(curl -fsLS get.chezmoi.io)"
             chezmoi_cmd="./bin/chezmoi"
         else
