@@ -34,7 +34,14 @@ function is_ci() {
 }
 
 function is_tty() {
-    [ -t 0 ]
+    # Check if the script is running in an interactive terminal
+    if [ -t 1 ]; then
+        echo "Interactive terminal detected"
+        return 0 # true
+    else
+        echo "Non-interactive terminal detected"
+        return 1 # false
+    fi
 }
 
 function is_not_tty() {
