@@ -7,13 +7,21 @@
   email = "{{- .email -}}"
   {{- if .key_sign }}
   signingkey = {{ .key_sign }}
-  {{- else if eq .downloadssh true }}
-  signingkey = {{ onepasswordRead "op://kdjfkdjfkdjfkdj/jkcdjckjdkjf/id" "ERYH6H7F3SSFGHHV2AS4CCFG5" }}
+  {{- else if .opsecret }}
+  signingkey = {{ .opsecret }}
   {{- end }}
 
-{{- if (or (.key_sign) (eq .downloadssh true)) }}
+{{- if (or (.key_sign) (.opsecret)) }}
 [gpg]
   format = ssh
+
+{{- if .opsecret }}
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+{{- end }}
+
+[credential]
+  helper = osxkeychain
 {{- end }}
 
 [core]
@@ -32,7 +40,7 @@
   defaultBranch = "master"
 
 [commit]
-  {{- if (or (.key_sign) (eq .downloadssh true)) }}
+  {{- if (or (.key_sign) (.opsecret)) }}
   gpgsign = true
   {{- end }} 
 
@@ -41,7 +49,7 @@
   autoSetupRemote = true
 
 [pull]
-	ff = only
+  ff = only
 
 [gitreview]
   remote = "origin"
