@@ -1,0 +1,39 @@
+; ╭──────────────────────────────────────────────────────────╮
+; │ GIT CONFIG                                               │
+; ╰──────────────────────────────────────────────────────────╯
+
+[user]
+  name = "{{- .name -}}"
+  email = "{{- .email -}}"
+  {{- if .key_sign }}
+  signingkey = {{ .key_sign }}
+  {{- end }}
+
+{{- if .key_sign }}
+[gpg]
+  format = ssh
+{{- end }}
+
+[core]
+  editor = "{{ .editor }}"
+  autocrlf = input
+  longpaths = true
+  pager = "delta"
+
+[init]
+  defaultBranch = "master"
+
+[gitreview]
+  remote = "origin"
+
+[color]
+  ui = "auto"
+  status = "auto"
+  diff = "auto"
+  branch = "auto"
+  interactive = "auto"
+
+{{- if eq .name "itkoren" }}
+[url "git@github.com:itkoren"]
+  insteadOf = https://github.com/itkoren
+{{- end }}

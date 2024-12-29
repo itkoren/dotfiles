@@ -1,0 +1,35 @@
+# ╭──────────────────────────────────────────────────────────╮
+# │ CHEZMOI IGNORE CONFIG                                    │
+# ╰──────────────────────────────────────────────────────────╯
+
+# Windows only
+{{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**
+
+AppData
+Documents
+
+.wslconfig
+{{ end }}
+
+# Unix only
+{{ if eq .chezmoi.os "windows" }}
+.chezmoiscripts/unix/**
+{{ end }}
+
+# Linux only
+{{ if ne .chezmoi.os "linux" }}
+.config/lazygit
+.config/vesktop
+{{ end }}
+
+# Ignore on WSL
+{{ if .is_wsl }}
+.config/vesktop
+.config/wezterm
+{{ end }}
+
+# Ignore on Work Environment
+# {{ if eq .hosttype "work" }}
+.ssh
+# {{ end }}
