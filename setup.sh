@@ -170,7 +170,19 @@ function initialize_os_macos() {
     
         # Check if xcode-select --install succeeded
         if [ $? -eq 0 ]; then
-            echo "Successfully triggered installation of Xcode Command Line Tools."
+            # Wait for user to manually complete installation
+            echo "You may need to manually complete the installation of Xcode Command Line Tools. Press [Enter] to continue once installation is complete."
+            
+            # Wait for user input after installation is completed
+            read -p "Press [Enter] once you've installed Xcode Command Line Tools and are ready to continue."
+        
+            # Verify if the installation was successful
+            until [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; do
+                echo "Waiting for Command Line Tools to be installed..."
+                sleep 5
+            done
+        
+            echo "Successfully installed Xcode Command Line Tools."
         else
             echo "Failed to trigger installation of Command Line Tools. Please install manually."
             exit 1
