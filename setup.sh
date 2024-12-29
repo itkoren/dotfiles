@@ -2,6 +2,8 @@
 
 set -Eeufo pipefail
 
+trap 'echo "Error at line $LINENO: $BASH_COMMAND"' ERR
+
 if [ "${DOTFILES_DEBUG:-}" ]; then
     set -x
 fi
