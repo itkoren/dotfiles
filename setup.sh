@@ -42,7 +42,7 @@ function is_not_tty() {
 }
 
 function is_ci_or_not_tty() {
-    echo "CI: ${is_ci}, Is TTY: $(! is_not_tty)"
+    echo "CI: ${CI}, Is TTY: $(is_tty)"
     is_ci || is_not_tty
 }
 
@@ -60,7 +60,7 @@ function get_os_type() {
 function keepalive_sudo_linux() {
     # Might as well ask for password up-front, right?
     echo "Checking for \`sudo\` access which may request your password."
-    sudo -v
+    sudo -v || { echo "sudo failed!"; exit 1; }
 
     # Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
     while true; do
@@ -297,7 +297,6 @@ function main() {
 
     echo ""
     echo "🤚  This script will setup .dotfiles for you."
-    sudo -v || { echo "sudo failed!"; exit 1; }
 
     if ! is_ci_or_not_tty; then
         echo "Interactive terminal detected, waiting for input."
