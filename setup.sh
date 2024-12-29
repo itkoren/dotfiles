@@ -118,9 +118,15 @@ function initialize_os_macos() {
         command -v brew &>/dev/null
     }
 
+    # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
+    # Install XCode Command Line Tools if necessary
+    xcode-select --install || echo "XCode already installed"
+
     # Instal Homebrew if needed.
     if ! is_homebrew_exists; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+        echo "Homebrew is already installed"
     fi
 
     # Setup Homebrew envvars.
