@@ -1,10 +1,10 @@
 {{- $codespaces := env "CODESPACES" | not | not -}}
-{{- if $codespaces }}{{ /* Codespaces dotfiles setup is non-interactive, so set name and an email address */ }}
+{{- if $codespaces }}{{/* Codespaces dotfiles setup is non-interactive, so set name and an email address */}}
 {{- $name := "Itai Koren" -}}
 {{- $email := "your@email.com" -}}
 {{- $opsecret := "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
-{{- $brewcasks := true -}}{{ /* true to install brew casks on macOS */ }}
-{{- else }}{{           /* Interactive setup, so prompt for an email address */ }}
+{{- $brewcasks := true -}}{{/* true to install brew casks on macOS */}}
+{{- else }}{{/* Interactive setup, so prompt for an email address */}}
 {{- $name := promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
