@@ -6,10 +6,6 @@ if [ "${DOTFILES_DEBUG:-}" ]; then
     set -x
 fi
 
-echo ""
-echo "🤚  This script will setup .dotfiles for you."
-read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
-
 # shellcheck disable=SC2016
 declare -r DOTFILES_LOGO='
                           /$$                                      /$$
@@ -295,9 +291,18 @@ function restart_shell() {
 }
 
 function main() {
+
+    echo ""
+    echo "🤚  This script will setup .dotfiles for you."
+    if ! is_ci_or_not_tty; then
+        read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
+    fi
+    
     echo "$DOTFILES_LOGO"
 
+    echo "Initializing OS environment..."
     initialize_os_env
+    echo "Setting up dotfiles..."
     initialize_dotfiles
 
     # restart_shell # Disabled because the at_exit function does not work properly.
