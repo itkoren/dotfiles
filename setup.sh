@@ -142,36 +142,38 @@ function initialize_os_macos() {
     if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
         echo "===> Installing Xcode Command Line Tools"
 
-        # Run softwareupdate --list to see available updates
+        # Check if the softwareupdate --list command includes CLT, but just in case it's missing, fall back to `xcode-select`
         softwareupdate_output=$(softwareupdate --list)
         echo "softwareupdate output: $softwareupdate_output"  # Debugging line
-
-        # Look for "Command Line Tools" in the output
-        CLT_PACKAGE=$(softwareupdate --list \
-            | grep -B 1 "Command Line Tools" \
-            | awk -F"*" '/^ *\*/ {print $2}' \
-            | sed -e 's/^ *Label: //' -e 's/^ *//' \
-            | sort -V \
-            | tail -n1)
-
-        if [ -z "$CLT_PACKAGE" ]; then
-            echo "No Command Line Tools package found in softwareupdate."
-            echo "Attempting to install Command Line Tools using xcode-select..."
-        
-            # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
-            # Install XCode Command Line Tools if necessary
-            xcode-select --install
-
-            # Check if installation succeeded
-            if [ $? -eq 0 ]; then
-                echo "Successfully triggered installation of Xcode Command Line Tools."
+    
+        # Try installing Command Line Tools using xcode-select if they're not listed
+        if [[ "$softwareupdate_output" =~ "Command Line Tools" ]]; then
+            # Attempt to install CLT from softwareupdate if it's listed
+            CLT_PACKAGE=$(echo "$softwareupdate_output" | grep -B 1 "Command Line Tools" \
+                | awk -F"*" '/^ *\*/ {print $2}' \
+                | sed -e 's/^ *Label: //' -e 's/^ *//' \
+                | sort -V \
+                | tail -n1)
+            
+            if [ -z "$CLT_PACKAGE" ]; then
+                echo "No CLT package found. Triggering install via xcode-select."
+                xcode-select --install
             else
-                echo "Failed to trigger installation of Command Line Tools. Please install manually."
-                exit 1
+                echo "Installing Command Line Tools package: $CLT_PACKAGE"
+                sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
             fi
         else
-            echo "Installing Command Line Tools package: $CLT_PACKAGE"
-            sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
+            # If no CLT package found, just trigger install via xcode-select
+            echo "Command Line Tools not listed in softwareupdate output. Installing via xcode-select..."
+            xcode-select --install
+        fi
+    
+        # Check if xcode-select --install succeeded
+        if [ $? -eq 0 ]; then
+            echo "Successfully triggered installation of Xcode Command Line Tools."
+        else
+            echo "Failed to trigger installation of Command Line Tools. Please install manually."
+            exit 1
         fi
 
         # Accept T&Cs
