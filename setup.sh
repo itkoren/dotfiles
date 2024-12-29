@@ -316,17 +316,24 @@ function main() {
 
     if ! is_ci_or_not_tty; then
         echo "Interactive terminal detected, waiting for input."
-        # Ask the user if they want to continue
-        read -p "Do you wish to continue? (yes/no): " response
-    
-        # Convert response to lowercase for case-insensitive comparison
-        response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
-    
-        if [[ "$response" == "yes" ]]; then
-            echo "Continuing with dotfiles setup..."
+        
+        # Ask the user if they want to continue, but only in interactive environments
+        if is_tty; then
+            # Prompt user for input
+            read -p "Do you wish to continue? (yes/no): " response
+        
+            # Convert response to lowercase for case-insensitive comparison
+            response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
+        
+            # Handle response validation
+            if [[ "$response" == "yes" ]]; then
+                echo "Continuing with dotfiles setup..."
+            else
+                echo "Exiting the script."
+                exit 0
+            fi
         else
-            echo "Exiting the script."
-            exit 0
+            echo "Skipping prompt, as this is a non-interactive terminal."
         fi
     else
         echo "Skipping prompt in non-interactive or CI environment."
