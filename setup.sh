@@ -296,6 +296,8 @@ function main() {
     echo ""
     echo "🤚  This script will setup .dotfiles for you."
     sudo -v || { echo "sudo failed!"; exit 1; }
+    echo "CI: $CI"
+    echo "Is TTY: $( [ -t 0 ] && echo 'Yes' || echo 'No' )"
     #if ! is_ci_or_not_tty; then
     #if is_tty; then
     if [ -t 0 ] && ! is_ci; then
