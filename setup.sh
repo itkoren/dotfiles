@@ -232,9 +232,9 @@ function initialize_os_env() {
 }
 
 function run_chezmoi() {
+    local chezmoi_cmd
     if [ ! "$(command -v chezmoi)" ]; then
         # install chezmoi via brew or download the chezmoi binary from the URL
-        local chezmoi_cmd
         read -p "Do you wish to skip install chezmoi? (y/n): " yn
         if [[ "$yn" =~ ^[Yy]$ ]]; then
             # Download chezmoi binary
