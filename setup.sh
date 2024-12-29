@@ -317,6 +317,7 @@ function main() {
     if ! is_ci_or_not_tty; then
         echo "Interactive terminal detected, waiting for input."
         read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
+        echo "User input received, continuing..."
     else
         echo "Skipping prompt in non-interactive or CI environment."
     fi
