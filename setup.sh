@@ -294,13 +294,12 @@ function run_chezmoi() {
 
 function initialize_dotfiles() {
 
-    if ! is_ci_or_not_tty; then
+    #if ! is_ci_or_not_tty; then
         # - /dev/tty of the github workflow is not available.
         # - We can use password-less sudo in the github workflow.
         # Therefore, skip the sudo keep alive function.
         #keepalive_sudo
-        echo "sudo keep alive"
-    fi
+    #fi
     run_chezmoi
 }
 
