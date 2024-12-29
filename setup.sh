@@ -299,6 +299,7 @@ function initialize_dotfiles() {
         # - We can use password-less sudo in the github workflow.
         # Therefore, skip the sudo keep alive function.
         # keepalive_sudo
+        echo "sudo keep alive"
     fi
     run_chezmoi
 }
