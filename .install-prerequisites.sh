@@ -16,5 +16,10 @@ else
     esac
 fi
 
-read -p "Please open 1Password, log into all accounts and set under Settings>Developer>CLI activate Integrate with 1Password CLI. Press any key to continue." -n 1 -r
+echo "Please open 1Password, log into all accounts and set the following:"
+echo " - Settings>Security>Unlock activate Touch ID"
+echo " - Settings>Security>Unlock activate Apple Watch"
+echo " - Settings>Developer>CLI activate Integrate with 1Password CLI"
+echo " - Settings>Developer>SSH Agent Set up the SSH Agent"
+read -p "Press any key to continue." -n 1 -r
 echo
