@@ -297,10 +297,12 @@ function main() {
     echo "🤚  This script will setup .dotfiles for you."
     sudo -v || { echo "sudo failed!"; exit 1; }
     #if ! is_ci_or_not_tty; then
-    if is_tty; then
+    #if is_tty; then
+    if [ -t 0 ] && ! is_ci; then
+        echo "Interactive terminal detected, waiting for input."
         read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
     else
-        echo "Skipping prompt in non-interactive environment."
+        echo "Skipping prompt in non-interactive or CI environment."
     fi
     
     echo "$DOTFILES_LOGO"
