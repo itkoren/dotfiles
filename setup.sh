@@ -118,9 +118,32 @@ function initialize_os_macos() {
         command -v brew &>/dev/null
     }
 
-    # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
-    # Install XCode Command Line Tools if necessary
-    xcode-select --install || echo "XCode already installed"
+    # Install the Xcode Command Line Tools.
+    if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
+        echo "===> Installing Xcode Command Line Tools"
+
+        CLT_PACKAGE=$(softwareupdate --list \
+            | grep -B 1 "Command Line Tools" \
+            | awk -F"*" '/^ *\*/ {print $2}' \
+            | sed -e 's/^ *Label: //' -e 's/^ *//' \
+            | sort -V \
+            | tail -n1)
+
+        if [ -z "$CLT_PACKAGE" ]; then
+            echo "No new updates available for Command Line Tools."
+        else
+            sudo softwareupdate --install "$CLT_PACKAGE"
+        fi
+    
+        # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
+        # Install XCode Command Line Tools if necessary
+        xcode-select --install || echo "XCode already installed"
+
+        # Accept T&Cs
+        if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
+          sudo xcodebuild -license
+        fi
+    fi
 
     # Instal Homebrew if needed.
     if ! is_homebrew_exists; then
