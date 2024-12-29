@@ -25,7 +25,7 @@ declare -r DOTFILES_LOGO='
 '
 
 declare -r DOTFILES_REPO_URL="https://github.com/itkoren/dotfiles"
-declare -r BRANCH_NAME="${BRANCH_NAME:-master}"
+declare -r BRANCH_NAME="${BRANCH_NAME:-main}"
 declare -r DOTFILES_GITHUB_PAT="${DOTFILES_GITHUB_PAT:-}"
 
 function is_ci() {
