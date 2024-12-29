@@ -240,6 +240,7 @@ function run_chezmoi() {
     local no_tty_option
     echo "going to check chezmoi requirements"
     if ! is_chezmoi_exists; then
+        echo "chezmoi is not installed. Let's proceed with installation."
         # install chezmoi via brew or download the chezmoi binary from the URL
         if ! is_ci_or_not_tty; then
             read -p "Do you wish to skip install chezmoi? (y/n): " yn
@@ -251,12 +252,18 @@ function run_chezmoi() {
             echo '👊  Temporary downloading chezmoi binary'
             sh -c "$(curl -fsLS get.chezmoi.io)"
             chezmoi_cmd="./bin/chezmoi"
+            echo "chezmoi binary downloaded to $chezmoi_cmd"
         else
             # Install chezmoi using brew
             echo '👊  Installing chezmoi'
             brew install chezmoi
             chezmoi_cmd=$(which chezmoi)
+            echo "chezmoi installed via brew, path: $chezmoi_cmd"
         fi
+    else
+        echo "chezmoi is already installed"
+        chezmoi_cmd=$(which chezmoi)
+        echo "chezmoi found at: $chezmoi_cmd"
     fi    
 
     echo "Checking chezmoi_cmd: $chezmoi_cmd"
