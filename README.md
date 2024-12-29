@@ -13,7 +13,7 @@ See [.chezmoiroot - chezmoi](https://www.chezmoi.io/reference/special-files-and-
 
 To set up the dotfiles run the appropriate snippet in the terminal.
 
-### 💻 `MacOS` [![MacOS](https://github.com/itkoren/dotfiles/actions/workflows/macos.yaml/badge.svg)](https://github.com/itkoren/dotfiles/actions/workflows/macos.yaml)
+### 💻 `MacOS`
 
 - Configuration snippet of the Apple Silicon MacOS environment for client macnine:
 
@@ -21,8 +21,7 @@ To set up the dotfiles run the appropriate snippet in the terminal.
 bash -c "$(curl -fsLS https://raw.githubusercontent.com/itkoren/dotfiles/main/setup.sh)"
 ```
 
-### 🖥️ `Ubuntu` [![Ubuntu](https://github.com/shunk031/dotfiles/actions/workflows/ubuntu.yaml/badge.svg)](https://github.com/shunk031/dotfiles/actions/workflows/ubuntu.yaml)
-
+### 🖥️ `Ubuntu`
 - Configuration snippet of the Ubuntu environment for both client and server machine:
 
 ```console
@@ -33,7 +32,7 @@ bash -c "$(wget -qO - https://raw.githubusercontent.com/itkoren/dotfiles/main/se
 
 The following is a minimal setup command to install chezmoi and my dotfiles from the github repository on a new empty machine:
 
-> sh -c "$(curl -fsLS get.chezmoi.io)" -- init shunk031 --apply
+> sh -c "$(curl -fsLS get.chezmoi.io)" -- init itkoren --apply
 
 ## ⚙️ Install & Setup Application Individually
 
