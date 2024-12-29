@@ -1,0 +1,96 @@
+{{- $name := promptStringOnce . "name" "Name" "itkoren" -}}
+{{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
+{{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
+{{- $osID := .chezmoi.os -}}
+{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
+{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+{{- $chassisType := "desktop" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
+{{-     $chassisType = "laptop" }}
+{{-   else }}
+{{-     $chassisType = "desktop" }}
+{{-   end }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+{{- else if eq .chezmoi.os "windows" }}
+{{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
+{{- end -}}
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ CHEZMOI CONFIG                                           │
+# ╰──────────────────────────────────────────────────────────╯
+
+sourceDir = {{ .chezmoi.workingTree | quote }}
+progress: true
+
+[data]
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+  editor = "nvim"
+  hosttype = {{ $hosttype | quote }}
+  device_type = {{ $chassisType | quote }}
+  osid = {{ $osID | quote }}
+  # do not override the following values
+{{- if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+  is_wsl = true
+{{- else }}
+  is_wsl = false
+{{- end }}
+
+[data.environment]
+  name = {{ $hosttype | quote }}
+  personal = {{ eq $hosttype "personal" }}
+  work = {{ eq $hosttype "work" }}
+
+[hooks.read-source-state.pre]
+    command = ".local/share/chezmoi/.install-prerequisites.sh"
+
+[hooks.init.pre]
+  command = "task"
+  args = [
+    "-d",
+    {{ .chezmoi.sourceDir | quote }},
+  ]
+
+[git]
+    autoCommit = true
+    autoPush = true
+
+[diff]
+  exclude = [
+    "scripts", 
+    "externals"
+  ]
+
+[merge]
+  command = "nvim"
+  args = [
+    "-d", 
+    "{{ "{{" }} .Destination {{ "}}" }}", 
+    "{{ "{{" }} .Source {{ "}}" }}", 
+    "{{ "{{" }} .Target {{ "}}" }}"
+  ]
+  
+[status]
+  exclude = [
+    "always"
+  ]
+
+[scriptEnv]
+  # whether to apply MacOS defaults or not
+  DEFAULTS = "0"
+  # general script debug
+  TRACE = "0"
+  VERBOSE = "0"
+  DOT_ENVIRONMENT = {{ $environment | quote }}
+  
+{{ if eq .chezmoi.os "windows" -}}
+[interpreters.ps1]
+  command = "pwsh"
+  args = [
+    "-NoLogo",
+    "-NoProfile"
+  ]
+{{- end -}}
