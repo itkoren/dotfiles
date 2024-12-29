@@ -29,7 +29,7 @@ declare -r BRANCH_NAME="${BRANCH_NAME:-main}"
 declare -r DOTFILES_GITHUB_PAT="${DOTFILES_GITHUB_PAT:-}"
 
 function is_ci() {
-    [[ "${CI:-}" == "true" ]]
+    [[ "${CI:-false}" == "true" ]]
 }
 
 function is_tty() {
