@@ -132,7 +132,8 @@ function initialize_os_macos() {
         if [ -z "$CLT_PACKAGE" ]; then
             echo "No new updates available for Command Line Tools."
         else
-            sudo softwareupdate --install "$CLT_PACKAGE"
+            echo "Installing Command Line Tools package: $CLT_PACKAGE"
+            sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
         fi
     
         # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
@@ -296,6 +297,8 @@ function main() {
     echo "🤚  This script will setup .dotfiles for you."
     if ! is_ci_or_not_tty; then
         read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
+    else
+        echo "Skipping prompt in non-interactive environment."
     fi
     
     echo "$DOTFILES_LOGO"
