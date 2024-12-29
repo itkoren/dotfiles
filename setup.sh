@@ -237,10 +237,15 @@ function run_chezmoi() {
     }
 
     local chezmoi_cmd
+    local no_tty_option
     echo "going to check chezmoi requirements"
     if ! is_chezmoi_exists; then
         # install chezmoi via brew or download the chezmoi binary from the URL
-        read -p "Do you wish to skip install chezmoi? (y/n): " yn
+        if ! is_ci_or_not_tty; then
+            read -p "Do you wish to skip install chezmoi? (y/n): " yn
+        else
+            yn="n" # If non-interactive, assume they want to skip
+        fi
         if [[ "$yn" =~ ^[Yy]$ ]]; then
             # Download chezmoi binary
             echo '👊  Temporary downloading chezmoi binary'
