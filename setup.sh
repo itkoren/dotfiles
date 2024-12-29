@@ -6,6 +6,10 @@ if [ "${DOTFILES_DEBUG:-}" ]; then
     set -x
 fi
 
+echo ""
+echo "🤚  This script will setup .dotfiles for you."
+read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
+
 # shellcheck disable=SC2016
 declare -r DOTFILES_LOGO='
                           /$$                                      /$$
@@ -291,9 +295,6 @@ function restart_shell() {
 }
 
 function main() {
-    echo "🤚  This script will setup .dotfiles for you."
-    read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
-
     echo "$DOTFILES_LOGO"
 
     initialize_os_env
