@@ -2,6 +2,11 @@
 # │ CHEZMOI IGNORE CONFIG                                    │
 # ╰──────────────────────────────────────────────────────────╯
 
+README.md
+install.sh
+install.ps1
+.oh-my-zsh/cache
+
 # Windows only
 {{ if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
