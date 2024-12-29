@@ -7,9 +7,11 @@
   email = "{{- .email -}}"
   {{- if .key_sign }}
   signingkey = {{ .key_sign }}
+  {{- else if eq .downloadSign true }}
+  signingkey = {{ onepasswordRead "op://kdjfkdjfkdjfkdj/jkcdjckjdkjf/id" "ERYH6H7F3SSFGHHV2AS4CCFG5" }}
   {{- end }}
 
-{{- if .key_sign }}
+{{- if (or (.key_sign) (eq .downloadSign true)) }}
 [gpg]
   format = ssh
 {{- end }}
@@ -33,7 +35,7 @@
   branch = "auto"
   interactive = "auto"
 
-{{- if eq .name "itkoren" }}
+{{- if eq .name "itkoren" "Itai Koren" "Koren Itai" }}
 [url "git@github.com:itkoren"]
   insteadOf = https://github.com/itkoren
 {{- end }}
