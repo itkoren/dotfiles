@@ -323,7 +323,7 @@ function main() {
         #response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
     
         #if [[ "$response" == "yes" ]]; then
-        #    echo "Continuing with dotfiles setup..."
+            echo "Continuing with dotfiles setup..."
         #else
         #    echo "Exiting the script."
         #    exit 0
