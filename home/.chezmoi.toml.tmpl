@@ -1,5 +1,11 @@
-{{- $name := promptStringOnce . "name" "Name" "itkoren" -}}
+{{- $codespaces := env "CODESPACES" | not | not -}}
+{{- if $codespaces }}{{ /* Codespaces dotfiles setup is non-interactive, so set name and an email address */}}
+{{- $name := "Itai Koren" -}}
+{{- $email := "your@email.com" -}}
+{{- else }}{{           /* Interactive setup, so prompt for an email address */}}
+{{- $name := promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
+{{- end }}
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
 {{- $osID := .chezmoi.os -}}
 {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
@@ -17,11 +23,14 @@
 {{- else if eq .chezmoi.os "windows" }}
 {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
 {{- end -}}
+{{- $powershellPath := lookPath "powershell" -}}
+{{- $pwshPath := lookPath "pwsh" -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
 # ╰──────────────────────────────────────────────────────────╯
 
+follow = true # follow symlinks, so we can symlink ~\Documents to ~\OneDrive\Documents
 sourceDir = {{ .chezmoi.workingTree | quote }}
 progress: true
 
@@ -32,7 +41,24 @@ progress: true
   hosttype = {{ $hosttype | quote }}
   device_type = {{ $chassisType | quote }}
   osid = {{ $osID | quote }}
-  # do not override the following values
+  codespaces = {{ $codespaces }}
+  {{ if $powershellPath  }}
+  powershellPath = {{ $powershellPath | quote }}
+  hasPowerShell = true
+  {{ end }}
+  {{ if $pwshPath  }}
+  pwshPath = {{ $pwshPath | quote }}
+  hasPwsh = true
+  {{ end }}
+  {{ if $pwshPath }}
+  shellexe = {{ $pwshPath | quote }}
+  {{ else }}
+  shellexe = {{ $powershellPath | quote }}
+  {{ end }}
+  git_oss = {{ promptString "oss git dir" | quote }}
+  git_work = {{ promptString "work git dir" | quote }}
+  
+# do not override the following values
 {{- if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
   is_wsl = true
 {{- else }}
@@ -59,6 +85,7 @@ progress: true
     autoPush = true
 
 [diff]
+  pager = "delta"
   exclude = [
     "scripts", 
     "externals"
