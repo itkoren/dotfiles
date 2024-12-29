@@ -48,9 +48,18 @@ function is_not_tty() {
     ! is_tty
 }
 
+# Improved check for CI or non-TTY
 function is_ci_or_not_tty() {
-    echo "CI: ${CI}, Is TTY: $(is_tty)"
-    is_ci || is_not_tty
+    if is_ci; then
+        echo "CI: true"
+        return 0  # CI environment, no input needed
+    elif is_not_tty; then
+        echo "CI: false, Non-interactive terminal detected"
+        return 0  # Non-interactive terminal
+    else
+        echo "CI: false, Interactive terminal detected"
+        return 1  # Interactive terminal
+    fi
 }
 
 function at_exit() {
