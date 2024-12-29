@@ -147,26 +147,26 @@ function initialize_os_macos() {
         echo "softwareupdate output: $softwareupdate_output"  # Debugging line
     
         # Try installing Command Line Tools using xcode-select if they're not listed
-        if [[ "$softwareupdate_output" =~ "Command Line Tools" ]]; then
+        #if [[ "$softwareupdate_output" =~ "Command Line Tools" ]]; then
             # Attempt to install CLT from softwareupdate if it's listed
-            CLT_PACKAGE=$(echo "$softwareupdate_output" | grep -B 1 "Command Line Tools" \
-                | awk -F"*" '/^ *\*/ {print $2}' \
-                | sed -e 's/^ *Label: //' -e 's/^ *//' \
-                | sort -V \
-                | tail -n1)
+        #    CLT_PACKAGE=$(echo "$softwareupdate_output" | grep -B 1 "Command Line Tools" \
+        #        | awk -F"*" '/^ *\*/ {print $2}' \
+        #        | sed -e 's/^ *Label: //' -e 's/^ *//' \
+        #        | sort -V \
+        #        | tail -n1)
             
-            if [ -z "$CLT_PACKAGE" ]; then
-                echo "No CLT package found. Triggering install via xcode-select."
-                xcode-select --install
-            else
-                echo "Installing Command Line Tools package: $CLT_PACKAGE"
-                sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
-            fi
-        else
+        #    if [ -z "$CLT_PACKAGE" ]; then
+        #        echo "No CLT package found. Triggering install via xcode-select."
+        #        xcode-select --install
+        #    else
+        #        echo "Installing Command Line Tools package: $CLT_PACKAGE"
+        #        sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
+        #    fi
+        #else
             # If no CLT package found, just trigger install via xcode-select
             echo "Command Line Tools not listed in softwareupdate output. Installing via xcode-select..."
             xcode-select --install
-        fi
+        #fi
     
         # Check if xcode-select --install succeeded
         if [ $? -eq 0 ]; then
