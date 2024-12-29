@@ -239,6 +239,7 @@ function run_chezmoi() {
     local chezmoi_cmd
     local no_tty_option
     echo "going to check chezmoi requirements"
+    # Check if chezmoi is installed
     if ! is_chezmoi_exists; then
         echo "chezmoi is not installed. Let's proceed with installation."
         # install chezmoi via brew or download the chezmoi binary from the URL
