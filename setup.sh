@@ -295,6 +295,7 @@ function main() {
 
     echo ""
     echo "🤚  This script will setup .dotfiles for you."
+    sudo -v || { echo "sudo failed!"; exit 1; }
     if ! is_ci_or_not_tty; then
         read -n 1 -r -s -p $'    Press any key to continue or Ctrl+C to abort...\n\n'
     else
