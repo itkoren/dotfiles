@@ -296,6 +296,9 @@ function main() {
     echo ""
     echo "🤚  This script will setup .dotfiles for you."
     sudo -v || { echo "sudo failed!"; exit 1; }
+
+    echo "CI: $( [[ "${CI:-false}" == "true" ]] )"
+    echo "Is TTY: $( [ -t 0 ] && echo 'Yes' || echo 'No' )"
     
     if ! is_ci_or_not_tty; then
         echo "Interactive terminal detected, waiting for input."
@@ -303,9 +306,6 @@ function main() {
     else
         echo "Skipping prompt in non-interactive or CI environment."
     fi
-
-    echo "CI: $CI"
-    echo "Is TTY: $( [ -t 0 ] && echo 'Yes' || echo 'No' )"
     
     echo "$DOTFILES_LOGO"
 
