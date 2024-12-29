@@ -142,6 +142,11 @@ function initialize_os_macos() {
     if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
         echo "===> Installing Xcode Command Line Tools"
 
+        # Run softwareupdate --list to see available updates
+        softwareupdate_output=$(softwareupdate --list)
+        echo "softwareupdate output: $softwareupdate_output"  # Debugging line
+
+        # Look for "Command Line Tools" in the output
         CLT_PACKAGE=$(softwareupdate --list \
             | grep -B 1 "Command Line Tools" \
             | awk -F"*" '/^ *\*/ {print $2}' \
@@ -150,15 +155,24 @@ function initialize_os_macos() {
             | tail -n1)
 
         if [ -z "$CLT_PACKAGE" ]; then
-            echo "No new updates available for Command Line Tools."
+            echo "No Command Line Tools package found in softwareupdate."
+            echo "Attempting to install Command Line Tools using xcode-select..."
+        
+            # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
+            # Install XCode Command Line Tools if necessary
+            xcode-select --install
+
+            # Check if installation succeeded
+            if [ $? -eq 0 ]; then
+                echo "Successfully triggered installation of Xcode Command Line Tools."
+            else
+                echo "Failed to trigger installation of Command Line Tools. Please install manually."
+                exit 1
+            fi
         else
             echo "Installing Command Line Tools package: $CLT_PACKAGE"
             sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
         fi
-    
-        # Source: https://github.com/DanielMSchmidt/dotfiles/blob/74d5cf6d4e74e2aab652c29523bbf5fed54ab979/.startup.sh#L7-L24
-        # Install XCode Command Line Tools if necessary
-        xcode-select --install || echo "XCode already installed"
 
         # Accept T&Cs
         if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
