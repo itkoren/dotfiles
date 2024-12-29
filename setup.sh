@@ -26,7 +26,7 @@ declare -r DOTFILES_LOGO='
                      https://github.com/itkoren/dotfiles
 '
 
-declare -r DOTFILES_REPO_URL="https://github.com/itkoren/dotfiles"
+declare -r DOTFILES_USER_OR_REPO_URL="itkoren"
 declare -r BRANCH_NAME="${BRANCH_NAME:-main}"
 declare -r DOTFILES_GITHUB_PAT="${DOTFILES_GITHUB_PAT:-}"
 declare -r CI="${CI:-false}"
@@ -273,7 +273,7 @@ function run_chezmoi() {
     # run `chezmoi init` to setup the source directory,
     # generate the config file, and optionally update the destination directory
     # to match the target state.
-    "${chezmoi_cmd}" init "${DOTFILES_REPO_URL}" \
+    "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
         --force \
         --branch "${BRANCH_NAME}" \
         --use-builtin-git true \
@@ -360,14 +360,14 @@ function main() {
         # Ask the user if they want to continue, but only in interactive environments
         if is_tty; then
             # Prompt user for input
-            read -p "Do you wish to continue? (yes/no): " response
+            read -p "Do you wish to continue? (y/n): " response
         
             # Convert response to lowercase for case-insensitive comparison
             response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
             echo "User input: $response"  # Debugging output
             
             # Handle response validation
-            if [[ "$response" == "yes" ]]; then
+            if [[ "$response" == "y" ]]; then
                 echo "Continuing with dotfiles setup..."
             else
                 echo "Exiting the script."
