@@ -324,7 +324,8 @@ function main() {
         
             # Convert response to lowercase for case-insensitive comparison
             response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
-        
+            echo "User input: $response"  # Debugging output
+            
             # Handle response validation
             if [[ "$response" == "yes" ]]; then
                 echo "Continuing with dotfiles setup..."
