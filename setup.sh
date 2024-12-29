@@ -298,7 +298,7 @@ function initialize_dotfiles() {
         # - /dev/tty of the github workflow is not available.
         # - We can use password-less sudo in the github workflow.
         # Therefore, skip the sudo keep alive function.
-        # keepalive_sudo
+        #keepalive_sudo
         echo "sudo keep alive"
     fi
     run_chezmoi
