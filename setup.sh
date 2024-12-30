@@ -262,6 +262,7 @@ function run_chezmoi() {
     # run `chezmoi init` to setup the source directory,
     # generate the config file, and optionally update the destination directory
     # to match the target state.
+    echo "Command being executed: ${chezmoi_cmd} init -v ${DOTFILES_USER_OR_REPO_URL} --force --branch ${BRANCH_NAME} --use-builtin-git true ${no_tty_option}"
     "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
         --force \
         --branch "${BRANCH_NAME}" \
