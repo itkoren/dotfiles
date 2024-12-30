@@ -38,8 +38,8 @@
 {{- $powershellPath := lookPath "powershell" -}}
 {{- $pwshPath := lookPath "pwsh" -}}
 
-{{- $git_oss = promptString "oss git dir" "~/dev/repositories/personal" | quote -}}
-{{- $git_work = promptString "work git dir" "~/dev/repositories/work" | quote -}}
+{{- $git_oss := promptString "oss git dir" "~/dev/repositories/personal" | quote -}}
+{{- $git_work := promptString "work git dir" "~/dev/repositories/work" | quote -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
