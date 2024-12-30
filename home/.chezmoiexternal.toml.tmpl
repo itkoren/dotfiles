@@ -6,6 +6,14 @@
 ["./AppData/Local/nvim"]
     type = "git-repo"
     url = "https://github.com/HeyItsGilbert/nvim"
+["./AppData/Roaming/bat"]
+    type = "archive"
+    url = "https://github.com/catppuccin/bat/archive/master.tar.gz"
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = [
+      "*/themes/**"
+    ]
 [".glzr/zebar/quiet-velvet"]
     type = "git-repo"
     url = "https://github.com/HeyItsGilbert/quiet-velvet"
@@ -47,12 +55,4 @@
     type = "git-repo"
     url = "/PProvost/vim-ps1.git"
     refreshPeriod = "168h"
-["./AppData/Roaming/bat"]
-    type = "archive"
-    url = "https://github.com/catppuccin/bat/archive/master.tar.gz"
-    stripComponents = 1
-    refreshPeriod = "168h"
-    include = [
-      "*/themes/**"
-    ]
 {{- end }}
