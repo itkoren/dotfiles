@@ -3,6 +3,7 @@
 {{- $email := "" -}}
 {{- $opsecret := "" -}}
 {{- $brewcasks := true -}}
+{{- $tasks := false -}}
 
 {{- if $codespaces }}
 {{-   $name = "Itai Koren" -}}
@@ -90,12 +91,14 @@ progress = true
 [hooks.read-source-state.pre]
   command = ".local/share/chezmoi/.install-prerequisites.sh"
 
+{{ if $tasks  }}
 [hooks.init.pre]
   command = "task"
   args = [
     "-d",
     {{ .chezmoi.sourceDir | quote }},
   ]
+{{- end }}
 
 [git]
   autoCommit = true
