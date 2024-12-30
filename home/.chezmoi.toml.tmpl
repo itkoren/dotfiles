@@ -1,20 +1,27 @@
 {{- $codespaces := env "CODESPACES" | not | not -}}
-{{- if $codespaces }}{{/* Codespaces dotfiles setup is non-interactive, so set name and an email address */}}
+{{- $name := "" -}}
+{{- $email := "" -}}
+{{- $opsecret := "" -}}
+{{- $brewcasks := true -}}
+
+{{- if $codespaces }}
 {{- $name := "Itai Koren" -}}
 {{- $email := "your@email.com" -}}
 {{- $opsecret := "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
-{{- $brewcasks := true -}}{{/* true to install brew casks on macOS */}}
-{{- else }}{{/* Interactive setup, so prompt for an email address */}}
+{{- $brewcasks := true -}}
+{{- else }}
 {{- $name := promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{- $email := promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
 {{- $brewcasks = promptBool "Install brew casks" true -}}
 {{- end }}
+
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
 {{- $osID := .chezmoi.os -}}
 {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
 {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
+
 {{- $chassisType := "desktop" }}
 {{- if eq .chezmoi.os "darwin" }}
 {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
@@ -27,6 +34,7 @@
 {{- else if eq .chezmoi.os "windows" }}
 {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
 {{- end -}}
+
 {{- $powershellPath := lookPath "powershell" -}}
 {{- $pwshPath := lookPath "pwsh" -}}
 
