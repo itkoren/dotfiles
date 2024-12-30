@@ -1,20 +1,20 @@
-#{{- $codespaces := (env "CODESPACES" | default "false") | not | not -}}
-#{{- $name := "" -}}
-#{{- $email := "" -}}
-#{{- $opsecret := "" -}}
-#{{- $brewcasks := true -}}
+{{- $codespaces := (env "CODESPACES" | default "false") | not | not -}}
+{{- $name := "" -}}
+{{- $email := "" -}}
+{{- $opsecret := "" -}}
+{{- $brewcasks := true -}}
 
-#{{- if $codespaces }}
+{{- if $codespaces }}
 {{-   $name = "Itai Koren" -}}
 {{-   $email = "your@email.com" -}}
 {{-   $opsecret = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
 {{-   $brewcasks = true -}}
-#{{- else }}
-#{{-   $name = promptStringOnce . "name" "Name" "Itai Koren" -}}
-#{{-   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
-#{{-   $opsecret = promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
-#{{-   $brewcasks = promptBoolOnce . "brewcasks" "Install brew casks" true -}}
-#{{- end }}
+{{- else }}
+{{-   $name = promptStringOnce . "name" "Name" "Itai Koren" -}}
+{{-   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
+{{-   $opsecret = promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
+{{-   $brewcasks = promptBoolOnce . "brewcasks" "Install brew casks" true -}}
+{{- end }}
 
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
 {{- $osID := .chezmoi.os -}}
@@ -35,11 +35,11 @@
 {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
 {{- end -}}
 
-#{{- $powershellPath := lookPath "powershell" -}}
-#{{- $pwshPath := lookPath "pwsh" -}}
+{{- $powershellPath := lookPath "powershell" -}}
+{{- $pwshPath := lookPath "pwsh" -}}
 
-#{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" | quote -}}
-#{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" | quote -}}
+{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" -}}
+{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
@@ -57,23 +57,23 @@ progress = true
   device_type = {{ $chassisType | quote }}
   osid = {{ $osID | quote }}
   codespaces = {{ $codespaces }}
-  opsecret = {{ $opsecret }}
+  opsecret = {{ $opsecret | quote }}
   brewcasks = {{ $brewcasks }}
-  #{{ if $powershellPath  }}
-  #powershellPath = {{ $powershellPath | quote }}
-  #hasPowerShell = true
-  #{{ end }}
-  #{{ if $pwshPath  }}
-  #pwshPath = {{ $pwshPath | quote }}
-  #hasPwsh = true
-  #{{ end }}
-  #{{ if $pwshPath }}
-  #shellexe = {{ $pwshPath | quote }}
-  #{{ else }}
-  #shellexe = {{ $powershellPath | quote }}
-  #{{ end }}
-  #git_oss = {{ $git_oss | quote }}
-  #git_work = {{ $git_work | quote }}
+  {{ if $powershellPath  }}
+  powershellPath = {{ $powershellPath | quote }}
+  hasPowerShell = true
+  {{ end }}
+  {{ if $pwshPath  }}
+  pwshPath = {{ $pwshPath | quote }}
+  hasPwsh = true
+  {{ end }}
+  {{ if $pwshPath }}
+  shellexe = {{ $pwshPath | quote }}
+  {{ else }}
+  shellexe = {{ $powershellPath | quote }}
+  {{ end }}
+  git_oss = {{ $git_oss | quote }}
+  git_work = {{ $git_work | quote }}
   
 # do not override the following values
 {{- if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
