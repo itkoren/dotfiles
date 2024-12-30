@@ -44,7 +44,7 @@
 
 follow = true # follow symlinks, so we can symlink ~\Documents to ~\OneDrive\Documents
 sourceDir = {{ .chezmoi.workingTree | quote }}
-progress: true
+progress = true
 
 [data]
   name = {{ $name | quote }}
