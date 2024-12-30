@@ -20,7 +20,7 @@ mas {{ .name | quote }}, id: {{ .id }}
 EOF
 {{ end -}}
 
-{{ if and (.environment.home) (hasKey .packages.darwin "work") -}}
+{{ if and (.environment.work) (hasKey .packages.darwin "work") -}}
 HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}' brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.darwin.work.taps -}}
 tap {{ . | quote | replace " " "\", \"" }}
