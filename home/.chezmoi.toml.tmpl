@@ -106,9 +106,9 @@ progress = true
 
 # Trigger the installation script before applying the .gitconfig
 [hooks.apply]
-  - command = "{{ .chezmoi.workingTree }}/.chezmoiscripts/run_onchange_before_01-darwin-install-packages.sh.tmpl"
-    args = []
-    when = "before"  # Ensure this runs before other configurations
+  command = "{{ .chezmoi.workingTree }}/.chezmoiscripts/run_onchange_before_01-darwin-install-packages.sh.tmpl"
+  args = []
+  when = "before"  # Ensure this runs before other configurations
 
 [git]
   autoCommit = true
