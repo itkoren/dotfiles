@@ -4,6 +4,7 @@
 {{- $opsecret := "" -}}
 {{- $brewcasks := true -}}
 {{- $tasks := false -}}
+{{- $externals := false -}}
 
 {{- if $codespaces }}
 {{-   $name = "Itai Koren" -}}
@@ -75,6 +76,7 @@ progress = true
   {{- end }}
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
+  externals = {{ $externals }}
   
 # do not override the following values
 {{- if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
