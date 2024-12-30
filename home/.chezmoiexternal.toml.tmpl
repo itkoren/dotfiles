@@ -18,6 +18,7 @@
     type = "git-repo"
     url = "https://github.com/HeyItsGilbert/quiet-velvet"
 {{- else }}
+{{- if .externals }}
 [".config/nvim"]
     type = "git-repo"
     url = "https://github.com/HeyItsGilbert/nvim"
@@ -55,4 +56,5 @@
     type = "git-repo"
     url = "/PProvost/vim-ps1.git"
     refreshPeriod = "168h"
+{{- end }}
 {{- end }}
