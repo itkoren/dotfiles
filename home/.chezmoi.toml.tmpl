@@ -13,7 +13,7 @@
 {{-   $name = promptStringOnce . "name" "Name" "Itai Koren" -}}
 {{-   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
 {{-   $opsecret = promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
-{{-   $brewcasks = promptBool "Install brew casks" true -}}
+{{-   $brewcasks = promptBoolOnce . "brewcasks" "Install brew casks" true -}}
 {{- end }}
 
 {{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
@@ -38,8 +38,8 @@
 {{- $powershellPath := lookPath "powershell" -}}
 {{- $pwshPath := lookPath "pwsh" -}}
 
-{{- $git_oss := promptString "oss git dir" "~/dev/repositories/personal" | quote -}}
-{{- $git_work := promptString "work git dir" "~/dev/repositories/work" | quote -}}
+{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" | quote -}}
+{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" | quote -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
