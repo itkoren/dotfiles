@@ -93,11 +93,11 @@ progress = true
 
 {{- if $tasks  }}
 [hooks.init.pre]
-  command = "task"
-  args = [
-    "-d",
-    {{ .chezmoi.sourceDir | quote }},
-  ]
+  #command = "task"
+  #args = [
+  #  "-d",
+  #  {{ .chezmoi.sourceDir | quote }},
+  #]
 {{- end }}
 
 [git]
