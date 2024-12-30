@@ -263,11 +263,20 @@ function run_chezmoi() {
     # generate the config file, and optionally update the destination directory
     # to match the target state.
     echo "Command being executed: ${chezmoi_cmd} init -v ${DOTFILES_USER_OR_REPO_URL} --force --branch ${BRANCH_NAME} --use-builtin-git true ${no_tty_option}"
-    "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
-        --force \
-        --branch "${BRANCH_NAME}" \
-        --use-builtin-git true \
-        ${no_tty_option}
+    if [ "${DOTFILES_DEBUG:-}" ]; then
+        "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
+            --force \
+            --branch "${BRANCH_NAME}" \
+            --use-builtin-git true \
+            --debug \
+            ${no_tty_option}
+    else
+        "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
+            --force \
+            --branch "${BRANCH_NAME}" \
+            --use-builtin-git true \
+            ${no_tty_option}
+    fi
 
     # the `age` command requires a tty, but there is no tty in the github actions.
     # Therefore, it is currnetly difficult to decrypt the files encrypted with `age` in this workflow.
