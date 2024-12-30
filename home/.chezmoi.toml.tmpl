@@ -92,12 +92,12 @@ progress = true
   command = ".local/share/chezmoi/.install-prerequisites.sh"
 
 {{- if $tasks  }}
-[hooks.init.pre]
-  #command = "task"
-  #args = [
-  #  "-d",
-  #  {{ .chezmoi.sourceDir | quote }},
-  #]
+#[hooks.init.pre]
+#  command = "task"
+#  args = [
+#    "-d",
+#    {{ .chezmoi.sourceDir | quote }},
+#  ]
 {{- end }}
 
 [git]
