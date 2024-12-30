@@ -16,19 +16,26 @@
   format = ssh
 
 {{- if .opsecret }}
+{{- if eq .chezmoi.os "darwin" }}
 [gpg "ssh"]
   program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 {{- end }}
+{{- end }}
 
+{{- if eq .chezmoi.os "darwin" }}
 [credential]
   helper = osxkeychain
+{{- else }}
+[credential]
+  helper = /usr/lib/git-core/git-credential-libsecret
+{{- end }}
 {{- end }}
 
 [core]
   editor = "{{ .editor }}"
   longpaths = true
   pager = "delta"
-  excludesFile = ~/.gitignore
+  excludesFile = ~/.gitignore_global
   {{- if eq .chezmoi.os "windows" }}
 	autocrlf = true
 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
@@ -38,6 +45,7 @@
 
 [init]
   defaultBranch = "master"
+  templatedir = ~/.gittemplates
 
 [commit]
   {{- if (or (.key_sign) (.opsecret)) }}
@@ -50,6 +58,23 @@
 
 [pull]
   ff = only
+
+[stash]
+  showPatch = true
+
+[log]
+  decorate = full
+
+[status]
+  showUntrackedFiles = all
+
+[merge]
+  conflictstyle = diff3
+  stat = true
+
+[advice]
+  pushNonFastForward = false
+  statusHints = false
 
 [gitreview]
   remote = "origin"
@@ -81,6 +106,9 @@
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
   file-decoration-style = none
+
+[help]
+  autocorrect = 1
 
 {{- if eq .name "itkoren" "Itai Koren" "Koren Itai" }}
 [url "git@github.com:itkoren"]
