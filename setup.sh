@@ -146,46 +146,21 @@ function initialize_os_macos() {
         softwareupdate_output=$(softwareupdate --list)
         echo "softwareupdate output: $softwareupdate_output"  # Debugging line
     
-        # Try installing Command Line Tools using xcode-select if they're not listed
-        #if [[ "$softwareupdate_output" =~ "Command Line Tools" ]]; then
-            # Attempt to install CLT from softwareupdate if it's listed
-        #    CLT_PACKAGE=$(echo "$softwareupdate_output" | grep -B 1 "Command Line Tools" \
-        #        | awk -F"*" '/^ *\*/ {print $2}' \
-        #        | sed -e 's/^ *Label: //' -e 's/^ *//' \
-        #        | sort -V \
-        #        | tail -n1)
-            
-        #    if [ -z "$CLT_PACKAGE" ]; then
-        #        echo "No CLT package found. Triggering install via xcode-select."
-        #        xcode-select --install
-        #    else
-        #        echo "Installing Command Line Tools package: $CLT_PACKAGE"
-        #        sudo softwareupdate --install "$CLT_PACKAGE" || { echo "Failed to install Command Line Tools"; exit 1; }
-        #    fi
-        #else
-            # If no CLT package found, just trigger install via xcode-select
-            echo "Command Line Tools not listed in softwareupdate output. Installing via xcode-select..."
+        # Install Xcode Command Line Tools if not already installed
+        if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
+            echo "Installing Xcode Command Line Tools..."
             xcode-select --install
-        #fi
     
-        # Check if xcode-select --install succeeded
-        if [ $? -eq 0 ]; then
-            # Wait for user to manually complete installation
-            echo "You may need to manually complete the installation of Xcode Command Line Tools. Press [Enter] to continue once installation is complete."
-            
-            # Wait for user input after installation is completed
-            read -p "Press [Enter] once you've installed Xcode Command Line Tools and are ready to continue."
-        
-            # Verify if the installation was successful
+            # Wait for user to complete installation
+            echo "Please complete the Xcode Command Line Tools installation..."
+            echo "Press Enter once the installation is complete."
+            read
+    
+            # Verify installation
             until [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; do
                 echo "Waiting for Command Line Tools to be installed..."
                 sleep 5
             done
-        
-            echo "Successfully installed Xcode Command Line Tools."
-        else
-            echo "Failed to trigger installation of Command Line Tools. Please install manually."
-            exit 1
         fi
 
         # Accept T&Cs
