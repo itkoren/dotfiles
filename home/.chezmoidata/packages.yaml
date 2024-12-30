@@ -15,6 +15,7 @@ packages:
             - "gh"
             - "jq"
             - "mas"
+            - "git-delta"
             #- "mise"
             #- "ripgrep"
             #- "rsync"
