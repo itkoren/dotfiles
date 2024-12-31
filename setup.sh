@@ -4,6 +4,9 @@ set -Eeufo pipefail
 
 trap 'echo "Error at line $LINENO: $BASH_COMMAND"' ERR
 
+# Catch any command failure and run reset function
+# trap 'reset_chezmoi_state' ERR
+
 if [ "${DOTFILES_DEBUG:-}" ]; then
     set -x
 fi
@@ -206,6 +209,14 @@ function initialize_os_env() {
     fi
 }
 
+# Function to reset chezmoi state before exiting
+function reset_chezmoi_state() {
+  echo "An error occurred, resetting chezmoi state..."
+  chezmoi state reset
+  rm -rf ~/.local/share/chezmoi
+  rm -rf ~/config/chezmoi
+}
+
 function run_chezmoi() {
     function is_chezmoi_exists() {
         command -v chezmoi &>/dev/null
@@ -264,18 +275,25 @@ function run_chezmoi() {
     # to match the target state.
     echo "Command being executed: ${chezmoi_cmd} init -v ${DOTFILES_USER_OR_REPO_URL} --force --branch ${BRANCH_NAME} --use-builtin-git true ${no_tty_option}"
     if [ "${DOTFILES_DEBUG:-}" ]; then
-        "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
-            --force \
-            --branch "${BRANCH_NAME}" \
-            --use-builtin-git true \
-            --debug \
-            ${no_tty_option}
+        if ! "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
+                --force \
+                --branch "${BRANCH_NAME}" \
+                --use-builtin-git true \
+                --debug \
+                --verbose \
+                ${no_tty_option}; then
+          reset_chezmoi_state
+          exit 1  # Exit the script with a failure status
+        fi
     else
-        "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
+        if ! "${chezmoi_cmd}" init -v "${DOTFILES_USER_OR_REPO_URL}" \
             --force \
             --branch "${BRANCH_NAME}" \
             --use-builtin-git true \
-            ${no_tty_option}
+            ${no_tty_option}; then
+          reset_chezmoi_state
+          exit 1  # Exit the script with a failure status
+        fi
     fi
 
     # the `age` command requires a tty, but there is no tty in the github actions.
@@ -294,7 +312,10 @@ function run_chezmoi() {
 
     # run `chezmoi apply` to ensure that target... are in the target state,
     # updating them if necessary.
-    "${chezmoi_cmd}" apply ${no_tty_option}
+    if ! "${chezmoi_cmd}" apply ${no_tty_option}; then
+      reset_chezmoi_state
+      exit 1  # Exit the script with a failure status
+    fi
 
     if [[ "$yn" =~ ^[Yy]$ ]]; then
         # purge the binary of the chezmoi cmd
