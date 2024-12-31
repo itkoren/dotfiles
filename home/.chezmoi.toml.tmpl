@@ -22,9 +22,9 @@
 
 {{ $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" }}
 {{ $osID := .chezmoi.os }}
-{{ if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) }}
+{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
 {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
-{{ end }}
+{{- end -}}
 
 {{ $chassisType := "desktop" }}
 {{ if eq .chezmoi.os "darwin" }}
