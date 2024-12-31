@@ -114,7 +114,7 @@ exclude = ["scripts", "externals"]
 
 [merge]
 command = "nvim"
-args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
   
 [status]
 exclude = ["always"]
