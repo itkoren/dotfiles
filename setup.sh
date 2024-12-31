@@ -41,11 +41,15 @@ function is_ci() {
 function is_tty() {
     # Check if the script is running in an interactive terminal
     if [ -t 1 ]; then
+      if [ "${DOTFILES_DEBUG:-}" ]; then
         echo "Interactive terminal detected"
-        return 0 # true
+      fi
+      return 0 # true
     else
+      if [ "${DOTFILES_DEBUG:-}" ]; then
         echo "Non-interactive terminal detected"
-        return 1 # false
+      fi
+      return 1 # false
     fi
 }
 
@@ -56,14 +60,20 @@ function is_not_tty() {
 # Improved check for CI or non-TTY
 function is_ci_or_not_tty() {
     if is_ci; then
+      if [ "${DOTFILES_DEBUG:-}" ]; then
         echo "CI: true"
-        return 0  # CI environment, no input needed
+      fi
+      return 0  # CI environment, no input needed
     elif is_not_tty; then
+      if [ "${DOTFILES_DEBUG:-}" ]; then
         echo "CI: false, Non-interactive terminal detected"
-        return 0  # Non-interactive terminal
+      fi
+      return 0  # Non-interactive terminal
     else
+      if [ "${DOTFILES_DEBUG:-}" ]; then
         echo "CI: false, Interactive terminal detected"
-        return 1  # Interactive terminal
+      fi
+      return 1  # Interactive terminal
     fi
 }
 
