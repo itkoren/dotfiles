@@ -5,7 +5,7 @@
 {{- $opsecret := "" -}}
 {{- $brewcasks := true -}}
 {{- $tasks := false -}}
-{{- $externals := false -}}
+{{- $externs := false -}}
 {{- $key_sign := false -}}
 
 {{- if $codespaces }}
@@ -78,7 +78,7 @@ progress = true
   {{- end }}
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
-  externals = {{ $externals }}
+  externs = {{ $externs }}
   key_sign = {{ $key_sign }}
   
 # do not override the following values
