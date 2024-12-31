@@ -61,11 +61,11 @@ progress = true
   device_type = {{ $chassisType | quote }}
   osid = {{ $osID | quote }}
   codespaces = {{ $codespaces }}
+  externs = {{ $externs }}
   opsecret = {{ $opsecret | quote }}
   brewcasks = {{ $brewcasks }}
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
-  externs = {{ $externs }}
   key_sign = {{ $key_sign }}
   {{- if $powershellPath  }}
   powershellPath = {{ $powershellPath | quote }}
