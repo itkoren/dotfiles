@@ -12,7 +12,7 @@
 {{   $name = "Itai Koren" }}
 {{   $email = "your@email.com" }}
 {{   $opsecret = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" }}
-{{   $brewcasks = true -}}
+{{   $brewcasks = true }}
 {{ else }}
 {{   $name = promptStringOnce . "name" "Name" "Itai Koren" }}
 {{   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" }}
@@ -50,7 +50,7 @@
 # ╰──────────────────────────────────────────────────────────╯
 
 follow = true # follow symlinks
-sourceDir = {{- .chezmoi.workingTree | quote -}}
+sourceDir = {{ .chezmoi.workingTree | quote }}
 progress = true
 
 [data]
