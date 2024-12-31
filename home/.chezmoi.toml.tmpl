@@ -96,7 +96,7 @@ work = {{ eq $hosttype "work" }}
 {{ if $tasks  }}
 [hooks.init.pre]
 command = "task"
-args = {{- list "-d" (.chezmoi.sourceDir | quote) | tomlArray -}}
+args = {{- list "-d" (.chezmoi.sourceDir | quote) | join ", " -}}
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
@@ -110,14 +110,14 @@ autoPush = true
 
 [diff]
 pager = "delta"
-exclude = {{ list "scripts" "externals" | tomlArray }}
+exclude = {{ list "scripts" "externals" | join ", " }}
 
 [merge]
 command = "nvim"
-args = {{ list "-d" "{{ .Destination }}" "{{ .Source }}" "{{ .Target }}" | tomlArray }}
+args = {{ list "-d" "{{ .Destination }}" "{{ .Source }}" "{{ .Target }}" | join ", " }}
   
 [status]
-exclude = {{ list "always" | tomlArray }}
+exclude = {{ list "always" | join ", " }}
 
 [scriptEnv]
 DEFAULTS = "0"
@@ -128,5 +128,5 @@ DOT_ENVIRONMENT = {{ $hosttype | quote }}
 {{ if eq .chezmoi.os "windows" }}
 [interpreters.ps1]
 command = "pwsh"
-args = {{ list "-NoLogo" "-NoProfile" | tomlArray }}
+args = {{ list "-NoLogo" "-NoProfile" | join ", " }}
 {{ end }}
