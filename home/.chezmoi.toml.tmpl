@@ -101,14 +101,10 @@ progress = true
   ]
 {{- end }}
 
+{{- if eq .chezmoi.os "darwin" -}}
 [hooks.read-source-state.pre]
-  command = "{{ .chezmoi.workingTree }}/.install-prerequisites.sh"
-
-# Trigger the installation script before applying the .gitconfig
-[hooks.apply]
-  command = "{{ .chezmoi.workingTree }}/.chezmoiscripts/run_onchange_before_01-darwin-install-packages.sh.tmpl"
-  args = []
-  when = "before"  # Ensure this runs before other configurations
+  command = "{{ .chezmoi.workingTree }}/.darwin-install-prerequisites.sh"
+{{- end }}
 
 [git]
   autoCommit = true
