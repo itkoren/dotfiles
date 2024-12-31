@@ -1,56 +1,56 @@
-{{ $dotfiles_debug := env "DOTFILES_DEBUG" | not | not }}
-{{ $codespaces := env "CODESPACES" | not | not }}
-{{ $name := "" }}
-{{ $email := "" }}
-{{ $opsecret := "" }}
-{{ $brewcasks := true }}
-{{ $tasks := false }}
-{{ $externs := false }}
-{{ $key_sign := false }}
+{{- $dotfiles_debug := env "DOTFILES_DEBUG" | not | not -}}
+{{- $codespaces := env "CODESPACES" | not | not -}}
+{{- $name := "" -}}
+{{- $email := "" -}}
+{{- $opsecret := "" -}}
+{{- $brewcasks := true -}}
+{{- $tasks := false -}}
+{{- $externs := false -}}
+{{- $key_sign := false -}}
 
-{{ if $codespaces }}
-{{   $name = "Itai Koren" }}
-{{   $email = "your@email.com" }}
-{{   $opsecret = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" }}
-{{   $brewcasks = true }}
-{{ else }}
-{{   $name = promptStringOnce . "name" "Name" "Itai Koren" }}
-{{   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" }}
-{{   $opsecret = promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" }}
-{{   $brewcasks = promptBoolOnce . "brewcasks" "Install brew casks" true }}
-{{ end }}
+{{- if $codespaces -}}
+{{-   $name = "Itai Koren" -}}
+{{-   $email = "your@email.com" -}}
+{{-   $opsecret = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
+{{-   $brewcasks = true -}}
+{{- else -}}
+{{-   $name = promptStringOnce . "name" "Name" "Itai Koren" -}}
+{{-   $email = promptStringOnce . "email" "Email Address" "itkoren@gmail.com" -}}
+{{-   $opsecret = promptStringOnce . "opsecret" "1Password secret key" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVM9GaHBTMXCHjXIPiD7cbOJKcxQghU//5SoIIPtyKT" -}}
+{{-   $brewcasks = promptBoolOnce . "brewcasks" "Install brew casks" true -}}
+{{- end -}}
 
-{{ $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" }}
-{{ $osID := .chezmoi.os }}
-{{ if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) }}
-{{   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id }}
-{{ end }}
+{{- $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" -}}
+{{- $osID := .chezmoi.os -}}
+{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
+{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
-{{ $chassisType := "desktop" }}
-{{ if eq .chezmoi.os "darwin" }}
-{{   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
-{{     $chassisType = "laptop" }}
-{{   else }}
-{{     $chassisType = "desktop" }}
-{{   end }}
-{{ else if eq .chezmoi.os "linux" }}
-{{   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
-{{ else if eq .chezmoi.os "windows" }}
-{{   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
-{{ end }}
+{{- $chassisType := "desktop" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") -}}
+{{-     $chassisType = "laptop" -}}
+{{-   else -}}
+{{-     $chassisType = "desktop" -}}
+{{-   end -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis -}}
+{{- else if eq .chezmoi.os "windows" -}}
+{{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim -}}
+{{- end -}}
 
-{{ $powershellPath := lookPath "powershell" }}
-{{ $pwshPath := lookPath "pwsh" }}
+{{- $powershellPath := lookPath "powershell" -}}
+{{- $pwshPath := lookPath "pwsh" -}}
 
-{{ $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" }}
-{{ $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" }}
+{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" -}}
+{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
 # ╰──────────────────────────────────────────────────────────╯
 
 follow = true # follow symlinks
-sourceDir = {{ .chezmoi.workingTree | quote }}
+sourceDir = {{- .chezmoi.workingTree | quote -}}
 progress = true
 
 [data]
@@ -67,18 +67,18 @@ brewcasks = {{ $brewcasks }}
 git_oss = {{ $git_oss | quote }}
 git_work = {{ $git_work | quote }}
 key_sign = {{ $key_sign }}
-{{ if $powershellPath  }}
-powershellPath = {{ $powershellPath | quote }}
+{{- if $powershellPath  -}}
+powershellPath = {{- $powershellPath | quote -}}
 hasPowerShell = true
 {{ end }}
-{{ if $pwshPath  }}
-pwshPath = {{ $pwshPath | quote }}
+{{- if $pwshPath -}}
+pwshPath = {{- $pwshPath | quote -}}
 hasPwsh = true
 {{ end }}
 {{ if $pwshPath }}
-shellexe = {{ $pwshPath | quote }}
+shellexe = {{- $pwshPath | quote -}}
 {{ else }}
-shellexe = {{ $powershellPath | quote }}
+shellexe = {{- $powershellPath | quote -}}
 {{ end }}
   
 # do not override the following values
@@ -101,7 +101,7 @@ args = {{ list "-d" (.chezmoi.sourceDir | quote) | quote }}
 
 {{ if eq .chezmoi.os "darwin" }}
 [hooks.read-source-state.pre]
-command = "{{ .chezmoi.workingTree }}/.darwin-install-prerequisites.sh"
+command = "{{- .chezmoi.workingTree -}}/.darwin-install-prerequisites.sh"
 {{ end }}
 
 [git]
