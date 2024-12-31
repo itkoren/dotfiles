@@ -22,9 +22,9 @@
 
 {{ $hosttype := promptChoiceOnce . "host-type" "Host Type" (list "personal" "work") "personal" }}
 {{ $osID := .chezmoi.os }}
-{{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
-{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
-{{- end -}}
+{{ if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) }}
+{{   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id }}
+{{ end }}
 
 {{ $chassisType := "desktop" }}
 {{ if eq .chezmoi.os "darwin" }}
@@ -34,23 +34,23 @@
 {{     $chassisType = "desktop" }}
 {{   end }}
 {{ else if eq .chezmoi.os "linux" }}
-{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis -}}
+{{   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
 {{ else if eq .chezmoi.os "windows" }}
-{{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim -}}
+{{   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
 {{ end }}
 
-{{- $powershellPath := lookPath "powershell" -}}
-{{- $pwshPath := lookPath "pwsh" -}}
+{{ $powershellPath := lookPath "powershell" }}
+{{ $pwshPath := lookPath "pwsh" }}
 
-{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" -}}
-{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" -}}
+{{ $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" }}
+{{ $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" }}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
 # ╰──────────────────────────────────────────────────────────╯
 
 follow = true # follow symlinks
-sourceDir = {{- .chezmoi.workingTree | quote -}}
+sourceDir = {{ .chezmoi.workingTree | quote }}
 progress = true
 
 [data]
@@ -68,17 +68,17 @@ git_oss = {{ $git_oss | quote }}
 git_work = {{ $git_work | quote }}
 key_sign = {{ $key_sign }}
 {{- if $powershellPath -}}
-powershellPath = {{- $powershellPath | quote -}}
+powershellPath = {{ $powershellPath | quote }}
 hasPowerShell = true
 {{- end -}}
 {{- if $pwshPath -}}
-pwshPath = {{- $pwshPath | quote -}}
+pwshPath = {{ $pwshPath | quote }}
 hasPwsh = true
 {{- end -}}
 {{- if $pwshPath -}}
-shellexe = {{- $pwshPath | quote -}}
+shellexe = {{ $pwshPath | quote }}
 {{- else -}}
-shellexe = {{- $powershellPath | quote -}}
+shellexe = {{ $powershellPath | quote }}
 {{- end -}}
   
 # do not override the following values
@@ -132,5 +132,5 @@ args = {{ list "-NoLogo" "-NoProfile" | quote }}
 {{ end }}
 
 {{ if $dotfiles_debug }}
-{{- print .chezmoi.workingTree -}}
+{{ print .chezmoi.workingTree }}
 {{ end }}
