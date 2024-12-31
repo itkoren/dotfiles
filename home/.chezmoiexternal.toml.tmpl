@@ -19,7 +19,7 @@ type = "git-repo"
 url = "https://github.com/HeyItsGilbert/quiet-velvet"
 
 {{- else }}
-{{- if .externs }}
+{{- if .chezmoi.data.externs }}
 [[.config/nvim]]
 type = "git-repo"
 url = "https://github.com/HeyItsGilbert/nvim"
