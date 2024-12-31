@@ -38,11 +38,6 @@
 {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
 {{- end -}}
 
-{{- $powershellPath := lookPath "powershell" -}}
-{{- $pwshPath := lookPath "pwsh" -}}
-
-{{- $git_oss := promptStringOnce . "git_oss" "oss git dir" "~/dev/repositories/personal" -}}
-{{- $git_work := promptStringOnce . "git_work" "work git dir" "~/dev/repositories/work" -}}
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ CHEZMOI CONFIG                                           │
