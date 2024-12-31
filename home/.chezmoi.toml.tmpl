@@ -1,3 +1,4 @@
+{{- $dotfiles_debug := env "DOTFILES_DEBUG" | not | not -}}
 {{- $codespaces := env "CODESPACES" | not | not -}}
 {{- $name := "" -}}
 {{- $email := "" -}}
@@ -131,4 +132,7 @@ progress = true
   command = "pwsh"
   args = {{- .chezmoi.array "-NoLogo" "-NoProfile" | quote }}
 {{- end -}}
+
+{{- if $dotfiles_debug }}
 {{- print .chezmoi.workingTree }}
+{{- end -}}
