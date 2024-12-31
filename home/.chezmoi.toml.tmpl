@@ -75,11 +75,11 @@ hasPowerShell = true
 pwshPath = {{ $pwshPath | quote }}
 hasPwsh = true
 {{- end -}}
-{{- if $pwshPath -}}
+{{- if $pwshPath }}
 shellexe = {{ $pwshPath | quote }}
-{{- else -}}
+{{- else }}
 shellexe = {{ $powershellPath | quote }}
-{{- end -}}
+{{- end }}
   
 # do not override the following values
 {{ if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
