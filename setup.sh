@@ -211,10 +211,19 @@ function initialize_os_env() {
 
 # Function to reset chezmoi state before exiting
 function reset_chezmoi_state() {
-  echo "An error occurred, resetting chezmoi state..."
-  chezmoi state reset
-  rm -rf ~/.local/share/chezmoi
-  rm -rf ~/config/chezmoi
+  echo "An error occurred!"
+  yn="y" # If non-interactive, assume they want to skip
+  if ! is_ci_or_not_tty; then
+    read -p "Do you wish to reset chezmoi state? (y/n): " yn
+  fi
+  if [[ "$yn" =~ ^[Yy]$ ]]; then
+    echo "Resetting chezmoi state..."
+    chezmoi state reset
+    rm -rf ~/.local/share/chezmoi
+    rm -rf ~/config/chezmoi
+  else
+    echo "Leaving chezmoi state..."  
+  fi
 }
 
 function run_chezmoi() {
