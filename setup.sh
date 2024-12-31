@@ -223,7 +223,6 @@ function reset_chezmoi_state() {
     rm -rf ~/config/chezmoi
     rm -r * ~/.local/share/chezmoi/
     rm -rf ~/.local/share/chezmoi
-    
   else
     echo "Leaving chezmoi state..."  
   fi
