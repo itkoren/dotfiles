@@ -11,9 +11,7 @@
     url = "https://github.com/catppuccin/bat/archive/master.tar.gz"
     stripComponents = 1
     refreshPeriod = "168h"
-    include = [
-      "*/themes/**"
-    ]
+    include = {{ list "*/themes/**" | quote }}
 [".glzr/zebar/quiet-velvet"]
     type = "git-repo"
     url = "https://github.com/HeyItsGilbert/quiet-velvet"
