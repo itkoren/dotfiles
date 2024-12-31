@@ -96,7 +96,7 @@ work = {{ eq $hosttype "work" }}
 {{ if $tasks  }}
 [hooks.init.pre]
 command = "task"
-args = {{ list "-d" (- .chezmoi.sourceDir | quote -) | quote }}
+args = {{- list "-d" (.chezmoi.sourceDir | quote) | quote -}}
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
