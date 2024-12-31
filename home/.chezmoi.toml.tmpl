@@ -95,10 +95,7 @@ progress = true
 {{- if $tasks  }}
 [hooks.init.pre]
   command = "task"
-  args = [
-    "-d",
-    {{ .chezmoi.sourceDir | quote }},
-  ]
+  args = {{- .chezmoi.array "-d" (.chezmoi.sourceDir | quote) | quote }}
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" -}}
@@ -112,24 +109,14 @@ progress = true
 
 [diff]
   pager = "delta"
-  exclude = [
-    "scripts", 
-    "externals"
-  ]
+  exclude = {{- .chezmoi.array "scripts" "externals" | quote }}
 
 [merge]
   command = "nvim"
-  args = [
-    "-d", 
-    "{{ "{{" }} .Destination {{ "}}" }}", 
-    "{{ "{{" }} .Source {{ "}}" }}", 
-    "{{ "{{" }} .Target {{ "}}" }}"
-  ]
+  args = {{- .chezmoi.array "-d" "{{ .Destination }}" "{{ .Source }}" "{{ .Target }}" | quote }}
   
 [status]
-  exclude = [
-    "always"
-  ]
+  exclude = {{- .chezmoi.array "always" | quote }}
 
 [scriptEnv]
   # whether to apply MacOS defaults or not
@@ -142,8 +129,6 @@ progress = true
 {{- if eq .chezmoi.os "windows" -}}
 [interpreters.ps1]
   command = "pwsh"
-  args = [
-    "-NoLogo",
-    "-NoProfile"
-  ]
+  args = {{- .chezmoi.array "-NoLogo" "-NoProfile" | quote }}
 {{- end -}}
+{{- print .chezmoi.workingTree }}
