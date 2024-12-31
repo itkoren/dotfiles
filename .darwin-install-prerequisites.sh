@@ -9,6 +9,7 @@ else
         brew tap "1password/tap"
         brew install --cask 1password
         brew install 1password-cli
+        brew install git-delta
         ;;
     *)
         echo "unsupported OS"
