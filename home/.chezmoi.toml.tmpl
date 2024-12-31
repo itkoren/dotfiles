@@ -70,16 +70,16 @@ key_sign = {{ $key_sign }}
 {{- if $powershellPath  -}}
 powershellPath = {{- $powershellPath | quote -}}
 hasPowerShell = true
-{{ end }}
+{{- end -}}
 {{- if $pwshPath -}}
 pwshPath = {{- $pwshPath | quote -}}
 hasPwsh = true
-{{ end }}
-{{ if $pwshPath }}
+{{- end -}}
+{{- if $pwshPath -}}
 shellexe = {{- $pwshPath | quote -}}
-{{ else }}
+{{- else -}}
 shellexe = {{- $powershellPath | quote -}}
-{{ end }}
+{{- end -}}
   
 # do not override the following values
 {{ if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
