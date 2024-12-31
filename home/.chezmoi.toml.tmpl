@@ -63,6 +63,11 @@ progress = true
   codespaces = {{ $codespaces }}
   opsecret = {{ $opsecret | quote }}
   brewcasks = {{ $brewcasks }}
+  git_oss = {{ $git_oss | quote }}
+  git_work = {{ $git_work | quote }}
+  externs = {{ $externs }}
+  key_sign = {{ $key_sign }}
+
   {{- if $powershellPath  }}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
@@ -76,10 +81,6 @@ progress = true
   {{- else }}
   shellexe = {{ $powershellPath | quote }}
   {{- end }}
-  git_oss = {{ $git_oss | quote }}
-  git_work = {{ $git_work | quote }}
-  externs = {{ $externs }}
-  key_sign = {{ $key_sign }}
   
 # do not override the following values
 {{- if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
