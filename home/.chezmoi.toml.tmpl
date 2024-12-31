@@ -67,19 +67,19 @@ brewcasks = {{ $brewcasks }}
 git_oss = {{ $git_oss | quote }}
 git_work = {{ $git_work | quote }}
 key_sign = {{ $key_sign }}
-{{ if $powershellPath }}
-powershellPath = {{ $powershellPath | quote }}
+{{- if $powershellPath -}}
+powershellPath = {{- $powershellPath | quote -}}
 hasPowerShell = true
-{{ end }}
-{{ if $pwshPath }}
-pwshPath = {{ $pwshPath | quote }}
+{{- end -}}
+{{- if $pwshPath -}}
+pwshPath = {{- $pwshPath | quote -}}
 hasPwsh = true
-{{ end }}
-{{ if $pwshPath }}
-shellexe = {{ $pwshPath | quote }}
-{{ else }}
-shellexe = {{ $powershellPath | quote }}
-{{ end }}
+{{- end -}}
+{{- if $pwshPath -}}
+shellexe = {{- $pwshPath | quote -}}
+{{- else -}}
+shellexe = {{- $powershellPath | quote -}}
+{{- end -}}
   
 # do not override the following values
 {{ if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
