@@ -65,9 +65,12 @@ progress = true
   brewcasks = {{ $brewcasks }}
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
-  externs = {{ $externs }}
+  {{- if $externs  }}
+  externs = true
+  {{- else }}
+  externs = false
+  {{- end }}
   key_sign = {{ $key_sign }}
-
   {{- if $powershellPath  }}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
