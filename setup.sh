@@ -219,8 +219,11 @@ function reset_chezmoi_state() {
   if [[ "$yn" =~ ^[Yy]$ ]]; then
     echo "Resetting chezmoi state..."
     chezmoi state reset
-    rm -rf ~/.local/share/chezmoi
+    rm -r * ~/config/chezmoi/
     rm -rf ~/config/chezmoi
+    rm -r * ~/.local/share/chezmoi/
+    rm -rf ~/.local/share/chezmoi
+    
   else
     echo "Leaving chezmoi state..."  
   fi
