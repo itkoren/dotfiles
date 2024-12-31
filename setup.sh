@@ -155,10 +155,6 @@ function initialize_os_macos() {
     if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
         echo "===> Installing Xcode Command Line Tools"
 
-        # Check if the softwareupdate --list command includes CLT, but just in case it's missing, fall back to `xcode-select`
-        softwareupdate_output=$(softwareupdate --list)
-        echo "softwareupdate output: $softwareupdate_output"  # Debugging line
-    
         # Install Xcode Command Line Tools if not already installed
         if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; then
             echo "Installing Xcode Command Line Tools..."
