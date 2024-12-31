@@ -96,7 +96,7 @@ progress = true
 {{- if $tasks  }}
 [hooks.init.pre]
   command = "task"
-  args = {{- .chezmoi.array "-d" (.chezmoi.sourceDir | quote) | quote }}
+  args = {{ list "-d" (.chezmoi.sourceDir | quote) | quote }}
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" -}}
@@ -110,14 +110,14 @@ progress = true
 
 [diff]
   pager = "delta"
-  exclude = {{- .chezmoi.array "scripts" "externals" | quote }}
+  exclude = {{ list "scripts" "externals" | quote }}
 
 [merge]
   command = "nvim"
-  args = {{- .chezmoi.array "-d" "{{ .Destination }}" "{{ .Source }}" "{{ .Target }}" | quote }}
+  args = {{ list "-d" "{{ .Destination }}" "{{ .Source }}" "{{ .Target }}" | quote }}
   
 [status]
-  exclude = {{- .chezmoi.array "always" | quote }}
+  exclude = {{ list "always" | quote }}
 
 [scriptEnv]
   # whether to apply MacOS defaults or not
@@ -130,7 +130,7 @@ progress = true
 {{- if eq .chezmoi.os "windows" -}}
 [interpreters.ps1]
   command = "pwsh"
-  args = {{- .chezmoi.array "-NoLogo" "-NoProfile" | quote }}
+  args = {{ list "-NoLogo" "-NoProfile" | quote }}
 {{- end -}}
 
 {{- if $dotfiles_debug }}
