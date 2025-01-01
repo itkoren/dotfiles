@@ -136,6 +136,11 @@ defaults write at.obdev.LaunchBar CalculatorHotKey -string "768@24"
 defaults write at.obdev.LaunchBar CalculatorHotKeyEnabled -bool true
 
 
+# Accept T&Cs if needed
+if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
+  sudo xcodebuild -license
+fi
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 {{ end }}
