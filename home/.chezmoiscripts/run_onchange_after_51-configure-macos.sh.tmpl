@@ -137,7 +137,7 @@ defaults write at.obdev.LaunchBar CalculatorHotKeyEnabled -bool true
 
 
 # Accept T&Cs if needed
-if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
+if /usr/bin/xcrun clang 2>&1 | grep license; then
   sudo xcodebuild -license
 fi
 
