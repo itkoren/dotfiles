@@ -1,4 +1,4 @@
-{{ if (eq .chezmoi.os "darwin") -}}
+{{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
 set -eufo pipefail
@@ -138,4 +138,4 @@ defaults write at.obdev.LaunchBar CalculatorHotKeyEnabled -bool true
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
-{{ end -}}
+{{ end }}
