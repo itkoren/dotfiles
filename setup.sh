@@ -172,9 +172,17 @@ function initialize_os_macos() {
             done
         fi
 
-        # Accept T&Cs
-        if /usr/bin/xcrun clang 2>&1 | grep license; then
-          sudo xcodebuild -license
+        # Accept T&Cs if needed
+        if xcodebuild -license check 2>&1 | grep -q "license"; then
+          echo "Xcode license has not been accepted."
+          echo "Accepting the Xcode license..."
+        
+          # Automatically accept the license
+          sudo xcodebuild -license accept
+        
+          echo "Xcode license accepted."
+        else
+          echo "Xcode license already accepted."
         fi
     fi
 
