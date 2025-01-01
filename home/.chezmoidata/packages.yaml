@@ -8,14 +8,11 @@ packages:
     # ── Universal (get installed before the other packages) ──────────────
     universal:
         taps:
-            - "1password/tap"
             - "homebrew/bundle"
-            #- "git-duet/tap"
         brews:
             - "gh"
             - "jq"
             - "mas"
-            - "git-delta"
             #- "mise"
             #- "ripgrep"
             #- "rsync"
