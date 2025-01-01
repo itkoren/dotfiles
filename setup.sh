@@ -173,7 +173,7 @@ function initialize_os_macos() {
         fi
 
         # Accept T&Cs
-        if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
+        if /usr/bin/xcrun clang 2>&1 | grep license; then
           sudo xcodebuild -license
         fi
     fi
