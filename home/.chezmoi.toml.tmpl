@@ -54,79 +54,79 @@ sourceDir = {{ .chezmoi.workingTree | quote }}
 progress = true
 
 [data]
-name = {{ $name | quote }}
-email = {{ $email | quote }}
-editor = "nvim"
-hosttype = {{ $hosttype | quote }}
-device_type = {{ $chassisType | quote }}
-osid = {{ $osID | quote }}
-codespaces = {{ $codespaces }}
-externs = {{ $externs }}
-opsecret = {{ $opsecret | quote }}
-brewcasks = {{ $brewcasks }}
-git_oss = {{ $git_oss | quote }}
-git_work = {{ $git_work | quote }}
-key_sign = {{ $key_sign }}
-{{- if $powershellPath -}}
-powershellPath = {{ $powershellPath | quote }}
-hasPowerShell = true
-{{- end -}}
-{{- if $pwshPath -}}
-pwshPath = {{ $pwshPath | quote }}
-hasPwsh = true
-{{- end -}}
-{{- if $pwshPath }}
-shellexe = {{ $pwshPath | quote }}
-{{- else }}
-shellexe = {{ $powershellPath | quote }}
-{{- end }}
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+  editor = "nvim"
+  hosttype = {{ $hosttype | quote }}
+  device_type = {{ $chassisType | quote }}
+  osid = {{ $osID | quote }}
+  codespaces = {{ $codespaces }}
+  externs = {{ $externs }}
+  opsecret = {{ $opsecret | quote }}
+  brewcasks = {{ $brewcasks }}
+  git_oss = {{ $git_oss | quote }}
+  git_work = {{ $git_work | quote }}
+  key_sign = {{ $key_sign }}
+  {{- if $powershellPath -}}
+  powershellPath = {{ $powershellPath | quote }}
+  hasPowerShell = true
+  {{- end -}}
+  {{- if $pwshPath -}}
+  pwshPath = {{ $pwshPath | quote }}
+  hasPwsh = true
+  {{- end -}}
+  {{- if $pwshPath }}
+  shellexe = {{ $pwshPath | quote }}
+  {{- else }}
+  shellexe = {{ $powershellPath | quote }}
+  {{- end }}
   
-# do not override the following values
-{{ if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-is_wsl = true
-{{ else }}
-is_wsl = false
-{{ end }}
+  # do not override the following values
+  {{ if and (eq $osID "linux-nixos") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+  is_wsl = true
+  {{ else }}
+  is_wsl = false
+  {{ end }}
 
 [data.environment]
-name = {{ $hosttype | quote }}
-personal = {{ eq $hosttype "personal" }}
-work = {{ eq $hosttype "work" }}
+  name = {{ $hosttype | quote }}
+  personal = {{ eq $hosttype "personal" }}
+  work = {{ eq $hosttype "work" }}
 
 {{ if $tasks  }}
 [hooks.init.pre]
-command = "task"
-args = ["-d", {.chezmoi.sourceDir | quote}]
+  command = "task"
+  args = ["-d", {.chezmoi.sourceDir | quote}]
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
 [hooks.read-source-state.pre]
-command = "{{- .chezmoi.workingTree -}}/.darwin-install-prerequisites.sh"
+  command = "{{- .chezmoi.workingTree -}}/.darwin-install-prerequisites.sh"
 {{ end }}
 
 [git]
-autoCommit = true
-autoPush = true
+  autoCommit = true
+  autoPush = true
 
 [diff]
-pager = "delta"
-exclude = ["scripts", "externals"]
+  pager = "delta"
+  exclude = ["scripts", "externals"]
 
 [merge]
-command = "nvim"
-args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
+  command = "nvim"
+  args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
   
 [status]
-exclude = ["always"]
+  exclude = ["always"]
 
 [scriptEnv]
-DEFAULTS = "0"
-TRACE = "0"
-VERBOSE = "0"
-DOT_ENVIRONMENT = {{ $hosttype | quote }}
+  DEFAULTS = "0"
+  TRACE = "0"
+  VERBOSE = "0"
+  DOT_ENVIRONMENT = {{ $hosttype | quote }}
   
 {{ if eq .chezmoi.os "windows" }}
 [interpreters.ps1]
-command = "pwsh"
-args = ["-NoLogo", "-NoProfile"]
+  command = "pwsh"
+  args = ["-NoLogo", "-NoProfile"]
 {{ end }}
