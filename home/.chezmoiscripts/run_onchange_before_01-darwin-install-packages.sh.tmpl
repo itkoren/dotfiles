@@ -1,4 +1,4 @@
-{{ if and (eq .chezmoi.os "darwin") (hasKey .packages "darwin") }}
+{{- if and (eq .chezmoi.os "darwin") (hasKey .packages "darwin") -}}
 #!/bin/bash
 
 {{ if hasKey .packages.darwin "universal" }}
