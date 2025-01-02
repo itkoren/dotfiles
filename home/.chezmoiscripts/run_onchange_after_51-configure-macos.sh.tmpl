@@ -135,6 +135,14 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write at.obdev.LaunchBar CalculatorHotKey -string "768@24"
 defaults write at.obdev.LaunchBar CalculatorHotKeyEnabled -bool true
 
+###############################################################################
+# ITerm 2                                                                   #
+###############################################################################
+
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Accept T&Cs if needed
 if ! sudo xcodebuild -license check &>/dev/null; then
