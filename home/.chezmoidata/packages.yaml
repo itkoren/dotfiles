@@ -10,6 +10,7 @@ packages:
         taps:
             - "homebrew/bundle"
         brews:
+            - "antigen"
             - "gh"
             - "jq"
             - "mas"
