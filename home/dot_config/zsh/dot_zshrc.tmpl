@@ -43,6 +43,13 @@ setopt HIST_VERIFY        # let you edit !$, !! and !* before executing the comm
 setopt HIST_IGNORE_DUPS   # do not store duplications
 setopt HIST_REDUCE_BLANKS # removes blank lines from history
 
+# public
+for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*; do
+    if [[ $file == *.sh ]]; then
+        source "$file"
+    fi
+done
+
 # Aliases
 if [ -f ${ZDOTDIR:-$HOME}/.aliases ]; then
   . ${ZDOTDIR:-$HOME}/.aliases
