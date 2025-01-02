@@ -1,0 +1,33 @@
+#
+# This file is managed by chezmoi. Always edit it with the command
+# chezmoi edit ~/.config/zsh/conf.d/.alias
+# chezmoi diff
+# chezmoi -v apply
+#
+
+# MODERN APPLICATIONS
+eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
+
+{{- if ne .chezmoi.os "windows" }}
+  alias ls='eza ${eza_params}'
+  alias l='eza --git-ignore ${eza_params}'
+  alias ll='eza --all --header --long ${eza_params}'
+  alias llm='eza --all --header --long --sort=modified ${eza_params}'
+  alias la='eza -lbhHigUmuSa'
+  alias lx='eza -lbhHigUmuSa@'
+  alias lt='eza --tree'
+  alias tree='eza --tree'
+{{- else }}
+  alias ls='ls -h --color=auto'
+  alias l='ls -l'
+  alias la='ls -a'
+  alias ll='ls -la'
+{{- end }}
+
+# docker
+alias dk='docker'
+alias dkc='docker-compose'
+
+# kubernetes
+alias kb='kubectl'
+alias kbc='kubectl config'
