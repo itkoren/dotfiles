@@ -1,0 +1,20 @@
+{{ if eq .chezmoi.os "darwin" -}}
+# macOS .zshrc contents
+  if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
+  
+  eval "$(zoxide init zsh)"
+
+{{ else if eq .chezmoi.os "linux" -}}
+# Linux .zshrc contents
+
+{{ else if eq .chezmoi.os "windows" -}}
+# Windows .zshrc contents
+
+  eval "$(zoxide init zsh | dos2unix)"
+
+{{ end -}} 
