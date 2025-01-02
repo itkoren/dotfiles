@@ -7,9 +7,9 @@ else
     case "$(uname -s)" in
     Darwin)
         brew tap "1password/tap"
-        brew install --cask 1password
-        brew install 1password-cli
-        brew install git-delta
+        brew install --cask --force 1password
+        brew install --force 1password-cli
+        brew install --force git-delta
         ;;
     *)
         echo "unsupported OS"
