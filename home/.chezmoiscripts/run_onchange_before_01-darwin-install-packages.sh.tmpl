@@ -59,4 +59,8 @@ mas {{ .name | quote }}, id: {{ .id }}
 {{ end }}
 EOF
 {{ end }}
+
+printf '\n\nSetting up antigen...\n'
+curl -L git.io/antigen > ${HOME}/.antigen.zsh
+
 {{ end }}
