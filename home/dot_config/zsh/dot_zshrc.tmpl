@@ -29,12 +29,12 @@ for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*; do
 done
 
 # Platform specific customizations
-if [ -f ${ZDOTDIR:-$HOME}/.platformrc ]; then
-  source ${ZDOTDIR:-$HOME}/.platformrc
+if [ -f "${ZDOTDIR:-$HOME}"/.platformrc ]; then
+  source "${ZDOTDIR:-$HOME}"/.platformrc
 fi
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 source ~/antigen.zsh
-antigen init ~/.antigenrc
+antigen init "${ZDOTDIR:-$HOME}"/antigen/.antigenrc
 
