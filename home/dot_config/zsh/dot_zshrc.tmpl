@@ -21,25 +21,12 @@ HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-## OPTIONS
-setopt NO_CASE_GLOB       # Globbing and tab-completion to be case-insensitive.
-setopt GLOB_COMPLETE
-setopt AUTO_CD            # Enable changing to directories without typing cd first.
-
-setopt CORRECT            # enable command auto-correction
-setopt CORRECT_ALL
-
 # public
 for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*; do
     if [[ $file == *.sh ]]; then
         source "$file"
     fi
 done
-
-# Aliases
-if [ -f ${ZDOTDIR:-$HOME}/.aliases ]; then
-  . ${ZDOTDIR:-$HOME}/.aliases
-fi
 
 # Platform specific customizations
 if [ -f ${ZDOTDIR:-$HOME}/.platformrc ]; then
