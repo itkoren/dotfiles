@@ -2,9 +2,9 @@
 set -ex
 
 function install_prerequisite() {
-    local prerequisite = "$1"
-    local is_tap = "$2"
-    local is_cask = "$3"
+    local prerequisite="$1"
+    local is_tap="$2"
+    local is_cask="$3"
 
     if [ -n "$is_tap" ]; then
         brew tap "$prerequisite"
@@ -21,7 +21,7 @@ function install_prerequisite() {
         if ! brew list "$prerequisite" > /dev/null 2>&1; then
             brew install "$prerequisite"
         else
-            read -p ""$prerequisite" is already installed, would you like to re-install it? (y/n): " yn
+            read -p "$prerequisite" is already installed, would you like to re-install it? (y/n): " yn
             if [[ "$yn" =~ ^[Yy]$ ]]; then
                 brew install --force "$prerequisite"
             fi
@@ -31,10 +31,10 @@ function install_prerequisite() {
 
 case "$(uname -s)" in
 Darwin)
-    install_prerequisite "1password/tap" "true"
+    install_prerequisite "1password/tap" "true" ""
     install_prerequisite "1password" "" "true"
-    install_prerequisite "1password-cli"
-    install_prerequisite "git-delta"
+    install_prerequisite "1password-cli" "" ""
+    install_prerequisite "git-delta" "" ""
     ;;
 *)
     echo "unsupported OS"
