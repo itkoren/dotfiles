@@ -255,11 +255,11 @@ function run_chezmoi() {
         echo "chezmoi is not installed. Let's proceed with installation."
         # install chezmoi via brew or download the chezmoi binary from the URL
         if ! is_ci_or_not_tty; then
-            read -p "Do you wish to skip install chezmoi? (y/n): " yn
+            read -p "Do you wish to keep chezmoi after installation? (y/n): " yn
         else
-            yn="n" # If non-interactive, assume they want to skip
+            yn="y" # If non-interactive, assume they want to keep
         fi
-        if [[ "$yn" =~ ^[Yy]$ ]]; then
+        if [[ "$yn" =~ ^[Nn]$ ]]; then
             # Download chezmoi binary
             echo '👊  Temporary downloading chezmoi binary'
             sh -c "$(curl -fsLS get.chezmoi.io)"
