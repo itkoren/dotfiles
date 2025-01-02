@@ -21,7 +21,7 @@ function install_prerequisite() {
         if ! brew list "$prerequisite" > /dev/null 2>&1; then
             brew install "$prerequisite"
         else
-            read -p "$prerequisite" is already installed, would you like to re-install it? (y/n): " yn
+            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
             if [[ "$yn" =~ ^[Yy]$ ]]; then
                 brew install --force "$prerequisite"
             fi
