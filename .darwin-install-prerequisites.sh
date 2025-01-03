@@ -1,40 +1,34 @@
 #!/bin/bash
 set -ex
 
-function install_prerequisite() {
+# Function to generate Brewfile content
+function generate_brewfile() {
     local prerequisite="$1"
     local is_tap="$2"
     local is_cask="$3"
 
     if [ -n "$is_tap" ]; then
-        brew tap "$prerequisite"
+        echo "tap \"$prerequisite\""
     elif [ -n "$is_cask" ]; then
-        if ! brew list --cask "$prerequisite" > /dev/null 2>&1; then
-            brew install --cask "$prerequisite"
-        else
-            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
-            if [[ "$yn" =~ ^[Yy]$ ]]; then
-                brew install --cask --force "$prerequisite"
-            fi
-        fi
+        echo "cask \"$prerequisite\""
     else
-        if ! brew list "$prerequisite" > /dev/null 2>&1; then
-            brew install "$prerequisite"
-        else
-            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
-            if [[ "$yn" =~ ^[Yy]$ ]]; then
-                brew install --force "$prerequisite"
-            fi
-        fi
+        echo "brew \"$prerequisite\""
     fi
 }
 
+# Create a temporary Brewfile content
+brewfile_content=""
+
 case "$(uname -s)" in
 Darwin)
-    install_prerequisite "1password/tap" 1 ""
-    install_prerequisite "1password" "" 1
-    install_prerequisite "1password-cli" "" ""
-    install_prerequisite "git-delta" "" ""
+    # Collect necessary Brewfile content
+    brewfile_content+=$(generate_brewfile "1password/tap" 1 "")
+    brewfile_content+=$(generate_brewfile "1password" "" 1)
+    brewfile_content+=$(generate_brewfile "1password-cli" "" "")
+    brewfile_content+=$(generate_brewfile "git-delta" "" "")
+
+    # Run brew bundle with the generated Brewfile content
+    brew bundle --no-lock --file=/dev/stdin <<< "$brewfile_content"
     ;;
 *)
     echo "unsupported OS"
@@ -42,6 +36,7 @@ Darwin)
     ;;
 esac
 
+# Post-installation instructions
 echo "Please open 1Password, log into all accounts and set the following:"
 echo " - Settings>Security>Unlock activate Touch ID"
 echo " - Settings>Security>Unlock activate Apple Watch"
