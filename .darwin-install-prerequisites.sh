@@ -8,11 +8,11 @@ function generate_brewfile() {
     local is_cask="$3"
 
     if [ -n "$is_tap" ]; then
-        echo "tap \"$prerequisite\"\n"
+        echo "tap \"$prerequisite\""
     elif [ -n "$is_cask" ]; then
-        echo "cask \"$prerequisite\"\n"
+        echo "cask \"$prerequisite\""
     else
-        echo "brew \"$prerequisite\"\n"
+        echo "brew \"$prerequisite\""
     fi
 }
 
@@ -23,10 +23,17 @@ case "$(uname -s)" in
 Darwin)
     # Collect necessary Brewfile content
     brewfile_content+=$(generate_brewfile "1password/tap" 1 "")
+    brewfile_content+=$'\n'  # Ensure newline between entries
     brewfile_content+=$(generate_brewfile "1password" "" 1)
+    brewfile_content+=$'\n'  # Ensure newline between entries
     brewfile_content+=$(generate_brewfile "1password-cli" "" "")
+    brewfile_content+=$'\n'  # Ensure newline between entries
     brewfile_content+=$(generate_brewfile "git-delta" "" "")
 
+    # Debugging output to check the generated Brewfile content
+    echo "Generated Brewfile content:"
+    echo "$brewfile_content"
+    
     # Use a here document to pass the Brewfile content to brew bundle
     echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
     ;;
