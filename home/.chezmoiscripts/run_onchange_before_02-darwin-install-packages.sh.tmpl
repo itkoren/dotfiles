@@ -27,7 +27,7 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if len non_installed_casks -}}
+{{ if .non_installed_casks -}}
 {{ range .non_installed_casks -}}
 cask {{ . }}
 {{ end -}}
@@ -79,7 +79,7 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if len non_installed_casks -}}
+{{ if .non_installed_casks -}}
 {{ range .non_installed_casks -}}
 cask {{ . }}
 {{ end -}}
@@ -131,7 +131,7 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if len non_installed_casks -}}
+{{ if .non_installed_casks -}}
 {{ range .non_installed_casks -}}
 cask {{ . }}
 {{ end -}}
