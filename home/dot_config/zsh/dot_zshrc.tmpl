@@ -12,6 +12,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Homebrew
+if [[ -d /opt/homebrew/bin ]]; then
+    export PATH="$PATH":/opt/homebrew/bin
+fi
+
 ## CONFIGURATIONS
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
@@ -35,6 +40,6 @@ fi
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-source ~/antigen.zsh
+source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
 antigen init "${ZDOTDIR:-$HOME}"/antigen/.antigenrc
 
