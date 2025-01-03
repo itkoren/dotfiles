@@ -1,43 +1,60 @@
 #!/bin/bash
 set -ex
 
-# Function to generate Brewfile content
-function generate_brewfile() {
+function force_install_prerequisite() {
+    local prerequisite="$1"
+    local is_cask="$2"
+    if [ -n "$is_cask" ]; then
+        if ! brew install --cask "$prerequisite" > /dev/null 2>&1; then
+            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
+            if [[ "$yn" =~ ^[Yy]$ ]]; then
+                brew install --cask --force "$prerequisite"
+            fi
+        fi
+    else
+        if ! brew install "$prerequisite" > /dev/null 2>&1; then
+            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
+            if [[ "$yn" =~ ^[Yy]$ ]]; then
+                brew install --force "$prerequisite"
+            fi
+        fi
+    fi
+}
+
+function install_prerequisite() {
     local prerequisite="$1"
     local is_tap="$2"
     local is_cask="$3"
 
     if [ -n "$is_tap" ]; then
-        echo "tap \"$prerequisite\""
+        brew tap "$prerequisite"
     elif [ -n "$is_cask" ]; then
-        echo "cask \"$prerequisite\""
+        if ! brew list --cask "$prerequisite" > /dev/null 2>&1; then
+            force_install_prerequisite "$prerequisite" 1
+        else
+            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
+            if [[ "$yn" =~ ^[Yy]$ ]]; then
+                brew install --cask --force "$prerequisite"
+            fi
+        fi
     else
-        echo "brew \"$prerequisite\""
+        if ! brew list "$prerequisite" > /dev/null 2>&1; then
+            force_install_prerequisite "$prerequisite" ""
+        else
+            read -p "$prerequisite is already installed, would you like to re-install it? (y/n): " yn
+            if [[ "$yn" =~ ^[Yy]$ ]]; then
+                brew install --force "$prerequisite"
+            fi
+        fi
     fi
 }
 
-# Create a temporary Brewfile content
-brewfile_content=""
-
 case "$(uname -s)" in
 Darwin)
-    # Collect necessary Brewfile content
-    brewfile_content+=$(generate_brewfile "1password/tap" 1 "")
-    brewfile_content+=$'\n'  # Ensure newline between entries
-    brewfile_content+=$(generate_brewfile "1password" "" 1)
-    brewfile_content+=$'\n'  # Ensure newline between entries
-    brewfile_content+=$(generate_brewfile "1password-cli" "" "")
-    brewfile_content+=$'\n'  # Ensure newline between entries
-    brewfile_content+=$(generate_brewfile "git-delta" "" "")
-
-    if [ "${DOTFILES_DEBUG:-}" ]; then
-        # Debugging output to check the generated Brewfile content
-        echo "Generated Brewfile content:"
-        echo "$brewfile_content"
-    fi
-
-    # Use a here document to pass the Brewfile content to brew bundle
-    echo "$brewfile_content" | brew bundle --no-lock --force --file=/dev/stdin
+    install_prerequisite "1password/tap" 1 ""
+    install_prerequisite "1password" "" 1
+    install_prerequisite "1password-cli" "" ""
+    install_prerequisite "git-delta" "" ""
     ;;
 *)
     echo "unsupported OS"
