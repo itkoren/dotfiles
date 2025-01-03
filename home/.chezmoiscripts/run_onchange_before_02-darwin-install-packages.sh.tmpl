@@ -3,20 +3,18 @@
 
 {{ if hasKey .packages.darwin "universal" }}
 
-# Initialize an empty array for non-installed casks
-non_installed_casks=""
+# Initialize an array to store casks that are not yet installed
+non_installed_casks=()
 
-{{ if .brewcasks }}
+{{ if .brewcasks -}}
 # Check each cask if it is installed, if not, add it to the list of non_installed_casks
 {{ range .packages.darwin.universal.casks -}}
   cask="{{ . | quote }}"
-  {{- $installed := exec "brew" (list "list" "--cask" (printf "%s" .)) }}
-  {{- if not $installed }}
-    non_installed_casks="$non_installed_casks\ncask {{ . | quote }}"
-  {{- end }}
+  if ! brew list --cask "$cask" > /dev/null 2>&1; then
+    non_installed_casks+=("$cask")
+  fi
 {{ end }}
 {{ end }}
-
 
 # Generate the Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
@@ -30,8 +28,10 @@ brew {{ . | quote }}
 
 {{ if .brewcasks -}}
 {{ if non_installed_casks -}}
-{{ .non_installed_casks }}
+{{ range $cask := non_installed_casks -}}
+cask {{ $cask }}
 {{ end -}}
+{{ end }}
 {{ end -}}
 
 {{ range .packages.darwin.universal.mas -}}
@@ -55,17 +55,16 @@ fi
 {{ if and (.environment.work) (hasKey .packages.darwin "work") }}
 HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
 
-# Initialize an empty array for non-installed casks
-non_installed_casks=""
+# Initialize an array to store casks that are not yet installed
+non_installed_casks=()
 
-{{ if .brewcasks }}
+{{ if .brewcasks -}}
 # Check each cask if it is installed, if not, add it to the list of non_installed_casks
 {{ range .packages.darwin.work.casks -}}
   cask="{{ . | quote }}"
-  {{- $installed := exec "brew" (list "list" "--cask" (printf "%s" .)) }}
-  {{- if not $installed }}
-    non_installed_casks="$non_installed_casks\ncask {{ . | quote }}"
-  {{- end }}
+  if ! brew list --cask "$cask" > /dev/null 2>&1; then
+    non_installed_casks+=("$cask")
+  fi
 {{ end }}
 {{ end }}
 
@@ -81,8 +80,10 @@ brew {{ . | quote }}
 
 {{ if .brewcasks -}}
 {{ if non_installed_casks -}}
-{{ .non_installed_casks }}
+{{ range $cask := non_installed_casks -}}
+cask {{ $cask }}
 {{ end -}}
+{{ end }}
 {{ end -}}
 
 {{ range .packages.darwin.work.mas -}}
@@ -106,17 +107,16 @@ fi
 {{ if and (.environment.personal) (hasKey .packages.darwin "personal") }}
 HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
 
-# Initialize an empty array for non-installed casks
-non_installed_casks=""
+# Initialize an array to store casks that are not yet installed
+non_installed_casks=()
 
-{{ if .brewcasks }}
+{{ if .brewcasks -}}
 # Check each cask if it is installed, if not, add it to the list of non_installed_casks
-{{ range .packages.darwin.work.casks -}}
+{{ range .packages.darwin.personal.casks -}}
   cask="{{ . | quote }}"
-  {{- $installed := exec "brew" (list "list" "--cask" (printf "%s" .)) }}
-  {{- if not $installed }}
-    non_installed_casks="$non_installed_casks\ncask {{ . | quote }}"
-  {{- end }}
+  if ! brew list --cask "$cask" > /dev/null 2>&1; then
+    non_installed_casks+=("$cask")
+  fi
 {{ end }}
 {{ end }}
 
@@ -132,8 +132,10 @@ brew {{ . | quote }}
 
 {{ if .brewcasks -}}
 {{ if non_installed_casks -}}
-{{ .non_installed_casks }}
+{{ range $cask := non_installed_casks -}}
+cask {{ $cask }}
 {{ end -}}
+{{ end }}
 {{ end -}}
 
 {{ range .packages.darwin.personal.mas -}}
