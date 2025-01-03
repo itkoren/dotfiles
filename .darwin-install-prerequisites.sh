@@ -27,8 +27,8 @@ Darwin)
     brewfile_content+=$(generate_brewfile "1password-cli" "" "")
     brewfile_content+=$(generate_brewfile "git-delta" "" "")
 
-    # Ensure the content is properly separated by newlines
-    brewfile_content=$(echo "$brewfile_content" | sed 's/$/\n/')
+    # Ensure the Brewfile content has proper newlines
+    brewfile_content=$(echo "$brewfile_content" | sed 's/$/\n/' | sed 's/\n$//')
     
     # Run brew bundle with the generated Brewfile content
     brew bundle --no-lock --file=/dev/stdin <<< "$brewfile_content"
