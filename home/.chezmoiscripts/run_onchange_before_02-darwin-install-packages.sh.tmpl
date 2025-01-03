@@ -37,7 +37,6 @@ cask {{ . }}
 {{ range .packages.darwin.universal.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-{{ end }}
 EOF
 )
 
@@ -89,7 +88,6 @@ cask {{ . }}
 {{ range .packages.darwin.work.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-{{ end }}
 EOF
 )
 
@@ -141,7 +139,6 @@ cask {{ . }}
 {{ range .packages.darwin.personal.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
-{{ end }}
 EOF
 )
 
