@@ -27,11 +27,11 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if non_installed_casks -}}
-{{ range $cask := non_installed_casks -}}
-cask {{ $cask }}
+{{ if len non_installed_casks -}}
+{{ range .non_installed_casks -}}
+cask {{ . }}
 {{ end -}}
-{{ end }}
+{{ end -}}
 {{ end -}}
 
 {{ range .packages.darwin.universal.mas -}}
@@ -79,11 +79,11 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if non_installed_casks -}}
-{{ range $cask := non_installed_casks -}}
-cask {{ $cask }}
+{{ if len non_installed_casks -}}
+{{ range .non_installed_casks -}}
+cask {{ . }}
 {{ end -}}
-{{ end }}
+{{ end -}}
 {{ end -}}
 
 {{ range .packages.darwin.work.mas -}}
@@ -131,11 +131,11 @@ brew {{ . | quote }}
 {{ end -}}
 
 {{ if .brewcasks -}}
-{{ if non_installed_casks -}}
-{{ range $cask := non_installed_casks -}}
-cask {{ $cask }}
+{{ if len non_installed_casks -}}
+{{ range .non_installed_casks -}}
+cask {{ . }}
 {{ end -}}
-{{ end }}
+{{ end -}}
 {{ end -}}
 
 {{ range .packages.darwin.personal.mas -}}
