@@ -37,7 +37,7 @@ Darwin)
     fi
 
     # Use a here document to pass the Brewfile content to brew bundle
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --no-lock --force --file=/dev/stdin
     ;;
 *)
     echo "unsupported OS"
