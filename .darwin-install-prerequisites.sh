@@ -27,11 +27,10 @@ Darwin)
     brewfile_content+=$(generate_brewfile "1password-cli" "" "")
     brewfile_content+=$(generate_brewfile "git-delta" "" "")
 
-    # Ensure the Brewfile content has proper newlines
-    brewfile_content=$(echo "$brewfile_content" | sed 's/$/\n/' | sed 's/\n$//')
-    
-    # Run brew bundle with the generated Brewfile content
-    brew bundle --no-lock --file=/dev/stdin <<< "$brewfile_content"
+    # Use a here document to pass the Brewfile content to brew bundle
+    brew bundle --no-lock --file=/dev/stdin <<EOF
+$brewfile_content
+EOF
     ;;
 *)
     echo "unsupported OS"
