@@ -40,6 +40,6 @@ fi
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 antigen init "${ZDOTDIR:-$HOME}"/antigen/.antigenrc
 
