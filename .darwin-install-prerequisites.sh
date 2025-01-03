@@ -30,10 +30,12 @@ Darwin)
     brewfile_content+=$'\n'  # Ensure newline between entries
     brewfile_content+=$(generate_brewfile "git-delta" "" "")
 
-    # Debugging output to check the generated Brewfile content
-    echo "Generated Brewfile content:"
-    echo "$brewfile_content"
-    
+    if [ "${DOTFILES_DEBUG:-}" ]; then
+        # Debugging output to check the generated Brewfile content
+        echo "Generated Brewfile content:"
+        echo "$brewfile_content"
+    fi
+
     # Use a here document to pass the Brewfile content to brew bundle
     echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
     ;;
