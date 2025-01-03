@@ -28,9 +28,7 @@ Darwin)
     brewfile_content+=$(generate_brewfile "git-delta" "" "")
 
     # Use a here document to pass the Brewfile content to brew bundle
-    brew bundle --no-lock --file=/dev/stdin <<EOF
-$brewfile_content
-EOF
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
     ;;
 *)
     echo "unsupported OS"
