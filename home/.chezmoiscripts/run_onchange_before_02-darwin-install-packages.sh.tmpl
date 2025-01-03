@@ -55,7 +55,13 @@ if [[ -n "$all_casks_to_install_or_update" ]]; then
 
     # Add missing or outdated casks dynamically
     while IFS= read -r cask; do
-        brewfile_content+=$(echo "cask \"${cask}\"")
+        # Strip any leading/trailing whitespace
+        cask=$(echo "$cask" | xargs)
+        
+        # Only add the cask to the Brewfile if it's not empty
+        if [[ -n "$cask" ]]; then
+            brewfile_content+="\ncask \"$cask\""
+        fi
     done <<< "$all_casks_to_install_or_update"
 
     # Check if the Brewfile content is correct
@@ -148,7 +154,13 @@ if [[ -n "$all_casks_to_install_or_update" ]]; then
 
     # Add missing or outdated casks dynamically
     while IFS= read -r cask; do
-        brewfile_content+=$(echo "cask \"${cask}\"")
+        # Strip any leading/trailing whitespace
+        cask=$(echo "$cask" | xargs)
+        
+        # Only add the cask to the Brewfile if it's not empty
+        if [[ -n "$cask" ]]; then
+            brewfile_content+="\ncask \"$cask\""
+        fi
     done <<< "$all_casks_to_install_or_update"
 
     # Check if the Brewfile content is correct
@@ -241,7 +253,13 @@ if [[ -n "$all_casks_to_install_or_update" ]]; then
 
     # Add missing or outdated casks dynamically
     while IFS= read -r cask; do
-        brewfile_content+=$(echo "cask \"${cask}\"")
+        # Strip any leading/trailing whitespace
+        cask=$(echo "$cask" | xargs)
+        
+        # Only add the cask to the Brewfile if it's not empty
+        if [[ -n "$cask" ]]; then
+            brewfile_content+="\ncask \"$cask\""
+        fi
     done <<< "$all_casks_to_install_or_update"
 
     # Check if the Brewfile content is correct
