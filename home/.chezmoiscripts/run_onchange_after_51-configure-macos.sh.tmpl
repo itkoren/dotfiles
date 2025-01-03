@@ -1,5 +1,5 @@
 {{- if (eq .chezmoi.os "darwin") -}}
-#!/bin/bash
+#!{{ lookPath "sh" }}
 
 set -eufo pipefail
 
