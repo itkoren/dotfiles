@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export ZDOTDIR="$HOME/.config/zsh"
+export DOTDIR="$HOME/.config"
+export ZDOTDIR="$DOTDIR/zsh"
 
 if [ ! -d "$ZDOTDIR" ]; then
     mkdir -p "$ZDOTDIR"
