@@ -13,7 +13,7 @@ tap {{ . | quote }}
 brew {{ . | quote }}
 {{ end -}}
 
-{{ if .packages.darwin.universal.brewcasks }}
+{{ if .packages.darwin.universal.casks }}
 {{ range .packages.darwin.universal.casks -}}
 cask {{ . | quote }}
 {{ end -}}
@@ -49,7 +49,7 @@ tap {{ . | quote }}
 brew {{ . | quote }}
 {{ end -}}
 
-{{ if .packages.darwin.work.brewcasks }}
+{{ if .packages.darwin.work.casks }}
 {{ range .packages.darwin.work.casks -}}
 cask {{ . | quote }}
 {{ end -}}
@@ -85,7 +85,7 @@ tap {{ . | quote }}
 brew {{ . | quote }}
 {{ end -}}
 
-{{ if .packages.darwin.personal.brewcasks }}
+{{ if .packages.darwin.personal.casks }}
 {{ range .packages.darwin.personal.casks -}}
 cask {{ . | quote }}
 {{ end -}}
