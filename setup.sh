@@ -249,6 +249,7 @@ function run_chezmoi() {
 
     local chezmoi_cmd
     local no_tty_option
+    local remove_chezmoi
     echo "going to check chezmoi requirements"
     # Check if chezmoi is installed
     if ! is_chezmoi_exists; then
@@ -264,6 +265,7 @@ function run_chezmoi() {
             echo '👊  Temporary downloading chezmoi binary'
             sh -c "$(curl -fsLS get.chezmoi.io)"
             chezmoi_cmd="./bin/chezmoi"
+            remove_chezmoi=1
             echo "chezmoi binary downloaded to $chezmoi_cmd"
         else
             # Install chezmoi using brew
@@ -342,7 +344,7 @@ function run_chezmoi() {
       exit 1  # Exit the script with a failure status
     fi
 
-    if [[ "$yn" =~ ^[Yy]$ ]]; then
+    if [ -n "$remove_chezmoi" ]; then
         # purge the binary of the chezmoi cmd
         rm -fv "${chezmoi_cmd}"
     fi
