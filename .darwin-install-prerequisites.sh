@@ -8,11 +8,11 @@ function generate_brewfile() {
     local is_cask="$3"
 
     if [ -n "$is_tap" ]; then
-        echo "tap \"$prerequisite\""
+        echo "tap \"$prerequisite\"\n"
     elif [ -n "$is_cask" ]; then
-        echo "cask \"$prerequisite\""
+        echo "cask \"$prerequisite\"\n"
     else
-        echo "brew \"$prerequisite\""
+        echo "brew \"$prerequisite\"\n"
     fi
 }
 
