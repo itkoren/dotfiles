@@ -63,7 +63,7 @@ function add_to_dock_left {
                 <key>_CFURLString</key>
                 <string>$app</string>
                 <key>_CFURLStringType</key>
-                <integer>15</integer>
+                <integer>0</integer>
             </dict>
         </dict>
         </dict>"
