@@ -173,7 +173,9 @@ function initialize_os_macos() {
         fi
 
         # Accept T&Cs if needed
-        if ! sudo xcodebuild -license check &>/dev/null; then
+        if sudo xcodebuild -license check &>/dev/null; then
+          echo "Xcode license already accepted."
+        else
           echo "Xcode license has not been accepted."
           echo "Accepting the Xcode license..."
         
@@ -181,8 +183,6 @@ function initialize_os_macos() {
           sudo xcodebuild -license accept
         
           echo "Xcode license accepted."
-        else
-          echo "Xcode license already accepted."
         fi
     fi
 
