@@ -114,14 +114,13 @@ done
 
 declare -a add_apps=(
     "/Applications/iTerm.app"
-    "/System/Applications/Launchpad.app"
 );
 
 for app in "${add_apps[@]}"; do
     add_app_to_dock "$app"
 done
 
-add_launchpad_to_dock
+add_to_dock_left "/System/Applications/Launchpad.app"
 
 killall "Dock" 2>/dev/null || true
 
