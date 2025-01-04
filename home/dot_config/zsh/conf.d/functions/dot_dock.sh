@@ -60,7 +60,7 @@ function add_to_dock_left {
             <key>file-data</key>
             <dict>
                 <key>_CFURLString</key>
-                <string>$app</string>
+                <string>file:////$app</string>
                 <key>_CFURLStringType</key>
                 <integer>15</integer>
             </dict>
