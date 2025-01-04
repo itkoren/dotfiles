@@ -44,3 +44,5 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 antigen init "${DOTDIR:-$HOME}"/antigen/.antigenrc
 
+# To customize prompt, run `p10k configure` or edit "${DOTDIR:-$HOME}"/.p10k.zsh.
+[[ ! -f "${DOTDIR:-$HOME}"/.p10k.zsh ]] || source "${DOTDIR:-$HOME}"/.p10k.zsh
