@@ -32,7 +32,7 @@ function remove_app_from_dock() {
     app="${1}"
     
     # Check if the application exists in the Dock (this looks for the app's name)
-    if defaults read "~/Library/Preferences/com.apple.dock.plist" persistent-apps | grep -q "$app"; then
+    if defaults read com.apple.dock persistent-apps | grep -q "$app_name"; then
       
       # Remove the application from the Dock using `defaults`
       /usr/libexec/PlistBuddy -c "Delete persistent-apps:$app" ~/Library/Preferences/com.apple.dock.plist
