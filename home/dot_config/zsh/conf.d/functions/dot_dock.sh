@@ -33,7 +33,7 @@ function add_app_to_dock {
     fi
 }
 
-function remove_app_from_dock() {
+function remove_app_from_dock {
     app="${1}"
     
     # Check if the application exists in the Dock (this looks for the app's name)
@@ -44,7 +44,7 @@ function remove_app_from_dock() {
     fi
 }
 
-function add_launchpad_to_dock() {
+function add_launchpad_to_dock {
     # Check if Launchpad is already in the Dock
     if ! defaults read com.apple.dock persistent-apps | grep -q "Launchpad.app"; then
         # Launchpad is not in the Dock, let's add it to the leftmost position
