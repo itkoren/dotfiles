@@ -28,6 +28,11 @@ function add_app_to_dock {
     fi
 }
 
+function remove_app_from_dock() {
+    app="${1}"
+    /usr/libexec/PlistBuddy -c "Delete persistent-apps:$app" ~/Library/Preferences/com.apple.dock.plist
+}
+
 # adds a folder to macOS Dock
 # usage: add_folder_to_dock "Folder Path" -a n -d n -v n
 # example: add_folder_to_dock "~/Downloads" -a 2 -d 0 -v 1
