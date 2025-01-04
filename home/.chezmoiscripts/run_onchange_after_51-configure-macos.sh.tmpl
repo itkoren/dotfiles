@@ -120,7 +120,7 @@ for app in "${add_apps[@]}"; do
     add_app_to_dock "$app"
 done
 
-killall Dock
+killall "Dock" 2>/dev/null || true
 
 #################################################
 # Screen                                          #
@@ -174,7 +174,7 @@ defaults write ~/Library/Preferences/com.apple.Safari WebAutomaticSpellingCorrec
 # Enable “Do Not Track”
 defaults write ~/Library/Preferences/com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
-killall Safari
+killall "Safari" 2>/dev/null || true
 
 #################################################
 # Keyboard                                      #
@@ -276,7 +276,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	OpenWith -bool true \
 	Privileges -bool true
 
-killall Finder
+killall "Finder" 2>/dev/null || true
 
 ###############################################################################
 # Mac App Store                                                               #
@@ -304,7 +304,7 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool false
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
-killall Mail
+killall "Mail" 2>/dev/null || true
 
 ###############################################################################
 # LaunchBar                                                                   #
@@ -321,7 +321,7 @@ defaults write at.obdev.LaunchBar CalculatorHotKeyEnabled -bool true
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-killall Photos
+killall "Photos" 2>/dev/null || true
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -340,7 +340,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-killall "Activity Monitor"
+killall "Activity Monitor" 2>/dev/null || true
 
 ###############################################################################
 # Mac App Store                                                               #
