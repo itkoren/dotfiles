@@ -47,6 +47,15 @@ packages:
               id: "975937182"
             - name: "Xcode"
               id: "497799835"
+            - name: "Slack for Desktop"
+              id: "803453959"
+
+    personal:
+        casks:
+          - "wavebox"
+        mas:
+          - name: "Drive Mounter"
+            id: "441149468"
     work:
         taps:
             #- "hashicorp/internal"
