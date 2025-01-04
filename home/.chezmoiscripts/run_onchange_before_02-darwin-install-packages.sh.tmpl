@@ -46,7 +46,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
       # Check if the cask is installed and outdated
       if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
         # If it's not installed or outdated, add it to the list of casks to install/update
-        casks_to_install_or_update+="$cask"
+        casks_to_install_or_update+="$cask\n"
       fi
     done <<< "$brewfile_cask_content"
     
@@ -129,7 +129,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
       # Check if the cask is installed and outdated
       if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
         # If it's not installed or outdated, add it to the list of casks to install/update
-        casks_to_install_or_update+="$cask"
+        casks_to_install_or_update+="$cask\n"
       fi
     done <<< "$brewfile_cask_content"
     
@@ -212,7 +212,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
       # Check if the cask is installed and outdated
       if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
         # If it's not installed or outdated, add it to the list of casks to install/update
-        casks_to_install_or_update+="$cask"
+        casks_to_install_or_update+="$cask\n"
       fi
     done <<< "$brewfile_cask_content"
     
