@@ -44,21 +44,23 @@ function remove_app_from_dock {
     fi
 }
 
-function add_launchpad_to_dock {
+function add_to_dock_left {
+    app="${1}"
+
     # Check if Launchpad is already in the Dock
-    if ! defaults read com.apple.dock persistent-apps | grep -q "Launchpad.app"; then
+    if ! defaults read com.apple.dock persistent-apps | grep -q "$app"; then
         # Launchpad is not in the Dock, let's add it to the leftmost position
         # Get the current list of Dock items
         dock_items=$(defaults read com.apple.dock persistent-apps)
         
         # Prepare the Launchpad entry
-        launchpad_entry="<dict>
+        app_entry="<dict>
         <key>tile-data</key>
         <dict>
             <key>file-data</key>
             <dict>
                 <key>_CFURLString</key>
-                <string>file:////System/Applications/Launchpad.app</string>
+                <string>$app</string>
                 <key>_CFURLStringType</key>
                 <integer>15</integer>
             </dict>
@@ -66,7 +68,7 @@ function add_launchpad_to_dock {
         </dict>"
     
         # Add Launchpad entry at the beginning (leftmost)
-        dock_items=$(echo "$launchpad_entry"$'\n'"$dock_items")
+        dock_items=$(echo "$app_entry"$'\n'"$dock_items")
         
         # Write the new list back to the Dock preferences
         defaults write com.apple.dock persistent-apps "$dock_items"
