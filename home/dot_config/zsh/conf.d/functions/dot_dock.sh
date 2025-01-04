@@ -8,23 +8,26 @@
 function add_app_to_dock {
     app="${1}"
 
-    if open -Ra "${app}"; then
-        echo "$app added to the Dock."
-
-        defaults write com.apple.dock persistent-apps -array-add "<dict>
-                <key>tile-data</key>
-                <dict>
-                    <key>file-data</key>
+    # Check if the application exists in the Dock (this looks for the app's name)
+    if defaults read com.apple.dock persistent-apps | grep -q "$app"; then
+        if open -Ra "${app}"; then
+            echo "$app added to the Dock."
+    
+            defaults write com.apple.dock persistent-apps -array-add "<dict>
+                    <key>tile-data</key>
                     <dict>
-                        <key>_CFURLString</key>
-                        <string>${app}</string>
-                        <key>_CFURLStringType</key>
-                        <integer>0</integer>
+                        <key>file-data</key>
+                        <dict>
+                            <key>_CFURLString</key>
+                            <string>${app}</string>
+                            <key>_CFURLStringType</key>
+                            <integer>0</integer>
+                        </dict>
                     </dict>
-                </dict>
-            </dict>"
-    else
-        echo "ERROR: Application $1 not found."
+                </dict>"
+        else
+            echo "ERROR: Application $1 not found."
+        fi
     fi
 }
 
