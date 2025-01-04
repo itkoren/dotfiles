@@ -11,6 +11,7 @@ packages:
             - "homebrew/bundle"
         brews:
             - "powerlevel10k"
+            - "thefuck"
             - "antigen"
             - "gh"
             - "jq"
