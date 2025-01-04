@@ -10,6 +10,8 @@ function add_app_to_dock {
 
     # Check if the application exists in the Dock (this looks for the app's name)
     if defaults read com.apple.dock persistent-apps | grep -q "$app"; then
+        echo "App $app already in dock"
+    else
         if open -Ra "${app}"; then
             echo "$app added to the Dock."
     
