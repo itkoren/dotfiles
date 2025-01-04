@@ -59,7 +59,7 @@ function add_launchpad_to_dock {
             <key>file-data</key>
             <dict>
                 <key>_CFURLString</key>
-                <string>file:///Applications/Launchpad.app</string>
+                <string>file:////System/Applications/Launchpad.app</string>
                 <key>_CFURLStringType</key>
                 <integer>15</integer>
             </dict>
