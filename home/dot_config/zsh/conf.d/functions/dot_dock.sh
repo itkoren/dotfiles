@@ -47,9 +47,10 @@ function remove_app_from_dock {
 function add_to_dock_left {
     app="${1}"
 
-    # Check if Launchpad is already in the Dock
+    # Check if app is already in the Dock
     if ! defaults read com.apple.dock persistent-apps | grep -q "$app"; then
         # Launchpad is not in the Dock, let's add it to the leftmost position
+        
         # Get the current list of Dock items
         dock_items=$(defaults read com.apple.dock persistent-apps)
         
@@ -60,7 +61,7 @@ function add_to_dock_left {
             <key>file-data</key>
             <dict>
                 <key>_CFURLString</key>
-                <string>file:////$app</string>
+                <string>$app</string>
                 <key>_CFURLStringType</key>
                 <integer>15</integer>
             </dict>
