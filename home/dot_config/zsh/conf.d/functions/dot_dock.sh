@@ -21,7 +21,7 @@ function add_app_to_dock {
                         <key>file-data</key>
                         <dict>
                             <key>_CFURLString</key>
-                            <string>file:////${app}</string>
+                            <string>${app}</string>
                             <key>_CFURLStringType</key>
                             <integer>0</integer>
                         </dict>
