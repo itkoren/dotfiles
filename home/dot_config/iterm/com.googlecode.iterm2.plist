@@ -1,4181 +1,1732 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>AdjustWindowForFontSizeChange</key>
-	<true/>
-	<key>AllowClipboardAccess</key>
-	<true/>
-	<key>AnimateDimming</key>
-	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
-	<key>AutoHideTmuxClientSession</key>
-	<false/>
-	<key>CGFontRenderingFontSmoothingDisabled</key>
-	<false/>
-	<key>CheckTestRelease</key>
-	<true/>
-	<key>ClosingHotkeySwitchesSpaces</key>
-	<true/>
-	<key>Command</key>
-	<string>/bin/zsh</string>
-	<key>CommandSelection</key>
-	<true/>
-	<key>Control</key>
-	<integer>1</integer>
-	<key>CopyLastNewline</key>
-	<false/>
-	<key>CopySelection</key>
-	<true/>
-	<key>Default Bookmark Guid</key>
-	<string>91275479-B120-4B65-B5BF-26CEF4AF584E</string>
-	<key>DimBackgroundWindows</key>
-	<false/>
-	<key>DimInactiveSplitPanes</key>
-	<true/>
-	<key>DimOnlyText</key>
-	<true/>
-	<key>DisableFullscreenTransparency</key>
-	<false/>
-	<key>DoubleClickPerformsSmartSelection</key>
-	<true/>
-	<key>EnableRendezvous</key>
-	<false/>
-	<key>FocusFollowsMouse</key>
-	<false/>
-	<key>FsTabDelay</key>
-	<real>1</real>
-	<key>HapticFeedbackForEsc</key>
-	<false/>
-	<key>HiddenAFRStrokeThickness</key>
-	<real>0.0</real>
-	<key>HiddenAdvancedFontRendering</key>
-	<false/>
-	<key>HideActivityIndicator</key>
-	<false/>
-	<key>HideMenuBarInFullscreen</key>
-	<true/>
-	<key>HideScrollbar</key>
-	<false/>
-	<key>HideTab</key>
-	<true/>
-	<key>HighlightTabLabels</key>
-	<true/>
-	<key>HotKeyTogglesWindow</key>
-	<false/>
-	<key>Hotkey</key>
-	<false/>
-	<key>HotkeyChar</key>
-	<integer>0</integer>
-	<key>HotkeyCode</key>
-	<integer>0</integer>
-	<key>HotkeyMigratedFromSingleToMulti</key>
-	<true/>
-	<key>HotkeyModifiers</key>
-	<integer>0</integer>
-	<key>IRMemory</key>
-	<integer>4</integer>
-	<key>JobName</key>
-	<true/>
-	<key>LeftCommand</key>
-	<integer>7</integer>
-	<key>LeftOption</key>
-	<integer>2</integer>
-	<key>LeftTabBarWidth</key>
-	<real>198</real>
-	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
-	<key>MaxVertically</key>
-	<false/>
-	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<false/>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSQuotedKeystrokeBinding</key>
-	<string></string>
-	<key>NSRepeatCountBinding</key>
-	<string></string>
-	<key>NSScrollAnimationEnabled</key>
-	<false/>
-	<key>NSScrollViewShouldScrollUnderTitlebar</key>
-	<false/>
-	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
-	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
-	</array>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
-	AAAAADoAAAAAAAAAAAAAAAAAAAFM
-	</data>
-	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
-	</data>
-	<key>NSTableView Supports v2 KeyBingingTable</key>
-	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>721 156 445 103 0 0 1280 777 </string>
-	<key>NSWindow Frame Preferences</key>
-	<string>269 110 924 485 0 0 1280 777 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>351 288 620 392 0 0 1280 777 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>110 144 1133 588 0 0 1280 777 </string>
-	<key>New Bookmarks</key>
-	<array>
-		<dict>
-			<key>ASCII Anti Aliased</key>
-			<true/>
-			<key>Allow Title Reporting</key>
-			<false/>
-			<key>Ambiguous Double Width</key>
-			<false/>
-			<key>Ansi 0 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Ansi 1 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0.8</string>
-			</dict>
-			<key>Ansi 10 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.2039216</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.5411764999999999</string>
-			</dict>
-			<key>Ansi 11 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3098039</string>
-				<key>Green Component</key>
-				<string>0.9137255</string>
-				<key>Red Component</key>
-				<string>0.9882353</string>
-			</dict>
-			<key>Ansi 12 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.6235294</string>
-				<key>Red Component</key>
-				<string>0.4470588</string>
-			</dict>
-			<key>Ansi 13 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6588235</string>
-				<key>Green Component</key>
-				<string>0.4980392</string>
-				<key>Red Component</key>
-				<string>0.6784314</string>
-			</dict>
-			<key>Ansi 14 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8862745</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 15 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.9254902</string>
-				<key>Green Component</key>
-				<string>0.9333333</string>
-				<key>Red Component</key>
-				<string>0.9333333</string>
-			</dict>
-			<key>Ansi 2 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.02352941</string>
-				<key>Green Component</key>
-				<string>0.6039215999999999</string>
-				<key>Red Component</key>
-				<string>0.3058824</string>
-			</dict>
-			<key>Ansi 3 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0.627451</string>
-				<key>Red Component</key>
-				<string>0.7686275</string>
-			</dict>
-			<key>Ansi 4 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6431373</string>
-				<key>Green Component</key>
-				<string>0.3960784</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 5 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.4823529</string>
-				<key>Green Component</key>
-				<string>0.3137255</string>
-				<key>Red Component</key>
-				<string>0.4588235</string>
-			</dict>
-			<key>Ansi 6 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6039215999999999</string>
-				<key>Green Component</key>
-				<string>0.5960785</string>
-				<key>Red Component</key>
-				<string>0.02352941</string>
-			</dict>
-			<key>Ansi 7 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.8431373</string>
-				<key>Red Component</key>
-				<string>0.827451</string>
-			</dict>
-			<key>Ansi 8 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3254902</string>
-				<key>Green Component</key>
-				<string>0.3411765</string>
-				<key>Red Component</key>
-				<string>0.3333333</string>
-			</dict>
-			<key>Ansi 9 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.1607843</string>
-				<key>Green Component</key>
-				<string>0.1607843</string>
-				<key>Red Component</key>
-				<string>0.9372549</string>
-			</dict>
-			<key>Automatically Log</key>
-			<false/>
-			<key>BM Growl</key>
-			<true/>
-			<key>Background Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Background Image Is Tiled</key>
-			<false/>
-			<key>Background Image Location</key>
-			<string></string>
-			<key>Badge Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.5</real>
-				<key>Blue Component</key>
-				<real>0.0</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.1491314172744751</real>
-				<key>Red Component</key>
-				<real>1</real>
-			</dict>
-			<key>Blend</key>
-			<real>0.30000001192092896</real>
-			<key>Blink Allowed</key>
-			<false/>
-			<key>Blinking Cursor</key>
-			<true/>
-			<key>Blur</key>
-			<true/>
-			<key>Blur Radius</key>
-			<real>13.096477508544922</real>
-			<key>Bold Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Character Encoding</key>
-			<integer>4</integer>
-			<key>Close Sessions On End</key>
-			<true/>
-			<key>Columns</key>
-			<integer>80</integer>
-			<key>Command</key>
-			<string></string>
-			<key>Cursor Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Cursor Guide Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.25</real>
-				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.9268307089805603</real>
-				<key>Red Component</key>
-				<real>0.70213186740875244</real>
-			</dict>
-			<key>Cursor Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Cursor Type</key>
-			<integer>0</integer>
-			<key>Custom Command</key>
-			<string>No</string>
-			<key>Custom Directory</key>
-			<string>No</string>
-			<key>Default Bookmark</key>
-			<string>No</string>
-			<key>Disable Printing</key>
-			<false/>
-			<key>Disable Smcup Rmcup</key>
-			<false/>
-			<key>Disable Window Resizing</key>
-			<true/>
-			<key>Draw Powerline Glyphs</key>
-			<true/>
-			<key>Flashing Bell</key>
-			<true/>
-			<key>Foreground Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Guid</key>
-			<string>91275479-B120-4B65-B5BF-26CEF4AF584E</string>
-			<key>Hide After Opening</key>
-			<false/>
-			<key>Horizontal Spacing</key>
-			<real>1</real>
-			<key>Idle Code</key>
-			<integer>0</integer>
-			<key>Initial Text</key>
-			<string></string>
-			<key>Jobs to Ignore</key>
-			<array>
-				<string>rlogin</string>
-				<string>ssh</string>
-				<string>slogin</string>
-				<string>telnet</string>
-			</array>
-			<key>Keyboard Map</key>
-			<dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
-				<key>0xf700-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2A</string>
-				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
-				<key>0xf701-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2B</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
-				</dict>
-				<key>0xf702-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2D</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
-				<key>0xf703-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2C</string>
-				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
-				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
-				</dict>
-			</dict>
-			<key>Link Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
-				<real>0.73423302173614502</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.35916060209274292</real>
-				<key>Red Component</key>
-				<real>0.0</real>
-			</dict>
-			<key>Log Directory</key>
-			<string></string>
-			<key>Minimum Contrast</key>
-			<real>0.0</real>
-			<key>Mouse Reporting</key>
-			<true/>
-			<key>Name</key>
-			<string>Default</string>
-			<key>Non Ascii Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 12</string>
-			<key>Non-ASCII Anti Aliased</key>
-			<true/>
-			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 11</string>
-			<key>Option Key Sends</key>
-			<integer>0</integer>
-			<key>Prompt Before Closing 2</key>
-			<integer>0</integer>
-			<key>Right Option Key Sends</key>
-			<integer>0</integer>
-			<key>Rows</key>
-			<integer>40</integer>
-			<key>Screen</key>
-			<integer>-1</integer>
-			<key>Scrollback Lines</key>
-			<integer>0</integer>
-			<key>Scrollback With Status Bar</key>
-			<false/>
-			<key>Scrollback in Alternate Screen</key>
-			<true/>
-			<key>Selected Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Selection Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>0.8353</string>
-				<key>Red Component</key>
-				<string>0.7098</string>
-			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
-			</dict>
-			<key>Send Code When Idle</key>
-			<false/>
-			<key>Set Local Environment Vars</key>
-			<true/>
-			<key>Shortcut</key>
-			<string></string>
-			<key>Show Status Bar</key>
-			<false/>
-			<key>Silence Bell</key>
-			<true/>
-			<key>Smart Cursor Color</key>
-			<true/>
-			<key>Smart Selection Rules</key>
-			<array>
-				<dict>
-					<key>notes</key>
-					<string>Word bounded by whitespace</string>
-					<key>precision</key>
-					<string>low</string>
-					<key>regex</key>
-					<string>\S+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>C++ namespace::identifier</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\~?/?([[:letter:][:number:]._-]+/+)+[[:letter:][:number:]._-]+/?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Quoted string</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>@?"(?:[^"\\]|\\.)*"</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Java/Python include paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([[:letter:][:number:]._]+\.)+[[:letter:][:number:]._]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>mailto URL</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Obj-C selector</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>@selector\([^)]+\)</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>email address</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>HTTP URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>https?://([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\.[a-z0-9A-Z]+)*((:[0-9]+)?)(/[a-zA-Z0-9;/\.\-_+%~?&amp;@=#\(\)]*)?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>SSH URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Telnet URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-			</array>
-			<key>Status Bar Layout</key>
-			<dict>
-				<key>advanced configuration</key>
-				<dict>
-					<key>algorithm</key>
-					<integer>0</integer>
-					<key>font</key>
-					<string>.AppleSystemUIFont 12</string>
-				</dict>
-				<key>components</key>
-				<array/>
-			</dict>
-			<key>Sync Title</key>
-			<false/>
-			<key>Tags</key>
-			<array/>
-			<key>Terminal Type</key>
-			<string>xterm-256color</string>
-			<key>Transparency</key>
-			<real>0.16662813723087311</real>
-			<key>Triggers</key>
-			<array/>
-			<key>Unlimited Scrollback</key>
-			<true/>
-			<key>Use Bold Font</key>
-			<true/>
-			<key>Use Bright Bold</key>
-			<true/>
-			<key>Use Canonical Parser</key>
-			<false/>
-			<key>Use Italic Font</key>
-			<true/>
-			<key>Vertical Spacing</key>
-			<real>1</real>
-			<key>Visual Bell</key>
-			<true/>
-			<key>Window Type</key>
-			<integer>0</integer>
-			<key>Working Directory</key>
-			<string>/Users/renemarc</string>
-		</dict>
-		<dict>
-			<key>ASCII Anti Aliased</key>
-			<true/>
-			<key>Allow Title Reporting</key>
-			<false/>
-			<key>Ambiguous Double Width</key>
-			<false/>
-			<key>Ansi 0 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Ansi 1 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0.8</string>
-			</dict>
-			<key>Ansi 10 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.2039216</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.5411764999999999</string>
-			</dict>
-			<key>Ansi 11 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3098039</string>
-				<key>Green Component</key>
-				<string>0.9137255</string>
-				<key>Red Component</key>
-				<string>0.9882353</string>
-			</dict>
-			<key>Ansi 12 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.6235294</string>
-				<key>Red Component</key>
-				<string>0.4470588</string>
-			</dict>
-			<key>Ansi 13 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6588235</string>
-				<key>Green Component</key>
-				<string>0.4980392</string>
-				<key>Red Component</key>
-				<string>0.6784314</string>
-			</dict>
-			<key>Ansi 14 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8862745</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 15 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.9254902</string>
-				<key>Green Component</key>
-				<string>0.9333333</string>
-				<key>Red Component</key>
-				<string>0.9333333</string>
-			</dict>
-			<key>Ansi 2 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.02352941</string>
-				<key>Green Component</key>
-				<string>0.6039215999999999</string>
-				<key>Red Component</key>
-				<string>0.3058824</string>
-			</dict>
-			<key>Ansi 3 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0.627451</string>
-				<key>Red Component</key>
-				<string>0.7686275</string>
-			</dict>
-			<key>Ansi 4 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6431373</string>
-				<key>Green Component</key>
-				<string>0.3960784</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 5 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.4823529</string>
-				<key>Green Component</key>
-				<string>0.3137255</string>
-				<key>Red Component</key>
-				<string>0.4588235</string>
-			</dict>
-			<key>Ansi 6 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6039215999999999</string>
-				<key>Green Component</key>
-				<string>0.5960785</string>
-				<key>Red Component</key>
-				<string>0.02352941</string>
-			</dict>
-			<key>Ansi 7 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.8431373</string>
-				<key>Red Component</key>
-				<string>0.827451</string>
-			</dict>
-			<key>Ansi 8 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3254902</string>
-				<key>Green Component</key>
-				<string>0.3411765</string>
-				<key>Red Component</key>
-				<string>0.3333333</string>
-			</dict>
-			<key>Ansi 9 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.1607843</string>
-				<key>Green Component</key>
-				<string>0.1607843</string>
-				<key>Red Component</key>
-				<string>0.9372549</string>
-			</dict>
-			<key>Automatically Log</key>
-			<false/>
-			<key>BM Growl</key>
-			<true/>
-			<key>Background Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Background Image Is Tiled</key>
-			<false/>
-			<key>Background Image Location</key>
-			<string></string>
-			<key>Badge Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.5</real>
-				<key>Blue Component</key>
-				<real>0.0</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.1491314172744751</real>
-				<key>Red Component</key>
-				<real>1</real>
-			</dict>
-			<key>Blend</key>
-			<real>0.30000001192092896</real>
-			<key>Blink Allowed</key>
-			<false/>
-			<key>Blinking Cursor</key>
-			<true/>
-			<key>Blur</key>
-			<true/>
-			<key>Blur Radius</key>
-			<real>13.096477508544922</real>
-			<key>Bold Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Bound Hosts</key>
-			<array/>
-			<key>Character Encoding</key>
-			<integer>4</integer>
-			<key>Close Sessions On End</key>
-			<true/>
-			<key>Columns</key>
-			<integer>80</integer>
-			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
-			<key>Cursor Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Cursor Guide Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.25</real>
-				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.9268307089805603</real>
-				<key>Red Component</key>
-				<real>0.70213186740875244</real>
-			</dict>
-			<key>Cursor Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Cursor Type</key>
-			<integer>0</integer>
-			<key>Custom Command</key>
-			<string>Custom Shell</string>
-			<key>Custom Directory</key>
-			<string>No</string>
-			<key>Default Bookmark</key>
-			<string>No</string>
-			<key>Disable Printing</key>
-			<false/>
-			<key>Disable Smcup Rmcup</key>
-			<false/>
-			<key>Disable Window Resizing</key>
-			<true/>
-			<key>Draw Powerline Glyphs</key>
-			<true/>
-			<key>Flashing Bell</key>
-			<true/>
-			<key>Foreground Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Guid</key>
-			<string>09E13072-6685-40FF-952B-9E3C2B2A8C10</string>
-			<key>Has Hotkey</key>
-			<false/>
-			<key>Hide After Opening</key>
-			<false/>
-			<key>Horizontal Spacing</key>
-			<real>1</real>
-			<key>Icon</key>
-			<integer>1</integer>
-			<key>Idle Code</key>
-			<integer>0</integer>
-			<key>Initial Text</key>
-			<string></string>
-			<key>Jobs to Ignore</key>
-			<array>
-				<string>rlogin</string>
-				<string>ssh</string>
-				<string>slogin</string>
-				<string>telnet</string>
-			</array>
-			<key>Keyboard Map</key>
-			<dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
-				<key>0xf700-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2A</string>
-				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
-				<key>0xf701-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2B</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
-				</dict>
-				<key>0xf702-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2D</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
-				<key>0xf703-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2C</string>
-				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
-				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
-				</dict>
-			</dict>
-			<key>Link Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
-				<real>0.73423302173614502</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.35916060209274292</real>
-				<key>Red Component</key>
-				<real>0.0</real>
-			</dict>
-			<key>Log Directory</key>
-			<string></string>
-			<key>Minimum Contrast</key>
-			<real>0.0</real>
-			<key>Mouse Reporting</key>
-			<true/>
-			<key>Name</key>
-			<string>Bash</string>
-			<key>Non Ascii Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 12</string>
-			<key>Non-ASCII Anti Aliased</key>
-			<true/>
-			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 11</string>
-			<key>Option Key Sends</key>
-			<integer>0</integer>
-			<key>Prompt Before Closing 2</key>
-			<integer>0</integer>
-			<key>Right Option Key Sends</key>
-			<integer>0</integer>
-			<key>Rows</key>
-			<integer>40</integer>
-			<key>Screen</key>
-			<integer>-1</integer>
-			<key>Scrollback Lines</key>
-			<integer>0</integer>
-			<key>Scrollback With Status Bar</key>
-			<false/>
-			<key>Scrollback in Alternate Screen</key>
-			<true/>
-			<key>Selected Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Selection Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>0.8353</string>
-				<key>Red Component</key>
-				<string>0.7098</string>
-			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
-			</dict>
-			<key>Send Code When Idle</key>
-			<false/>
-			<key>Set Local Environment Vars</key>
-			<true/>
-			<key>Shortcut</key>
-			<string></string>
-			<key>Show Status Bar</key>
-			<false/>
-			<key>Silence Bell</key>
-			<true/>
-			<key>Smart Cursor Color</key>
-			<true/>
-			<key>Smart Selection Rules</key>
-			<array>
-				<dict>
-					<key>notes</key>
-					<string>Word bounded by whitespace</string>
-					<key>precision</key>
-					<string>low</string>
-					<key>regex</key>
-					<string>\S+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>C++ namespace::identifier</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\~?/?([[:letter:][:number:]._-]+/+)+[[:letter:][:number:]._-]+/?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Quoted string</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>@?"(?:[^"\\]|\\.)*"</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Java/Python include paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([[:letter:][:number:]._]+\.)+[[:letter:][:number:]._]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>mailto URL</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Obj-C selector</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>@selector\([^)]+\)</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>email address</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>HTTP URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>https?://([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\.[a-z0-9A-Z]+)*((:[0-9]+)?)(/[a-zA-Z0-9;/\.\-_+%~?&amp;@=#\(\)]*)?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>SSH URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Telnet URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-			</array>
-			<key>Status Bar Layout</key>
-			<dict>
-				<key>advanced configuration</key>
-				<dict>
-					<key>algorithm</key>
-					<integer>0</integer>
-					<key>font</key>
-					<string>.AppleSystemUIFont 12</string>
-				</dict>
-				<key>components</key>
-				<array/>
-			</dict>
-			<key>Sync Title</key>
-			<false/>
-			<key>Tags</key>
-			<array/>
-			<key>Terminal Type</key>
-			<string>xterm-256color</string>
-			<key>Thin Strokes</key>
-			<integer>4</integer>
-			<key>Title Components</key>
-			<integer>34</integer>
-			<key>Transparency</key>
-			<real>0.16662813723087311</real>
-			<key>Triggers</key>
-			<array/>
-			<key>Unlimited Scrollback</key>
-			<true/>
-			<key>Use Bold Font</key>
-			<true/>
-			<key>Use Bright Bold</key>
-			<true/>
-			<key>Use Canonical Parser</key>
-			<false/>
-			<key>Use Italic Font</key>
-			<true/>
-			<key>Vertical Spacing</key>
-			<real>1</real>
-			<key>Visual Bell</key>
-			<true/>
-			<key>Window Type</key>
-			<integer>0</integer>
-			<key>Working Directory</key>
-			<string>/Users/renemarc</string>
-		</dict>
-		<dict>
-			<key>ASCII Anti Aliased</key>
-			<true/>
-			<key>Allow Title Reporting</key>
-			<false/>
-			<key>Ambiguous Double Width</key>
-			<false/>
-			<key>Ansi 0 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Ansi 1 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0.8</string>
-			</dict>
-			<key>Ansi 10 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.2039216</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.5411764999999999</string>
-			</dict>
-			<key>Ansi 11 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3098039</string>
-				<key>Green Component</key>
-				<string>0.9137255</string>
-				<key>Red Component</key>
-				<string>0.9882353</string>
-			</dict>
-			<key>Ansi 12 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.6235294</string>
-				<key>Red Component</key>
-				<string>0.4470588</string>
-			</dict>
-			<key>Ansi 13 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6588235</string>
-				<key>Green Component</key>
-				<string>0.4980392</string>
-				<key>Red Component</key>
-				<string>0.6784314</string>
-			</dict>
-			<key>Ansi 14 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8862745</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 15 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.9254902</string>
-				<key>Green Component</key>
-				<string>0.9333333</string>
-				<key>Red Component</key>
-				<string>0.9333333</string>
-			</dict>
-			<key>Ansi 2 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.02352941</string>
-				<key>Green Component</key>
-				<string>0.6039215999999999</string>
-				<key>Red Component</key>
-				<string>0.3058824</string>
-			</dict>
-			<key>Ansi 3 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0.627451</string>
-				<key>Red Component</key>
-				<string>0.7686275</string>
-			</dict>
-			<key>Ansi 4 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6431373</string>
-				<key>Green Component</key>
-				<string>0.3960784</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 5 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.4823529</string>
-				<key>Green Component</key>
-				<string>0.3137255</string>
-				<key>Red Component</key>
-				<string>0.4588235</string>
-			</dict>
-			<key>Ansi 6 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6039215999999999</string>
-				<key>Green Component</key>
-				<string>0.5960785</string>
-				<key>Red Component</key>
-				<string>0.02352941</string>
-			</dict>
-			<key>Ansi 7 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.8431373</string>
-				<key>Red Component</key>
-				<string>0.827451</string>
-			</dict>
-			<key>Ansi 8 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3254902</string>
-				<key>Green Component</key>
-				<string>0.3411765</string>
-				<key>Red Component</key>
-				<string>0.3333333</string>
-			</dict>
-			<key>Ansi 9 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.1607843</string>
-				<key>Green Component</key>
-				<string>0.1607843</string>
-				<key>Red Component</key>
-				<string>0.9372549</string>
-			</dict>
-			<key>Automatically Log</key>
-			<false/>
-			<key>BM Growl</key>
-			<true/>
-			<key>Background Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Background Image Is Tiled</key>
-			<false/>
-			<key>Background Image Location</key>
-			<string></string>
-			<key>Badge Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.5</real>
-				<key>Blue Component</key>
-				<real>0.0</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.1491314172744751</real>
-				<key>Red Component</key>
-				<real>1</real>
-			</dict>
-			<key>Blend</key>
-			<real>0.30000001192092896</real>
-			<key>Blink Allowed</key>
-			<false/>
-			<key>Blinking Cursor</key>
-			<true/>
-			<key>Blur</key>
-			<true/>
-			<key>Blur Radius</key>
-			<real>13.096477508544922</real>
-			<key>Bold Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Bound Hosts</key>
-			<array/>
-			<key>Character Encoding</key>
-			<integer>4</integer>
-			<key>Close Sessions On End</key>
-			<true/>
-			<key>Columns</key>
-			<integer>80</integer>
-			<key>Command</key>
-			<string>/usr/local/bin/pwsh</string>
-			<key>Cursor Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Cursor Guide Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.25</real>
-				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.9268307089805603</real>
-				<key>Red Component</key>
-				<real>0.70213186740875244</real>
-			</dict>
-			<key>Cursor Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Cursor Type</key>
-			<integer>0</integer>
-			<key>Custom Command</key>
-			<string>Custom Shell</string>
-			<key>Custom Directory</key>
-			<string>No</string>
-			<key>Default Bookmark</key>
-			<string>No</string>
-			<key>Disable Printing</key>
-			<false/>
-			<key>Disable Smcup Rmcup</key>
-			<false/>
-			<key>Disable Window Resizing</key>
-			<true/>
-			<key>Draw Powerline Glyphs</key>
-			<true/>
-			<key>Flashing Bell</key>
-			<true/>
-			<key>Foreground Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Guid</key>
-			<string>C719D3F1-8504-4E5C-903C-BFC0D8BA5B88</string>
-			<key>Has Hotkey</key>
-			<false/>
-			<key>Hide After Opening</key>
-			<false/>
-			<key>Horizontal Spacing</key>
-			<real>1</real>
-			<key>Icon</key>
-			<integer>1</integer>
-			<key>Idle Code</key>
-			<integer>0</integer>
-			<key>Initial Text</key>
-			<string></string>
-			<key>Jobs to Ignore</key>
-			<array>
-				<string>rlogin</string>
-				<string>ssh</string>
-				<string>slogin</string>
-				<string>telnet</string>
-			</array>
-			<key>Keyboard Map</key>
-			<dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
-				<key>0xf700-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2A</string>
-				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
-				<key>0xf701-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2B</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
-				</dict>
-				<key>0xf702-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2D</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
-				<key>0xf703-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2C</string>
-				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
-				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
-				</dict>
-			</dict>
-			<key>Link Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
-				<real>0.73423302173614502</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.35916060209274292</real>
-				<key>Red Component</key>
-				<real>0.0</real>
-			</dict>
-			<key>Log Directory</key>
-			<string></string>
-			<key>Minimum Contrast</key>
-			<real>0.0</real>
-			<key>Mouse Reporting</key>
-			<true/>
-			<key>Name</key>
-			<string>Powershell</string>
-			<key>Non Ascii Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 12</string>
-			<key>Non-ASCII Anti Aliased</key>
-			<true/>
-			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 11</string>
-			<key>Option Key Sends</key>
-			<integer>0</integer>
-			<key>Prompt Before Closing 2</key>
-			<integer>0</integer>
-			<key>Right Option Key Sends</key>
-			<integer>0</integer>
-			<key>Rows</key>
-			<integer>40</integer>
-			<key>Screen</key>
-			<integer>-1</integer>
-			<key>Scrollback Lines</key>
-			<integer>0</integer>
-			<key>Scrollback With Status Bar</key>
-			<false/>
-			<key>Scrollback in Alternate Screen</key>
-			<true/>
-			<key>Selected Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Selection Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>0.8353</string>
-				<key>Red Component</key>
-				<string>0.7098</string>
-			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
-			</dict>
-			<key>Send Code When Idle</key>
-			<false/>
-			<key>Set Local Environment Vars</key>
-			<true/>
-			<key>Shortcut</key>
-			<string></string>
-			<key>Show Status Bar</key>
-			<false/>
-			<key>Silence Bell</key>
-			<true/>
-			<key>Smart Cursor Color</key>
-			<true/>
-			<key>Smart Selection Rules</key>
-			<array>
-				<dict>
-					<key>notes</key>
-					<string>Word bounded by whitespace</string>
-					<key>precision</key>
-					<string>low</string>
-					<key>regex</key>
-					<string>\S+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>C++ namespace::identifier</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\~?/?([[:letter:][:number:]._-]+/+)+[[:letter:][:number:]._-]+/?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Quoted string</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>@?"(?:[^"\\]|\\.)*"</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Java/Python include paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([[:letter:][:number:]._]+\.)+[[:letter:][:number:]._]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>mailto URL</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Obj-C selector</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>@selector\([^)]+\)</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>email address</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>HTTP URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>https?://([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\.[a-z0-9A-Z]+)*((:[0-9]+)?)(/[a-zA-Z0-9;/\.\-_+%~?&amp;@=#\(\)]*)?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>SSH URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Telnet URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-			</array>
-			<key>Status Bar Layout</key>
-			<dict>
-				<key>advanced configuration</key>
-				<dict>
-					<key>algorithm</key>
-					<integer>0</integer>
-					<key>font</key>
-					<string>.AppleSystemUIFont 12</string>
-				</dict>
-				<key>components</key>
-				<array/>
-			</dict>
-			<key>Sync Title</key>
-			<false/>
-			<key>Tags</key>
-			<array/>
-			<key>Terminal Type</key>
-			<string>xterm-256color</string>
-			<key>Title Components</key>
-			<integer>34</integer>
-			<key>Transparency</key>
-			<real>0.16662813723087311</real>
-			<key>Triggers</key>
-			<array/>
-			<key>Unlimited Scrollback</key>
-			<true/>
-			<key>Use Bold Font</key>
-			<true/>
-			<key>Use Bright Bold</key>
-			<true/>
-			<key>Use Canonical Parser</key>
-			<false/>
-			<key>Use Italic Font</key>
-			<true/>
-			<key>Vertical Spacing</key>
-			<real>1</real>
-			<key>Visual Bell</key>
-			<true/>
-			<key>Window Type</key>
-			<integer>0</integer>
-			<key>Working Directory</key>
-			<string>/Users/renemarc</string>
-		</dict>
-		<dict>
-			<key>ASCII Anti Aliased</key>
-			<true/>
-			<key>Allow Title Reporting</key>
-			<false/>
-			<key>Ambiguous Double Width</key>
-			<false/>
-			<key>Ansi 0 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Ansi 1 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0.8</string>
-			</dict>
-			<key>Ansi 10 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.2039216</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.5411764999999999</string>
-			</dict>
-			<key>Ansi 11 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3098039</string>
-				<key>Green Component</key>
-				<string>0.9137255</string>
-				<key>Red Component</key>
-				<string>0.9882353</string>
-			</dict>
-			<key>Ansi 12 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.6235294</string>
-				<key>Red Component</key>
-				<string>0.4470588</string>
-			</dict>
-			<key>Ansi 13 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6588235</string>
-				<key>Green Component</key>
-				<string>0.4980392</string>
-				<key>Red Component</key>
-				<string>0.6784314</string>
-			</dict>
-			<key>Ansi 14 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8862745</string>
-				<key>Green Component</key>
-				<string>0.8862745</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 15 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.9254902</string>
-				<key>Green Component</key>
-				<string>0.9333333</string>
-				<key>Red Component</key>
-				<string>0.9333333</string>
-			</dict>
-			<key>Ansi 2 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.02352941</string>
-				<key>Green Component</key>
-				<string>0.6039215999999999</string>
-				<key>Red Component</key>
-				<string>0.3058824</string>
-			</dict>
-			<key>Ansi 3 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0.627451</string>
-				<key>Red Component</key>
-				<string>0.7686275</string>
-			</dict>
-			<key>Ansi 4 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6431373</string>
-				<key>Green Component</key>
-				<string>0.3960784</string>
-				<key>Red Component</key>
-				<string>0.2039216</string>
-			</dict>
-			<key>Ansi 5 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.4823529</string>
-				<key>Green Component</key>
-				<string>0.3137255</string>
-				<key>Red Component</key>
-				<string>0.4588235</string>
-			</dict>
-			<key>Ansi 6 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.6039215999999999</string>
-				<key>Green Component</key>
-				<string>0.5960785</string>
-				<key>Red Component</key>
-				<string>0.02352941</string>
-			</dict>
-			<key>Ansi 7 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.8117647</string>
-				<key>Green Component</key>
-				<string>0.8431373</string>
-				<key>Red Component</key>
-				<string>0.827451</string>
-			</dict>
-			<key>Ansi 8 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.3254902</string>
-				<key>Green Component</key>
-				<string>0.3411765</string>
-				<key>Red Component</key>
-				<string>0.3333333</string>
-			</dict>
-			<key>Ansi 9 Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0.1607843</string>
-				<key>Green Component</key>
-				<string>0.1607843</string>
-				<key>Red Component</key>
-				<string>0.9372549</string>
-			</dict>
-			<key>Automatically Log</key>
-			<false/>
-			<key>BM Growl</key>
-			<true/>
-			<key>Background Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Background Image Is Tiled</key>
-			<false/>
-			<key>Background Image Location</key>
-			<string></string>
-			<key>Badge Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.5</real>
-				<key>Blue Component</key>
-				<real>0.0</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.1491314172744751</real>
-				<key>Red Component</key>
-				<real>1</real>
-			</dict>
-			<key>Blend</key>
-			<real>0.30000001192092896</real>
-			<key>Blink Allowed</key>
-			<false/>
-			<key>Blinking Cursor</key>
-			<true/>
-			<key>Blur</key>
-			<true/>
-			<key>Blur Radius</key>
-			<real>13.096477508544922</real>
-			<key>Bold Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Bound Hosts</key>
-			<array/>
-			<key>Character Encoding</key>
-			<integer>4</integer>
-			<key>Close Sessions On End</key>
-			<true/>
-			<key>Columns</key>
-			<integer>80</integer>
-			<key>Command</key>
-			<string>/bin/zsh</string>
-			<key>Cursor Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Cursor Guide Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>0.25</real>
-				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.9268307089805603</real>
-				<key>Red Component</key>
-				<real>0.70213186740875244</real>
-			</dict>
-			<key>Cursor Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Cursor Type</key>
-			<integer>0</integer>
-			<key>Custom Command</key>
-			<string>Custom Shell</string>
-			<key>Custom Directory</key>
-			<string>No</string>
-			<key>Default Bookmark</key>
-			<string>No</string>
-			<key>Disable Printing</key>
-			<false/>
-			<key>Disable Smcup Rmcup</key>
-			<false/>
-			<key>Disable Window Resizing</key>
-			<true/>
-			<key>Draw Powerline Glyphs</key>
-			<true/>
-			<key>Flashing Bell</key>
-			<true/>
-			<key>Foreground Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>1</string>
-				<key>Red Component</key>
-				<string>1</string>
-			</dict>
-			<key>Guid</key>
-			<string>1A7C71CA-DCCB-457A-BC3A-90D507B601FD</string>
-			<key>Has Hotkey</key>
-			<false/>
-			<key>Hide After Opening</key>
-			<false/>
-			<key>Horizontal Spacing</key>
-			<real>1</real>
-			<key>Icon</key>
-			<integer>1</integer>
-			<key>Idle Code</key>
-			<integer>0</integer>
-			<key>Initial Text</key>
-			<string></string>
-			<key>Jobs to Ignore</key>
-			<array>
-				<string>rlogin</string>
-				<string>ssh</string>
-				<string>slogin</string>
-				<string>telnet</string>
-			</array>
-			<key>Keyboard Map</key>
-			<dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
-				<key>0xf700-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2A</string>
-				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
-				<key>0xf701-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2B</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
-				</dict>
-				<key>0xf702-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2D</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
-				<key>0xf703-0x220000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2C</string>
-				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
-				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
-				</dict>
-			</dict>
-			<key>Link Color</key>
-			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
-				<key>Blue Component</key>
-				<real>0.73423302173614502</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
-				<key>Green Component</key>
-				<real>0.35916060209274292</real>
-				<key>Red Component</key>
-				<real>0.0</real>
-			</dict>
-			<key>Log Directory</key>
-			<string></string>
-			<key>Minimum Contrast</key>
-			<real>0.0</real>
-			<key>Mouse Reporting</key>
-			<true/>
-			<key>Name</key>
-			<string>Zsh</string>
-			<key>Non Ascii Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 12</string>
-			<key>Non-ASCII Anti Aliased</key>
-			<true/>
-			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Regular 11</string>
-			<key>Option Key Sends</key>
-			<integer>0</integer>
-			<key>Prompt Before Closing 2</key>
-			<integer>0</integer>
-			<key>Right Option Key Sends</key>
-			<integer>0</integer>
-			<key>Rows</key>
-			<integer>40</integer>
-			<key>Screen</key>
-			<integer>-1</integer>
-			<key>Scrollback Lines</key>
-			<integer>0</integer>
-			<key>Scrollback With Status Bar</key>
-			<false/>
-			<key>Scrollback in Alternate Screen</key>
-			<true/>
-			<key>Selected Text Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>0</string>
-				<key>Green Component</key>
-				<string>0</string>
-				<key>Red Component</key>
-				<string>0</string>
-			</dict>
-			<key>Selection Color</key>
-			<dict>
-				<key>Blue Component</key>
-				<string>1</string>
-				<key>Green Component</key>
-				<string>0.8353</string>
-				<key>Red Component</key>
-				<string>0.7098</string>
-			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
-			</dict>
-			<key>Send Code When Idle</key>
-			<false/>
-			<key>Set Local Environment Vars</key>
-			<true/>
-			<key>Shortcut</key>
-			<string></string>
-			<key>Show Status Bar</key>
-			<false/>
-			<key>Silence Bell</key>
-			<true/>
-			<key>Smart Cursor Color</key>
-			<true/>
-			<key>Smart Selection Rules</key>
-			<array>
-				<dict>
-					<key>notes</key>
-					<string>Word bounded by whitespace</string>
-					<key>precision</key>
-					<string>low</string>
-					<key>regex</key>
-					<string>\S+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>C++ namespace::identifier</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\~?/?([[:letter:][:number:]._-]+/+)+[[:letter:][:number:]._-]+/?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Quoted string</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>@?"(?:[^"\\]|\\.)*"</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Java/Python include paths</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>([[:letter:][:number:]._]+\.)+[[:letter:][:number:]._]+</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>mailto URL</string>
-					<key>precision</key>
-					<string>normal</string>
-					<key>regex</key>
-					<string>\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Obj-C selector</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>@selector\([^)]+\)</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>email address</string>
-					<key>precision</key>
-					<string>high</string>
-					<key>regex</key>
-					<string>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>HTTP URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>https?://([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\.[a-z0-9A-Z]+)*((:[0-9]+)?)(/[a-zA-Z0-9;/\.\-_+%~?&amp;@=#\(\)]*)?</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>SSH URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-				<dict>
-					<key>notes</key>
-					<string>Telnet URL</string>
-					<key>precision</key>
-					<string>very_high</string>
-					<key>regex</key>
-					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
-				</dict>
-			</array>
-			<key>Status Bar Layout</key>
-			<dict>
-				<key>advanced configuration</key>
-				<dict>
-					<key>algorithm</key>
-					<integer>0</integer>
-					<key>font</key>
-					<string>.AppleSystemUIFont 12</string>
-				</dict>
-				<key>components</key>
-				<array/>
-			</dict>
-			<key>Sync Title</key>
-			<false/>
-			<key>Tags</key>
-			<array/>
-			<key>Terminal Type</key>
-			<string>xterm-256color</string>
-			<key>Thin Strokes</key>
-			<integer>4</integer>
-			<key>Title Components</key>
-			<integer>34</integer>
-			<key>Transparency</key>
-			<real>0.16662813723087311</real>
-			<key>Triggers</key>
-			<array/>
-			<key>Unlimited Scrollback</key>
-			<true/>
-			<key>Use Bold Font</key>
-			<true/>
-			<key>Use Bright Bold</key>
-			<true/>
-			<key>Use Canonical Parser</key>
-			<false/>
-			<key>Use Italic Font</key>
-			<true/>
-			<key>Vertical Spacing</key>
-			<real>1</real>
-			<key>Visual Bell</key>
-			<true/>
-			<key>Window Type</key>
-			<integer>0</integer>
-			<key>Working Directory</key>
-			<string>/Users/renemarc</string>
-		</dict>
-	</array>
-	<key>NoSyncAllAppVersions</key>
-	<array>
-		<string>3.3.8</string>
-		<string>3.3.8beta5</string>
-		<string>3.3.9beta1</string>
-		<string>3.3.8beta4</string>
-		<string>3.3.8beta3</string>
-		<string>2.1.4</string>
-		<string>3.3.0beta15</string>
-		<string>3.3.9</string>
-		<string>3.3.8beta1</string>
-	</array>
-	<key>NoSyncBFPRecents</key>
-	<array>
-		<string>Monaco</string>
-		<string>SauceCodePro Nerd Font Mono</string>
-		<string>Source Code Pro</string>
-	</array>
-	<key>NoSyncFrame_SharedPreferences</key>
-	<dict>
-		<key>screenFrame</key>
-		<string>{{0, 0}, {1280, 800}}</string>
-		<key>topLeft</key>
-		<string>{237, 703}</string>
-	</dict>
-	<key>NoSyncInstallationId</key>
-	<string>31FEE2EE-BAA6-45BC-8E76-E49E54B5F9AD</string>
-	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>20</integer>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
-	<key>NoSyncNextAnnoyanceTime</key>
-	<real>598553924.84942305</real>
-	<key>NoSyncOnboardingWindowHasBeenShown</key>
-	<true/>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
-	<key>NoSyncRecordedVariables</key>
-	<dict>
-		<key>0</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string></string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>1</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>presentationName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxRole</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>lastCommand</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>profileName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>termid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>id</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>jobName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>columns</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tab.tmuxWindowTitle</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>hostname</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxClientName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>path</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>triggerName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindowPane</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxStatusRight</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>mouseReportingMode</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>name</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxPaneTitle</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>rows</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>username</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tab.tmuxWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tty</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>badge</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>autoLogId</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>tab</string>
-				<key>nonterminalContext</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxStatusLeft</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>autoNameFormat</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>autoName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>terminalWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>creationTimeString</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>commandLine</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>jobPid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>16</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.presentationName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.iterm2.localhostName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>style</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>frame</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.termid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.terminalWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentTab</string>
-				<key>nonterminalContext</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.window</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>id</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.name</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverride</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.path</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.commandLine</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>number</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.hostname</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.tty</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.username</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverrideFormat</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.jobName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>2</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.commandLine</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>title</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>title</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindowTitle</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.presentationName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>iterm2.localhostName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.jobPid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>window</string>
-				<key>nonterminalContext</key>
-				<integer>16</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.tty</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.jobName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.name</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>window</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>id</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverride</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.username</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.path</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverrideFormat</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.hostname</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindow</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>4</key>
-		<array>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>localhostName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>effectiveTheme</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-	</dict>
-	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
-	<dict>
-		<key>Initial Directory</key>
-		<string>/Users/renemarc</string>
-	</dict>
-	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>585638091.55111694</real>
-	<key>OnlyWhenMoreTabs</key>
-	<true/>
-	<key>OpenArrangementAtStartup</key>
-	<false/>
-	<key>OpenBookmark</key>
-	<false/>
-	<key>OpenTmuxWindowsIn</key>
-	<integer>0</integer>
-	<key>PassOnControlClick</key>
-	<false/>
-	<key>PasteFromClipboard</key>
-	<true/>
-	<key>PasteTabToStringTabStopSize</key>
-	<integer>4</integer>
-	<key>PointerActions</key>
-	<dict>
-		<key>Button,1,1,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kContextMenuPointerAction</string>
-		</dict>
-		<key>Button,2,1,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPasteFromClipboardPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeDown,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevWindowPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeLeft,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kPrevTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeRight,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextTabPointerAction</string>
-		</dict>
-		<key>Gesture,ThreeFingerSwipeUp,,</key>
-		<dict>
-			<key>Action</key>
-			<string>kNextWindowPointerAction</string>
-		</dict>
-	</dict>
-	<key>PrefsCustomFolder</key>
-	<string>~/.config/iterm</string>
-	<key>PromptOnQuit</key>
-	<true/>
-	<key>QuitWhenAllWindowsClosed</key>
-	<false/>
-	<key>RightCommand</key>
-	<integer>8</integer>
-	<key>RightOption</key>
-	<integer>3</integer>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
-	<key>SUFeedAlternateAppNameKey</key>
-	<string>iTerm</string>
-	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=10</string>
-	<key>SUHasLaunchedBefore</key>
-	<true/>
-	<key>SULastCheckTime</key>
-	<date>2020-02-16T23:45:49Z</date>
-	<key>SUUpdateGroupIdentifier</key>
-	<integer>1701577509</integer>
-	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
-	<key>SavePasteHistory</key>
-	<false/>
-	<key>ShowBookmarkName</key>
-	<false/>
-	<key>ShowPaneTitles</key>
-	<true/>
-	<key>SmartPlacement</key>
-	<false/>
-	<key>SoundForEsc</key>
-	<false/>
-	<key>SplitPaneDimmingAmount</key>
-	<real>0.40000000596046448</real>
-	<key>StatusBarPosition</key>
-	<integer>1</integer>
-	<key>SwitchTabModifier</key>
-	<integer>4</integer>
-	<key>SwitchWindowModifier</key>
-	<integer>6</integer>
-	<key>TabStyleWithAutomaticOption</key>
-	<integer>1</integer>
-	<key>TabViewType</key>
-	<integer>2</integer>
-	<key>ThreeFingerEmulates</key>
-	<false/>
-	<key>TmuxDashboardLimit</key>
-	<integer>10</integer>
-	<key>TripleClickSelectsFullWrappedLines</key>
-	<true/>
-	<key>URLHandlersByGuid</key>
-	<dict/>
-	<key>UseBorder</key>
-	<true/>
-	<key>UseCompactLabel</key>
-	<true/>
-	<key>UseLionStyleFullscreen</key>
-	<true/>
-	<key>VisualIndicatorForEsc</key>
-	<false/>
-	<key>WebKitDefaultFontSize</key>
-	<integer>11</integer>
-	<key>WebKitStandardFont</key>
-	<string>.AppleSystemUIFont</string>
-	<key>WindowNumber</key>
-	<true/>
-	<key>WindowStyle</key>
-	<integer>0</integer>
-	<key>WordCharacters</key>
-	<string>/-+\~_.</string>
-	<key>iTerm Version</key>
-	<string>3.3.9</string>
-</dict>
-</plist>
+6270 6c69 7374 3030 df10 4b00 0100 0200
+0300 0400 0500 0600 0700 0800 0900 0a00
+0b00 0c00 0d00 0e00 0f00 1000 1100 1200
+1300 1400 1500 1600 1700 1800 1900 1a00
+1b00 1c00 1d00 1e00 1f00 2000 2100 2200
+2300 2400 2500 2600 2700 2800 2900 2a00
+2b00 2c00 2d00 2e00 2f00 3000 3100 3200
+3300 3400 3500 3600 3700 3800 3900 3a00
+3b00 3c00 3d00 3e00 3f00 4000 4100 4200
+4300 4400 4500 4600 4700 4800 4900 4a00
+4b00 4c00 4d00 5000 5103 e901 0a01 0a00
+4c03 ed03 ee03 ef03 f003 f105 3e05 3f05
+4005 4101 0a01 d505 4300 4c01 0a03 4f05
+4801 0a05 4e05 6105 6203 9105 6301 0a00
+4c05 6600 4c05 6a01 0a00 5005 6c05 6d05
+6e00 5001 0a05 7101 0a05 7303 4f05 7401
+0a05 7605 7701 0a05 7903 4f05 7a05 7b05
+7c05 7d05 7e05 7f05 8000 4c05 0a05 8201
+0a01 0a05 8505 8805 8901 d506 7700 4c06
+7906 7a06 7b06 7c5f 1023 4e6f 5379 6e63
+4967 6e6f 7265 5379 7374 656d 5769 6e64
+6f77 5265 7374 6f72 6174 696f 6e5f 1030
+4e53 5370 6c69 7456 6965 7720 5375 6276
+6965 7720 4672 616d 6573 204e 5343 6f6c
+6f72 5061 6e65 6c53 706c 6974 5669 6577
+5f10 194e 6f53 796e 6352 6573 746f 7265
+5769 6e64 6f77 7343 6f75 6e74 5d4e 6577
+2042 6f6f 6b6d 6172 6b73 5f10 1544 6566
+6175 6c74 2042 6f6f 6b6d 6172 6b20 4775
+6964 5b53 6f75 6e64 466f 7245 7363 5f10
+2b4e 534f 7665 726c 6179 5363 726f 6c6c
+6572 7346 616c 6c42 6163 6b46 6f72 4163
+6365 7373 6f72 7956 6965 7773 5f10 1f48
+6f74 6b65 794d 6967 7261 7465 6446 726f
+6d53 696e 676c 6554 6f4d 756c 7469 5f10
+1c4e 5357 696e 646f 7720 4672 616d 6520
+5355 5570 6461 7465 416c 6572 745f 1021
+4e53 4e61 7650 616e 656c 4578 7061 6e64
+6564 5369 7a65 466f 724f 7065 6e4d 6f64
+655f 1023 4e6f 5379 6e63 5061 7373 776f
+7264 4d61 6e61 6765 7244 6174 6153 6f75
+7263 654e 616d 655f 1014 4e6f 5379 6e63
+496e 7374 616c 6c61 7469 6f6e 4964 5f10
+174e 6f53 796e 6352 6563 6f72 6465 6456
+6172 6961 626c 6573 5f10 1e4e 5357 696e
+646f 7720 4672 616d 6520 6954 6572 6d20
+5769 6e64 6f77 2031 3459 5355 4665 6564
+5552 4c5f 1019 5355 4665 6564 416c 7465
+726e 6174 6541 7070 4e61 6d65 4b65 795f
+1017 4e6f 5379 6e63 4e65 7874 416e 6e6f
+7961 6e63 6554 696d 655f 1015 5669 7375
+616c 496e 6469 6361 746f 7246 6f72 4573
+635f 1018 4e53 5175 6f74 6564 4b65 7973
+7472 6f6b 6542 696e 6469 6e67 5f10 284e
+6f53 796e 6353 6176 6550 616e 656c 5361
+7665 6453 6574 7469 6e67 735f 5361 7665
+5072 6f66 696c 655f 1010 4f70 656e 556e
+7469 746c 6564 4669 6c65 5f10 1841 7070
+6c65 5072 6573 7341 6e64 486f 6c64 456e
+6162 6c65 645f 101a 4170 706c 6541 6e74
+6941 6c69 6173 696e 6754 6872 6573 686f
+6c64 5f10 1d4e 6f53 796e 6346 7261 6d65
+5f53 6861 7265 6450 7265 6665 7265 6e63
+6573 5f10 164f 7065 6e4e 6f57 696e 646f
+7773 4174 5374 6172 7475 705e 506f 696e
+7465 7241 6374 696f 6e73 5d69 5465 726d
+2056 6572 7369 6f6e 5f10 134e 6f53 796e
+634c 6173 744f 5356 6572 7369 6f6e 5f10
+214e 6f53 796e 6352 656d 6f76 6544 6570
+7265 6361 7465 644b 6579 4d61 7070 696e
+6773 5f10 254e 5357 696e 646f 7720 4672
+616d 6520 4e53 4e61 7650 616e 656c 4175
+746f 7361 7665 4e61 6d65 5f10 254e 6f53
+796e 6357 696e 646f 7752 6573 746f 7265
+7357 6f72 6b73 7061 6365 4174 4c61 756e
+6368 5f10 1c4e 6f53 796e 6355 7365 7248
+6173 5365 6c65 6374 6564 436f 6d6d 616e
+645f 1010 4e6f 5379 6e63 4246 5052 6563
+656e 7473 5f10 1753 5545 6e61 626c 6541
+7574 6f6d 6174 6963 4368 6563 6b73 5f10
+0f53 554c 6173 7443 6865 636b 5469 6d65
+5f10 194e 6f53 796e 6350 6572 6d69 7373
+696f 6e54 6f53 686f 7754 6970 5f10 1b41
+7070 6c65 5363 726f 6c6c 416e 696d 6174
+696f 6e45 6e61 626c 6564 5f10 254e 6f53
+796e 6350 6572 6d69 7373 696f 6e73 4865
+6c70 6572 5f41 6363 6573 7369 6269 6c69
+7479 5f10 1b4e 5357 696e 646f 7720 4672
+616d 6520 4e53 436f 6c6f 7250 616e 656c
+5f10 2e4e 5354 6f6f 6c62 6172 2043 6f6e
+6669 6775 7261 7469 6f6e 2063 6f6d 2e61
+7070 6c65 2e4e 5343 6f6c 6f72 5061 6e65
+6c5f 1012 4e6f 5379 6e63 4c6f 6767 696e
+6753 7479 6c65 5f10 254e 5353 6372 6f6c
+6c56 6965 7753 686f 756c 6453 6372 6f6c
+6c55 6e64 6572 5469 746c 6562 6172 5f10
+1d4e 5357 696e 646f 7720 4672 616d 6520
+6954 6572 6d20 5769 6e64 6f77 2030 5f10
+1448 6170 7469 6346 6565 6462 6163 6b46
+6f72 4573 635f 101d 4e53 5769 6e64 6f77
+2046 7261 6d65 2069 5465 726d 2057 696e
+646f 7720 315f 1022 4170 706c 6553 6d6f
+6f74 6846 6978 6564 466f 6e74 7353 697a
+6554 6872 6573 686f 6c64 5f10 1d4e 5357
+696e 646f 7720 4672 616d 6520 6954 6572
+6d20 5769 6e64 6f77 2032 5f10 1153 5553
+656e 6450 726f 6669 6c65 496e 666f 5f10
+1d4e 5357 696e 646f 7720 4672 616d 6520
+6954 6572 6d20 5769 6e64 6f77 2033 5f10
+1d4e 5357 696e 646f 7720 4672 616d 6520
+6954 6572 6d20 5769 6e64 6f77 2034 5f10
+184f 7065 6e41 7272 616e 6765 6d65 6e74
+4174 5374 6172 7475 705f 1016 4170 706c
+6557 696e 646f 7754 6162 6269 6e67 4d6f
+6465 5f10 1b54 6162 5374 796c 6557 6974
+6841 7574 6f6d 6174 6963 4f70 7469 6f6e
+5f10 1d4e 5357 696e 646f 7720 4672 616d
+6520 6954 6572 6d20 5769 6e64 6f77 2035
+5f10 1d4e 5357 696e 646f 7720 4672 616d
+6520 6954 6572 6d20 5769 6e64 6f77 2036
+5f10 1d4e 5357 696e 646f 7720 4672 616d
+6520 6954 6572 6d20 5769 6e64 6f77 2037
+5f10 214e 534e 6176 5061 6e65 6c45 7870
+616e 6465 6453 697a 6546 6f72 5361 7665
+4d6f 6465 5f10 1753 5555 7064 6174 6547
+726f 7570 4964 656e 7469 6669 6572 5f10
+1d4e 5357 696e 646f 7720 4672 616d 6520
+6954 6572 6d20 5769 6e64 6f77 2039 5f10
+284e 6f53 796e 634c 6173 7453 7973 7465
+6d50 7974 686f 6e56 6572 7369 6f6e 5265
+7175 6972 656d 656e 745f 1013 5355 4861
+734c 6175 6e63 6865 6442 6566 6f72 655f
+1028 4e6f 5379 6e63 4c61 756e 6368 4578
+7065 7269 656e 6365 436f 6e74 726f 6c6c
+6572 5275 6e43 6f75 6e74 5f10 1e4e 5357
+696e 646f 7720 4672 616d 6520 554b 4372
+6173 6852 6570 6f72 7465 725f 1019 5355
+5570 6461 7465 5265 6c61 756e 6368 696e
+674d 6172 6b65 725f 1018 4e53 5363 726f
+6c6c 416e 696d 6174 696f 6e45 6e61 626c
+6564 5f10 144e 6f53 796e 6341 6c6c 4170
+7056 6572 7369 6f6e 735f 101c 4e53 5769
+6e64 6f77 2046 7261 6d65 2053 5553 7461
+7475 7346 7261 6d65 5f10 1443 7573 746f
+6d20 436f 6c6f 7220 5072 6573 6574 735f
+1014 4e53 5265 7065 6174 436f 756e 7442
+696e 6469 6e67 5f10 1e4e 5357 696e 646f
+7720 4672 616d 6520 6954 6572 6d20 5769
+6e64 6f77 2031 305f 1022 4e53 4e61 7650
+616e 656c 4578 7061 6e64 6564 5374 6174
+6546 6f72 5361 7665 4d6f 6465 5f10 1e4e
+5357 696e 646f 7720 4672 616d 6520 6954
+6572 6d20 5769 6e64 6f77 2031 315f 1016
+4e53 4f53 504c 6173 7452 6f6f 7444 6972
+6563 746f 7279 5f10 254e 6f53 796e 6354
+6970 4f66 5468 6544 6179 456c 6967 6962
+696c 6974 7942 6567 616e 5469 6d65 5f10
+1e4e 5357 696e 646f 7720 4672 616d 6520
+6954 6572 6d20 5769 6e64 6f77 2031 3209
+a200 4e00 4f5f 1032 302e 3030 3030 3030
+2c20 302e 3030 3030 3030 2c20 3232 342e
+3030 3030 3030 2c20 3235 382e 3030 3030
+3030 2c20 4e4f 2c20 4e4f 5f10 3330 2e30
+3030 3030 302c 2032 3539 2e30 3030 3030
+302c 2032 3234 2e30 3030 3030 302c 2034
+382e 3030 3030 3030 2c20 4e4f 2c20 4e4f
+1000 a200 5202 64df 10a1 0053 0054 0055
+0056 0057 0058 0059 005a 005b 005c 005d
+005e 005f 0060 0061 0062 0063 0064 0065
+0066 0067 0068 0069 006a 006b 006c 006d
+006e 006f 0070 0071 0072 0073 0074 0075
+0076 0077 0078 0079 007a 007b 007c 007d
+007e 007f 0080 0081 0082 0083 0084 0085
+0086 0087 0088 0089 008a 008b 008c 008d
+008e 008f 0090 0091 0092 0093 0094 0095
+0096 0097 0098 0099 009a 009b 009c 009d
+009e 009f 00a0 00a1 00a2 00a3 00a4 00a5
+00a6 00a7 00a8 00a9 00aa 00ab 00ac 00ad
+00ae 00af 00b0 00b1 00b2 00b3 00b4 00b5
+00b6 00b7 00b8 00b9 00ba 00bb 00bc 00bd
+00be 00bf 00c0 00c1 00c2 00c3 00c4 00c5
+00c6 00c7 00c8 00c9 00ca 00cb 00cc 00cd
+00ce 00cf 00d0 00d1 00d2 00d3 00d4 00d5
+00d6 00d7 00d8 00d9 00da 00db 00dc 00dd
+00de 00df 00e0 00e1 00e2 00e3 00e4 00e5
+00e6 00e7 00e8 00e9 00ea 00eb 00ec 00ed
+00ee 00ef 00f0 00f1 00f2 00f3 00f4 00ff
+0101 0105 010a 010a 010c 010f 004c 010a
+004c 004c 0117 011b 011c 011f 004c 0123
+0124 0129 012a 0109 004c 00fd 012f 010a
+0134 0138 013a 010a 0050 0050 013f 010a
+0144 0148 0109 0050 0149 014d 0151 00fd
+010a 0156 0157 0159 015a 015b 010a 004c
+015e 015f 010a 004c 0162 0166 016a 016b
+016e 0172 0175 0179 017e 0181 0182 0186
+0187 010a 016a 004c 018e 004c 0193 015b
+0197 019a 019d 019e 019f 01a3 004c 01a9
+010a 004c 01ae 01af 01b1 010a 01b6 01ba
+01be 004c 01c0 01c4 01cd 0109 01ce 0109
+0109 01cf 0109 010a 01d1 0050 01d5 004c
+004c 010a 01d9 010a 004c 01e0 01e1 01e5
+01d5 010a 01eb 01ef 01f2 01f5 004c 01fa
+01fe 0202 004c 0207 020b 0109 010a 020d
+0210 0211 0213 0217 010a 021b 021f 0223
+0227 022b 022f 0233 0237 010a 004c 023d
+010a 0242 0245 0246 024b 010a 010a 0251
+0254 0258 010a 025a 025e 004c 004c 5f10
+1541 6e73 6920 3132 2043 6f6c 6f72 2028
+4c69 6768 7429 5f10 1441 6e73 6920 3135
+2043 6f6c 6f72 2028 4461 726b 295f 1017
+466f 7265 6772 6f75 6e64 2043 6f6c 6f72
+2028 4461 726b 295f 1011 4375 7273 6f72
+2054 6578 7420 436f 6c6f 725f 1012 536d
+6172 7420 4375 7273 6f72 2043 6f6c 6f72
+5f10 1750 726f 6d70 7420 4265 666f 7265
+2043 6c6f 7369 6e67 2032 5f10 1341 6e73
+6920 3320 436f 6c6f 7220 2844 6172 6b29
+5f10 1441 6e73 6920 3132 2043 6f6c 6f72
+2028 4461 726b 295f 100f 4d6f 7573 6520
+5265 706f 7274 696e 675f 101b 5573 6520
+556e 6465 726c 696e 6520 436f 6c6f 7220
+284c 6967 6874 295f 1017 4469 7361 626c
+6520 5769 6e64 6f77 2052 6573 697a 696e
+6758 424d 2047 726f 776c 5f10 1742 6163
+6b67 726f 756e 6420 436f 6c6f 7220 2844
+6172 6b29 5447 7569 645f 1013 4375 7273
+6f72 2043 6f6c 6f72 2028 4461 726b 295f
+1016 5365 6c65 6374 696f 6e20 436f 6c6f
+7220 2844 6172 6b29 5f10 2b4f 6e6c 7920
+5468 6520 4465 6661 756c 7420 4247 2043
+6f6c 6f72 2055 7365 7320 5472 616e 7370
+6172 656e 6379 5f10 1053 6372 6f6c 6c62
+6163 6b20 4c69 6e65 735f 1012 4261 6467
+6520 436f 6c6f 7220 2844 6172 6b29 5f10
+1046 6169 6e74 2054 6578 7420 416c 7068
+615f 1013 416e 7369 2030 2043 6f6c 6f72
+2028 4461 726b 295c 5472 616e 7370 6172
+656e 6379 5f10 0f55 7365 2042 7269 6768
+7420 426f 6c64 5f10 1248 6f72 697a 6f6e
+7461 6c20 5370 6163 696e 675f 1015 416e
+7369 2031 3320 436f 6c6f 7220 284c 6967
+6874 2954 426c 7572 5d41 6e73 6920 3133
+2043 6f6c 6f72 5f10 1341 6e73 6920 3220
+436f 6c6f 7220 2844 6172 6b29 5c43 7572
+736f 7220 436f 6c6f 725f 1018 5573 6520
+4375 7273 6f72 2047 7569 6465 2028 4c69
+6768 7429 5f10 104f 7074 696f 6e20 4b65
+7920 5365 6e64 7359 4964 6c65 2043 6f64
+655f 1014 416e 7369 2031 3320 436f 6c6f
+7220 2844 6172 6b29 5f10 1353 656e 6420
+436f 6465 2057 6865 6e20 4964 6c65 5f10
+0f53 656c 6563 7469 6f6e 2043 6f6c 6f72
+5d54 6572 6d69 6e61 6c20 5479 7065 5f10
+1343 7572 736f 7220 426f 6f73 7420 2844
+6172 6b29 5f10 1652 6967 6874 204f 7074
+696f 6e20 4b65 7920 5365 6e64 735f 1010
+4261 636b 6772 6f75 6e64 2043 6f6c 6f72
+5f10 1441 6e73 6920 3130 2043 6f6c 6f72
+2028 4461 726b 295d 416e 7369 2031 3020
+436f 6c6f 725f 1010 5665 7274 6963 616c
+2053 7061 6369 6e67 5f10 1555 7365 2054
+6162 2043 6f6c 6f72 2028 4c69 6768 7429
+5743 6f6c 756d 6e73 5f10 1441 6e73 6920
+3220 436f 6c6f 7220 284c 6967 6874 2956
+5363 7265 656e 5f10 1843 7572 736f 7220
+5465 7874 2043 6f6c 6f72 2028 4461 726b
+295b 4465 7363 7269 7074 696f 6e5f 1014
+556e 6c69 6d69 7465 6420 5363 726f 6c6c
+6261 636b 5f10 0f55 7365 2049 7461 6c69
+6320 466f 6e74 5f10 1157 6f72 6b69 6e67
+2044 6972 6563 746f 7279 5f10 1a53 656c
+6563 7465 6420 5465 7874 2043 6f6c 6f72
+2028 4461 726b 295f 1017 5573 6520 4375
+7273 6f72 2047 7569 6465 2028 4461 726b
+295b 5669 7375 616c 2042 656c 6c5f 1012
+4c69 6e6b 2043 6f6c 6f72 2028 4c69 6768
+7429 5f10 1341 6e73 6920 3120 436f 6c6f
+7220 2844 6172 6b29 5f10 1044 6566 6175
+6c74 2042 6f6f 6b6d 6172 6b5f 1015 416e
+7369 2031 3420 436f 6c6f 7220 284c 6967
+6874 295f 1014 416e 7369 2037 2043 6f6c
+6f72 2028 4c69 6768 7429 5f10 1441 6e73
+6920 3320 436f 6c6f 7220 284c 6967 6874
+295f 1013 416e 7369 2039 2043 6f6c 6f72
+2028 4461 726b 295f 1013 4261 6467 6520
+436f 6c6f 7220 284c 6967 6874 295f 1014
+416e 7369 2031 3420 436f 6c6f 7220 2844
+6172 6b29 5454 6167 735f 1011 4c69 6e6b
+2043 6f6c 6f72 2028 4461 726b 295e 4375
+7374 6f6d 2043 6f6d 6d61 6e64 5e4a 6f62
+7320 746f 2049 676e 6f72 655f 1012 5573
+6520 4e6f 6e2d 4153 4349 4920 466f 6e74
+5f10 1043 7573 746f 6d20 4469 7265 6374
+6f72 795f 101f 5573 6520 5365 6c65 6374
+6564 2054 6578 7420 436f 6c6f 7220 284c
+6967 6874 295f 1012 426f 6c64 2043 6f6c
+6f72 2028 4c69 6768 7429 5f10 1942 7269
+6768 7465 6e20 426f 6c64 2054 6578 7420
+2844 6172 6b29 5f10 1441 6e73 6920 3820
+436f 6c6f 7220 284c 6967 6874 2954 4e61
+6d65 5f10 1441 6e73 6920 3131 2043 6f6c
+6f72 2028 4461 726b 295d 416e 7369 2031
+3420 436f 6c6f 725f 1017 4661 696e 7420
+5465 7874 2041 6c70 6861 2028 4461 726b
+2954 526f 7773 5f10 1842 6163 6b67 726f
+756e 6420 436f 6c6f 7220 284c 6967 6874
+295f 101a 4375 7273 6f72 2047 7569 6465
+2043 6f6c 6f72 2028 4c69 6768 7429 5f10
+1755 7365 2053 656c 6563 7465 6420 5465
+7874 2043 6f6c 6f72 5f10 1341 6e73 6920
+3620 436f 6c6f 7220 2844 6172 6b29 5d55
+7365 2054 6162 2043 6f6c 6f72 5f10 1755
+7365 2042 7269 6768 7420 426f 6c64 2028
+4c69 6768 7429 5f10 1443 7572 736f 7220
+436f 6c6f 7220 284c 6967 6874 295f 1015
+416e 7369 2031 3520 436f 6c6f 7220 284c
+6967 6874 295d 416e 7369 2031 3120 436f
+6c6f 725a 5379 6e63 2054 6974 6c65 5f10
+1341 6e73 6920 3820 436f 6c6f 7220 2844
+6172 6b29 5f10 1541 6e73 6920 3130 2043
+6f6c 6f72 2028 4c69 6768 7429 5b4e 6f72
+6d61 6c20 466f 6e74 5f10 1e55 7365 2053
+656c 6563 7465 6420 5465 7874 2043 6f6c
+6f72 2028 4461 726b 295f 1010 466f 7265
+6772 6f75 6e64 2043 6f6c 6f72 5f10 1e4d
+6174 6368 2042 6163 6b67 726f 756e 6420
+436f 6c6f 7220 284c 6967 6874 2957 436f
+6d6d 616e 645f 1018 4d69 6e69 6d75 6d20
+436f 6e74 7261 7374 2028 4c69 6768 7429
+5f10 1243 6861 7261 6374 6572 2045 6e63
+6f64 696e 675f 1010 4d69 6e69 6d75 6d20
+436f 6e74 7261 7374 5f10 1443 7572 736f
+7220 426f 6f73 7420 284c 6967 6874 295f
+1019 4375 7273 6f72 2054 6578 7420 436f
+6c6f 7220 284c 6967 6874 295c 4375 7273
+6f72 2042 6f6f 7374 5f10 1355 7365 2055
+6e64 6572 6c69 6e65 2043 6f6c 6f72 5f10
+1341 6e73 6920 3520 436f 6c6f 7220 2844
+6172 6b29 5b57 696e 646f 7720 5479 7065
+5f10 1942 6163 6b67 726f 756e 6420 496d
+6167 6520 4c6f 6361 7469 6f6e 5f10 1242
+7269 6768 7465 6e20 426f 6c64 2054 6578
+745f 1012 4153 4349 4920 416e 7469 2041
+6c69 6173 6564 5f10 1455 7365 2054 6162
+2043 6f6c 6f72 2028 4461 726b 295f 1019
+4375 7273 6f72 2047 7569 6465 2043 6f6c
+6f72 2028 4461 726b 295d 466c 6173 6869
+6e67 2042 656c 6c5f 101a 4272 6967 6874
+656e 2042 6f6c 6420 5465 7874 2028 4c69
+6768 7429 5e4e 6f6e 2041 7363 6969 2046
+6f6e 745f 1013 416e 7369 2037 2043 6f6c
+6f72 2028 4461 726b 295b 4261 6467 6520
+436f 6c6f 7258 5368 6f72 7463 7574 5f10
+1953 6d61 7274 2043 7572 736f 7220 436f
+6c6f 7220 2844 6172 6b29 5f10 1d4d 6174
+6368 2042 6163 6b67 726f 756e 6420 436f
+6c6f 7220 2844 6172 6b29 5d41 6e73 6920
+3135 2043 6f6c 6f72 5f10 1541 6e73 6920
+3131 2043 6f6c 6f72 2028 4c69 6768 7429
+5c41 6e73 6920 3920 436f 6c6f 725d 5573
+6520 426f 6c64 2046 6f6e 745f 1014 416e
+7369 2034 2043 6f6c 6f72 2028 4c69 6768
+7429 5c41 6e73 6920 3820 436f 6c6f 725f
+1014 416e 7369 2030 2043 6f6c 6f72 2028
+4c69 6768 7429 5f10 1655 7365 2042 7269
+6768 7420 426f 6c64 2028 4461 726b 295a
+426f 6c64 2043 6f6c 6f72 5f10 1b53 656c
+6563 7465 6420 5465 7874 2043 6f6c 6f72
+2028 4c69 6768 7429 5f10 174d 696e 696d
+756d 2043 6f6e 7472 6173 7420 2844 6172
+6b29 5f10 1a53 6d61 7274 2043 7572 736f
+7220 436f 6c6f 7220 284c 6967 6874 295c
+416e 7369 2037 2043 6f6c 6f72 5c4b 6579
+626f 6172 6420 4d61 705f 1011 426f 6c64
+2043 6f6c 6f72 2028 4461 726b 295a 4c69
+6e6b 2043 6f6c 6f72 5c41 6e73 6920 3620
+436f 6c6f 725c 5369 6c65 6e63 6520 4265
+6c6c 5f10 1341 6e73 6920 3420 436f 6c6f
+7220 2844 6172 6b29 5f10 1441 6e73 6920
+3920 436f 6c6f 7220 284c 6967 6874 295d
+416e 7369 2031 3220 436f 6c6f 725f 1014
+416e 7369 2031 2043 6f6c 6f72 2028 4c69
+6768 7429 5f10 1441 6e73 6920 3520 436f
+6c6f 7220 284c 6967 6874 295c 416e 7369
+2035 2043 6f6c 6f72 5f10 1846 6f72 6567
+726f 756e 6420 436f 6c6f 7220 284c 6967
+6874 295c 416e 7369 2034 2043 6f6c 6f72
+5f10 2b55 7365 2053 6570 6172 6174 6520
+436f 6c6f 7273 2066 6f72 204c 6967 6874
+2061 6e64 2044 6172 6b20 4d6f 6465 5f10
+1544 7261 7720 506f 7765 726c 696e 6520
+476c 7970 6873 5c41 6e73 6920 3320 436f
+6c6f 725f 100f 426c 696e 6b69 6e67 2043
+7572 736f 725f 1014 416e 7369 2036 2043
+6f6c 6f72 2028 4c69 6768 7429 5f10 164d
+6174 6368 2042 6163 6b67 726f 756e 6420
+436f 6c6f 725f 1012 4375 7273 6f72 2047
+7569 6465 2043 6f6c 6f72 5c41 6e73 6920
+3220 436f 6c6f 725f 1010 5573 6520 4375
+7273 6f72 2047 7569 6465 5f10 1a55 7365
+2055 6e64 6572 6c69 6e65 2043 6f6c 6f72
+2028 4461 726b 295f 1017 5365 6c65 6374
+696f 6e20 436f 6c6f 7220 284c 6967 6874
+295c 416e 7369 2031 2043 6f6c 6f72 5f10
+1846 6169 6e74 2054 6578 7420 416c 7068
+6120 284c 6967 6874 295f 1016 416d 6269
+6775 6f75 7320 446f 7562 6c65 2057 6964
+7468 5f10 1353 656c 6563 7465 6420 5465
+7874 2043 6f6c 6f72 5c41 6e73 6920 3020
+436f 6c6f 725f 1015 436c 6f73 6520 5365
+7373 696f 6e73 204f 6e20 456e 645f 1016
+4e6f 6e2d 4153 4349 4920 416e 7469 2041
+6c69 6173 6564 d500 f500 f600 f700 f800
+f900 fa00 fb00 fc00 fd00 fe5d 5265 6420
+436f 6d70 6f6e 656e 745b 436f 6c6f 7220
+5370 6163 655e 426c 7565 2043 6f6d 706f
+6e65 6e74 5f10 0f41 6c70 6861 2043 6f6d
+706f 6e65 6e74 5f10 0f47 7265 656e 2043
+6f6d 706f 6e65 6e74 233f e4e9 6580 0000
+0054 7352 4742 233f ee5a 6000 0000 0023
+3ff0 0000 0000 0000 233f e574 4da0 0000
+00d5 00f5 00f6 00f7 00f8 00f9 0100 00fb
+00fd 00fd 00fd 233f efff f7a0 0000 00d5
+00f5 00f6 00f7 00f8 00f9 0102 00fb 0103
+00fd 0104 233f eb95 5540 0000 0023 3feb
+9569 0000 0000 233f eb95 8000 0000 00d3
+0106 0107 0108 0109 0109 0109 5f10 0f47
+7265 656e 2043 6f6d 706f 6e65 6e74 5d52
+6564 2043 6f6d 706f 6e65 6e74 5e42 6c75
+6520 436f 6d70 6f6e 656e 7423 0000 0000
+0000 0000 0808 d500 f500 f600 f700 f800
+f901 0d00 fb01 0900 fd01 0e23 3fe8 fa90
+8000 0000 233f e8a0 8560 0000 00d5 00f5
+00f6 00f7 00f8 00f9 0110 00fb 0111 00fd
+0112 233f e4e9 6580 0000 0023 3fee 5a60
+0000 0000 233f e574 4da0 0000 0009 0809
+09d5 00f5 00f6 00f7 00f8 00f9 0118 00fb
+0119 00fd 011a 233f b4a8 0000 0000 0023
+3fbe fc00 0000 0000 233f b95f 5780 0000
+005f 1024 3842 3142 3245 3437 2d34 4643
+362d 3442 4543 2d42 3532 322d 3344 3735
+3036 3036 4235 4631 d500 f500 f600 f700
+f800 f901 1d00 fb01 1e00 fd00 fd23 3fef
+ffce 6000 0000 233f efff e540 0000 00d5
+00f5 00f6 00f7 00f8 00f9 0120 00fb 00fd
+00fd 0121 233f e676 7680 0000 0023 3fea
+fafb 0000 0000 0911 03e8 d500 f500 f600
+f700 f800 f901 2500 fb01 2601 2701 2823
+3fef 51df 0000 0000 233f e4de b51e fd18
+0023 3fe0 0000 0000 0000 233f e4de b51e
+fd18 0023 3fe0 0000 0000 0000 d500 f500
+f600 f700 f800 f901 2b00 fb01 2c00 fd01
+2d23 3fb4 1414 2000 0000 233f be1e 1e20
+0000 0023 3fb9 1919 2000 0000 09d5 00f5
+00f6 00f7 00f8 00f9 0130 00fb 0131 00fd
+0132 233f ec3a a000 0000 0023 3fec 3aa0
+0000 0000 233f df88 d560 0000 0008 d301
+0601 0701 0801 3501 3601 3723 3fd9 b495
+e000 0000 233f efa3 f6e0 0000 0023 3fe3
+71f5 0000 0000 d500 f500 f600 f700 f800
+f901 0900 fb01 0900 fd01 3923 3fe8 5858
+6000 0000 d301 0601 0701 0801 3b01 3c01
+3d23 3fed 55b6 4000 0000 233f ed54 5560
+0000 0023 3fed 53de 0000 0000 08d5 00f5
+00f6 00f7 00f8 00f9 0140 00fb 0141 00fd
+0142 233f ec3a a000 0000 0023 3fec 3aa0
+0000 0000 233f df88 d560 0000 0008 d301
+0601 0701 0801 4501 4601 4723 3fda 8945
+6000 0000 233f d39f 4040 0000 0023 3fde
+244e 2000 0000 5e78 7465 726d 2d32 3536
+636f 6c6f 72d3 0106 0107 0108 014a 014b
+014c 233f c2df a600 0000 0023 3fbc df66
+a000 0000 233f c542 44c0 0000 00d5 00f5
+00f6 00f7 00f8 00f9 014e 00fb 014f 00fd
+0150 233f d614 9860 0000 0023 3fe2 17ea
+6000 0000 233f ecef e000 0000 00d3 0106
+0107 0108 0152 0153 0154 233f eef2 aba0
+0000 0023 3fe5 b23b a000 0000 233f e7e4
+1280 0000 0008 1050 d500 f500 f600 f700
+f800 f901 0900 fb01 0900 fd01 5823 3fe8
+5858 6000 0000 13ff ffff ffff ffff ffd5
+00f5 00f6 00f7 00f8 00f9 0109 00fb 0109
+00fd 0109 5744 6566 6175 6c74 0809 5d2f
+5573 6572 732f 696b 6f72 656e d500 f500
+f600 f700 f800 f901 0900 fb01 0900 fd01
+0908 09d5 00f5 00f6 00f7 00f8 00f9 0163
+00fb 0164 00fd 0165 233f c958 dba0 0000
+0023 3fed e100 0000 0000 233f e1da 4da0
+0000 00d5 00f5 00f6 00f7 00f8 00f9 0167
+00fb 0168 00fd 0169 233f e6a3 6000 0000
+0023 3fc4 dd32 4000 0000 233f ce48 ee80
+0000 0052 4e6f d500 f500 f600 f700 f800
+f901 6c00 fb00 fd00 fd01 6d23 3fd8 0ffa
+c000 0000 233f efc3 a620 0000 00d5 00f5
+00f6 00f7 00f8 00f9 016f 00fb 0170 00fd
+0171 233f e8fe 4720 0000 0023 3fe8 fe59
+0000 0000 233f e8fe 6de0 0000 00d5 00f5
+00f6 00f7 00f8 00f9 0173 00fb 0109 00fd
+0174 233f e8fa 9080 0000 0023 3fe8 a085
+6000 0000 d500 f500 f600 f700 f800 f901
+7600 fb01 7700 fd01 7823 3feb b5e0 0000
+0000 233f dd55 50c0 0000 0023 3fde 6a58
+4000 0000 d500 f500 f600 f700 f800 f901
+7a00 fb01 7b01 7c01 7d23 3fe7 e05e 0000
+0000 233f bdb9 24fc b780 0023 3fe0 0000
+0000 0000 233f bdb9 24fc b780 00d5 00f5
+00f6 00f7 00f8 00f9 017f 00fb 00fd 00fd
+0180 233f d80f fac0 0000 0023 3fef c3a6
+2000 0000 a0d5 00f5 00f6 00f7 00f8 00f9
+0183 00fb 0184 00fd 0185 233f c958 dba0
+0000 0023 3fed e100 0000 0000 233f e1da
+4da0 0000 005c 4375 7374 6f6d 2053 6865
+6c6c a401 8801 8901 8a01 8b56 726c 6f67
+696e 5373 7368 5673 6c6f 6769 6e56 7465
+6c6e 6574 0809 d500 f500 f600 f700 f800
+f901 8f00 fb01 9000 fd01 9123 3fb0 1010
+1010 1010 233f b010 1010 1010 1023 3fb0
+1010 1010 1010 09d5 00f5 00f6 00f7 00f8
+00f9 0194 00fb 0195 00fd 0196 233f da19
+af00 0000 0023 3fda 19c3 0000 0000 233f
+da19 da20 0000 00d5 00f5 00f6 00f7 00f8
+00f9 0198 00fb 0109 00fd 0199 233f eda1
+0000 0000 0023 3fec 44a1 0000 0000 d301
+0601 0701 0800 fd01 9b01 9c23 3fe3 4b2f
+6000 0000 233f ecdb c0e0 0000 0023 3fe0
+0000 0000 0000 1019 d500 f500 f600 f700
+f800 f901 a000 fb01 a100 fd01 a223 3fef
+5c28 f5c2 8f5c 233f ef5c 28f5 c28f 5c23
+3fef 5c28 f5c2 8f5c d500 f500 f600 f700
+f800 f901 a400 fb01 a501 a601 a723 3fe0
+bf8c ebfa f800 233f eb4d 5b00 0000 0023
+3fd0 0000 0000 0000 233f e8b5 acee 3ac6
+3309 d500 f500 f600 f700 f800 f901 0900
+fb01 aa00 fd01 ab23 3fe9 0360 2000 0000
+233f e8c6 bae0 0000 0008 09d5 00f5 00f6
+00f7 00f8 00f9 0109 00fb 0109 00fd 0109
+d500 f500 f600 f700 f800 f901 b000 fb00
+fd00 fd00 fd23 3fef fff7 a000 0000 d301
+0601 0701 0801 b201 b301 b423 3fec 3e72
+4000 0000 233f efec d360 0000 0023 3fdb
+351b 6000 0000 08d5 00f5 00f6 00f7 00f8
+00f9 01b7 00fb 01b8 00fd 01b9 233f da19
+af00 0000 0023 3fda 19c3 0000 0000 233f
+da19 da20 0000 00d5 00f5 00f6 00f7 00f8
+00f9 01bb 00fb 01bc 00fd 01bd 233f d614
+9860 0000 0023 3fe2 17ea 6000 0000 233f
+ecef e000 0000 005f 1016 4d65 736c 6f4c
+4753 2d4e 462d 5265 6775 6c61 7220 3136
+09d3 0106 0107 0108 01c1 01c2 01c3 233f
+ed7c 5940 0000 0023 3fed 08ae 8000 0000
+233f edcc 0e00 0000 00d5 01c5 00f6 01c6
+01c7 01c8 01c9 01ca 01cb 00fd 01cc 5d52
+6564 2043 6f6d 706f 6e65 6e74 5e42 6c75
+6520 436f 6d70 6f6e 656e 745f 100f 416c
+7068 6120 436f 6d70 6f6e 656e 745f 100f
+4772 6565 6e20 436f 6d70 6f6e 656e 7423
+3fef e730 a000 0000 5250 3323 3fd4 8de8
+0000 0000 233f ef8d 6260 0000 0058 2f62
+696e 2f7a 7368 1004 d500 f500 f600 f700
+f800 f900 fd00 fb00 fd00 fd00 fd08 d500
+f500 f600 f700 f800 f901 d200 fb01 d300
+fd01 d423 3fe8 1200 0000 0000 233f e7d6
+9400 0000 0023 3fcf e99d 4000 0000 5009
+0908 d500 f500 f600 f700 f800 f901 da00
+fb01 db01 dc01 dd23 3fd8 1882 2d18 8000
+233f ee1c 9800 0000 0023 3fd0 0000 0000
+0000 233f e9ac a7f2 a1b2 bd08 0959 4d6f
+6e61 636f 2031 32d5 00f5 00f6 00f7 00f8
+00f9 01e2 00fb 01e3 00fd 01e4 233f e8fe
+4720 0000 0023 3fe8 fe59 0000 0000 233f
+e8fe 6de0 0000 00d5 01c5 00f6 01c6 01c7
+01c8 01e6 01ca 01e7 01e8 01e9 233f edbc
+c6e0 0000 0023 3fc1 de97 0000 0000 233f
+e000 0000 0000 0023 3fd0 4e7c 6000 0000
+08d5 01c5 00f6 01c6 01c7 01c8 01ec 01ca
+01ed 00fd 01ee 233f efe7 30a0 0000 0023
+3fd4 8de8 0000 0000 233f ef8d 6260 0000
+00d3 0106 0107 0108 01f0 00fd 01f1 233f
+efff ca40 0000 0023 3fef ffed c000 0000
+d500 f500 f600 f700 f800 f901 f300 fb01
+0900 fd01 f423 3fed a100 0000 0000 233f
+ec44 a100 0000 00d3 0106 0107 0108 01f6
+01f7 01f8 233f dcff a8c0 0000 0023 3fef
+aaa7 c000 0000 233f db67 5e40 0000 0009
+d500 f500 f600 f700 f800 f901 fb00 fb01
+fc00 fd01 fd23 3fc3 b7ae 6000 0000 233f
+e907 7820 0000 0023 3fd0 f18f 0000 0000
+d301 0601 0701 0801 ff02 0002 0123 3fe6
+223b 0000 0000 233f e42e 0980 0000 0023
+3fe7 248b 0000 0000 d500 f500 f600 f700
+f800 f902 0300 fb02 0400 fd02 0523 3fb4
+1414 2000 0000 233f be1e 1e20 0000 0023
+3fb9 1919 2000 0000 09d3 0106 0107 0108
+0208 0209 020a 233f ed55 b640 0000 0023
+3fed 5455 6000 0000 233f ed53 de00 0000
+00d5 00f5 00f6 00f7 00f8 00f9 0109 00fb
+0109 00fd 0109 08d3 0106 0107 0108 020e
+00fd 020f 233f efff ca40 0000 0023 3fef
+ffed c000 0000 d0d5 00f5 00f6 00f7 00f8
+00f9 0212 00fb 00fd 00fd 00fd 233f efff
+f7a0 0000 00d5 01c5 00f6 01c6 01c7 01c8
+0214 01ca 0215 00fd 0216 233f c293 f040
+0000 0023 3fe6 b2c8 2000 0000 233f d69c
+f740 0000 00d3 0106 0107 0108 00fd 0218
+0219 233f d64f 76c0 0000 0023 3fea 4297
+2000 0000 08d5 00f5 00f6 00f7 00f8 00f9
+021c 00fb 021d 00fd 021e 233f c3b7 ae60
+0000 0023 3fe9 0778 2000 0000 233f d0f1
+8f00 0000 00d5 00f5 00f6 00f7 00f8 00f9
+0220 00fb 0221 00fd 0222 233f ebb5 e000
+0000 0023 3fdd 5550 c000 0000 233f de6a
+5840 0000 00d3 0106 0107 0108 0224 0225
+0226 233f e9f0 f8c0 0000 0023 3fdc 1564
+0000 0000 233f eff7 b1a0 0000 00d5 00f5
+00f6 00f7 00f8 00f9 0228 00fb 0229 00fd
+022a 233f e6a3 6000 0000 0023 3fc4 dd32
+4000 0000 233f ce48 ee80 0000 00d5 00f5
+00f6 00f7 00f8 00f9 022c 00fb 022d 00fd
+022e 233f e812 0000 0000 0023 3fe7 d694
+0000 0000 233f cfe9 9d40 0000 00d3 0106
+0107 0108 0230 0231 0232 233f c109 bec0
+0000 0023 3fef 9128 a000 0000 233f dba3
+0c60 0000 00d5 00f5 00f6 00f7 00f8 00f9
+0234 00fb 0235 00fd 0236 233f b010 1010
+1010 1023 3fb0 1010 1010 1010 233f b010
+1010 1010 10d3 0106 0107 0108 0238 0239
+023a 233f e6e1 2000 0000 0023 3fcb 87bb
+0000 0000 233f eff5 79c0 0000 0008 09d3
+0106 0107 0108 023e 023f 0240 233f ea22
+9740 0000 0023 3fef e172 c000 0000 233f
+c940 7300 0000 0008 d500 f500 f600 f700
+f800 f901 0900 fb02 4300 fd02 4423 3fe9
+0360 2000 0000 233f e8c6 bae0 0000 00d5
+01c5 00f6 01c6 01c7 01c8 00fd 01ca 0109
+00fd 00fd d501 c500 f601 c601 c701 c802
+4701 ca02 4802 4902 4a23 3fe7 f4be 6000
+0000 233f efb8 6120 0000 0023 3fd0 0000
+0000 0000 233f ed74 8e00 0000 00d3 0106
+0107 0108 024c 024d 024e 233f ee34 5620
+0000 0023 3fd7 2b78 4000 0000 233f e3da
+7f20 0000 0008 08d5 00f5 00f6 00f7 00f8
+00f9 0252 00fb 00fd 00fd 0253 233f e676
+7680 0000 0023 3fea fafb 0000 0000 d301
+0601 0701 0802 5502 5602 5723 3fcc 4934
+a000 0000 233f ef96 a7a0 0000 0023 3fd0
+5e45 6000 0000 233f e000 0000 0000 0008
+d301 0601 0701 0802 5b02 5c02 5d23 3fed
+7c59 4000 0000 233f ed08 ae80 0000 0023
+3fed cc0e 0000 0000 d301 0601 0701 0802
+5f02 6002 6123 3fd6 cb54 2000 0000 233f
+d0d2 cb60 0000 0023 3fd9 c319 c000 0000
+0909 df10 9c00 f202 6500 5400 5300 5602
+6600 5800 5902 6700 5a02 6802 6900 5b00
+5d00 5e00 5f00 6000 6102 6a00 6202 6b00
+6400 6502 6c00 6700 6800 6900 6a00 6b00
+6c00 6d00 6e00 6f00 7100 7200 7302 6d00
+7400 7500 7600 7800 7900 7a00 7b00 7c00
+7e00 7f00 8000 8100 8200 8300 8400 8500
+8600 8800 8900 8a00 8b00 8c00 8d00 8e00
+8f00 9000 9100 9200 9300 9400 9500 9600
+9700 9b00 9900 9c02 6e00 9d02 6f00 9e02
+7000 a000 a100 a202 7100 a402 7200 a700
+a802 7300 a900 aa00 ab00 ac00 ad02 7400
+af02 7500 b102 7600 b302 7700 b602 7802
+7900 b900 ba02 7a02 7b00 bb00 bd00 bf00
+c000 c200 c300 c402 7c00 c500 c800 c900
+ca00 cb00 cc00 cd00 ce00 d000 d100 d400
+d500 d600 d700 d802 7d00 d900 da00 db00
+dc00 dd00 de00 df00 e000 e100 e202 7e00
+e400 e500 e602 7f02 8000 e800 e902 8100
+ec00 ed00 ef00 f000 f100 f300 5500 4c00
+5002 8302 8502 8c01 0a01 0a02 9200 4c02
+9600 5000 4c00 4c00 4c00 4c02 9e02 a202
+a300 4c02 a701 d501 2302 aa02 af02 b002
+b400 4c00 fd02 b600 4c02 bb02 bf02 c100
+5000 5002 c501 0a01 0a02 cb01 4800 5002
+cf02 d302 d700 fd01 5602 db02 df02 e001
+5b01 0a00 4c01 5e02 e300 4c02 e502 ed01
+6a02 f102 f402 f702 fb02 ff03 0403 0703
+0801 8603 0c01 0a01 6a03 0e03 1203 1601
+5903 1703 1a03 1b03 1e01 9e03 1f03 2300
+4c03 2901 0a03 2d03 3101 d503 3401 0a03
+3903 3d03 4100 4c03 4303 4701 cd03 4801
+ce01 0903 4901 0901 0a03 4b03 4f00 4c00
+4c01 d500 4c03 5301 0a01 e003 5903 5d00
+5001 d503 6603 6903 6d00 4c03 7203 7603
+7a03 7e03 8203 8603 8903 9303 9503 9900
+4c01 0a03 9e03 a203 a603 aa03 ae03 b203
+b603 ba01 0a00 4c03 c001 0a03 c503 c800
+5003 c903 ce01 0a03 d303 d701 0a03 dc03
+e000 4c03 e55f 1015 486f 744b 6579 204d
+6f64 6966 6965 7220 466c 6167 735f 1012
+536d 6172 7420 4375 7273 6f72 2043 6f6c
+6f72 5f10 1448 6f74 4b65 7920 5769 6e64
+6f77 2046 6c6f 6174 735f 101a 486f 744b
+6579 204d 6f64 6966 6965 7220 4163 7469
+7661 7469 6f6e 5f10 1849 6e69 7469 616c
+2055 7365 2054 7261 6e73 7061 7265 6e63
+795f 1017 486f 744b 6579 2057 696e 646f
+7720 4175 746f 4869 6465 735f 1011 486f
+744b 6579 2043 6861 7261 6374 6572 735f
+1010 4661 696e 7420 5465 7874 2041 6c70
+6861 5f10 2348 6f74 4b65 7920 5769 6e64
+6f77 2052 656f 7065 6e73 204f 6e20 4163
+7469 7661 7469 6f6e 5553 7061 6365 5f10
+1a48 6f74 4b65 7920 416c 7465 726e 6174
+6520 5368 6f72 7463 7574 735b 426c 7572
+2052 6164 6975 735f 1017 5573 6520 5365
+6c65 6374 6564 2054 6578 7420 436f 6c6f
+725d 5573 6520 5461 6220 436f 6c6f 725f
+1024 486f 744b 6579 2043 6861 7261 6374
+6572 7320 4967 6e6f 7269 6e67 204d 6f64
+6966 6965 7273 5a48 6173 2048 6f74 6b65
+795f 101e 4d61 7463 6820 4261 636b 6772
+6f75 6e64 2043 6f6c 6f72 2028 4c69 6768
+7429 5542 6c65 6e64 5f10 104d 696e 696d
+756d 2043 6f6e 7472 6173 745c 4375 7273
+6f72 2042 6f6f 7374 5f10 1355 7365 2055
+6e64 6572 6c69 6e65 2043 6f6c 6f72 5f10
+1648 6f74 4b65 7920 5769 6e64 6f77 2041
+6e69 6d61 7465 735f 1012 4272 6967 6874
+656e 2042 6f6c 6420 5465 7874 5f10 0f48
+6f74 4b65 7920 4b65 7920 436f 6465 5f10
+1c48 6f74 4b65 7920 4163 7469 7661 7465
+6420 4279 204d 6f64 6966 6965 725f 1015
+4472 6177 2050 6f77 6572 6c69 6e65 2047
+6c79 7068 735f 1016 4d61 7463 6820 4261
+636b 6772 6f75 6e64 2043 6f6c 6f72 5f10
+1f48 6f74 4b65 7920 5769 6e64 6f77 2044
+6f63 6b20 436c 6963 6b20 4163 7469 6f6e
+5f10 1055 7365 2043 7572 736f 7220 4775
+6964 6509 d500 f500 f600 f700 f800 f902
+8400 fb00 fd00 fd00 fd23 3fef fff7 a000
+0000 d302 8602 8702 8802 8902 8a02 8b5f
+100f 4772 6565 6e20 436f 6d70 6f6e 656e
+745e 426c 7565 2043 6f6d 706f 6e65 6e74
+5d52 6564 2043 6f6d 706f 6e65 6e74 233f
+e9f0 f8c0 0000 0023 3fef f7b1 a000 0000
+233f dc15 6400 0000 00d3 028d 028e 028f
+0109 0109 0109 5f10 0f47 7265 656e 2043
+6f6d 706f 6e65 6e74 5e42 6c75 6520 436f
+6d70 6f6e 656e 745d 5265 6420 436f 6d70
+6f6e 656e 7408 08d5 00f5 00f6 00f7 00f8
+00f9 0293 00fb 0109 00fd 0294 233f e8fa
+9080 0000 0023 3fe8 a085 6000 0000 09d5
+00f5 00f6 00f7 00f8 00f9 0297 00fb 0298
+00fd 0299 233f e4e9 6580 0000 0023 3fee
+5a60 0000 0000 233f e574 4da0 0000 0009
+0909 09d5 00f5 00f6 00f7 00f8 00f9 029f
+00fb 02a0 00fd 02a1 233f b4a8 0000 0000
+0023 3fbe fc00 0000 0000 233f b95f 5780
+0000 005f 1024 4632 3243 4637 4438 2d34
+4538 362d 3430 4545 2d42 3337 432d 3742
+4137 4541 4538 3835 3043 d500 f500 f600
+f700 f800 f902 a400 fb02 a500 fd00 fd23
+3fef ffce 6000 0000 233f efff e540 0000
+0009 d500 f500 f600 f700 f800 f902 a800
+fb00 fd00 fd02 a923 3fe6 7676 8000 0000
+233f eafa fb00 0000 00d5 00f5 00f6 00f7
+00f8 00f9 02ab 00fb 02ac 02ad 02ae 233f
+ef51 df00 0000 0023 3fe4 deb5 1efd 1800
+233f e000 0000 0000 0023 3fe4 deb5 1efd
+1800 233f e000 0000 0000 00d5 00f5 00f6
+00f7 00f8 00f9 02b1 00fb 02b2 00fd 02b3
+233f b414 1420 0000 0023 3fbe 1e1e 2000
+0000 233f b919 1920 0000 0023 3faf 968c
+bedb 2df7 09d3 0286 0287 0288 02b7 02b8
+02b9 233f d9b4 95e0 0000 0023 3fe3 71f5
+0000 0000 233f efa3 f6e0 0000 0009 d302
+8d02 8e02 8f02 bc02 bd02 be23 3fd9 b495
+e000 0000 233f e371 f500 0000 0023 3fef
+a3f6 e000 0000 d500 f500 f600 f700 f800
+f901 0900 fb01 0900 fd02 c023 3fe8 5858
+6000 0000 d302 8d02 8e02 8f02 c202 c302
+c423 3fed 55b6 4000 0000 233f ed53 de00
+0000 0023 3fed 5455 6000 0000 d500 f500
+f600 f700 f800 f902 c600 fb02 c700 fd02
+c823 3fec 3aa0 0000 0000 233f ec3a a000
+0000 0023 3fdf 88d5 6000 0000 0808 d302
+8d02 8e02 8f02 cc02 cd02 ce23 3fda 8945
+6000 0000 233f de24 4e20 0000 0023 3fd3
+9f40 4000 0000 d302 8d02 8e02 8f02 d002
+d102 d223 3fc2 dfa6 0000 0000 233f c542
+44c0 0000 0023 3fbc df66 a000 0000 d500
+f500 f600 f700 f800 f902 d400 fb02 d500
+fd02 d623 3fd6 1498 6000 0000 233f e217
+ea60 0000 0023 3fec efe0 0000 0000 d302
+8d02 8e02 8f02 d802 d902 da23 3fee f2ab
+a000 0000 233f e7e4 1280 0000 0023 3fe5
+b23b a000 0000 d302 8602 8702 8802 dc02
+dd02 de23 3fee 3456 2000 0000 233f e3da
+7f20 0000 0023 3fd7 2b78 4000 0000 13ff
+ffff ffff ffff fed5 00f5 00f6 00f7 00f8
+00f9 0109 00fb 0109 00fd 0109 0809 d500
+f500 f600 f700 f800 f901 0900 fb01 0900
+fd01 0909 d502 e600 f602 e702 e802 e902
+ea01 ca02 eb00 fd02 ec5d 5265 6420 436f
+6d70 6f6e 656e 745e 426c 7565 2043 6f6d
+706f 6e65 6e74 5f10 0f41 6c70 6861 2043
+6f6d 706f 6e65 6e74 5f10 0f47 7265 656e
+2043 6f6d 706f 6e65 6e74 233f c293 f040
+0000 0023 3fe6 b2c8 2000 0000 233f d69c
+f740 0000 00d5 00f5 00f6 00f7 00f8 00f9
+02ee 00fb 02ef 00fd 02f0 233f e6a3 6000
+0000 0023 3fc4 dd32 4000 0000 233f ce48
+ee80 0000 00d3 0286 0287 0288 00fd 02f2
+02f3 233f ecdb c0e0 0000 0023 3fe3 4b2f
+6000 0000 d302 8602 8702 8802 f502 f600
+fd23 3fef ffca 4000 0000 233f efff edc0
+0000 00d3 0286 0287 0288 02f8 02f9 02fa
+233f ea22 9740 0000 0023 3fc9 4073 0000
+0000 233f efe1 72c0 0000 00d5 00f5 00f6
+00f7 00f8 00f9 02fc 00fb 02fd 00fd 02fe
+233f ebb5 e000 0000 0023 3fdd 5550 c000
+0000 233f de6a 5840 0000 00d5 02e6 00f6
+02e7 02e8 02e9 0300 01ca 0301 0302 0303
+233f edbc c6e0 0000 0023 3fc1 de97 0000
+0000 233f e000 0000 0000 0023 3fd0 4e7c
+6000 0000 d500 f500 f600 f700 f800 f903
+0500 fb00 fd00 fd03 0623 3fd8 0ffa c000
+0000 233f efc3 a620 0000 00a0 d500 f500
+f600 f700 f800 f903 0900 fb03 0a00 fd03
+0b23 3fc9 58db a000 0000 233f ede1 0000
+0000 0023 3fe1 da4d a000 0000 a401 8801
+8901 8a01 8b08 d302 8602 8702 8803 0f03
+1003 1123 3fe6 223b 0000 0000 233f e724
+8b00 0000 0023 3fe4 2e09 8000 0000 d302
+8602 8702 8803 1303 1403 1523 3fed 55b6
+4000 0000 233f ed53 de00 0000 0023 3fed
+5455 6000 0000 5d48 6f74 6b65 7920 5769
+6e64 6f77 d500 f500 f600 f700 f800 f903
+1800 fb01 0900 fd03 1923 3fed a100 0000
+0000 233f ec44 a100 0000 00a0 d302 8d02
+8e02 8f00 fd03 1c03 1d23 3fec dbc0 e000
+0000 233f e34b 2f60 0000 0023 4000 0000
+0000 0000 d302 8602 8702 8803 2003 2103
+2223 3fc2 dfa6 0000 0000 233f c542 44c0
+0000 0023 3fbc df66 a000 0000 d502 e600
+f602 e702 e802 e903 2401 ca03 2503 2603
+2723 3fe7 f4be 6000 0000 233f efb8 6120
+0000 0023 3fd0 0000 0000 0000 233f ed74
+8e00 0000 0009 d500 f500 f600 f700 f800
+f901 0900 fb03 2a00 fd03 2b23 3fe9 0360
+2000 0000 233f e8c6 bae0 0000 0008 d302
+8602 8702 8803 2e03 2f03 3023 3fed 55b6
+4000 0000 233f ed53 de00 0000 0023 3fed
+5455 6000 0000 d302 8602 8702 8803 3203
+3300 fd23 3fef ffca 4000 0000 233f efff
+edc0 0000 00d3 028d 028e 028f 0335 0336
+0337 233f ec3e 7240 0000 0023 3fdb 351b
+6000 0000 233f efec d360 0000 0008 d500
+f500 f600 f700 f800 f903 3a00 fb03 3b00
+fd03 3c23 3fda 19af 0000 0000 233f da19
+c300 0000 0023 3fda 19da 2000 0000 d302
+8602 8702 8803 3e03 3f03 4023 3fee f2ab
+a000 0000 233f e7e4 1280 0000 0023 3fe5
+b23b a000 0000 5f10 164d 6573 6c6f 4c47
+532d 4e46 2d52 6567 756c 6172 2031 3809
+d302 8d02 8e02 8f03 4403 4503 4623 3fed
+7c59 4000 0000 233f edcc 0e00 0000 0023
+3fed 08ae 8000 0000 d502 e600 f602 e702
+e802 e900 fd01 ca01 0900 fd00 fd23 3fe0
+0000 0000 0000 d302 8602 8702 8801 0901
+0901 0908 d500 f500 f600 f700 f800 f903
+4c00 fb03 4d00 fd03 4e23 3fe8 1200 0000
+0000 233f e7d6 9400 0000 0023 3fcf e99d
+4000 0000 1001 0909 09d5 00f5 00f6 00f7
+00f8 00f9 0354 00fb 0355 0356 0357 233f
+d818 822d 1880 0023 3fee 1c98 0000 0000
+233f d000 0000 0000 0023 3fe9 aca7 f2a1
+b2bd 08d5 00f5 00f6 00f7 00f8 00f9 035a
+00fb 035b 00fd 035c 233f e8fe 4720 0000
+0023 3fe8 fe59 0000 0000 233f e8fe 6de0
+0000 00d5 035e 00f6 035f 0360 0361 0362
+01ca 0363 0364 0365 5d52 6564 2043 6f6d
+706f 6e65 6e74 5e42 6c75 6520 436f 6d70
+6f6e 656e 745f 100f 416c 7068 6120 436f
+6d70 6f6e 656e 745f 100f 4772 6565 6e20
+436f 6d70 6f6e 656e 7423 3fed bcc6 e000
+0000 233f c1de 9700 0000 0023 3fe0 0000
+0000 0000 233f d04e 7c60 0000 00d3 028d
+028e 028f 0367 0368 00fd 233f efff ca40
+0000 0023 3fef ffed c000 0000 d302 8602
+8702 8803 6a03 6b03 6c23 3fec 3e72 4000
+0000 233f db35 1b60 0000 0023 3fef ecd3
+6000 0000 d302 8d02 8e02 8f03 6e03 6f03
+7023 3fdc ffa8 c000 0000 233f db67 5e40
+0000 0023 3fef aaa7 c000 0000 09d3 0286
+0287 0288 0373 0374 0375 233f e6e1 2000
+0000 0023 3fef f579 c000 0000 233f cb87
+bb00 0000 00d3 028d 028e 028f 0377 0378
+0379 233f e622 3b00 0000 0023 3fe7 248b
+0000 0000 233f e42e 0980 0000 00d3 0286
+0287 0288 037b 037c 037d 233f d6cb 5420
+0000 0023 3fd9 c319 c000 0000 233f d0d2
+cb60 0000 00d3 028d 028e 028f 037f 0380
+0381 233f ed55 b640 0000 0023 3fed 53de
+0000 0000 233f ed54 5560 0000 00d3 0286
+0287 0288 0383 0384 0385 233f ed7c 5940
+0000 0023 3fed cc0e 0000 0000 233f ed08
+ae80 0000 00d3 028d 028e 028f 0387 0388
+00fd 233f efff ca40 0000 0023 3fef ffed
+c000 0000 d103 8a03 8b5d 3078 3734 2d30
+7831 3030 3030 30d5 038c 038d 038e 038f
+0390 0391 0050 0392 02a2 0391 5756 6572
+7369 6f6e 5a41 7070 6c79 204d 6f64 6556
+4163 7469 6f6e 5454 6578 7458 4573 6361
+7069 6e67 1002 101b d500 f500 f600 f700
+f800 f903 9400 fb00 fd00 fd00 fd23 3fef
+fff7 a000 0000 d503 5e00 f603 5f03 6003
+6103 9601 ca03 9700 fd03 9823 3fc2 93f0
+4000 0000 233f e6b2 c820 0000 0023 3fd6
+9cf7 4000 0000 d302 8d02 8e02 8f00 fd03
+9a03 9b23 3fea 4297 2000 0000 233f d64f
+76c0 0000 0009 08d5 00f5 00f6 00f7 00f8
+00f9 039f 00fb 03a0 00fd 03a1 233f c3b7
+ae60 0000 0023 3fe9 0778 2000 0000 233f
+d0f1 8f00 0000 00d3 0286 0287 0288 03a3
+03a4 03a5 233f dcff a8c0 0000 0023 3fdb
+675e 4000 0000 233f efaa a7c0 0000 00d3
+028d 028e 028f 03a7 03a8 03a9 233f e9f0
+f8c0 0000 0023 3fef f7b1 a000 0000 233f
+dc15 6400 0000 00d3 0286 0287 0288 03ab
+03ac 03ad 233f cc49 34a0 0000 0023 3fd0
+5e45 6000 0000 233f ef96 a7a0 0000 00d3
+0286 0287 0288 03af 03b0 03b1 233f c109
+bec0 0000 0023 3fdb a30c 6000 0000 233f
+ef91 28a0 0000 00d3 028d 028e 028f 03b3
+03b4 03b5 233f c109 bec0 0000 0023 3fdb
+a30c 6000 0000 233f ef91 28a0 0000 00d3
+0286 0287 0288 03b7 03b8 03b9 233f ed7c
+5940 0000 0023 3fed cc0e 0000 0000 233f
+ed08 ae80 0000 00d3 028d 028e 028f 03bb
+03bc 03bd 233f e6e1 2000 0000 0023 3fef
+f579 c000 0000 233f cb87 bb00 0000 0008
+09d3 028d 028e 028f 03c1 03c2 03c3 233f
+ea22 9740 0000 0023 3fc9 4073 0000 0000
+233f efe1 72c0 0000 0008 d302 8602 8702
+8800 fd03 c603 c723 3fea 4297 2000 0000
+233f d64f 76c0 0000 00d5 035e 00f6 035f
+0360 0361 00fd 01ca 0109 00fd 00fd d503
+5e00 f603 5f03 6003 6103 ca01 ca03 cb03
+cc03 cd23 3fe7 f4be 6000 0000 233f efb8
+6120 0000 0023 3fd0 0000 0000 0000 233f
+ed74 8e00 0000 00d3 028d 028e 028f 03cf
+03d0 03d1 233f ee34 5620 0000 0023 3fe3
+da7f 2000 0000 233f d72b 7840 0000 0008
+d302 8602 8702 8803 d403 d503 d623 3fda
+8945 6000 0000 233f de24 4e20 0000 0023
+3fd3 9f40 4000 0000 d302 8d02 8e02 8f03
+d803 d903 da23 3fcc 4934 a000 0000 233f
+d05e 4560 0000 0023 3fef 96a7 a000 0000
+08d3 028d 028e 028f 03dd 03de 03df 233f
+ed7c 5940 0000 0023 3fed cc0e 0000 0000
+233f ed08 ae80 0000 00d3 028d 028e 028f
+03e1 03e2 03e3 233f d6cb 5420 0000 0023
+3fd9 c319 c000 0000 233f d0d2 cb60 0000
+0009 d500 f500 f600 f700 f800 f903 e600
+fb03 e700 fd03 e823 3feb 9555 4000 0000
+233f eb95 6900 0000 0023 3feb 9580 0000
+0000 5f10 2438 4231 4232 4534 372d 3446
+4336 2d34 4245 432d 4235 3232 2d33 4437
+3530 3630 3642 3546 3108 0809 5f10 1e36
+3330 2035 3832 2036 3230 2033 3938 2030
+2030 2031 3932 3020 3131 3735 205a 7b38
+3030 2c20 3434 387d 584b 6579 6368 6169
+6e5f 1024 4542 3237 3446 3634 2d33 3841
+312d 3436 3444 2d39 3241 362d 3846 4539
+3239 3637 3439 4246 d503 f203 f303 f403
+f503 f603 f704 9004 e004 e905 3b51 3152
+3136 5134 5132 5130 af10 3203 f803 fe04
+0104 0404 0704 0a04 0d04 1004 1304 1604
+1904 1c04 1f04 2204 2504 2804 2b04 2e04
+3104 3404 3704 3a04 3d04 4004 4304 4504
+4804 4b04 4e04 5104 5404 5704 5a04 5d04
+6004 6304 6604 6904 6c04 6f04 7204 7504
+7804 7b04 7e04 8104 8404 8704 8a04 8dd3
+03f9 03fa 03fb 03fc 004c 0050 546e 616d
+655a 6973 5465 726d 696e 616c 5f10 126e
+6f6e 7465 726d 696e 616c 436f 6e74 6578
+745f 1010 7072 6573 656e 7461 7469 6f6e
+4e61 6d65 09d3 03f9 03fa 03fb 03ff 004c
+0050 5874 6d75 7852 6f6c 6509 d303 f903
+fa03 fb04 0200 4c00 505b 6c61 7374 436f
+6d6d 616e 6409 d303 f903 fa03 fb04 0500
+4c00 505b 7072 6f66 696c 654e 616d 6509
+d303 f903 fa03 fb04 0800 4c00 505f 1016
+7368 6f77 696e 6741 6c74 6572 6e61 7465
+5363 7265 656e 09d3 03f9 03fa 03fb 040b
+004c 0050 5269 6409 d303 f903 fa03 fb04
+0e00 4c00 5056 7465 726d 6964 09d3 03f9
+03fa 03fb 0411 004c 0050 5d68 6f6d 6544
+6972 6563 746f 7279 09d3 03f9 03fa 03fb
+0414 004c 0050 576a 6f62 4e61 6d65 09d3
+03f9 03fa 03fb 0417 004c 0050 5763 6f6c
+756d 6e73 09d3 03f9 03fa 03fb 041a 004c
+0050 5575 6e61 6d65 09d3 03f9 03fa 03fb
+041d 004c 0050 5f10 1374 6162 2e74 6d75
+7857 696e 646f 7754 6974 6c65 09d3 03f9
+03fa 03fb 0420 004c 0050 5c70 726f 6365
+7373 5469 746c 6509 d303 f903 fa03 fb04
+2300 4c00 505e 746d 7578 436c 6965 6e74
+4e61 6d65 09d3 03f9 03fa 03fb 0426 004c
+0050 5868 6f73 746e 616d 6509 d303 f903
+fa03 fb04 2900 4c00 505f 100f 7365 6c65
+6374 696f 6e4c 656e 6774 6809 d303 f903
+fa03 fb04 2c00 4c00 5059 6d6f 7573 6549
+6e66 6f09 d303 f903 fa03 fb04 2f00 4c00
+5054 7061 7468 09d3 03f9 03fa 03fb 0432
+004c 0050 5573 6865 6c6c 09d3 03f9 03fa
+03fb 0435 004c 0050 5b74 7269 6767 6572
+4e61 6d65 09d3 03f9 03fa 03fb 0438 010a
+034f 5d70 6172 656e 7453 6573 7369 6f6e
+08d3 03f9 03fa 03fb 043b 004c 0050 5f10
+1074 6572 6d69 6e61 6c49 636f 6e4e 616d
+6509 d303 f903 fa03 fb04 3e00 4c00 505e
+746d 7578 5769 6e64 6f77 5061 6e65 09d3
+03f9 03fa 03fb 0441 004c 0050 5f10 126d
+6f75 7365 5265 706f 7274 696e 674d 6f64
+6509 d303 f903 fa03 fb03 f900 4c00 5009
+d303 f903 fa03 fb04 4600 4c00 505f 100f
+746d 7578 5374 6174 7573 5269 6768 7409
+d303 f903 fa03 fb04 4901 0a01 ce56 6974
+6572 6d32 08d3 03f9 03fa 03fb 044c 004c
+0050 5d74 6d75 7850 616e 6554 6974 6c65
+09d3 03f9 03fa 03fb 044f 004c 0050 5472
+6f77 7309 d303 f903 fa03 fb04 5200 4c00
+505f 1013 746d 7578 5769 6e64 6f77 5061
+6e65 496e 6465 7809 d303 f903 fa03 fb04
+5500 4c00 5053 7474 7909 d303 f903 fa03
+fb04 5800 4c00 5059 6175 746f 4c6f 6749
+6409 d303 f903 fa03 fb04 5b00 4c00 5055
+6261 6467 6509 d303 f903 fa03 fb04 5e00
+4c00 5058 7573 6572 6e61 6d65 09d3 03f9
+03fa 03fb 0461 004c 0050 5b6c 6f67 4669
+6c65 6e61 6d65 09d3 03f9 03fa 03fb 0464
+004c 0050 5f10 1265 6666 6563 7469 7665
+5f72 6f6f 745f 7069 6409 d303 f903 fa03
+fb04 6700 4c00 505f 1013 7373 6849 6e74
+6567 7261 7469 6f6e 4c65 7665 6c09 d303
+f903 fa03 fb04 6a00 4c00 505f 1012 7461
+622e 746d 7578 5769 6e64 6f77 4e61 6d65
+09d3 03f9 03fa 03fb 046d 010a 0391 5374
+6162 08d3 03f9 03fa 03fb 0470 004c 0050
+5e74 6d75 7853 7461 7475 734c 6566 7409
+d303 f903 fa03 fb04 7300 4c00 5059 7365
+6c65 6374 696f 6e09 d303 f903 fa03 fb04
+7600 4c00 5059 6265 6c6c 436f 756e 7409
+d303 f903 fa03 fb04 7900 4c00 505e 6175
+746f 4e61 6d65 466f 726d 6174 09d3 03f9
+03fa 03fb 047c 004c 0050 5861 7574 6f4e
+616d 6509 d303 f903 fa03 fb04 7f00 4c00
+505f 1012 7465 726d 696e 616c 5769 6e64
+6f77 4e61 6d65 09d3 03f9 03fa 03fb 0482
+004c 0050 5f10 1263 7265 6174 696f 6e54
+696d 6553 7472 696e 6709 d303 f903 fa03
+fb04 8500 4c00 505b 636f 6d6d 616e 644c
+696e 6509 d303 f903 fa03 fb04 8800 4c00
+505f 1011 6170 706c 6963 6174 696f 6e4b
+6579 7061 6409 d303 f903 fa03 fb04 8b00
+4c00 5056 6a6f 6250 6964 09d3 03f9 03fa
+03fb 048e 004c 0050 5370 6964 09af 101b
+0491 0494 0497 049a 049d 04a0 04a3 04a6
+04a9 04ac 04af 04b2 04b5 04b8 04ba 04bd
+04c0 04c3 04c6 04c9 04cc 04cf 04d2 04d5
+04d7 04da 04dd d303 f903 fa03 fb04 9200
+4c00 5055 7374 796c 6509 d303 f903 fa03
+fb04 9500 4c00 505f 1020 6375 7272 656e
+7454 6162 2e63 7572 7265 6e74 5365 7373
+696f 6e2e 6a6f 6250 6964 09d3 03f9 03fa
+03fb 0498 004c 0050 5566 7261 6d65 09d3
+03f9 03fa 03fb 049b 004c 0050 5f10 1d63
+7572 7265 6e74 5461 622e 6375 7272 656e
+7453 6573 7369 6f6e 2e70 6964 09d3 03f9
+03fa 03fb 049e 004c 0050 5f10 2363 7572
+7265 6e74 5461 622e 6375 7272 656e 7453
+6573 7369 6f6e 2e6d 6f75 7365 496e 666f
+09d3 03f9 03fa 03fb 04a1 004c 0050 5f10
+2063 7572 7265 6e74 5461 622e 6375 7272
+656e 7453 6573 7369 6f6e 2e74 6572 6d69
+6409 d303 f903 fa03 fb04 a400 4c00 505f
+102c 6375 7272 656e 7454 6162 2e63 7572
+7265 6e74 5365 7373 696f 6e2e 7465 726d
+696e 616c 5769 6e64 6f77 4e61 6d65 09d3
+03f9 03fa 03fb 04a7 004c 0050 5f10 2a63
+7572 7265 6e74 5461 622e 6375 7272 656e
+7453 6573 7369 6f6e 2e74 6572 6d69 6e61
+6c49 636f 6e4e 616d 6509 d303 f903 fa03
+fb04 aa00 4c00 505e 6973 486f 746b 6579
+5769 6e64 6f77 09d3 03f9 03fa 03fb 04ad
+010a 0391 5a63 7572 7265 6e74 5461 6208
+d303 f903 fa03 fb04 b000 4c00 505f 1026
+6375 7272 656e 7454 6162 2e63 7572 7265
+6e74 5365 7373 696f 6e2e 7072 6f63 6573
+7354 6974 6c65 09d3 03f9 03fa 03fb 04b3
+004c 0050 5f10 1963 7572 7265 6e74 5461
+622e 6375 7272 656e 7453 6573 7369 6f6e
+09d3 03f9 03fa 03fb 04b6 004c 0050 5f10
+1163 7572 7265 6e74 5461 622e 7769 6e64
+6f77 09d3 03f9 03fa 03fb 040b 004c 0050
+09d3 03f9 03fa 03fb 04bb 004c 0050 5f10
+1e63 7572 7265 6e74 5461 622e 6375 7272
+656e 7453 6573 7369 6f6e 2e6e 616d 6509
+d303 f903 fa03 fb04 be00 4c00 505d 7469
+746c 654f 7665 7272 6964 6509 d303 f903
+fa03 fb04 c100 4c00 5056 6e75 6d62 6572
+09d3 03f9 03fa 03fb 04c4 004c 0050 5f10
+2563 7572 7265 6e74 5461 622e 6375 7272
+656e 7453 6573 7369 6f6e 2e63 6f6d 6d61
+6e64 4c69 6e65 09d3 03f9 03fa 03fb 04c7
+004c 0050 5f10 2c63 7572 7265 6e74 5461
+622e 6375 7272 656e 7453 6573 7369 6f6e
+2e65 6666 6563 7469 7665 5f72 6f6f 745f
+7069 6409 d303 f903 fa03 fb04 ca00 4c00
+505f 101e 6375 7272 656e 7454 6162 2e63
+7572 7265 6e74 5365 7373 696f 6e2e 7061
+7468 09d3 03f9 03fa 03fb 04cd 004c 0050
+5f10 2263 7572 7265 6e74 5461 622e 6375
+7272 656e 7453 6573 7369 6f6e 2e68 6f73
+746e 616d 6509 d303 f903 fa03 fb04 d000
+4c00 505f 101d 6375 7272 656e 7454 6162
+2e63 7572 7265 6e74 5365 7373 696f 6e2e
+7474 7909 d303 f903 fa03 fb04 d300 4c00
+505f 1022 6375 7272 656e 7454 6162 2e63
+7572 7265 6e74 5365 7373 696f 6e2e 7573
+6572 6e61 6d65 09d3 03f9 03fa 03fb 0449
+010a 01ce 08d3 03f9 03fa 03fb 04d8 004c
+0050 5f10 1374 6974 6c65 4f76 6572 7269
+6465 466f 726d 6174 09d3 03f9 03fa 03fb
+04db 004c 0050 5f10 2363 7572 7265 6e74
+5461 622e 6375 7272 656e 7453 6573 7369
+6f6e 2e62 656c 6c43 6f75 6e74 09d3 03f9
+03fa 03fb 04de 004c 0050 5f10 2163 7572
+7265 6e74 5461 622e 6375 7272 656e 7453
+6573 7369 6f6e 2e6a 6f62 4e61 6d65 09a3
+04e1 04e3 04e6 d303 f903 fa03 fb04 8e00
+4c00 5009 d303 f903 fa03 fb04 e400 4c00
+505d 6c6f 6361 6c68 6f73 744e 616d 6509
+d303 f903 fa03 fb04 e700 4c00 505e 6566
+6665 6374 6976 6554 6865 6d65 09af 101d
+04ea 04ed 04f0 04f3 04f6 04f8 04fb 04fe
+0501 0504 0507 050b 050e 0511 0514 0517
+051a 051c 051e 0520 0523 0526 0529 052b
+052e 0530 0533 0536 0539 d303 f903 fa03
+fb04 eb00 4c00 505f 1013 6375 7272 656e
+7453 6573 7369 6f6e 2e70 6174 6809 d303
+f903 fa03 fb04 ee00 4c00 505a 746d 7578
+5769 6e64 6f77 09d3 03f9 03fa 03fb 04f1
+004c 0050 5f10 1a63 7572 7265 6e74 5365
+7373 696f 6e2e 636f 6d6d 616e 644c 696e
+6509 d303 f903 fa03 fb04 f401 0a03 4f55
+7469 746c 6508 d303 f903 fa03 fb04 f400
+4c00 5009 d303 f903 fa03 fb04 f900 4c00
+505f 100f 746d 7578 5769 6e64 6f77 5469
+746c 6509 d303 f903 fa03 fb04 fc00 4c00
+505f 101f 6375 7272 656e 7453 6573 7369
+6f6e 2e74 6572 6d69 6e61 6c49 636f 6e4e
+616d 6509 d303 f903 fa03 fb04 ff00 4c00
+505f 1015 6375 7272 656e 7453 6573 7369
+6f6e 2e6a 6f62 5069 6409 d303 f903 fa03
+fb05 0200 4c00 505f 1021 6375 7272 656e
+7453 6573 7369 6f6e 2e65 6666 6563 7469
+7665 5f72 6f6f 745f 7069 6409 d303 f903
+fa03 fb05 0500 4c00 505e 746d 7578 5769
+6e64 6f77 4e61 6d65 09d3 03f9 03fa 03fb
+0508 010a 050a 5677 696e 646f 7708 1010
+d303 f903 fa03 fb05 0c00 4c00 505f 1012
+6375 7272 656e 7453 6573 7369 6f6e 2e74
+7479 09d3 03f9 03fa 03fb 050f 004c 0050
+5f10 1663 7572 7265 6e74 5365 7373 696f
+6e2e 6a6f 624e 616d 6509 d303 f903 fa03
+fb05 1200 4c00 505f 1013 6375 7272 656e
+7453 6573 7369 6f6e 2e6e 616d 6509 d303
+f903 fa03 fb05 1500 4c00 505f 101b 6375
+7272 656e 7453 6573 7369 6f6e 2e70 726f
+6365 7373 5469 746c 6509 d303 f903 fa03
+fb05 1800 4c00 505f 1018 6375 7272 656e
+7453 6573 7369 6f6e 2e6d 6f75 7365 496e
+666f 09d3 03f9 03fa 03fb 0508 004c 0050
+09d3 03f9 03fa 03fb 040b 004c 0050 09d3
+03f9 03fa 03fb 04be 004c 0050 09d3 03f9
+03fa 03fb 0521 004c 0050 5f10 1763 7572
+7265 6e74 5365 7373 696f 6e2e 7573 6572
+6e61 6d65 09d3 03f9 03fa 03fb 0524 004c
+0050 5f10 1863 7572 7265 6e74 5365 7373
+696f 6e2e 6265 6c6c 436f 756e 7409 d303
+f903 fa03 fb05 2700 4c00 505f 1015 6375
+7272 656e 7453 6573 7369 6f6e 2e74 6572
+6d69 6409 d303 f903 fa03 fb04 4901 0a01
+ce08 d303 f903 fa03 fb05 2c00 4c00 505f
+1021 6375 7272 656e 7453 6573 7369 6f6e
+2e74 6572 6d69 6e61 6c57 696e 646f 774e
+616d 6509 d303 f903 fa03 fb04 d800 4c00
+5009 d303 f903 fa03 fb05 3100 4c00 505f
+1017 6375 7272 656e 7453 6573 7369 6f6e
+2e68 6f73 746e 616d 6509 d303 f903 fa03
+fb05 3400 4c00 505f 1012 6375 7272 656e
+7453 6573 7369 6f6e 2e70 6964 09d3 03f9
+03fa 03fb 0537 004c 0050 5e63 7572 7265
+6e74 5365 7373 696f 6e09 d303 f903 fa03
+fb05 3701 0a03 4f08 a105 3cd3 03f9 03fa
+03fb 01d5 004c 0050 095f 101e 3733 3920
+3635 3720 3831 3020 3535 3820 3020 3020
+3334 3430 2031 3431 3520 5f10 3568 7474
+7073 3a2f 2f69 7465 726d 322e 636f 6d2f
+6170 7063 6173 7473 2f66 696e 616c 5f6d
+6f64 6572 6e2e 786d 6c3f 7368 6172 643d
+3837 5569 5465 726d 2341 c66c 6a5a 2279
+3508 d105 4405 455f 1011 496e 6974 6961
+6c20 4469 7265 6374 6f72 795f 1017 2f55
+7365 7273 2f69 6b6f 7265 6e2f 446f 6375
+6d65 6e74 7309 08d2 0549 054a 054b 054c
+5774 6f70 4c65 6674 5b73 6372 6565 6e46
+7261 6d65 5a7b 3439 382c 2038 3431 7d5f
+1016 7b7b 302c 2030 7d2c 207b 3139 3230
+2c20 3132 3030 7d7d 08d6 054f 0550 0551
+0552 0553 0554 0555 0557 0559 055b 055d
+055f 5f10 1e47 6573 7475 7265 2c54 6872
+6565 4669 6e67 6572 5377 6970 6544 6f77
+6e2c 2c5f 101c 4765 7374 7572 652c 5468
+7265 6546 696e 6765 7253 7769 7065 5570
+2c2c 5c42 7574 746f 6e2c 312c 312c 2c5f
+101e 4765 7374 7572 652c 5468 7265 6546
+696e 6765 7253 7769 7065 4c65 6674 2c2c
+5f10 1f47 6573 7475 7265 2c54 6872 6565
+4669 6e67 6572 5377 6970 6552 6967 6874
+2c2c 5c42 7574 746f 6e2c 322c 312c 2cd1
+038e 0556 5f10 186b 5072 6576 5769 6e64
+6f77 506f 696e 7465 7241 6374 696f 6ed1
+038e 0558 5f10 186b 4e65 7874 5769 6e64
+6f77 506f 696e 7465 7241 6374 696f 6ed1
+038e 055a 5f10 196b 436f 6e74 6578 744d
+656e 7550 6f69 6e74 6572 4163 7469 6f6e
+d103 8e05 5c5f 1015 6b50 7265 7654 6162
+506f 696e 7465 7241 6374 696f 6ed1 038e
+055e 5f10 156b 4e65 7874 5461 6250 6f69
+6e74 6572 4163 7469 6f6e d103 8e05 605f
+1020 6b50 6173 7465 4672 6f6d 436c 6970
+626f 6172 6450 6f69 6e74 6572 4163 7469
+6f6e 5633 2e35 2e31 305f 101b 5665 7273
+696f 6e20 3135 2e32 2028 4275 696c 6420
+3234 4331 3031 295f 101e 3533 3920 3438
+3220 3830 3020 3434 3820 3020 3020 3139
+3230 2031 3137 3520 0809 a205 6705 685b
+4d65 736c 6f4c 4753 204e 4656 4d6f 6e61
+636f 0933 41c6 9411 faa0 59b0 0855 332e
+352e 355f 101b 3020 3831 2032 3234 2032
+3738 2030 2030 2031 3932 3020 3131 3735
+20d1 056f 034f 5b54 4220 4973 2053 686f
+776e 085f 101c 3020 3020 3139 3230 2031
+3230 3020 3020 3020 3139 3230 2031 3137
+3520 085f 101f 3230 3520 3332 3920 3135
+3130 2037 3931 2030 2030 2031 3932 3020
+3131 3735 205f 101f 3131 3136 2037 3030
+2038 3130 2035 3538 2030 2030 2033 3434
+3020 3134 3135 2008 5f10 1c30 2034 3833
+2038 3130 2035 3538 2030 2030 2031 3932
+3020 3131 3735 205f 101e 3330 3120 3631
+3720 3739 3020 3535 3820 3020 3020 3139
+3230 2031 3137 3520 0856 6d61 6e75 616c
+5f10 1e32 3939 2033 3831 2038 3130 2035
+3538 2030 2030 2031 3932 3020 3131 3735
+205f 101d 3239 3020 3830 2037 3930 2035
+3538 2030 2030 2031 3932 3020 3131 3735
+205f 101e 3837 3620 3437 3920 3831 3020
+3535 3820 3020 3020 3139 3230 2031 3137
+3520 5a7b 3830 302c 2034 3438 7d12 b2dc
+b861 5f10 1f31 3637 2034 3738 2031 3639
+3020 3538 3120 3020 3020 3139 3230 2031
+3137 3520 5431 2e31 3709 5f10 1e31 3137
+2032 3537 2035 3932 2035 3930 2030 2030
+2033 3434 3020 3134 3135 2008 08a4 0586
+0561 0587 056c 5533 2e35 2e37 5533 2e35
+2e39 5f10 1f31 3532 3020 3936 3020 3430
+3020 3133 3520 3020 3020 3334 3430 2031
+3431 3520 d205 8a05 8b05 8c06 0759 636f
+6f6c 6e69 6768 745f 1016 6d61 7465 7269
+616c 2d64 6573 6967 6e2d 636f 6c6f 7273
+df10 1b05 8d05 8e05 8f05 9005 9105 9205
+9305 9405 9505 9605 9705 9805 9905 9a05
+9b05 9c05 9d05 9e05 9f05 a005 a105 a205
+a305 a405 a505 a605 a705 a805 b005 b405
+b505 b605 ba05 bd05 c105 c505 c905 cc05
+cf05 d205 d605 d905 dd05 e005 e405 e705
+eb05 ef05 f205 f605 f905 fc06 0006 045c
+416e 7369 2037 2043 6f6c 6f72 5a4c 696e
+6b20 436f 6c6f 725f 1013 5365 6c65 6374
+6564 2054 6578 7420 436f 6c6f 725f 1011
+4375 7273 6f72 2054 6578 7420 436f 6c6f
+725d 416e 7369 2031 3520 436f 6c6f 725c
+416e 7369 2032 2043 6f6c 6f72 5c41 6e73
+6920 3820 436f 6c6f 725d 416e 7369 2031
+3120 436f 6c6f 725a 426f 6c64 2043 6f6c
+6f72 5c41 6e73 6920 3320 436f 6c6f 725c
+416e 7369 2039 2043 6f6c 6f72 5d41 6e73
+6920 3134 2043 6f6c 6f72 5f10 1042 6163
+6b67 726f 756e 6420 436f 6c6f 725d 416e
+7369 2031 3020 436f 6c6f 725c 416e 7369
+2034 2043 6f6c 6f72 5c43 7572 736f 7220
+436f 6c6f 725f 1012 4375 7273 6f72 2047
+7569 6465 2043 6f6c 6f72 5d41 6e73 6920
+3133 2043 6f6c 6f72 5c41 6e73 6920 3520
+436f 6c6f 7259 5461 6220 436f 6c6f 725b
+4261 6467 6520 436f 6c6f 725c 416e 7369
+2030 2043 6f6c 6f72 5c41 6e73 6920 3620
+436f 6c6f 725f 100f 5365 6c65 6374 696f
+6e20 436f 6c6f 725d 416e 7369 2031 3220
+436f 6c6f 725f 1010 466f 7265 6772 6f75
+6e64 2043 6f6c 6f72 5c41 6e73 6920 3120
+436f 6c6f 72d5 05a9 00f6 05aa 05ab 05ac
+05ad 00fb 05ae 00fd 05af 5d52 6564 2043
+6f6d 706f 6e65 6e74 5e42 6c75 6520 436f
+6d70 6f6e 656e 745f 100f 416c 7068 6120
+436f 6d70 6f6e 656e 745f 100f 4772 6565
+6e20 436f 6d70 6f6e 656e 7423 3fb6 0270
+8000 0000 233f e45a a780 0000 0023 3fef
+ba00 0000 0000 d505 a900 f605 aa05 ab05
+ac05 b100 fb05 b200 fd05 b323 3fe1 8d84
+2000 0000 233f ef9c c000 0000 0023 3fe5
+1868 e000 0000 d505 a900 f605 aa05 ab05
+ac01 0900 fb01 0900 fd01 09d5 05a9 00f6
+05aa 05ab 05ac 0109 00fb 0109 00fd 0109
+d505 a900 f605 aa05 ab05 ac05 b700 fb05
+b800 fd05 b923 3fd8 05de e000 0000 233f
+e7ee 5000 0000 0023 3fef 8a00 0000 0000
+d505 a900 f605 aa05 ab05 ac05 bb00 fb05
+bc00 fd00 fd23 3fd4 ac80 0000 0000 233f
+ea0b 4a80 0000 00d5 05a9 00f6 05aa 05ab
+05ac 05be 00fb 05bf 00fd 05c0 233f d8bb
+3fc0 0000 0023 3fdb 4980 0000 0000 233f
+da24 8d40 0000 00d5 05a9 00f6 05aa 05ab
+05ac 05c2 00fb 05c3 00fd 05c4 233f efa6
+c000 0000 0023 3fe5 c9cf c000 0000 233f
+eeb2 f680 0000 00d5 05a9 00f6 05aa 05ab
+05ac 05c6 00fb 05c7 00fd 05c8 233f eddd
+dde0 0000 0023 3fed dddd e000 0000 233f
+eddd dde0 0000 00d5 05a9 00f6 05aa 05ab
+05ac 00fd 00fb 05ca 00fd 05cb 233f e077
+2000 0000 0023 3fee 8006 a000 0000 d505
+a900 f605 aa05 ab05 ac00 fd00 fb05 cd00
+fd05 ce23 3fe6 214e 4000 0000 233f d524
+0000 0000 00d5 05a9 00f6 05aa 05ab 05ac
+00fd 00fb 05d0 00fd 05d1 233f eb03 3fa0
+0000 0023 3fda 87c0 0000 0000 d505 a900
+f605 aa05 ab05 ac05 d300 fb05 d400 fd05
+d523 3f74 c0db 4000 0000 233f b7ac 0000
+0000 0023 3fa7 f87d e000 0000 d505 a900
+f605 aa05 ab05 ac05 d700 fb05 d800 fd00
+fd23 3fdd 0000 0000 0000 233f eb24 fe80
+0000 00d5 05a9 00f6 05aa 05ab 05ac 05da
+00fb 05db 00fd 05dc 233f b340 c2c0 0000
+0023 3fef 3500 0000 0000 233f ddb3 d4c0
+0000 00d5 05a9 00f6 05aa 05ab 05ac 05de
+00fb 05df 00fd 00fd 233f cc5c 0000 0000
+0023 3fe3 a5f7 8000 0000 d505 a900 f605
+aa05 ab05 ac05 e100 fb00 fd05 e205 e323
+3fe6 77dd 4000 0000 233f d000 0000 0000
+0023 3fed a898 e000 0000 d505 a900 f605
+aa05 ab05 ac05 e500 fb00 fd00 fd05 e623
+3fe5 d5d5 e000 0000 233f e030 3040 0000
+00d5 05a9 00f6 05aa 05ab 05ac 05e8 00fb
+05e9 00fd 05ea 233f e8f8 f900 0000 0023
+3fed 5d5d 6000 0000 233f e252 5260 0000
+00d5 05a9 00f6 05aa 05ab 05ac 05ec 00fb
+05ed 00fd 05ee 233f 7010 1020 0000 0023
+3fc3 9393 a000 0000 233f b616 1620 0000
+00d5 05a9 00f6 05aa 05ab 05ac 00fd 00fb
+0109 05f0 05f1 233f e000 0000 0000 0023
+3fc3 16bd 0000 0000 d505 a900 f605 aa05
+ab05 ac05 f300 fb05 f400 fd05 f523 3fa6
+84cd 0000 0000 233f d86f 0000 0000 0023
+3fcd a688 4000 0000 d505 a900 f605 aa05
+ab05 ac00 fd00 fb05 f700 fd05 f823 3fea
+9c80 0000 0000 233f d795 c000 0000 00d5
+05a9 00f6 05aa 05ab 05ac 05fa 00fb 05fb
+00fd 00fd 233f cc1c 1c20 0000 0023 3fe3
+9393 a000 0000 d505 a900 f605 aa05 ab05
+ac05 fd00 fb05 fe00 fd05 ff23 3fcb e999
+c000 0000 233f effd 4000 0000 0023 3fe1
+c46a 0000 0000 d505 a900 f605 aa05 ab05
+ac06 0100 fb06 0200 fd06 0323 3fed 965e
+2000 0000 233f eeae 0000 0000 0023 3feb
+d651 0000 0000 d505 a900 f605 aa05 ab05
+ac00 fd00 fb06 0500 fd06 0623 3fcd 5380
+0000 0000 233f cd53 8000 0000 00df 1017
+0608 0609 060a 060b 060c 060d 060e 060f
+0610 0611 0612 0613 0614 0615 0616 0617
+0618 0619 061a 061b 061c 061d 061e 061f
+0625 0629 062a 062d 0631 0635 0639 063d
+0641 0645 0648 064c 0650 0654 0658 065c
+0660 0664 0667 066b 066f 0673 5c41 6e73
+6920 3720 436f 6c6f 725f 1013 5365 6c65
+6374 6564 2054 6578 7420 436f 6c6f 725f
+1011 4375 7273 6f72 2054 6578 7420 436f
+6c6f 725d 416e 7369 2031 3520 436f 6c6f
+725c 416e 7369 2032 2043 6f6c 6f72 5c41
+6e73 6920 3820 436f 6c6f 725d 416e 7369
+2031 3120 436f 6c6f 725a 426f 6c64 2043
+6f6c 6f72 5c41 6e73 6920 3320 436f 6c6f
+725c 416e 7369 2039 2043 6f6c 6f72 5d41
+6e73 6920 3134 2043 6f6c 6f72 5f10 1042
+6163 6b67 726f 756e 6420 436f 6c6f 725d
+416e 7369 2031 3020 436f 6c6f 725c 416e
+7369 2034 2043 6f6c 6f72 5c43 7572 736f
+7220 436f 6c6f 725d 416e 7369 2031 3320
+436f 6c6f 725c 416e 7369 2035 2043 6f6c
+6f72 5c41 6e73 6920 3020 436f 6c6f 725c
+416e 7369 2036 2043 6f6c 6f72 5f10 0f53
+656c 6563 7469 6f6e 2043 6f6c 6f72 5d41
+6e73 6920 3132 2043 6f6c 6f72 5f10 1046
+6f72 6567 726f 756e 6420 436f 6c6f 725c
+416e 7369 2031 2043 6f6c 6f72 d306 2006
+2106 2206 2300 fd06 245f 100f 4772 6565
+6e20 436f 6d70 6f6e 656e 745d 5265 6420
+436f 6d70 6f6e 656e 745e 426c 7565 2043
+6f6d 706f 6e65 6e74 233f efff ca40 0000
+0023 3fef ffed c000 0000 d306 2006 2106
+2206 2606 2706 2823 3fed 7c59 4000 0000
+233f ed08 ae80 0000 0023 3fed cc0e 0000
+0000 d306 2006 2106 2201 0901 0901 09d3
+0620 0621 0622 062b 00fd 062c 233f efff
+ca40 0000 0023 3fef ffed c000 0000 d306
+2006 2106 2206 2e06 2f06 3023 3fee 3456
+2000 0000 233f d72b 7840 0000 0023 3fe3
+da7f 2000 0000 d306 2006 2106 2206 3206
+3306 3423 3fe6 223b 0000 0000 233f e42e
+0980 0000 0023 3fe7 248b 0000 0000 d306
+2006 2106 2206 3606 3706 3823 3fec 3e72
+4000 0000 233f efec d360 0000 0023 3fdb
+351b 6000 0000 d306 2006 2106 2206 3a06
+3b06 3c23 3fed 55b6 4000 0000 233f ed54
+5560 0000 0023 3fed 53de 0000 0000 d306
+2006 2106 2206 3e06 3f06 4023 3fea 2297
+4000 0000 233f efe1 72c0 0000 0023 3fc9
+4073 0000 0000 d306 2006 2106 2206 4206
+4306 4423 3fdc ffa8 c000 0000 233f efaa
+a7c0 0000 0023 3fdb 675e 4000 0000 d306
+2006 2106 2200 fd06 4606 4723 3fe3 4b2f
+6000 0000 233f ecdb c0e0 0000 00d3 0620
+0621 0622 0649 064a 064b 233f c2df a600
+0000 0023 3fbc df66 a000 0000 233f c542
+44c0 0000 00d3 0620 0621 0622 064d 064e
+064f 233f eef2 aba0 0000 0023 3fe5 b23b
+a000 0000 233f e7e4 1280 0000 00d3 0620
+0621 0622 0651 0652 0653 233f e6e1 2000
+0000 0023 3fcb 87bb 0000 0000 233f eff5
+79c0 0000 00d3 0620 0621 0622 0655 0656
+0657 233f ed55 b640 0000 0023 3fed 5455
+6000 0000 233f ed53 de00 0000 00d3 0620
+0621 0622 0659 065a 065b 233f d9b4 95e0
+0000 0023 3fef a3f6 e000 0000 233f e371
+f500 0000 00d3 0620 0621 0622 065d 065e
+065f 233f c109 bec0 0000 0023 3fef 9128
+a000 0000 233f dba3 0c60 0000 00d3 0620
+0621 0622 0661 0662 0663 233f d6cb 5420
+0000 0023 3fd0 d2cb 6000 0000 233f d9c3
+19c0 0000 00d3 0620 0621 0622 00fd 0665
+0666 233f d64f 76c0 0000 0023 3fea 4297
+2000 0000 d306 2006 2106 2206 6806 6906
+6a23 3fda 8945 6000 0000 233f d39f 4040
+0000 0023 3fde 244e 2000 0000 d306 2006
+2106 2206 6c06 6d06 6e23 3fe9 f0f8 c000
+0000 233f dc15 6400 0000 0023 3fef f7b1
+a000 0000 d306 2006 2106 2206 7006 7106
+7223 3fed 7c59 4000 0000 233f ed08 ae80
+0000 0023 3fed cc0e 0000 0000 d306 2006
+2106 2206 7406 7506 7623 3fcc 4934 a000
+0000 233f ef96 a7a0 0000 0023 3fd0 5e45
+6000 0000 5f10 1e39 3435 2034 3733 2038
+3130 2035 3538 2030 2030 2031 3932 3020
+3131 3735 2009 5f10 1d36 3820 3434 3220
+3831 3020 3538 3120 3020 3020 3139 3230
+2031 3137 3520 4f11 02ec 626f 6f6b ec02
+0000 0000 0410 3000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 c401 0000 0400
+0000 0303 0000 0004 0000 0500 0000 0101
+0000 5573 6572 7300 0000 0600 0000 0101
+0000 696b 6f72 656e 0000 0900 0000 0101
+0000 446f 6375 6d65 6e74 7300 0000 0c00
+0000 0106 0000 1000 0000 2000 0000 3000
+0000 0800 0000 0403 0000 a541 0000 0000
+0000 0800 0000 0403 0000 7315 0400 0000
+0000 0800 0000 0403 0000 a415 0400 0000
+0000 0c00 0000 0106 0000 5800 0000 6800
+0000 7800 0000 0800 0000 0004 0000 41c5
+a899 35e6 0e37 1800 0000 0102 0000 0200
+0000 0000 0000 1f02 0000 0000 0000 1f02
+0000 0000 0000 0000 0000 0105 0000 0800
+0000 0403 0000 0100 0000 0000 0000 0400
+0000 0303 0000 f601 0000 0800 0000 0109
+0000 6669 6c65 3a2f 2f2f 0c00 0000 0101
+0000 4d61 6369 6e74 6f73 6820 4844 0800
+0000 0403 0000 0050 a11b 7300 0000 0800
+0000 0004 0000 41c6 821d 6580 0000 2400
+0000 0101 0000 4443 4430 3132 3433 2d35
+4145 442d 3441 4432 2d41 3938 362d 3535
+3437 3037 3246 4435 3731 1800 0000 0102
+0000 8100 0000 0100 0000 ef13 0000 0100
+0000 ef13 0000 0100 0000 0100 0000 0101
+0000 2f00 0000 3000 0000 0102 0000 646e
+6962 0000 0000 0100 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 7363 6f64 0200 0000 0000 0000 f000
+0000 feff ffff 0100 0000 0000 0000 1300
+0000 0410 0000 4400 0000 0000 0000 0510
+0000 8800 0000 0000 0000 1010 0000 ac00
+0000 0000 0000 4010 0000 9c00 0000 0000
+0000 0220 0000 8001 0000 0000 0000 0520
+0000 f000 0000 0000 0000 1020 0000 0001
+0000 0000 0000 1120 0000 3401 0000 0000
+0000 1220 0000 1401 0000 0000 0000 1320
+0000 2401 0000 0000 0000 2020 0000 6001
+0000 0000 0000 3020 0000 cc00 0000 0000
+0000 01c0 0000 d400 0000 0000 0000 11c0
+0000 2000 0000 0000 0000 12c0 0000 e400
+0000 0000 0000 01d0 0000 cc00 0000 0000
+0000 10d0 0000 0400 0000 0000 0000 17f0
+0000 3000 0000 0000 0000 22f0 0000 8c01
+0000 0000 0000 2341 c667 3f2c 3cef 805f
+101d 3536 3320 3330 3820 3831 3020 3535
+3820 3020 3020 3135 3132 2039 3637 2000
+0801 3701 5d01 9001 ac01 ba01 d201 de02
+0c02 2e02 4d02 7102 9702 ae02 c802 e902
+f303 0f03 2903 4103 5c03 8703 9a03 b503
+d203 f204 0b04 1a04 2804 3e04 6204 8a04
+b204 d104 e404 fe05 1005 2c05 4a05 7205
+9005 c105 d605 fe06 1e06 3506 5506 7a06
+9a06 ae06 ce06 ee07 0907 2207 4007 6007
+8007 a007 c407 de07 fe08 2908 3f08 6a08
+8b08 a708 c208 d908 f809 0f09 2609 4709
+6c09 8d09 a609 ce09 ef09 f009 f50a 2a0a
+600a 620a 670c ee0d 060d 1d0d 370d 4b0d
+600d 7a0d 900d a70d b90d d70d f10d fa0e
+140e 190e 2f0e 480e 760e 890e 9e0e b10e
+c70e d40e e60e fb0f 130f 180f 260f 3c0f
+490f 640f 770f 810f 980f ae0f c00f ce0f
+e40f fd10 1010 2710 3510 4810 6010 6810
+7f10 8610 a110 ad10 c410 d610 ea11 0711
+2111 2d11 4211 5811 6b11 8311 9a11 b111
+c711 dd11 f411 f912 0d12 1c12 2b12 4012
+5312 7512 8a12 a612 bd12 c212 d912 e713
+0113 0613 2113 3e13 5813 6e13 7c13 9613
+ad13 c513 d313 de13 f414 0c14 1814 3914
+4c14 6d14 7514 9014 a514 b814 cf14 eb14
+f815 0e15 2415 3015 4c15 6115 7615 8d15
+a915 b715 d415 e315 f916 0516 0e16 2a16
+4a16 5816 7016 7d16 8b16 a216 af16 c616
+df16 ea17 0817 2217 3f17 4c17 5917 6d17
+7817 8517 9217 a817 bf17 cd17 e417 fb18
+0818 2318 3018 5e18 7618 8318 9518 ac18
+c518 da18 e718 fa19 1719 3119 3e19 5919
+7219 8819 9519 ad19 c619 db19 e919 f51a
+041a 161a 281a 311a 361a 3f1a 481a 511a
+661a 6f1a 841a 8d1a 961a 9f1a ac1a be1a
+cc1a db1a e41a e51a e61a fb1b 041b 0d1b
+221b 2b1b 341b 3d1b 3e1b 3f1b 401b 411b
+561b 5f1b 681b 711b 981b ad1b b61b bf1b
+d41b dd1b e61b e71b ea1b ff1c 081c 111c
+1a1c 231c 2c1c 411c 4a1c 531c 5c1c 5d1c
+721c 7b1c 841c 8d1c 8e1c 9b1c a41c ad1c
+b61c cb1c d41c e11c ea1c f31c fc1c fd1d
+121d 1b1d 241d 2d1d 2e1d 3b1d 441d 4d1d
+561d 651d 721d 7b1d 841d 8d1d a21d ab1d
+b41d bd1d ca1d d31d dc1d e51d e61d e81d
+fd1e 061e 0f1e 241e 2c1e 2d1e 2e1e 3c1e
+511e 521e 531e 681e 711e 7a1e 831e 981e
+a11e aa1e b31e b61e cb1e d41e dd1e f21e
+fb1f 041f 0d1f 221f 2b1f 341f 491f 521f
+5b1f 641f 791f 821f 8b1f 941f 9d1f b21f
+bb1f c41f c51f da1f e31f ec1f f520 0220
+0b20 1220 1620 1d20 2420 2520 2620 3b20
+4420 4d20 5620 5720 6c20 7520 7e20 8720
+9c20 a520 ae20 bb20 c420 cd20 d620 d820
+ed20 f620 ff21 0821 1d21 2621 2f21 3821
+4121 4221 5721 6021 6921 6a21 6b21 8021
+9521 9e21 ab21 b421 bd21 c621 c721 dc21
+e521 ee21 f722 0c22 1522 1e22 2722 4022
+4122 4e22 5722 6022 6922 7e22 8c22 9b22
+ad22 bf22 c822 cb22 d422 dd22 e622 e822
+fd22 fe23 1323 1c23 2523 2e23 2f23 3023
+3123 3223 4723 5023 5923 6223 6b23 6c23
+6d23 7723 8c23 9523 9e23 a723 bc23 c523
+ce23 d723 e023 e123 f623 ff24 0824 1124
+1e24 2724 3024 4524 4e24 5724 6424 6d24
+7624 7f24 8024 9524 9e24 a724 b024 bd24
+c624 cf24 d824 ed24 f624 ff25 0825 0925
+1625 1f25 2825 3125 4625 4725 5425 5d25
+6625 6725 7c25 8525 9a25 a325 ac25 b525
+c225 cb25 d425 d525 ea25 f325 fc26 0526
+1a26 2326 2c26 3526 4226 4b26 5426 5d26
+7226 7b26 8426 8d26 a226 ab26 b426 bd26
+ca26 d326 dc26 e526 fa27 0327 0c27 1527
+2227 2b27 3427 3d27 3e27 3f27 4c27 5527
+5e27 6727 6827 7d27 8627 8f27 a427 b927
+c227 cb27 d427 dd27 ea27 f327 fc28 0528
+0628 0728 1c28 2528 2e28 3b28 4428 4d28
+5628 5f28 6028 6d28 7628 7f28 8828 9528
+9e28 a728 b028 b128 b22b 252b 3d2b 522b
+692b 862b a12b bb2b cf2b e22c 082c 0e2c
+2b2c 372c 512c 5f2c 862c 912c b22c b82c
+cb2c d82c ee2d 072d 1c2d 2e2d 4d2d 652d
+7e2d a02d b32d b42d c92d d22d df2d f12e
+002e 0e2e 172e 202e 292e 362e 482e 572e
+652e 662e 672e 7c2e 852e 8e2e 8f2e a42e
+ad2e b62e bf2e c02e c12e c22e c32e d82e
+e12e ea2e f32f 1a2f 2f2f 382f 412f 422f
+572f 602f 692f 7e2f 872f 902f 992f a22f
+ab2f c02f c92f d22f db2f e42f e52f f22f
+fb30 0430 0d30 0e30 1b30 2430 2d30 3630
+4b30 5430 6130 6a30 7330 7c30 9130 9a30
+a330 ac30 ad30 ae30 bb30 c430 cd30 d630
+e330 ec30 f530 fe31 1331 1c31 2531 2e31
+3b31 4431 4d31 5631 6331 6c31 7531 7e31
+8731 9c31 9d31 9e31 b331 b431 c931 d731
+e631 f832 0a32 1332 1c32 2532 3a32 4332
+4c32 5532 6232 6b32 7432 8132 8a32 9332
+a032 a932 b232 bb32 d032 d932 e232 eb33
+0033 0933 1233 1b33 2433 3933 4233 4b33
+4c33 6133 6a33 7333 7c33 8533 8633 9333
+9c33 a533 ae33 bb33 c433 cd33 d633 e433
+f934 0234 0b34 0c34 1934 2234 2b34 3434
+4134 4a34 5334 5c34 7134 7a34 8334 8c34
+9534 9634 ab34 b434 bd34 be34 cb34 d434
+dd34 e634 f334 fc35 0535 1235 1b35 2435
+2d35 2e35 4335 4c35 5535 5e35 6b35 7435
+7d35 8635 9f35 a035 ad35 b635 bf35 c835
+dd35 e635 f335 f436 0936 1236 1b36 2436
+2636 2736 2836 2936 3e36 4736 5036 5936
+6236 6336 7836 8136 8a36 9336 a836 b636
+c536 d736 e936 f236 fb37 0437 0d37 1a37
+2337 2c37 3937 4237 4b37 5437 6137 6a37
+7337 7c37 7d37 8a37 9337 9c37 a537 b237
+bb37 c437 cd37 da37 e337 ec37 f538 0238
+0b38 1438 1d38 2a38 3338 3c38 4538 5238
+5b38 6438 6938 7738 8c38 9438 9f38 a638
+ab38 b438 b638 b838 cd38 d638 eb38 f438
+fd39 0639 1339 1c39 2539 2639 2739 3c39
+4539 4e39 5739 6439 6d39 7639 7f39 8c39
+9539 9e39 a739 b439 bd39 c639 cf39 dc39
+e539 ee39 f73a 043a 0d3a 163a 1f3a 2c3a
+353a 3e3a 473a 543a 5d3a 663a 6f3a 703a
+713a 7e3a 873a 903a 993a 9a3a a73a b03a
+b93a ce3a e33a ec3a f53a fe3b 073b 143b
+1d3b 263b 2f3b 303b 3d3b 463b 4f3b 583b
+653b 6e3b 773b 803b 813b 8e3b 973b a03b
+a93b b63b bf3b c83b d13b d23b e73b f03b
+f93c 023c 293c 2a3c 2b3c 2c3c 4d3c 583c
+613c 883c 9d3c 9f3c a23c a43c a63c a83d
+0f3d 1c3d 213d 2c3d 413d 543d 553d 623d
+6b3d 6c3d 793d 853d 863d 933d 9f3d a03d
+ad3d c63d c73d d43d d73d d83d e53d ec3d
+ed3d fa3e 083e 093e 163e 1e3e 1f3e 2c3e
+343e 353e 423e 483e 493e 563e 6c3e 6d3e
+7a3e 873e 883e 953e a43e a53e b23e bb3e
+bc3e c93e db3e dc3e e93e f33e f43f 013f
+063f 073f 143f 1a3f 1b3f 283f 343f 353f
+423f 503f 513f 5e3f 713f 723f 7f3f 8e3f
+8f3f 9c3f b13f b23f bf3f c03f cd3f df3f
+e03f ed3f f43f f540 0240 1040 1140 1e40
+2340 2440 3140 4740 4840 5540 5940 5a40
+6740 7140 7240 7f40 8540 8640 9340 9c40
+9d40 aa40 b640 b740 c440 d940 da40 e740
+fd40 fe41 0b41 2041 2141 2e41 3241 3341
+4041 4f41 5041 5d41 6741 6841 7541 7f41
+8041 8d41 9c41 9d41 aa41 b341 b441 c141
+d641 d741 e441 f941 fa42 0742 1342 1442
+2142 3542 3642 4342 4a42 4b42 5842 5c42
+5d42 9642 a342 a942 aa42 b742 da42 db42
+e842 ee42 ef42 fc43 1c43 1d43 2a43 5043
+5143 5e43 8143 8243 8f43 be43 bf43 cc43
+f943 fa44 0744 1644 1744 2444 2f44 3044
+3d44 6644 6744 7444 9044 9144 9e44 b244
+b344 c044 c144 ce44 ef44 f044 fd45 0b45
+0c45 1945 2045 2145 2e45 5645 5745 6445
+9345 9445 a145 c245 c345 d045 f545 f646
+0346 2346 2446 3146 5646 5746 6446 6546
+7246 8846 8946 9646 bc46 bd46 ca46 ee46
+ef46 f647 0347 0447 1147 1f47 2047 2d47
+3c47 3d47 7a47 8747 9d47 9e47 ab47 b647
+b747 c447 e147 e247 ef47 f547 f648 0348
+0448 1148 2348 2448 3148 5348 5448 6148
+7948 7a48 8748 ab48 ac48 b948 c848 c948
+d648 dd48 de48 e048 ed49 0249 0349 1049
+2949 2a49 3749 4d49 4e49 5b49 7949 7a49
+8749 a249 a349 b049 b149 be49 bf49 cc49
+cd49 da49 f449 f54a 024a 1d4a 1e4a 2b4a
+434a 444a 514a 524a 5f4a 834a 844a 914a
+924a 9f4a b94a ba4a c74a dc4a dd4a ea4a
+f94a fa4b 074b 084b 0b4b 184b 194b 3a4b
+724b 784b 814b 824b 874b 9b4b b54b b64b
+b74b c04b c84b d44b df4b f84b f94c 124c
+334c 524c 5f4c 804c a24c af4c b44c cf4c
+d44c ef4c f44d 104d 154d 2d4d 324d 4a4d
+4f4d 724d 794d 974d b84d b94d ba4d bf4d
+cb4d d24d d34d dc4d dd4d e34e 014e 064e
+124e 134e 324e 334e 554e 774e 784e 974e
+b84e b94e c04e e14f 014f 224f 2d4f 324f
+544f 594f 5a4f 7b4f 7c4f 7d4f 864f 8c4f
+924f b44f bd4f c74f e050 4f50 5c50 6750
+7d50 9150 9f50 ac50 b950 c750 d250 df50
+ec50 fa51 0d51 1b51 2851 3551 4a51 5851
+6551 6f51 7b51 8851 9551 a751 b551 c851
+d551 ea51 f852 0752 1952 2b52 3452 3d52
+4652 5b52 6452 6d52 7652 8b52 a052 b552
+be52 c752 d052 e552 ee52 f753 0c53 1553
+1e53 2753 3c53 4553 4e53 5753 6c53 7553
+7e53 8753 9c53 a553 ae53 c353 cc53 d553
+ea53 f353 fc54 1154 1a54 2354 2c54 4154
+4a54 5354 6854 7154 7a54 8354 9854 a154
+aa54 bf54 c854 d154 da54 ef54 f855 0155
+1655 1f55 2855 3155 4655 4f55 5855 6155
+7655 7f55 8855 9d55 a655 af55 b855 cd55
+d655 df55 f455 fd56 0656 1b56 2456 2d56
+3656 4b56 5456 5d56 6656 7b56 8456 8d56
+ec56 f957 0f57 2357 3157 3e57 4b57 5957
+6457 7157 7e57 8c57 9f57 ad57 ba57 c757
+d557 e257 ef57 fc58 0e58 1c58 2f58 3c58
+4958 5b58 6958 7858 8158 8a58 9758 a058
+a958 b258 bf58 cc58 d558 de58 eb58 f458
+fd59 0659 1359 1c59 2559 2e59 3b59 4459
+4d59 5659 6359 6c59 7559 7e59 8b59 9459
+9d59 a659 b359 bc59 c559 ce59 db59 e459
+ed59 fa5a 035a 0c5a 155a 225a 2b5a 345a
+3d5a 4a5a 535a 5c5a 655a 725a 7b5a 845a
+8d5a 9a5a a35a ac5a b55a c25a cb5a d45a
+dd5a ea5a f35a fc5b 055b 125b 1b5b 245b
+315b 3a5b 435b 4c5b 595b 625b 6b5b 745b
+815b 8a5b 935b 9c5b a95b b25b bb5b c45b
+e55b e65c 065e f65e ff00 0000 0000 0002
+0200 0000 0000 0006 7d00 0000 0000 0000
+0000 0000 0000 005f 1f
