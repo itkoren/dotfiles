@@ -121,6 +121,8 @@ for app in "${add_apps[@]}"; do
     add_app_to_dock "$app"
 done
 
+add_launchpad_to_dock
+
 killall "Dock" 2>/dev/null || true
 
 #################################################
