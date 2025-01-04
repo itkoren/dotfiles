@@ -3,6 +3,8 @@
 
 set -eufo pipefail
 
+source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_dock.sh"
+
 # ~/.macos — https://mths.be/macos
 
 echo "Setting macOS defaults..."
@@ -86,6 +88,34 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+declare -a remove_apps=(
+    "Safari"
+    "Messages"
+    "Mail"
+    "Maps"
+    "Photos"
+    "FaceTime"
+    "Contacts"
+    "Reminders"
+    "Notes"
+    "Freeform"
+    "TV"
+    "Music"
+    "App Store"
+)
+
+for app in "${remove_apps[@]}"; do
+    remove_app_from_dock "$app"
+done
+
+declare -a add_apps=(
+    "/Applications/iTerm.app"
+);
+
+for app in "${add_apps[@]}"; do
+    add_app_to_dock "$app"
+done
 
 killall Dock
 
