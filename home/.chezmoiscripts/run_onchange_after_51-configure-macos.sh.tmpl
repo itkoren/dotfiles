@@ -119,7 +119,7 @@ for app in "${add_apps[@]}"; do
     add_app_to_dock "$app"
 done
 
-add_to_dock_left "/System/Applications/Launchpad.app"
+add_to_dock_left "file:////System/Applications/Launchpad.app"
 
 killall "Dock" 2>/dev/null || true
 
