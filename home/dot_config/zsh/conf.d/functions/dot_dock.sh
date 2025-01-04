@@ -71,6 +71,7 @@ function add_launchpad_to_dock {
         
         # Write the new list back to the Dock preferences
         defaults write com.apple.dock persistent-apps "$dock_items"
+    fi
 }
 
 # adds a folder to macOS Dock
