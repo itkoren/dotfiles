@@ -51,6 +51,8 @@ packages:
               id: "803453959"
 
     personal:
+        taps:
+        brews:
         casks:
           - "wavebox"
         mas:
