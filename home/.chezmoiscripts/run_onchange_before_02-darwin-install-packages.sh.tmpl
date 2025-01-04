@@ -1,6 +1,8 @@
 {{- if and (eq .chezmoi.os "darwin") (hasKey .packages "darwin") -}}
 #!{{ lookPath "sh" }}
 
+# packages.yaml hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+
 {{ if hasKey .packages.darwin "universal" }}
 {{ if .brewcasks -}}
 # First check missing and outdated casks
