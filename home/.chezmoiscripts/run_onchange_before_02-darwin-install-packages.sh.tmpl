@@ -6,25 +6,13 @@
 {{ if hasKey .packages.darwin "universal" }}
 {{ if .brewcasks -}}
 # First check missing and outdated casks
-brewfile_content=$(cat <<EOF
+brewfile_cask_content=$(cat <<EOF
 {{ range .packages.darwin.universal.casks -}}
 cask {{ . | quote }}
 {{ end -}}
 EOF
 )
 {{ end -}}
-
-# Capture the output of `brew bundle check`
-bundle_check_output=$(echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin)
-
-# Parse missing casks (those that are not installed)
-missing_casks=$(echo "$bundle_check_output" | grep "not installed" | grep -i "cask" | sed 's/.*not installed: //')
-
-# Parse outdated casks
-outdated_casks=$(echo "$bundle_check_output" | grep "outdated" | grep -i "cask" | sed 's/.*outdated: //')
-
-# Combine missing and outdated casks into one list
-all_casks_to_install_or_update="$missing_casks"$'\n'"$outdated_casks"
 
 # Generate the tap & formulas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
@@ -48,33 +36,29 @@ fi
 
 {{ if .brewcasks -}}
 # If there are missing or outdated casks, generate a Brewfile for only those casks
-if [[ -n "$all_casks_to_install_or_update" ]]; then
-    echo "The following casks are missing or outdated:"
-    echo "$all_casks_to_install_or_update"
+if [[ -n "$brewfile_cask_content" ]]; then
 
-    # Start the Brewfile content
-    brewfile_content="# Brewfile generated for missing and outdated casks\n\n"
-
-    # Add missing or outdated casks dynamically
+    # Iterate over each cask in the list
     while IFS= read -r cask; do
-        # Strip any leading/trailing whitespace
-        cask=$(echo "$cask" | xargs)
-        
-        # Only add the cask to the Brewfile if it's not empty
-        if [[ -n "$cask" ]]; then
-            brewfile_content+="\ncask \"$cask\""
-        fi
-    done <<< "$all_casks_to_install_or_update"
-
-    # Check if the Brewfile content is correct
-    echo -e "$brewfile_content"
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
+      
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask"
+      fi
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -105,25 +89,13 @@ HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6
 
 {{ if .brewcasks -}}
 # First check missing and outdated casks
-brewfile_content=$(cat <<EOF
+brewfile_cask_content=$(cat <<EOF
 {{ range .packages.darwin.work.casks -}}
 cask {{ . | quote }}
 {{ end -}}
 EOF
 )
 {{ end -}}
-
-# Capture the output of `brew bundle check`
-bundle_check_output=$(echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin)
-
-# Parse missing casks (those that are not installed)
-missing_casks=$(echo "$bundle_check_output" | grep "not installed" | grep -i "cask" | sed 's/.*not installed: //')
-
-# Parse outdated casks
-outdated_casks=$(echo "$bundle_check_output" | grep "outdated" | grep -i "cask" | sed 's/.*outdated: //')
-
-# Combine missing and outdated casks into one list
-all_casks_to_install_or_update="$missing_casks"$'\n'"$outdated_casks"
 
 # Generate the tap & formulas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
@@ -147,33 +119,29 @@ fi
 
 {{ if .brewcasks -}}
 # If there are missing or outdated casks, generate a Brewfile for only those casks
-if [[ -n "$all_casks_to_install_or_update" ]]; then
-    echo "The following casks are missing or outdated:"
-    echo "$all_casks_to_install_or_update"
+if [[ -n "$brewfile_cask_content" ]]; then
 
-    # Start the Brewfile content
-    brewfile_content="# Brewfile generated for missing and outdated casks\n\n"
-
-    # Add missing or outdated casks dynamically
+    # Iterate over each cask in the list
     while IFS= read -r cask; do
-        # Strip any leading/trailing whitespace
-        cask=$(echo "$cask" | xargs)
-        
-        # Only add the cask to the Brewfile if it's not empty
-        if [[ -n "$cask" ]]; then
-            brewfile_content+="\ncask \"$cask\""
-        fi
-    done <<< "$all_casks_to_install_or_update"
-
-    # Check if the Brewfile content is correct
-    echo -e "$brewfile_content"
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
+      
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask"
+      fi
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -204,25 +172,13 @@ HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6
 
 {{ if .brewcasks -}}
 # First check missing and outdated casks
-brewfile_content=$(cat <<EOF
+brewfile_cask_content=$(cat <<EOF
 {{ range .packages.darwin.personal.casks -}}
 cask {{ . | quote }}
 {{ end -}}
 EOF
 )
 {{ end -}}
-
-# Capture the output of `brew bundle check`
-bundle_check_output=$(echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin)
-
-# Parse missing casks (those that are not installed)
-missing_casks=$(echo "$bundle_check_output" | grep "not installed" | grep -i "cask" | sed 's/.*not installed: //')
-
-# Parse outdated casks
-outdated_casks=$(echo "$bundle_check_output" | grep "outdated" | grep -i "cask" | sed 's/.*outdated: //')
-
-# Combine missing and outdated casks into one list
-all_casks_to_install_or_update="$missing_casks"$'\n'"$outdated_casks"
 
 # Generate the tap & formulas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
@@ -246,33 +202,29 @@ fi
 
 {{ if .brewcasks -}}
 # If there are missing or outdated casks, generate a Brewfile for only those casks
-if [[ -n "$all_casks_to_install_or_update" ]]; then
-    echo "The following casks are missing or outdated:"
-    echo "$all_casks_to_install_or_update"
+if [[ -n "$brewfile_cask_content" ]]; then
 
-    # Start the Brewfile content
-    brewfile_content="# Brewfile generated for missing and outdated casks\n\n"
-
-    # Add missing or outdated casks dynamically
+    # Iterate over each cask in the list
     while IFS= read -r cask; do
-        # Strip any leading/trailing whitespace
-        cask=$(echo "$cask" | xargs)
-        
-        # Only add the cask to the Brewfile if it's not empty
-        if [[ -n "$cask" ]]; then
-            brewfile_content+="\ncask \"$cask\""
-        fi
-    done <<< "$all_casks_to_install_or_update"
-
-    # Check if the Brewfile content is correct
-    echo -e "$brewfile_content"
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
+      
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" &>/dev/null; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask"
+      fi
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
