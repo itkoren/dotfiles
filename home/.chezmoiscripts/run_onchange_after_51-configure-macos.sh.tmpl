@@ -107,14 +107,13 @@ declare -a remove_apps=(
     "Pages"
     "App Store"
 )
+declare -a add_apps=(
+    "/Applications/iTerm.app"
+);
 
 for app in "${remove_apps[@]}"; do
     remove_app_from_dock "$app"
 done
-
-declare -a add_apps=(
-    "/Applications/iTerm.app"
-);
 
 for app in "${add_apps[@]}"; do
     add_app_to_dock "$app"
