@@ -10,6 +10,7 @@ packages:
         taps:
             - "homebrew/bundle"
         brews:
+            - "powerlevel10k"
             - "antigen"
             - "gh"
             - "jq"
