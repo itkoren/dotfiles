@@ -44,6 +44,35 @@ function remove_app_from_dock() {
     fi
 }
 
+function add_launchpad_to_dock() {
+    # Check if Launchpad is already in the Dock
+    if ! defaults read com.apple.dock persistent-apps | grep -q "Launchpad.app"; then
+        # Launchpad is not in the Dock, let's add it to the leftmost position
+        
+        # Get the current list of Dock items
+        dock_items=$(defaults read com.apple.dock persistent-apps)
+        
+        # Prepare the Launchpad entry
+        launchpad_entry="<dict>
+        <key>tile-data</key>
+        <dict>
+            <key>file-data</key>
+            <dict>
+                <key>_CFURLString</key>
+                <string>file:///Applications/Launchpad.app</string>
+                <key>_CFURLStringType</key>
+                <integer>15</integer>
+            </dict>
+        </dict>
+        </dict>"
+    
+        # Add Launchpad entry at the beginning (leftmost)
+        dock_items=$(echo "$launchpad_entry"$'\n'"$dock_items")
+        
+        # Write the new list back to the Dock preferences
+        defaults write com.apple.dock persistent-apps "$dock_items"
+}
+
 # adds a folder to macOS Dock
 # usage: add_folder_to_dock "Folder Path" -a n -d n -v n
 # example: add_folder_to_dock "~/Downloads" -a 2 -d 0 -v 1
