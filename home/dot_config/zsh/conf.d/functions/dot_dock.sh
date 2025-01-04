@@ -30,7 +30,13 @@ function add_app_to_dock {
 
 function remove_app_from_dock() {
     app="${1}"
-    /usr/libexec/PlistBuddy -c "Delete persistent-apps:$app" ~/Library/Preferences/com.apple.dock.plist
+    
+    # Check if the application exists in the Dock (this looks for the app's name)
+    if defaults read "~/Library/Preferences/com.apple.dock.plist" persistent-apps | grep -q "$app"; then
+      
+      # Remove the application from the Dock using `defaults`
+      /usr/libexec/PlistBuddy -c "Delete persistent-apps:$app" ~/Library/Preferences/com.apple.dock.plist
+    fi
 }
 
 # adds a folder to macOS Dock
