@@ -58,7 +58,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -141,7 +141,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -224,7 +224,7 @@ if [[ -n "$brewfile_cask_content" ]]; then
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
