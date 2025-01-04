@@ -48,7 +48,6 @@ function add_launchpad_to_dock {
     # Check if Launchpad is already in the Dock
     if ! defaults read com.apple.dock persistent-apps | grep -q "Launchpad.app"; then
         # Launchpad is not in the Dock, let's add it to the leftmost position
-        
         # Get the current list of Dock items
         dock_items=$(defaults read com.apple.dock persistent-apps)
         
