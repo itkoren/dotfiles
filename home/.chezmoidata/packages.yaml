@@ -37,6 +37,7 @@ packages:
             #- "font-hack-nerd-font"
             - "font-meslo-lg-nerd-font"
             - "raycast"
+            - "obsidian"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
