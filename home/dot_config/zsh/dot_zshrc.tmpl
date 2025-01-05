@@ -42,6 +42,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 source $(brew --prefix)/share/antigen/antigen.zsh
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/etc/profile.d/z.sh
 antigen init "${DOTDIR:-$HOME}"/antigen/.antigenrc
 
 # To customize prompt, run `p10k configure` or edit "${ZDOTDIR:-$HOME}"/.p10k.zsh.
