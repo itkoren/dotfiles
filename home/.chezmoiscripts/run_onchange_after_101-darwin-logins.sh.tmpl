@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+
+{{ if .environment.personal -}}
+# Log into DockerHub
+echo "{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/aoc5pnv66fejhnrwsoohfsyl3y/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}" | docker login -u {{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/aoc5pnv66fejhnrwsoohfsyl3y/username" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }} --password-stdin
+{{ end -}}
+
+{{ end -}}
