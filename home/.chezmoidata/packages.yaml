@@ -21,6 +21,8 @@ packages:
             - "mas"
             - "fzf"
             - "zoxide"
+            - "tldr"
+            - "asdf"
             #- "mise"
             #- "ripgrep"
             #- "rsync"
@@ -38,6 +40,10 @@ packages:
             - "font-meslo-lg-nerd-font"
             - "raycast"
             - "obsidian"
+            - "orbstack"
+            - "raindropio"
+            - "sf-symbols"
+            - "spotify"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -53,7 +59,19 @@ packages:
               id: "497799835"
             - name: "Slack for Desktop"
               id: "803453959"
-
+        asdf:
+            - plugin: "nodejs"
+              versions:
+                  - "latest"
+            - plugin: "golang"
+              versions:
+                  - "latest"
+            - plugin: "python"
+              versions:
+                  - "latest"
+            - plugin: "java"
+              versions:
+                  - "latest"
     personal:
         taps:
         brews:
