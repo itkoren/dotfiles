@@ -145,7 +145,20 @@ function keepalive_sudo() {
         exit 1
     fi
 }
-
+function verify_dictation_shortcut() {
+    echo "***************************************************************************"
+    echo "***************************************************************************"
+    echo "***************************************************************************"
+    echo "**** Dictation Settings will be opened when you press the Enter button ****"
+    echo "**** Please verify the Shortcut option is set to \"Press fn Twice\"    ****"
+    echo "**** Press Enter button again once complete                            ****"
+    echo "***************************************************************************"
+    echo "***************************************************************************"
+    echo "***************************************************************************"
+    read
+    open "x-apple.systempreferences:com.apple.preference.keyboard?Dictation"
+    read
+}
 function initialize_os_macos() {
     function is_homebrew_exists() {
         command -v brew &>/dev/null
@@ -161,8 +174,15 @@ function initialize_os_macos() {
             xcode-select --install
     
             # Wait for user to complete installation
-            echo "Please complete the Xcode Command Line Tools installation..."
-            echo "Press Enter once the installation is complete."
+            echo "******************************************************************************************"
+            echo "******************************************************************************************"
+            echo "******************************************************************************************"
+            echo "**** Xcode Command Line Tools installation will start when you press the Enter button ****"
+            echo "**** Please complete the Xcode Command Line Tools installation...                     ****"
+            echo "**** Press Enter button again once the installation is complete.                      ****"
+            echo "******************************************************************************************"
+            echo "******************************************************************************************"
+            echo "******************************************************************************************"
             read
     
             # Verify installation
@@ -185,6 +205,9 @@ function initialize_os_macos() {
           echo "Xcode license accepted."
         fi
     fi
+
+    # Verify dictation shortcut 
+    verify_dictation_shortcut
 
     # Instal Homebrew if needed.
     if ! is_homebrew_exists; then
