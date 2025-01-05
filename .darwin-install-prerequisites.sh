@@ -63,10 +63,18 @@ Darwin)
 esac
 
 # Post-installation instructions
-echo "Please open 1Password, log into all accounts and set the following:"
-echo " - Settings>Security>Unlock activate Touch ID"
-echo " - Settings>Security>Unlock activate Apple Watch"
-echo " - Settings>Developer>CLI activate Integrate with 1Password CLI"
-echo " - Settings>Developer>SSH Agent Set up the SSH Agent"
+echo "***************************************************************************"
+echo "***************************************************************************"
+echo "***************************************************************************"
+echo "**** 1Password App will be opened when you press the Enter button      ****"
+echo "**** Please log into all accounts and set the following:               ****"
+echo "**** - Settings>Security>Unlock activate Touch ID                      ****"
+echo "**** - Settings>Security>Unlock activate Apple Watch                   ****"
+echo "**** - Settings>Developer>CLI activate Integrate with 1Password CLI    ****"
+echo "**** - Settings>Developer>SSH Agent Set up the SSH Agent               ****"
+echo "***************************************************************************"
+echo "***************************************************************************"
+echo "***************************************************************************"
+open "/Applications/1Password.app"
 read -p "Press any key to continue." -n 1 -r
 echo
