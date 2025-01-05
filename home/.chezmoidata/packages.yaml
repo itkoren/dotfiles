@@ -80,6 +80,7 @@ packages:
         mas:
           - name: "Drive Mounter"
             id: "441149468"
+        asdf:
     work:
         taps:
             #- "hashicorp/internal"
@@ -99,3 +100,4 @@ packages:
             #- "notion-calendar"
             #- "postico"
         mas: []
+        asdf:
