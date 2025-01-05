@@ -81,6 +81,13 @@ if [[ $? -ne 0 ]]; then
     echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
 fi
 
+{{ range .packages.darwin.universal.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ range .versions }}
+asdf install {{ .plugin }} {{ . }}
+{{ end }}
+{{ end -}}
+
 {{ end }}
 
 
@@ -164,6 +171,13 @@ if [[ $? -ne 0 ]]; then
     echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
 fi
 
+{{ range .packages.darwin.work.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ range .versions }}
+asdf install {{ .plugin }} {{ . }}
+{{ end }}
+{{ end -}}
+
 {{ end }}
 
 
@@ -246,6 +260,13 @@ echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
 if [[ $? -ne 0 ]]; then
     echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
 fi
+
+{{ range .packages.darwin.personal.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ range .versions }}
+asdf install {{ .plugin }} {{ . }}
+{{ end }}
+{{ end -}}
 
 {{ end }}
 
