@@ -157,7 +157,8 @@ function verify_dictation_shortcut() {
     echo "***************************************************************************"
     read
     open "x-apple.systempreferences:com.apple.preference.keyboard?Dictation"
-    read
+    read -p "Press any key to continue." -n 1 -r
+    echo
 }
 function initialize_os_macos() {
     function is_homebrew_exists() {
@@ -183,7 +184,8 @@ function initialize_os_macos() {
             echo "******************************************************************************************"
             echo "******************************************************************************************"
             echo "******************************************************************************************"
-            read
+            read -p "Press any key to continue." -n 1 -r
+            echo
     
             # Verify installation
             until [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]; do
