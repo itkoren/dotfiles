@@ -58,6 +58,7 @@ antigen bundle <<EOBUNDLES
     dirhistory
 
     zsh-users/zsh-history-substring-search
+    leophys/zsh-plugin-fzf-finder
 
     jeffreytse/zsh-vi-mode
     kennethreitz/autoenv
