@@ -12,3 +12,12 @@ setopt HIST_REDUCE_BLANKS # removes blank lines from history
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+bindkey '^t' atuin-search
+
+# bind to the up key, which depends on terminal mode
+bindkey '^[[A' atuin-up-search
+bindkey '^[OA' atuin-up-search
