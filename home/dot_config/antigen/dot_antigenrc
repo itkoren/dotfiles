@@ -29,6 +29,9 @@ antigen bundle <<EOBUNDLES
     node
     ssh-agent
     web-search
+    asdf
+    ansible
+    kubectl
 
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting
@@ -43,9 +46,9 @@ antigen bundle <<EOBUNDLES
     command-not-found
 
     # Other general oh-my-zsh plugins
+    aliases
     common-aliases
     extract
-    z
     colored-man-pages
     docker
     pip
@@ -56,6 +59,12 @@ antigen bundle <<EOBUNDLES
     safe-paste
     thefuck
     dirhistory
+    encode64
+    zoxide
+    copyfile
+    copypath
+    dirhistory
+    macos
 
     zsh-users/zsh-history-substring-search
     leophys/zsh-plugin-fzf-finder
@@ -65,6 +74,7 @@ antigen bundle <<EOBUNDLES
     b4b4r07/enhancd
     supercrabtree/k
     esc/conda-zsh-completion
+    MichaelAquilina/zsh-you-should-use
 
 EOBUNDLES
 
