@@ -44,6 +44,8 @@ packages:
             - "raindropio"
             - "sf-symbols"
             - "spotify"
+            - "clop"
+            - "popclip"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -59,6 +61,8 @@ packages:
               id: "497799835"
             - name: "Slack for Desktop"
               id: "803453959"
+            - name: "rcmd - App Switcher"
+              id: "1596283165"
         asdf:
             - plugin: "nodejs"
               versions:
