@@ -86,7 +86,7 @@ fi
 {{ printf "%T" .versions }}  # This will print the type of .versions
 asdf plugin add {{ .plugin }}
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
+asdf install {{ ..plugin }} {{ . }}
 {{ end }}
 {{ end -}}
 
@@ -176,7 +176,7 @@ fi
 {{ range .packages.darwin.work.asdf -}}
 asdf plugin add {{ .plugin }}
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
+asdf install {{ ..plugin }} {{ . }}
 {{ end }}
 {{ end -}}
 
@@ -266,7 +266,7 @@ fi
 {{ range .packages.darwin.personal.asdf -}}
 asdf plugin add {{ .plugin }}
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
+asdf install {{ ..plugin }} {{ . }}
 {{ end }}
 {{ end -}}
 
