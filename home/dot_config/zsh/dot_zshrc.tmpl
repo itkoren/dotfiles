@@ -40,13 +40,12 @@ fi
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 source $(brew --prefix)/share/antigen/antigen.zsh
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-source $(brew --prefix)/etc/profile.d/z.sh
 antigen init "${DOTDIR:-$HOME}"/antigen/.antigenrc
-
-# Set up fzf key bindings and fuzzy completion
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # zsh-history-substring-search configuration
 bindkey '^[[A' history-substring-search-up # or '\eOA'
