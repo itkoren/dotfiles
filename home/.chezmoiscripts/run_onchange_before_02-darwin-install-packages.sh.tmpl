@@ -83,10 +83,9 @@ fi
 
 {{ range .packages.darwin.universal.asdf -}}
 asdf plugin add {{ .plugin }}
-{{ with . }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
-{{ end }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
 {{ end }}
 {{ end -}}
 
@@ -175,10 +174,9 @@ fi
 
 {{ range .packages.darwin.work.asdf -}}
 asdf plugin add {{ .plugin }}
-{{ with . }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
-{{ end }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
 {{ end }}
 {{ end -}}
 
@@ -267,10 +265,9 @@ fi
 
 {{ range .packages.darwin.personal.asdf -}}
 asdf plugin add {{ .plugin }}
-{{ with . }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
 {{ range .versions }}
-asdf install {{ $.plugin }} {{ . }}
-{{ end }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
 {{ end }}
 {{ end -}}
 
