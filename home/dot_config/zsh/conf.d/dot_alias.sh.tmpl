@@ -9,19 +9,46 @@
 eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
 
 {{- if ne .chezmoi.os "windows" }}
-  alias ls='eza ${eza_params}'
-  alias l='eza --git-ignore ${eza_params}'
-  alias ll='eza --all --header --long ${eza_params}'
-  alias llm='eza --all --header --long --sort=modified ${eza_params}'
-  alias la='eza -lbhHigUmuSa'
-  alias lx='eza -lbhHigUmuSa@'
-  alias lt='eza --tree'
-  alias tree='eza --tree'
+alias ls='eza ${eza_params}'
+alias l='eza --git-ignore ${eza_params}'
+alias ll='eza --all --header --long ${eza_params}'
+alias llm='eza --all --header --long --sort=modified ${eza_params}'
+alias la='eza -lbhHigUmuSa'
+alias lx='eza -lbhHigUmuSa@'
+alias lt='eza --tree'
+alias tree='eza --tree'
 {{- else }}
-  alias ls='ls -h --color=auto'
-  alias l='ls -l'
-  alias la='ls -a'
-  alias ll='ls -la'
+# VARIABLES
+export PDT="~/Desktop"
+export PDL="~/Downloads"
+export PDM="~/Documents"
+export PCT="~/content"
+export PCW="~/content/work"
+export PCP="~/content/personal"
+
+# ALIASES
+#
+# SPELLING ALIASES
+alias sudp="sudo"
+alias gerp="grep"
+
+# SHORTCUT ALIASES
+alias hg="history | grep"
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# NAVIGATION ALIASES
+alias ndt="cd $PDT"
+alias ndl="cd $PDL"
+alias ndm="cd $PDM"
+alias nct="cd $PCT"
+alias ncw="cd $PCW"
+alias ncp="cd $PCP"
+
+alias ls='ls -h --color=auto'
+alias l='ls -l'
+alias la='ls -a'
+alias ll='ls -la'
 {{- end }}
 
 # docker
