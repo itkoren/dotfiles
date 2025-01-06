@@ -82,6 +82,8 @@ if [[ $? -ne 0 ]]; then
 fi
 
 {{ range .packages.darwin.universal.asdf -}}
+{{ printf "%T" .plugin }}  # This will print the type of .plugin
+{{ printf "%T" .versions }}  # This will print the type of .versions
 asdf plugin add {{ .plugin }}
 {{ range .versions }}
 asdf install {{ .plugin }} {{ . }}
