@@ -16,7 +16,7 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 
-bindkey '^rr' atuin-search
+bindkey '^f' atuin-search
 
 # bind to the up key, which depends on terminal mode
 bindkey '^[[A' atuin-up-search
