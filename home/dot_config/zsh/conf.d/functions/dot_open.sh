@@ -1,3 +1,3 @@
-ideap() {
+function ideap {
   nohup idea $1 &
 }
