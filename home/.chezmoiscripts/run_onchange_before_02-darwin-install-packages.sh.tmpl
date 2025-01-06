@@ -82,11 +82,11 @@ if [[ $? -ne 0 ]]; then
 fi
 
 {{ range .packages.darwin.universal.asdf -}}
-{{ printf "%T" .plugin }}  # This will print the type of .plugin
-{{ printf "%T" .versions }}  # This will print the type of .versions
 asdf plugin add {{ .plugin }}
+{{ with . }}
 {{ range .versions }}
-asdf install {{ ..plugin }} {{ . }}
+asdf install {{ $.plugin }} {{ . }}
+{{ end }}
 {{ end }}
 {{ end -}}
 
@@ -175,8 +175,10 @@ fi
 
 {{ range .packages.darwin.work.asdf -}}
 asdf plugin add {{ .plugin }}
+{{ with . }}
 {{ range .versions }}
-asdf install {{ ..plugin }} {{ . }}
+asdf install {{ $.plugin }} {{ . }}
+{{ end }}
 {{ end }}
 {{ end -}}
 
@@ -265,8 +267,10 @@ fi
 
 {{ range .packages.darwin.personal.asdf -}}
 asdf plugin add {{ .plugin }}
+{{ with . }}
 {{ range .versions }}
-asdf install {{ ..plugin }} {{ . }}
+asdf install {{ $.plugin }} {{ . }}
+{{ end }}
 {{ end }}
 {{ end -}}
 
