@@ -1,6 +1,6 @@
 #!/bin/bash
 
-test_font() {
+function test_font {
     echo -e "regular"
     echo -e "\e[1mbold\e[0m"
     echo -e "\e[3mitalic\e[0m"
