@@ -45,7 +45,6 @@ packages:
             - "spotify"
             - "clop"
             - "popclip"
-            - "textsniper"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -81,6 +80,7 @@ packages:
         brews:
         casks:
           - "wavebox"
+          - "textsniper"
         mas:
           - name: "Drive Mounter"
             id: "441149468"
