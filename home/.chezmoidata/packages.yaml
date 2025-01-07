@@ -43,8 +43,8 @@ packages:
             - "raindropio"
             - "sf-symbols"
             - "spotify"
-            - "clop"
             - "popclip"
+            - "itsycal"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -80,6 +80,7 @@ packages:
         brews:
         casks:
           - "wavebox"
+          - "clop"
           - "textsniper"
         mas:
           - name: "Drive Mounter"
