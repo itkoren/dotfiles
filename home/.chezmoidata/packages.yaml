@@ -45,6 +45,7 @@ packages:
             - "spotify"
             - "clop"
             - "popclip"
+            - "textsniper"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
