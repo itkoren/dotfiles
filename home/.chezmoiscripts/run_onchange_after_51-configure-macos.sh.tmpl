@@ -53,7 +53,7 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 #################################################
 # Dock                                          #
@@ -129,7 +129,30 @@ done
 killall "Dock" 2>/dev/null || true
 
 #################################################
-# Screen                                          #
+# Spotlight                                     #
+#################################################
+
+# Exclude the Calendar from spotlight indexing
+defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Library/Calendars"
+
+# Exclude the Reminders from spotlight indexing
+defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Library/Reminders"
+
+# Exclude the Fonts from spotlight indexing
+defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "/System/Library/Fonts"
+
+# Exclude Pictures from spotlight indexing
+defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Pictures"
+
+# Exclude Movies from spotlight indexing
+defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Movies"
+
+# Force Spotlight to re-index and apply exclusions
+killall "mds" 2>/dev/null || true
+mdutil -E /
+
+#################################################
+# Screen                                        #
 #################################################
 
 ## Hot corners
@@ -153,7 +176,7 @@ defaults write com.apple.screencapture type -string "png"
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 #################################################
 # Safari & WebKit                               #
@@ -195,7 +218,7 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Show language menu in the top right corner of the boot screen
-sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 #################################################
 # Trackpad                                      #
@@ -210,10 +233,10 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 #################################################
 
 # Enable lid wakeup
-sudo pmset -a lidwake 1
+pmset -a lidwake 1
 
 # Restart automatically on power loss
-sudo pmset -a autorestart 1
+pmset -a autorestart 1
 
 # Show battery persentage in the toolbar
 defaults write com.apple.menuextra.battery ShowPercent -bool true
@@ -248,7 +271,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 chflags nohidden ~/Library
 
 # Show the /Volumes folder
-sudo chflags nohidden /Volumes
+chflags nohidden /Volumes
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -386,12 +409,12 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "{{ .chezmo
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Accept T&Cs if needed
-if ! sudo xcodebuild -license check &>/dev/null; then
+if ! xcodebuild -license check &>/dev/null; then
   echo "Xcode license has not been accepted."
   echo "Accepting the Xcode license..."
 
   # Automatically accept the license
-  sudo xcodebuild -license accept
+  xcodebuild -license accept
 
   echo "Xcode license accepted."
 fi
