@@ -133,26 +133,26 @@ killall "Dock" 2>/dev/null || true
 #################################################
 
 # Exclude Calendar from Spotlight indexing (user-level preferences)
-defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Calendars"
+#defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Calendars"
 
 # Exclude Reminders from Spotlight indexing
-defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Reminders"
+#defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Reminders"
 
 # Exclude Fonts from Spotlight indexing
-defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
+#defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
 
 # Exclude Pictures from Spotlight indexing
-defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Pictures"
+#defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Pictures"
 
 # Exclude Movies from Spotlight indexing
-defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
+#defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
 
 # Apply the changes: Force Spotlight to re-index
-sudo mdutil -E /  # Re-index the system-wide Spotlight database
+#sudo mdutil -E /  # Re-index the system-wide Spotlight database
 
 # Restart Spotlight-related processes to apply changes
-killall "mds" 2>/dev/null || true
-killall "mdworker" 2>/dev/null || true
+#killall "mds" 2>/dev/null || true
+#killall "mdworker" 2>/dev/null || true
 
 #################################################
 # Screen                                        #
