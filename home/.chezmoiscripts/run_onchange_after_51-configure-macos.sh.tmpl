@@ -133,19 +133,19 @@ killall "Dock" 2>/dev/null || true
 #################################################
 
 # Exclude the Calendar from spotlight indexing
-defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Library/Calendars"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Library/Calendars"
 
 # Exclude the Reminders from spotlight indexing
-defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Library/Reminders"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Library/Reminders"
 
 # Exclude the Fonts from spotlight indexing
-defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "/System/Library/Fonts"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
 
 # Exclude Pictures from spotlight indexing
-defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Pictures"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Pictures"
 
 # Exclude Movies from spotlight indexing
-defaults write /System/Library/LaunchDaemons/com.apple.metadata.mds.plist Exclusions -array-add "~/Movies"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Movies"
 
 # Force Spotlight to re-index and apply exclusions
 killall "mds" 2>/dev/null || true
