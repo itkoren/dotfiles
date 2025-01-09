@@ -133,27 +133,24 @@ killall "Dock" 2>/dev/null || true
 #################################################
 
 # Exclude Calendar from Spotlight indexing (user-level preferences)
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Calendars"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Calendars"
 
 # Exclude Reminders from Spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Reminders"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Reminders"
 
 # Exclude Fonts from Spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
 
 # Exclude Pictures from Spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Pictures"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Pictures"
 
 # Exclude Movies from Spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
+defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
 
-# Apply the changes and force Spotlight to re-index
-# sudo mdutil -i off /Users/$(whoami)  # Temporarily turn off indexing on the user's home directory (just to be safe)
+# Apply the changes: Force Spotlight to re-index
+sudo mdutil -E /  # Re-index the system-wide Spotlight database
 
-# Force Spotlight to re-index
-sudo mdutil -E /
-
-# Restart the Spotlight process to ensure exclusions are applied
+# Restart Spotlight-related processes to apply changes
 killall "mds" 2>/dev/null || true
 killall "mdworker" 2>/dev/null || true
 
