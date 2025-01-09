@@ -53,7 +53,7 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 #################################################
 # Dock                                          #
@@ -176,7 +176,7 @@ defaults write com.apple.screencapture type -string "png"
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
-defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 #################################################
 # Safari & WebKit                               #
@@ -218,7 +218,7 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Show language menu in the top right corner of the boot screen
-defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 #################################################
 # Trackpad                                      #
@@ -233,10 +233,10 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 #################################################
 
 # Enable lid wakeup
-pmset -a lidwake 1
+sudo pmset -a lidwake 1
 
 # Restart automatically on power loss
-pmset -a autorestart 1
+sudo pmset -a autorestart 1
 
 # Show battery persentage in the toolbar
 defaults write com.apple.menuextra.battery ShowPercent -bool true
@@ -271,7 +271,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 chflags nohidden ~/Library
 
 # Show the /Volumes folder
-chflags nohidden /Volumes
+sudo chflags nohidden /Volumes
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -409,12 +409,12 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "{{ .chezmo
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Accept T&Cs if needed
-if ! xcodebuild -license check &>/dev/null; then
+if ! sudo xcodebuild -license check &>/dev/null; then
   echo "Xcode license has not been accepted."
   echo "Accepting the Xcode license..."
 
   # Automatically accept the license
-  xcodebuild -license accept
+  sudo xcodebuild -license accept
 
   echo "Xcode license accepted."
 fi
