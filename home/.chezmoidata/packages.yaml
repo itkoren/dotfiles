@@ -22,6 +22,8 @@ packages:
             - "zoxide"
             - "tldr"
             - "asdf"
+            - "peco"
+            - "stern"
             #- "mise"
             #- "ripgrep"
             #- "rsync"
@@ -38,7 +40,10 @@ packages:
             #- "font-hack-nerd-font"
             - "font-meslo-lg-nerd-font"
             - "raycast"
+            - "alfred"
+            - "transmit"
             - "sublime-text"
+            - "coderunner"
             - "obsidian"
             - "orbstack"
             - "raindropio"
@@ -50,6 +55,8 @@ packages:
             - "tower"
             - "bunch"
             - "arc"
+            - "paw"
+            - "proxyman"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -69,6 +76,8 @@ packages:
               id: "803453959"
             - name: "rcmd - App Switcher"
               id: "1596283165"
+            - name: "Boop"
+              id: "1518425043"
         asdf:
             - plugin: "nodejs"
               versions:
@@ -93,6 +102,7 @@ packages:
           - "aldente"
           - "webstorm"
           - "paletro"
+          - "expandrive"
         mas:
           - name: "Drive Mounter"
             id: "441149468"
