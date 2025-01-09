@@ -149,7 +149,7 @@ sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -
 
 # Force Spotlight to re-index and apply exclusions
 killall "mds" 2>/dev/null || true
-mdutil -E /
+sudo mdutil -E /
 
 #################################################
 # Screen                                        #
