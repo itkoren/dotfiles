@@ -132,20 +132,28 @@ killall "Dock" 2>/dev/null || true
 # Spotlight                                     #
 #################################################
 
-# Exclude the Calendar from spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Library/Calendars"
+# Exclude Calendar from Spotlight indexing (full path, not relative)
+sudo defaults write /System/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Calendars"
 
-# Exclude the Reminders from spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Library/Reminders"
+# Exclude Reminders from Spotlight indexing
+sudo defaults write /System/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Library/Reminders"
 
-# Exclude the Fonts from spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
+# Exclude Fonts from Spotlight indexing
+sudo defaults write /System/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/System/Library/Fonts"
 
-# Exclude Pictures from spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Pictures"
+# Exclude Pictures from Spotlight indexing
+sudo defaults write /System/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Pictures"
 
-# Exclude Movies from spotlight indexing
-sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "~/Movies"
+# Exclude Movies from Spotlight indexing
+sudo defaults write /System/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
+
+# Apply the changes and force Spotlight to re-index
+sudo mdutil -i off /Users/$(whoami)  # Temporarily turn off indexing on the user's home directory (just to be safe)
+sudo mdutil -E /  # Re-index the entire system and apply changes
+
+# Restart the Spotlight process to ensure exclusions are applied
+killall "mds" 2>/dev/null || true
+killall "mdworker" 2>/dev/null || true
 
 # Force Spotlight to re-index and apply exclusions
 killall "mds" 2>/dev/null || true
