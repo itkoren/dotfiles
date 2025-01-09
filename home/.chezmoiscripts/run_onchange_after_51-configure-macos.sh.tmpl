@@ -148,7 +148,7 @@ sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -
 sudo defaults write ~/Library/Preferences/com.apple.spotlight.plist Exclusions -array-add "/Users/$(whoami)/Movies"
 
 # Apply the changes and force Spotlight to re-index
-sudo mdutil -i off /Users/$(whoami)  # Temporarily turn off indexing on the user's home directory (just to be safe)
+# sudo mdutil -i off /Users/$(whoami)  # Temporarily turn off indexing on the user's home directory (just to be safe)
 
 # Force Spotlight to re-index
 sudo mdutil -E /
