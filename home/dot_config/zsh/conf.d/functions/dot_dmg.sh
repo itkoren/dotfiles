@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function dmginstall {
   if [[ $# -lt 1 ]]; then
     echo "Usage: dmginstall [url or path]"
