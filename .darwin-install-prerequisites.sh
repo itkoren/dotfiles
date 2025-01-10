@@ -55,7 +55,7 @@ Darwin)
     install_prerequisite "1password" "" 1
     install_prerequisite "1password-cli" "" ""
     install_prerequisite "git-delta" "" ""
-    install_prerequisite "age" "" 1
+    install_prerequisite "age" "" ""
     ;;
 *)
     echo "unsupported OS"
