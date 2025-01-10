@@ -94,7 +94,6 @@ packages:
     personal:
         taps:
         brews:
-          - "age"
         casks:
           - "wavebox"
           - "clop"
