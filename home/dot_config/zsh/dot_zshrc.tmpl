@@ -28,6 +28,7 @@ ENABLE_CORRECTION="true"
 
 # public
 for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*; do
+    echo "sourcing $file"
     if [[ $file == *.sh ]]; then
         source "$file"
     fi
