@@ -9,11 +9,11 @@ apps:
     universal:
         encrypted:
             - {{ .chezmoi.sourceDir }}/apps/encrypted.Supercharge.app
-        plain:
+        plain: []
     personal:
-        encrypted:
-        plain:
+        encrypted: []
+        plain: []
     work:
-        encrypted:
-        plain:
+        encrypted: []
+        plain: []
         
