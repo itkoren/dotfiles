@@ -1,0 +1,19 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+
+source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_dmg.sh"
+
+# Path to the Downloads directory
+downloads_dir=~/Downloads
+
+# List all .dmg files in the Downloads directory and loop through them
+for dmg_file in "$downloads_dir"/*.dmg; do
+    if [[ -f "$dmg_file" ]]; then  # Check if it's a regular file
+        echo "Installing $dmg_file..."
+        dmginstall "$dmg_file"  # Call your dmginstall function for each file
+    fi
+done
+
+echo "All installations complete."
+
+{{ end -}}
