@@ -1,0 +1,48 @@
+{{- if and (eq .chezmoi.os "darwin") (hasKey .apps "darwin") -}}
+#!{{ lookPath "sh" }}
+
+# apps.yaml.tmpl hash: {{ include ".chezmoidata/apps.yaml.tmpl" | sha256sum }}
+source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_age.sh"
+
+{{ if hasKey .apps.darwin "universal" }}
+
+{{ range .apps.darwin.universal.encrypted -}}
+age_decrypt_extract {{ . | quote }} "/Applications" "{{ .age_identity }}"
+{{ end -}}
+
+{{ range .apps.darwin.universal.plain -}}
+cp {{ . | quote }} "/Applications"
+{{ end -}}
+
+{{ end -}}
+
+
+{{ if and (.environment.work) (hasKey .apps.darwin "work") }}
+
+{{ range .apps.darwin.work.encrypted -}}
+age_decrypt_extract {{ . | quote }} "/Applications" "{{ .age_identity }}"
+{{ end -}}
+
+{{ range .apps.darwin.work.plain -}}
+cp {{ . | quote }} "/Applications"
+{{ end -}}
+
+{{ end -}}
+
+
+{{ if and (.environment.personal) (hasKey .apps.darwin "personal") }}
+
+{{ range .apps.darwin.personal.encrypted -}}
+age_decrypt_extract {{ . | quote }} "/Applications" "{{ .age_identity }}"
+{{ end -}}
+
+{{ range .apps.darwin.personal.plain -}}
+cp {{ . | quote }} "/Applications"
+{{ end -}}
+
+{{ end -}}
+
+{{ end }}
+
+
+{{ end }}
