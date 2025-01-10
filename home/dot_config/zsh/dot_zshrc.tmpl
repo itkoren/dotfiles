@@ -30,11 +30,12 @@ ENABLE_CORRECTION="true"
 setopt nonomatch
 
 # Loop through all .sh files recursively in conf.d
-for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*(.sh); do
-  if [[ -f $file ]]; then  # Ensure it's a file, not a directory
+for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*.sh; do
+  if [[ -f $file ]]; then  # Ensure it's a file
     source "$file"
   fi
 done
+
 
 # Platform specific customizations
 if [ -f "${ZDOTDIR:-$HOME}"/.platformrc ]; then
