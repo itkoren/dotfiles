@@ -1,7 +1,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
 
-read -p "going to install downloaded dmg files! skip? (y/n): " yn
+read -p "Going to install downloaded dmg files! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
     echo "Skipping..."
 else
