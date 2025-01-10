@@ -8,6 +8,7 @@
 {{ $externs := false }}
 {{ $key_sign := false }}
 {{ $age_recipient := "age1g995t9xueedckrmxp5ktrlrhgdthdqt8gd7feanlje0t9qgk5yvqrwssqq" }}
+{{ $age_identity := "~/.config/age/key.txt" }}
 
 {{ if $codespaces }}
 {{   $name = "Itai Koren" }}
@@ -56,7 +57,7 @@ progress = true
 encryption = "age"
 
 [age]
-  identity = "~/.config/age/key.txt"
+  identity = {{ $age_identity | quote }}
   recipient = {{ $age_recipient | quote }}
 
 [data]
@@ -73,6 +74,7 @@ encryption = "age"
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
   key_sign = {{ $key_sign }}
+  age_identity = {{ $age_identity | quote }}
   age_recipient = {{ $age_recipient | quote }}
   {{- if $powershellPath -}}
   powershellPath = {{ $powershellPath | quote }}
