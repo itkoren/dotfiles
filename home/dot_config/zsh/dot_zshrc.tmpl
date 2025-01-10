@@ -29,10 +29,18 @@ ENABLE_CORRECTION="true"
 # Disable nomatch to prevent errors if no files are found
 setopt nonomatch
 
+# Check if the conf.d directory exists
+conf_dir="${ZDOTDIR:-$HOME}/conf.d"
+echo "Checking files in: $conf_dir"
+
 # Loop through all .sh files recursively in conf.d
 for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*.sh; do
+  echo "Checking file: $file"  # Debugging line to see the files being matched
   if [[ -f $file ]]; then  # Ensure it's a file
+    echo "Sourcing $file"
     source "$file"
+  else
+    echo "$file is not a regular file"  # Debugging line to see if it's not a regular file
   fi
 done
 
