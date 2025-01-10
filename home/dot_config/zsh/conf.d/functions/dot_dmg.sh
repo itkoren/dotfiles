@@ -27,8 +27,8 @@ function dmginstall {
   echo "Mounting image..."
   listing=$(sudo hdiutil mount "$app" | grep Volumes)
   
-  # Use sed to properly extract the volume path (handle spaces in names)
-  volume=$(echo "$listing" | sed -E 's/.*\t([^\t]+)$/\1/')
+  # Use rev/cut to extract the correct volume path (handles spaces)
+  volume=$(echo "$listing" | rev | cut -d$'\t' -f1 | rev)
 
   if [[ -z "$volume" ]]; then
     echo "Failed to mount the disk image."
