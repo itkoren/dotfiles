@@ -105,7 +105,7 @@ encryption = "age"
 {{ if $tasks  }}
 [hooks.init.pre]
   command = "task"
-  args = ["-d", {.chezmoi.sourceDir | quote}]
+  args = ["-d", {{- .chezmoi.sourceDir | quote -}}]
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
