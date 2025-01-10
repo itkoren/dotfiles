@@ -7,6 +7,7 @@
 {{ $tasks := false }}
 {{ $externs := false }}
 {{ $key_sign := false }}
+{{ $age_recipient := "age1g995t9xueedckrmxp5ktrlrhgdthdqt8gd7feanlje0t9qgk5yvqrwssqq" }}
 
 {{ if $codespaces }}
 {{   $name = "Itai Koren" }}
@@ -56,7 +57,7 @@ encryption = "age"
 
 [age]
   identity = "~/.config/age/key.txt"
-  recipient = "age1g995t9xueedckrmxp5ktrlrhgdthdqt8gd7feanlje0t9qgk5yvqrwssqq"
+  recipient = {{ $age_recipient | quote }}
 
 [data]
   name = {{ $name | quote }}
@@ -72,6 +73,7 @@ encryption = "age"
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
   key_sign = {{ $key_sign }}
+  age_recipient = {{ $age_recipient }}
   {{- if $powershellPath -}}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
