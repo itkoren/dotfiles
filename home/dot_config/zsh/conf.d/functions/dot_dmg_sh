@@ -1,0 +1,41 @@
+function dmginstall {
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: dmginstall [url]"
+    exit 1
+  fi
+    
+  url="${1}"
+  tempd=""
+
+  set -x
+  if [[ "$url" =~ "^https?://" ]]; then
+    echo "The argument starts with http:// or https://"
+    # Download file
+    echo "Downloading $url..."
+    tempd=$(mktemp -d)
+    curl "$url" > "$tempd/pkg.dmg"
+    app = "$tempd/pkg.dmg"
+  else
+    echo "The argument does not start with http:// or https://"
+    app = $url
+  fi
+
+  echo "Mounting image..."
+  listing=$(sudo hdiutil mount $app | grep Volumes)
+  volume=$(echo "$listing" | cut -f 3)
+  if [ -e "$volume/*.app" ]; then
+    cp -rf "$volume/*.app" /Applications
+  elif [ -e "$volume/*.pkg" ]; then
+    package=$(ls -1 "$volume" | grep .pkg | head -1)
+    sudo installer -pkg "$volume/$package" -target /
+  fi
+
+  # Unmount volume, delete temporal file
+  echo "Cleaning up..."
+  hdiutil unmount "$(echo "$listing" | cut -f 1) -quiet
+  if [[ -n "$tempd" ]]; then
+    rm -rf $tempd
+  fi
+  echo "Done!"
+  set +x
+}
