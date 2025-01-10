@@ -1,0 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+export AGE_LOCAL_PUBLIC_KEY={{ .age.recipient | quote }}
+{{ end -}}
