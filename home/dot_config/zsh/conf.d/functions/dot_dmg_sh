@@ -1,40 +1,70 @@
 function dmginstall {
   if [[ $# -lt 1 ]]; then
-    echo "Usage: dmginstall [url]"
+    echo "Usage: dmginstall [url or path]"
     exit 1
   fi
     
   url="${1}"
   tempd=""
-
+  app=""
+  
   set -x
-  if [[ "$url" =~ "^https?://" ]]; then
+  
+  # Check if the input is a URL or a local file
+  if [[ "$url" =~ ^https?:// ]]; then
     echo "The argument starts with http:// or https://"
     # Download file
     echo "Downloading $url..."
     tempd=$(mktemp -d)
-    curl "$url" > "$tempd/pkg.dmg"
-    app = "$tempd/pkg.dmg"
+    curl -L "$url" -o "$tempd/pkg.dmg" || { echo "Download failed"; exit 1; }
+    app="$tempd/pkg.dmg"
   else
     echo "The argument does not start with http:// or https://"
-    app = $url
+    app="$url"
   fi
 
+  # Mount the DMG file
   echo "Mounting image..."
-  listing=$(sudo hdiutil mount $app | grep Volumes)
-  volume=$(echo "$listing" | cut -f 3)
-  if [ -e "$volume/*.app" ]; then
-    cp -rf "$volume/*.app" /Applications
-  elif [ -e "$volume/*.pkg" ]; then
-    package=$(ls -1 "$volume" | grep .pkg | head -1)
-    sudo installer -pkg "$volume/$package" -target /
+  listing=$(sudo hdiutil mount "$app" | grep Volumes)
+  volume=$(echo "$listing" | cut -f 3 | tr -d '[:space:]')  # Remove any leading/trailing whitespace
+
+  if [[ -z "$volume" ]]; then
+    echo "Failed to mount the disk image."
+    exit 1
+  fi
+  
+  # Install the app or package
+  if ls "$volume"/*.app &>/dev/null; then
+    app_to_install=$(find "$volume" -name "*.app" | head -n 1)
+    app_name=$(basename "$app_to_install")
+    
+    # Check if the app is already installed
+    if [[ -d "/Applications/$app_name" ]]; then
+      read -p "$app_name already exists. Do you want to overwrite it? (y/n): " answer
+      if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
+        echo "Installation canceled."
+        exit 0
+      fi
+    fi
+    
+    echo "Copying $app_to_install to /Applications..."
+    sudo cp -rf "$app_to_install" /Applications
+  elif ls "$volume"/*.pkg &>/dev/null; then
+    package=$(find "$volume" -name "*.pkg" | head -n 1)
+    
+    # Install the package
+    echo "Installing package $package..."
+    sudo installer -pkg "$package" -target /
+  else
+    echo "No .app or .pkg found in the mounted disk image."
+    exit 1
   fi
 
-  # Unmount volume, delete temporal file
+  # Unmount volume and clean up
   echo "Cleaning up..."
-  hdiutil unmount "$(echo "$listing" | cut -f 1) -quiet
+  sudo hdiutil unmount "$volume" -quiet
   if [[ -n "$tempd" ]]; then
-    rm -rf $tempd
+    rm -rf "$tempd"
   fi
   echo "Done!"
   set +x
