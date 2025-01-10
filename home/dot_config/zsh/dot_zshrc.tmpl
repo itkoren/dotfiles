@@ -26,12 +26,11 @@ HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Enable globstar to allow recursive globbing
-setopt globstar
+# Disable nomatch to prevent errors if no files are found
+setopt nonomatch
 
-# public
 # Loop through all .sh files recursively in conf.d
-for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*.sh; do
+for file in "${ZDOTDIR:-$HOME}"/conf.d/**/*(.sh); do
   if [[ -f $file ]]; then  # Ensure it's a file, not a directory
     source "$file"
   fi
