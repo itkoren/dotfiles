@@ -73,7 +73,7 @@ encryption = "age"
   git_oss = {{ $git_oss | quote }}
   git_work = {{ $git_work | quote }}
   key_sign = {{ $key_sign }}
-  age_recipient = {{ $age_recipient }}
+  age_recipient = {{ $age_recipient | quote }}
   {{- if $powershellPath -}}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
