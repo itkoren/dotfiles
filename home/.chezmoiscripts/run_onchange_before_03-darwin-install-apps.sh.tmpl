@@ -1,7 +1,7 @@
 {{- if and (eq .chezmoi.os "darwin") (hasKey .apps "darwin") -}}
 #!{{ lookPath "sh" }}
 
-# apps.yaml.tmpl hash: {{ include ".chezmoidata/apps.yaml.tmpl" | sha256sum }}
+# apps.yaml hash: {{ include ".chezmoidata/apps.yaml" | sha256sum }}
 source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_age.sh"
 
 {{ if hasKey .apps.darwin "universal" }}
