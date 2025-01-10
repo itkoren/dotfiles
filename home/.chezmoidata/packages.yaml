@@ -15,6 +15,7 @@ packages:
             - "antigen"
             - "autojump"
             - "atuin"
+            - "eza"
             - "gh"
             - "jq"
             - "mas"
