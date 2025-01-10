@@ -76,6 +76,7 @@ encryption = "age"
   key_sign = {{ $key_sign }}
   age_identity = {{ $age_identity | quote }}
   age_recipient = {{ $age_recipient | quote }}
+  cm_src_dir = {{ .chezmoi.sourceDir | quote }}
   {{- if $powershellPath -}}
   powershellPath = {{ $powershellPath | quote }}
   hasPowerShell = true
