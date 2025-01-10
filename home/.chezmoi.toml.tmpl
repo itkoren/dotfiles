@@ -52,6 +52,11 @@
 follow = true # follow symlinks
 sourceDir = {{ .chezmoi.workingTree | quote }}
 progress = true
+encryption = "age"
+
+[age]
+  identity = "~/.config/age/key.txt"
+  recipient = "age1g995t9xueedckrmxp5ktrlrhgdthdqt8gd7feanlje0t9qgk5yvqrwssqq"
 
 [data]
   name = {{ $name | quote }}
