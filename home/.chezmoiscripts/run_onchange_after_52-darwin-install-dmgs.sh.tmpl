@@ -1,8 +1,10 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
 
-read -p "going to install dowanloded dmg files! skip? (y/n): " yn
-if [[ "$yn" =~ ^[Nn]$ ]]; then
+read -p "going to install downloaded dmg files! skip? (y/n): " yn
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    echo "Skipping..."
+else
     source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_dmg.sh"
 
     # Path to the Downloads directory
