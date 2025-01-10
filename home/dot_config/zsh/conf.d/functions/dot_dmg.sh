@@ -26,12 +26,16 @@ function dmginstall {
   # Mount the DMG file
   echo "Mounting image..."
   listing=$(sudo hdiutil mount "$app" | grep Volumes)
-  volume=$(echo "$listing" | cut -f 3 | tr -d '[:space:]')  # Remove any leading/trailing whitespace
+  
+  # Use awk to properly extract the volume path (handle spaces in names)
+  volume=$(echo "$listing" | awk '{print $3}')
 
   if [[ -z "$volume" ]]; then
     echo "Failed to mount the disk image."
     exit 1
   fi
+  
+  echo "Mounted volume: $volume"
   
   # Install the app or package
   if ls "$volume"/*.app &>/dev/null; then
