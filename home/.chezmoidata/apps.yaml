@@ -8,7 +8,7 @@ apps:
     # ── Universal (get installed before the other apps) ──────────────
     universal:
         encrypted:
-            - "{{- .chezmoi.sourceDir | quote -}}/apps/encrypted.Supercharge.app"
+            - "{{ .cm_src_dir }}/apps/encrypted.Supercharge.app"
         plain:
     personal:
         encrypted:
