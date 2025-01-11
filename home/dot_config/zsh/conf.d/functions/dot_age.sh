@@ -125,19 +125,21 @@ function age_decrypt_extract {
     # Check if the extracted file is already in the target directory
     # Iterate over all files in the source directory
     for src_file in "$tempd"/*; do
-      echo "processing $src_file"
-      # Skip directories, only process files
-      if [ -d "$src_file" ]; then
-        continue
-      fi
-
       # Get the file name (without path)
       file_name=$(basename "$src_file")
     
       # Check if the file exists in the target directory
       target_file="$output_dir/$file_name"
       if [ -e "$target_file" ]; then
-        read -p "$file_name already exists. Do you want to overwrite it? (y/n): " yn
+        # Check if the script is running in an interactive shell
+        if [ -t 0 ]; then
+            # If interactive, prompt the user
+            echo -n "$file_name already exists. Do you want to overwrite it? (y/n): "
+            read yn
+        else
+            # Default to 'y' if non-interactive
+            yn="y"
+        fi
         if [[ "$yn" =~ ^[Yy]$ ]]; then
           echo "Copying $file_name to $output_dir..."
           sudo cp -rf "$tempd/$file_name" "$target_file"
