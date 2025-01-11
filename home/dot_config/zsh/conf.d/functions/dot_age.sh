@@ -21,7 +21,7 @@ function age_compress_encrypt {
       return 1
     fi
     
-    # Check if the provided .app file exists
+    # Check if the provided file exists
     if [ ! -d "$app_file_path" ]; then
       echo "Error: '$app_file_path' is not a valid .app directory."
       return 1
@@ -30,9 +30,22 @@ function age_compress_encrypt {
     # Define temporary compressed file
     local compressed_file="${output_file}.tar.gz"
 
-    # Compress the .app file
-    echo "Compressing the .app file..."
-    tar -czf "$compressed_file" -C "$(dirname "$app_file_path")" "$(basename "$app_file_path")"
+    # Compress the file
+    echo "Compressing the file..."
+    # Check if the file already exists
+    if [ -e "$compressed_file" ]; then
+      read -p "$compressed_file already exists. Do you want to overwrite it? (y/n): " yn
+      if [[ "$yn" =~ ^[Yy]$ ]]; then
+        echo "Overwriting $compressed_file..."
+        tar -czf "$compressed_file" -C "$(dirname "$app_file_path")" "$(basename "$app_file_path")"
+      else
+        echo "Skipping $compressed_file..."
+        return 0
+      fi
+    else
+      echo "Compressing $compressed_file..."
+      tar -czf "$compressed_file" -C "$(dirname "$app_file_path")" "$(basename "$app_file_path")"
+    fi
 
     if [ $? -ne 0 ]; then
         echo "Error: Failed to compress the .app file."
@@ -61,14 +74,15 @@ function age_compress_encrypt {
 # Function to decrypt and extract a compressed file using age
 function age_decrypt_extract {
     if [ $# -ne 2 ]; then
-        echo "Usage: decrypt_and_extract_with_age <encrypted_file> <output_dir> ?<private_key>"
+        echo "Usage: age_decrypt_extract <encrypted_file> <output_dir> ?<private_key>"
         return 1
     fi
 
     local encrypted_file="$1"
     local output_dir="$2"
     local private_key="${3:-$AGE_LOCAL_KEYS_FILE}"
-
+    local tempd=$(mktemp -d)
+    
     # Check if the encrypted file exists
     if [ ! -f "$encrypted_file" ]; then
         echo "Error: '$encrypted_file' is not a valid encrypted file."
@@ -82,7 +96,7 @@ function age_decrypt_extract {
     fi
 
     # Define the temporary decrypted compressed file
-    local decrypted_file="${output_dir}/decrypted_file.tar.gz"
+    local decrypted_file="${tempd}/decrypted_file.tar.gz"
 
     # Decrypt the file using age
     echo "Decrypting the file with age..."
@@ -95,8 +109,7 @@ function age_decrypt_extract {
 
     # Extract the decrypted .tar.gz file
     echo "Extracting the decrypted .tar.gz file..."
-    mkdir -p "$output_dir"
-    tar -xzf "$decrypted_file" -C "$output_dir"
+    tar -xzf "$decrypted_file" -C "$tempd"
 
     if [ $? -ne 0 ]; then
         echo "Error: Failed to extract the .tar.gz file."
@@ -106,6 +119,37 @@ function age_decrypt_extract {
     # Clean up the temporary decrypted file
     rm "$decrypted_file"
 
+    # Verify target directory exists
+    mkdir -p "$output_dir"
+    
+    # Check if the extracted file is already in the target directory
+    # Iterate over all files in the source directory
+    for src_file in "$tempd"/*; do
+      # Skip directories, only process files
+      if [ -d "$src_file" ]; then
+        continue
+      fi
+
+      # Get the file name (without path)
+      file_name=$(basename "$src_file")
+    
+      # Check if the file exists in the target directory
+      target_file="$output_dir/$file_name"
+      if [ -e "$target_file" ]; then
+        read -p "$file_name already exists. Do you want to overwrite it? (y/n): " yn
+        if [[ "$yn" =~ ^[Yy]$ ]]; then
+          echo "Copying $file_name to $output_dir..."
+          sudo cp -rf "$tempd/$file_name" "$target_file"
+        else
+          echo "Skipping $file_name..."
+          continue
+        fi
+      else
+        echo "Copying $file_name to $output_dir..."
+        sudo cp -rf "$tempd/$file_name" "$target_file"
+      fi
+    done
+    
     echo "Successfully decrypted and extracted the .app file. Output directory: $output_dir"
 }
 
