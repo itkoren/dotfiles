@@ -104,8 +104,6 @@ packages:
           - "paletro"
           - "expandrive"
         mas:
-          - name: "Drive Mounter"
-            id: "441149468"
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
           - name: "Dropover - Easier Drag & Drop"
