@@ -1,0 +1,43 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+
+{{- $workingTree := .chezmoi.workingTree -}}
+{{- $destDir := .chezmoi.destDir -}}
+
+# licenses.yaml hash: {{ include ".chezmoidata/licenses.yaml" | sha256sum }}
+source "$HOME/.config/zsh/conf.d/functions/.age.sh"
+
+read -p "Going to decrypt and copy all license files! skip? (y/n): " yn
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    echo "Skipping..."
+else
+  {{ if hasKey .licenses.darwin "universal" }}
+
+  mkdir "{{ $destDir }}/content/licenses"
+
+  {{ range .licenses.darwin.universal -}}
+  age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/content/licenses"
+  {{ end -}}
+  
+  {{ end -}}
+  
+  
+  {{ if and (.environment.work) (hasKey .licenses.darwin "work") }}
+  
+  {{ range .licenses.darwin.work.encrypted -}}
+  age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/content/licenses"
+  {{ end -}}
+  
+  {{ end -}}
+  
+  
+  {{ if and (.environment.personal) (hasKey .licenses.darwin "personal") }}
+  
+  {{ range .licenses.darwin.personal.encrypted -}}
+  age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/content/licenses"
+  {{ end -}}
+  
+  {{ end -}}
+fi
+
+{{ end -}}
