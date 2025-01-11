@@ -9,7 +9,7 @@ source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 
 read -p "Going to decrypt and copy all license files! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
-    echo "Skipping..."
+  echo "Skipping..."
 else
   {{ if hasKey .licenses.darwin "universal" }}
 
@@ -24,7 +24,7 @@ else
   
   {{ if and (.environment.work) (hasKey .licenses.darwin "work") }}
   
-  {{ range .licenses.darwin.work.encrypted -}}
+  {{ range .licenses.darwin.work -}}
   age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/content/licenses"
   {{ end -}}
   
@@ -33,7 +33,7 @@ else
   
   {{ if and (.environment.personal) (hasKey .licenses.darwin "personal") }}
   
-  {{ range .licenses.darwin.personal.encrypted -}}
+  {{ range .licenses.darwin.personal -}}
   age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/content/licenses"
   {{ end -}}
   
