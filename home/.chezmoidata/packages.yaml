@@ -104,6 +104,8 @@ packages:
           - "expandrive"
           - "mountain-duck"
           - "imazing"
+          - "command-tab-plus"
+          - "dockview"
         mas:
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
