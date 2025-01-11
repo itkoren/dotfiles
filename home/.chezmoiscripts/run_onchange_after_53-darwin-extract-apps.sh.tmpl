@@ -7,11 +7,10 @@ source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 {{ if hasKey .apps.darwin "universal" }}
 
 {{ range .apps.darwin.universal.encrypted -}}
-age_decrypt_extract {{ . | quote }} "/Applications"
+age_decrypt_extract {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
-
 {{ range .apps.darwin.universal.plain -}}
-cp {{ . | quote }} "/Applications"
+cp {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
 
 {{ end -}}
@@ -20,11 +19,11 @@ cp {{ . | quote }} "/Applications"
 {{ if and (.environment.work) (hasKey .apps.darwin "work") }}
 
 {{ range .apps.darwin.work.encrypted -}}
-age_decrypt_extract {{ . | quote }} "/Applications"
+age_decrypt_extract {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
 
 {{ range .apps.darwin.work.plain -}}
-cp {{ . | quote }} "/Applications"
+cp {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
 
 {{ end -}}
@@ -33,11 +32,11 @@ cp {{ . | quote }} "/Applications"
 {{ if and (.environment.personal) (hasKey .apps.darwin "personal") }}
 
 {{ range .apps.darwin.personal.encrypted -}}
-age_decrypt_extract {{ . | quote }} "/Applications"
+age_decrypt_extract {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
 
 {{ range .apps.darwin.personal.plain -}}
-cp {{ . | quote }} "/Applications"
+cp {{ .chezmoi.sourceDir }}/{{ . | quote }} "~/Downloads"
 {{ end -}}
 
 {{ end -}}
