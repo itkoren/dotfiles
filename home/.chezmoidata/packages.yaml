@@ -102,6 +102,7 @@ packages:
           - "paletro"
           - "expandrive"
           - "mountain-duck"
+          - "imazing"
         mas:
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
