@@ -125,6 +125,7 @@ function age_decrypt_extract {
     # Check if the extracted file is already in the target directory
     # Iterate over all files in the source directory
     for src_file in "$tempd"/*; do
+      echo "processing $src_file"
       # Skip directories, only process files
       if [ -d "$src_file" ]; then
         continue
