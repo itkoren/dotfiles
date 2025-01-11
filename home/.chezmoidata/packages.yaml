@@ -103,6 +103,7 @@ packages:
           - "webstorm"
           - "paletro"
           - "expandrive"
+          - "mountain-duck"
         mas:
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
