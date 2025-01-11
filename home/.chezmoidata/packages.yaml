@@ -51,7 +51,6 @@ packages:
             - "spotify"
             - "popclip"
             - "lens"
-            - "forklift"
             - "tower"
             - "bunch"
             - "arc"
