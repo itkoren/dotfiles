@@ -10,10 +10,10 @@ source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 {{ if hasKey .apps.darwin "universal" }}
 
 {{ range .apps.darwin.universal.encrypted -}}
-age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+age_decrypt_extract "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 {{ range .apps.darwin.universal.plain -}}
-cp "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+cp "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 
 {{ end -}}
@@ -22,11 +22,11 @@ cp "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
 {{ if and (.environment.work) (hasKey .apps.darwin "work") }}
 
 {{ range .apps.darwin.work.encrypted -}}
-age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+age_decrypt_extract "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 
 {{ range .apps.darwin.work.plain -}}
-cp "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+cp "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 
 {{ end -}}
@@ -35,11 +35,11 @@ cp "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
 {{ if and (.environment.personal) (hasKey .apps.darwin "personal") }}
 
 {{ range .apps.darwin.personal.encrypted -}}
-age_decrypt_extract "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+age_decrypt_extract "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 
 {{ range .apps.darwin.personal.plain -}}
-cp "{{ $workingTree }}/{{ . }}" "{{ $destDir }}/Downloads"
+cp "{{ $workingTree }}/{{ . }}" "/Applications"
 {{ end -}}
 
 {{ end -}}
