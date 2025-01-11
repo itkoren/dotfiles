@@ -40,7 +40,6 @@ packages:
             #- "font-hack"
             #- "font-hack-nerd-font"
             - "font-meslo-lg-nerd-font"
-            - "raycast"
             - "alfred"
             - "transmit"
             - "sublime-text"
