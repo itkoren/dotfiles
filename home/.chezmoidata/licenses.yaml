@@ -8,7 +8,7 @@ licenses:
     # ── Universal (get installed before the other licenses) ──────────────
     universal:
         - "licenses/encrypted.alfred.license.txt"
-        - "licenses/encrypted.transmit.txt"
+        - "licenses/encrypted.transmit.license.txt"
         - "licenses/encrypted.pastepal.license.txt"
     personal:
         - "licenses/encrypted.522779.mountainducklicense"
