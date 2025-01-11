@@ -10,10 +10,10 @@ apps:
         encrypted:
             - "apps/encrypted.Supercharge.app"
             - "apps/encrypted.PastePal.app"
-            - "apps/encrypted.Tab Finder.app"
         plain:
     personal:
         encrypted:
+            - "apps/encrypted.Tab Finder.app"
         plain:
     work:
         encrypted:
