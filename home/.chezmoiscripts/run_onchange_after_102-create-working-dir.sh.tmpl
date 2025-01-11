@@ -1,14 +1,18 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!{{ lookPath "sh" }}
 
-mkdir -p "$HOME/content/work"
-mkdir -p "$HOME/content/personal"
-
-{{ if .environment.personal }}
-# Check if the repos are already cloned
-if [ ! -d "$HOME/content/personal/dotfiles" ]; then
-    git clone git@github.com:itkoren/dotfiles.git "$HOME/content/personal/dotfiles"
+read -p "Going to recreate working dirs! skip? (y/n): " yn
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    echo "Skipping..."
+else
+    mkdir -p "$HOME/content/work"
+    mkdir -p "$HOME/content/personal"
+    
+    {{ if .environment.personal }}
+    # Check if the repos are already cloned
+    if [ ! -d "$HOME/content/personal/dotfiles" ]; then
+        git clone git@github.com:itkoren/dotfiles.git "$HOME/content/personal/dotfiles"
+    fi
+    {{ end }}
 fi
-{{ end }}
-
 {{ end -}}
