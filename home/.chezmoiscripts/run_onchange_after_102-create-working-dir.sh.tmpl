@@ -1,7 +1,7 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!{{ lookPath "sh" }}
 
-read -p "Going to recreate working dirs! skip? (y/n): " yn
+read -p "Going to create working dirs! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
     echo "Skipping..."
 else
