@@ -2,7 +2,6 @@
 #!{{ lookPath "sh" }}
 
 {{- $workingTree := .chezmoi.workingTree -}}
-{{- $destDir := .chezmoi.destDir -}}
 
 # apps.yaml hash: {{ include ".chezmoidata/apps.yaml" | sha256sum }}
 source "$HOME/.config/zsh/conf.d/functions/.age.sh"
