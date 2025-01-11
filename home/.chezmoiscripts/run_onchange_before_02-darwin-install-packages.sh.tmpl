@@ -7,275 +7,275 @@ read -p "Going to install packages! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
   echo "Skipping..."
 else
-  {{ if hasKey .packages.darwin "universal" }}
-  {{ if .brewcasks -}}
-  # First check missing and outdated casks
-  brewfile_cask_content=$(cat <<EOF
-  {{ range .packages.darwin.universal.casks -}}
-  cask {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  {{ end -}}
-  
-  # Generate the tap & formulas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.universal.taps -}}
-  tap {{ . | quote }}
-  {{ end -}}
-  
-  {{ range .packages.darwin.universal.brews -}}
-  brew {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ if .brewcasks -}}
-  # If there are missing or outdated casks, generate a Brewfile for only those casks
-  if [[ -n "$brewfile_cask_content" ]]; then
-  
-      # Iterate over each cask in the list
-      while IFS= read -r cask; do
-        # Remove the "cask" prefix and the quotes to get the cask name
-        cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
-        
-        # Check if the cask is installed and outdated
-        if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
-          # If it's not installed or outdated, add it to the list of casks to install/update
-          casks_to_install_or_update+="$cask\n"
-        fi
-      done <<< "$brewfile_cask_content"
+{{ if hasKey .packages.darwin "universal" }}
+{{ if .brewcasks -}}
+# First check missing and outdated casks
+brewfile_cask_content=$(cat <<EOF
+{{ range .packages.darwin.universal.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+)
+{{ end -}}
+
+# Generate the tap & formulas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.universal.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+
+{{ range .packages.darwin.universal.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ if .brewcasks -}}
+# If there are missing or outdated casks, generate a Brewfile for only those casks
+if [[ -n "$brewfile_cask_content" ]]; then
+
+    # Iterate over each cask in the list
+    while IFS= read -r cask; do
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
       
-      # Now $casks_to_install_or_update contains all casks that need installation or updating
-      echo "Casks to install or update: $casks_to_install_or_update"
-  
-      # Step 1: Check if the casks are already installed using `brew bundle check`
-      echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
-  
-      # Step 2: If some casks are missing or outdated, install them
-      if [[ $? -ne 0 ]]; then
-          echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask\n"
       fi
-  else
-      echo "No missing or outdated casks to install."
-  fi
-  {{ end -}}
-  
-  # Generate the mas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.universal.mas -}}
-  mas {{ .name | quote }}, id: {{ .id }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ range .packages.darwin.universal.asdf -}}
-  asdf plugin add {{ .plugin }}
-  {{ $plugin := .plugin }}  # Store the plugin name in a local variable
-  {{ range .versions }}
-  asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
-  {{ end }}
-  {{ end -}}
-  
-  {{ end }}
-  
-  
-  {{ if and (.environment.work) (hasKey .packages.darwin "work") }}
-  HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
-  
-  {{ if .brewcasks -}}
-  # First check missing and outdated casks
-  brewfile_cask_content=$(cat <<EOF
-  {{ range .packages.darwin.work.casks -}}
-  cask {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  {{ end -}}
-  
-  # Generate the tap & formulas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.work.taps -}}
-  tap {{ . | quote }}
-  {{ end -}}
-  
-  {{ range .packages.darwin.work.brews -}}
-  brew {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ if .brewcasks -}}
-  # If there are missing or outdated casks, generate a Brewfile for only those casks
-  if [[ -n "$brewfile_cask_content" ]]; then
-  
-      # Iterate over each cask in the list
-      while IFS= read -r cask; do
-        # Remove the "cask" prefix and the quotes to get the cask name
-        cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
-        
-        # Check if the cask is installed and outdated
-        if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
-          # If it's not installed or outdated, add it to the list of casks to install/update
-          casks_to_install_or_update+="$cask\n"
-        fi
-      done <<< "$brewfile_cask_content"
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
+
+    # Step 1: Check if the casks are already installed using `brew bundle check`
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+
+    # Step 2: If some casks are missing or outdated, install them
+    if [[ $? -ne 0 ]]; then
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+    fi
+else
+    echo "No missing or outdated casks to install."
+fi
+{{ end -}}
+
+# Generate the mas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.universal.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ range .packages.darwin.universal.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
+{{ range .versions }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
+{{ end }}
+{{ end -}}
+
+{{ end }}
+
+
+{{ if and (.environment.work) (hasKey .packages.darwin "work") }}
+HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
+
+{{ if .brewcasks -}}
+# First check missing and outdated casks
+brewfile_cask_content=$(cat <<EOF
+{{ range .packages.darwin.work.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+)
+{{ end -}}
+
+# Generate the tap & formulas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.work.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+
+{{ range .packages.darwin.work.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ if .brewcasks -}}
+# If there are missing or outdated casks, generate a Brewfile for only those casks
+if [[ -n "$brewfile_cask_content" ]]; then
+
+    # Iterate over each cask in the list
+    while IFS= read -r cask; do
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
       
-      # Now $casks_to_install_or_update contains all casks that need installation or updating
-      echo "Casks to install or update: $casks_to_install_or_update"
-  
-      # Step 1: Check if the casks are already installed using `brew bundle check`
-      echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
-  
-      # Step 2: If some casks are missing or outdated, install them
-      if [[ $? -ne 0 ]]; then
-          echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask\n"
       fi
-  else
-      echo "No missing or outdated casks to install."
-  fi
-  {{ end -}}
-  
-  # Generate the mas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.work.mas -}}
-  mas {{ .name | quote }}, id: {{ .id }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ range .packages.darwin.work.asdf -}}
-  asdf plugin add {{ .plugin }}
-  {{ $plugin := .plugin }}  # Store the plugin name in a local variable
-  {{ range .versions }}
-  asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
-  {{ end }}
-  {{ end -}}
-  
-  {{ end }}
-  
-  
-  {{ if and (.environment.personal) (hasKey .packages.darwin "personal") }}
-  HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
-  
-  {{ if .brewcasks -}}
-  # First check missing and outdated casks
-  brewfile_cask_content=$(cat <<EOF
-  {{ range .packages.darwin.personal.casks -}}
-  cask {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  {{ end -}}
-  
-  # Generate the tap & formulas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.personal.taps -}}
-  tap {{ . | quote }}
-  {{ end -}}
-  
-  {{ range .packages.darwin.personal.brews -}}
-  brew {{ . | quote }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ if .brewcasks -}}
-  # If there are missing or outdated casks, generate a Brewfile for only those casks
-  if [[ -n "$brewfile_cask_content" ]]; then
-  
-      # Iterate over each cask in the list
-      while IFS= read -r cask; do
-        # Remove the "cask" prefix and the quotes to get the cask name
-        cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
-        
-        # Check if the cask is installed and outdated
-        if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
-          # If it's not installed or outdated, add it to the list of casks to install/update
-          casks_to_install_or_update+="$cask\n"
-        fi
-      done <<< "$brewfile_cask_content"
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
+
+    # Step 1: Check if the casks are already installed using `brew bundle check`
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+
+    # Step 2: If some casks are missing or outdated, install them
+    if [[ $? -ne 0 ]]; then
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+    fi
+else
+    echo "No missing or outdated casks to install."
+fi
+{{ end -}}
+
+# Generate the mas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.work.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ range .packages.darwin.work.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
+{{ range .versions }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
+{{ end }}
+{{ end -}}
+
+{{ end }}
+
+
+{{ if and (.environment.personal) (hasKey .packages.darwin "personal") }}
+HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/6gs2v2ehe4k74q6u3yez4b65ii/password" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}'
+
+{{ if .brewcasks -}}
+# First check missing and outdated casks
+brewfile_cask_content=$(cat <<EOF
+{{ range .packages.darwin.personal.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+)
+{{ end -}}
+
+# Generate the tap & formulas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.personal.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+
+{{ range .packages.darwin.personal.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ if .brewcasks -}}
+# If there are missing or outdated casks, generate a Brewfile for only those casks
+if [[ -n "$brewfile_cask_content" ]]; then
+
+    # Iterate over each cask in the list
+    while IFS= read -r cask; do
+      # Remove the "cask" prefix and the quotes to get the cask name
+      cask_name=$(echo "$cask" | sed -E 's/cask "(.*)"/\1/')
       
-      # Now $casks_to_install_or_update contains all casks that need installation or updating
-      echo "Casks to install or update: $casks_to_install_or_update"
-  
-      # Step 1: Check if the casks are already installed using `brew bundle check`
-      echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
-  
-      # Step 2: If some casks are missing or outdated, install them
-      if [[ $? -ne 0 ]]; then
-          echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+      # Check if the cask is installed and outdated
+      if ! brew list --cask "$cask_name" &>/dev/null || brew outdated --cask "$cask_name" | grep -q .; then
+        # If it's not installed or outdated, add it to the list of casks to install/update
+        casks_to_install_or_update+="$cask\n"
       fi
-  else
-      echo "No missing or outdated casks to install."
-  fi
-  {{ end -}}
-  
-  # Generate the mas Brewfile content dynamically and store it in a variable
-  brewfile_content=$(cat <<EOF
-  {{ range .packages.darwin.personal.mas -}}
-  mas {{ .name | quote }}, id: {{ .id }}
-  {{ end -}}
-  EOF
-  )
-  
-  # Step 1: Check if all packages are already installed using `brew bundle check`
-  echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
-  
-  # Step 2: If some packages are missing, install them
-  if [[ $? -ne 0 ]]; then
-      echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
-  fi
-  
-  {{ range .packages.darwin.personal.asdf -}}
-  asdf plugin add {{ .plugin }}
-  {{ $plugin := .plugin }}  # Store the plugin name in a local variable
-  {{ range .versions }}
-  asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
-  {{ end }}
-  {{ end -}}
-  
-  {{ end }}
+    done <<< "$brewfile_cask_content"
+    
+    # Now $casks_to_install_or_update contains all casks that need installation or updating
+    echo "Casks to install or update: $casks_to_install_or_update"
+
+    # Step 1: Check if the casks are already installed using `brew bundle check`
+    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+
+    # Step 2: If some casks are missing or outdated, install them
+    if [[ $? -ne 0 ]]; then
+        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+    fi
+else
+    echo "No missing or outdated casks to install."
+fi
+{{ end -}}
+
+# Generate the mas Brewfile content dynamically and store it in a variable
+brewfile_content=$(cat <<EOF
+{{ range .packages.darwin.personal.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+EOF
+)
+
+# Step 1: Check if all packages are already installed using `brew bundle check`
+echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+
+# Step 2: If some packages are missing, install them
+if [[ $? -ne 0 ]]; then
+    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+fi
+
+{{ range .packages.darwin.personal.asdf -}}
+asdf plugin add {{ .plugin }}
+{{ $plugin := .plugin }}  # Store the plugin name in a local variable
+{{ range .versions }}
+asdf install {{ $plugin }} {{ . }}  # Use the $plugin variable
+{{ end }}
+{{ end -}}
+
+{{ end }}
 fi
 
 {{ end }}
