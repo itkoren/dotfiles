@@ -97,35 +97,35 @@ else
 	defaults write com.apple.dock showhidden -bool true
 	
 	declare -a remove_apps=(
-	    "Safari"
-	    "Messages"
-	    "Mail"
-	    "Maps"
-	    "Photos"
-	    "FaceTime"
-	    "Contacts"
-	    "Reminders"
-	    "Notes"
-	    "Freeform"
-	    "TV"
-	    "Music"
-	    "Pages.app"
-	    "App Store.app"
-	    "Keynote"
-	    "Numbers"
-	    "/Applications/Pages.app"
-	    "/System/Applications/App%20Store.app"
+		"Safari"
+		"Messages"
+		"Mail"
+		"Maps"
+		"Photos"
+		"FaceTime"
+		"Contacts"
+		"Reminders"
+		"Notes"
+		"Freeform"
+		"TV"
+		"Music"
+		"Pages.app"
+		"App Store.app"
+		"Keynote"
+		"Numbers"
+		"/Applications/Pages.app"
+		"/System/Applications/App%20Store.app"
 	)
 	declare -a add_apps=(
-	    "/Applications/iTerm.app"
-	    "/System/Applications/Launchpad.app"
+		"/Applications/iTerm.app"
+		"/System/Applications/Launchpad.app"
 	);
 	
 	for app in "${remove_apps[@]}"; do
-	    remove_app_from_dock "$app"
+		remove_app_from_dock "$app"
 	done
 	for app in "${add_apps[@]}"; do
-	    add_app_to_dock "$app"
+		add_app_to_dock "$app"
 	done
 	
 	# add_to_dock_left "file:////System/Applications/Launchpad.app"
