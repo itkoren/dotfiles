@@ -23,7 +23,7 @@ function age_compress_encrypt {
     
     # Check if the provided file exists
     if [ ! -e "$app_file_path" ]; then
-      echo "Error: '$app_file_path' is not a valid file."
+      echo "Error: '$app_file_path' is not a valid file/dir."
       return 1
     fi
 
