@@ -23,7 +23,7 @@ function age_compress_encrypt {
     
     # Check if the provided file exists
     if [ ! -d "$app_file_path" ]; then
-      echo "Error: '$app_file_path' is not a valid .app directory."
+      echo "Error: '$app_file_path' is not a valid directory."
       return 1
     fi
 
@@ -48,7 +48,7 @@ function age_compress_encrypt {
     fi
 
     if [ $? -ne 0 ]; then
-        echo "Error: Failed to compress the .app file."
+        echo "Error: Failed to compress the file."
         return 1
     fi
 
@@ -64,7 +64,7 @@ function age_compress_encrypt {
     # Clean up the temporary compressed file
     rm "$compressed_file"
 
-    echo "Successfully compressed and encrypted the .app file. Encrypted file: $output_file"
+    echo "Successfully compressed and encrypted the file. Encrypted file: $output_file"
 }
 
 # Example usage: compress_and_encrypt_with_age "/path/to/your/app/file.app" "output_filename.age" "your-public-key"
@@ -150,7 +150,7 @@ function age_decrypt_extract {
       fi
     done
     
-    echo "Successfully decrypted and extracted the .app file. Output directory: $output_dir"
+    echo "Successfully decrypted and extracted the file. Output directory: $output_dir"
 }
 
 # Example usage: decrypt_and_extract_with_age "encrypted_app_file.age" "/path/to/extract" "private_key.txt"
