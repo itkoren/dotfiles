@@ -1,0 +1,23 @@
+# ╭──────────────────────────────────────────────────────────╮
+# │ APPS                                                 │
+# ╰──────────────────────────────────────────────────────────╯
+
+---
+apps:
+  darwin:
+    # ── Universal (get installed before the other apps) ──────────────
+    universal:
+        - "licenses/encrypted.alfred.license.txt"
+        - "licenses/encrypted.transmit.txt"
+        - "licenses/encrypted.pastepal.license.txt"
+    personal:
+        - "licenses/encrypted.522779.mountainducklicense"
+        - "licenses/encrypted.bartender.license.txt"
+        - "licenses/encrypted.commandtabplus2.license.txt"
+        - "licenses/encrypted.dockview.license.txt"
+        - "licenses/encrypted.imazing.license.txt"
+        - "licenses/encrypted.royaltsx.license.txt"
+        - "licenses/encrypted.softorino.license.txt"
+        - "licenses/encrypted.tabfinder.license.txt"
+        - "licenses/encrypted.triploai.license.txt"        
+    work:
