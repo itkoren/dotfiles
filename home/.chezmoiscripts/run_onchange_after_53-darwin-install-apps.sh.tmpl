@@ -8,7 +8,7 @@ source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 
 read -p "Going to install apps! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
-    echo "Skipping..."
+  echo "Skipping..."
 else
   {{ if hasKey .apps.darwin "universal" }}
   
