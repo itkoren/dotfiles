@@ -69,7 +69,12 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_universal_package := .packages.darwin.universal.mas | where "id" "eq" "497799835" | first -}}
+{{- $exclude_universal_package := nil -}}
+{{- range .packages.darwin.universal.mas -}}
+  {{- if eq .id "497799835" -}}
+    {{- $exclude_universal_package = . -}}
+  {{- end -}}
+{{- end -}}
 {{- if $exclude_universal_package -}}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_universal_package.id }}
@@ -179,7 +184,12 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_work_package := .packages.darwin.work.mas | where "id" "eq" "497799835" | first -}}
+{{- $exclude_work_package := nil -}}
+{{- range .packages.darwin.work.mas -}}
+  {{- if eq .id "497799835" -}}
+    {{- $exclude_work_package = . -}}
+  {{- end -}}
+{{- end -}}
 {{- if $exclude_work_package -}}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_work_package.id }}
@@ -289,7 +299,12 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_personal_package := .packages.darwin.personal.mas | where "id" "eq" "497799835" | first -}}
+{{- $exclude_personal_package := nil -}}
+{{- range .packages.darwin.personal.mas -}}
+  {{- if eq .id "497799835" -}}
+    {{- $exclude_personal_package = . -}}
+  {{- end -}}
+{{- end -}}
 {{- if $exclude_personal_package -}}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_personal_package.id }}
