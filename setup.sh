@@ -194,17 +194,41 @@ function initialize_os_macos() {
             done
         fi
 
+        
         # Accept T&Cs if needed
-        if sudo xcodebuild -license check &>/dev/null; then
-          echo "Xcode license already accepted."
+        # Check if full Xcode is installed
+        if [ -d "/Applications/Xcode.app" ]; then
+            # Set the active developer directory to Xcode if not already set
+            if ! xcode-select -p | grep -q '/Applications/Xcode.app'; then
+                echo "Setting active developer directory to Xcode..."
+                sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+            fi
+        
+            # Accept the Xcode license if not already accepted
+            if sudo xcodebuild -license check &>/dev/null; then
+                echo "Xcode license already accepted."
+            else
+                echo "Xcode license has not been accepted."
+                echo "Accepting the Xcode license..."
+                sudo xcodebuild -license accept
+                echo "Xcode license accepted."
+            fi
         else
-          echo "Xcode license has not been accepted."
-          echo "Accepting the Xcode license..."
+            # If only Command Line Tools are installed, handle accepting the license
+            if [ -d "/Library/Developer/CommandLineTools" ]; then
+                # Set the active developer directory to Command Line Tools if not already set
+                if ! xcode-select -p | grep -q '/Library/Developer/CommandLineTools'; then
+                    echo "Setting active developer directory to Command Line Tools..."
+                    sudo xcode-select --switch /Library/Developer/CommandLineTools
+                fi
         
-          # Automatically accept the license
-          sudo xcodebuild -license accept
-        
-          echo "Xcode license accepted."
+                # Accept the CLT license using xcode-select
+                if sudo xcode-select --install &>/dev/null; then
+                    echo "Command Line Tools license accepted."
+                else
+                    echo "Unable to accept the Command Line Tools license automatically."
+                fi
+            fi
         fi
     fi
 
