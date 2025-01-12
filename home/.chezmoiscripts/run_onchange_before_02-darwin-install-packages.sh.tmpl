@@ -7,6 +7,7 @@ read -p "Going to install packages! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
   echo "Skipping..."
 else
+{{ $xcode_id := "497799835" -}}
 {{ if hasKey .packages.darwin "universal" }}
 {{ if .brewcasks -}}
 # First check missing and outdated casks
@@ -69,13 +70,13 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_universal_package := "" -}}
-{{- range .packages.darwin.universal.mas -}}
-  {{- if eq .id "497799835" -}}
-    {{- $exclude_universal_package = . -}}
-  {{- end -}}
-{{- end -}}
-{{- if $exclude_universal_package -}}
+{{ $exclude_universal_package := "" }}
+{{ range .packages.darwin.universal.mas }}
+  {{ if eq .id $xcode_id }}
+    {{ $exclude_universal_package = . }}
+  {{ end }}
+{{ end }}
+{{ if $exclude_universal_package }}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_universal_package.id }}
 
@@ -89,12 +90,12 @@ if ! sudo xcodebuild -license check &>/dev/null; then
 
   echo "Xcode license accepted."
 fi
-{{- end -}}
+{{ end }}
 
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.universal.mas -}}
-{{- if ne .id "497799835" -}} # Exclude the xcode package with id 497799835
+{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
 mas {{ .name | quote }}, id: {{ .id }}
 {{- end -}}
 {{ end -}}
@@ -184,13 +185,13 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_work_package := "" -}}
-{{- range .packages.darwin.work.mas -}}
-  {{- if eq .id "497799835" -}}
-    {{- $exclude_work_package = . -}}
-  {{- end -}}
-{{- end -}}
-{{- if $exclude_work_package -}}
+{{ $exclude_work_package := "" }}
+{{ range .packages.darwin.work.mas }}
+  {{ if eq .id $xcode_id }}
+    {{ $exclude_work_package = . }}
+  {{ end }}
+{{ end }}
+{{ if $exclude_work_package }}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_work_package.id }}
 
@@ -204,12 +205,12 @@ if ! sudo xcodebuild -license check &>/dev/null; then
 
   echo "Xcode license accepted."
 fi
-{{- end -}}
+{{ end }}
 
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.work.mas -}}
-{{- if ne .id "497799835" -}} # Exclude the xcode package with id 497799835
+{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
 mas {{ .name | quote }}, id: {{ .id }}
 {{- end -}}
 {{ end -}}
@@ -299,13 +300,13 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_personal_package := "" -}}
-{{- range .packages.darwin.personal.mas -}}
-  {{- if eq .id "497799835" -}}
-    {{- $exclude_personal_package = . -}}
-  {{- end -}}
-{{- end -}}
-{{- if $exclude_personal_package -}}
+{{ $exclude_personal_package := "" }}
+{{ range .packages.darwin.personal.mas }}
+  {{ if eq .id $xcode_id }}
+    {{ $exclude_personal_package = . }}
+  {{ end }}
+{{ end }}
+{{ if $exclude_personal_package }}
 # Install the Xcode specific app (id: 497799835) separately if needed
 mas install {{ $exclude_personal_package.id }}
 
@@ -319,12 +320,12 @@ if ! sudo xcodebuild -license check &>/dev/null; then
 
   echo "Xcode license accepted."
 fi
-{{- end -}}
+{{ end }}
 
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.personal.mas -}}
-{{- if ne .id "497799835" -}} # Exclude the xcode package with id 497799835
+{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
 mas {{ .name | quote }}, id: {{ .id }}
 {{- end -}}
 {{ end -}}
