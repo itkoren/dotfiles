@@ -203,6 +203,16 @@ function initialize_os_macos() {
             echo "Setting active developer directory to Xcode..."
             sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
         fi
+
+        # Accept the Xcode license if not already accepted
+        if sudo xcodebuild -license check &>/dev/null; then
+            echo "Xcode license already accepted."
+        else
+            echo "Xcode license has not been accepted."
+            echo "Accepting the Xcode license..."
+            sudo xcodebuild -license accept
+            echo "Xcode license accepted."
+        fi
     else
         # If only Command Line Tools are installed, handle accepting the license
         if [ -d "/Library/Developer/CommandLineTools" ]; then
@@ -212,16 +222,6 @@ function initialize_os_macos() {
                 sudo xcode-select --switch /Library/Developer/CommandLineTools
             fi
         fi
-    fi
-
-    # Accept the Xcode license if not already accepted
-    if sudo xcodebuild -license check &>/dev/null; then
-        echo "Xcode license already accepted."
-    else
-        echo "Xcode license has not been accepted."
-        echo "Accepting the Xcode license..."
-        sudo xcodebuild -license accept
-        echo "Xcode license accepted."
     fi
 
     # Verify dictation shortcut 
