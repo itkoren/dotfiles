@@ -5,7 +5,7 @@
 {{- $destDir := .chezmoi.destDir -}}
 
 # licenses.yaml hash: {{ include ".chezmoidata/licenses.yaml" | sha256sum }}
-source "$HOME/.config/age/.public
+source "$HOME/.config/age/.public"
 source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 
 read -p "Going to decrypt and copy all license files! skip? (y/n): " yn
