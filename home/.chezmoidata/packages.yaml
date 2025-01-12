@@ -96,7 +96,6 @@ packages:
           - "bartender"
           - "wavebox"
           - "clop"
-          - "textsniper"
           - "royal-tsx"
           - "aldente"
           - "webstorm"
