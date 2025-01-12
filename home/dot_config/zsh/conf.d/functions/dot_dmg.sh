@@ -45,12 +45,15 @@ function dmginstall {
     app_name=$(basename "$app_to_install")
     
     # Check if the app is already installed
-    if [[ -d "/Applications/$app_name" ]]; then
+    if [[ -e "/Applications/$app_name" ]]; then
       read -p "$app_name already exists. Do you want to overwrite it? (y/n): " yn
       if [[ "$yn" =~ ^[Yy]$ ]]; then
         echo "Copying $app_to_install to /Applications..."
         sudo cp -rf "$app_to_install" /Applications
       fi
+    else
+      echo "Copying $app_to_install to /Applications..."
+      sudo cp -rf "$app_to_install" /Applications
     fi
   elif ls "$volume"/*.pkg &>/dev/null; then
     package=$(find "$volume" -name "*.pkg" | head -n 1)
