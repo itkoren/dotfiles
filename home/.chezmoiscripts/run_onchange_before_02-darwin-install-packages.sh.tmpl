@@ -69,7 +69,7 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_universal_package := nil -}}
+{{- $exclude_universal_package := "" -}}
 {{- range .packages.darwin.universal.mas -}}
   {{- if eq .id "497799835" -}}
     {{- $exclude_universal_package = . -}}
@@ -184,7 +184,7 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_work_package := nil -}}
+{{- $exclude_work_package := "" -}}
 {{- range .packages.darwin.work.mas -}}
   {{- if eq .id "497799835" -}}
     {{- $exclude_work_package = . -}}
@@ -299,7 +299,7 @@ else
 fi
 {{ end -}}
 
-{{- $exclude_personal_package := nil -}}
+{{- $exclude_personal_package := "" -}}
 {{- range .packages.darwin.personal.mas -}}
   {{- if eq .id "497799835" -}}
     {{- $exclude_personal_package = . -}}
