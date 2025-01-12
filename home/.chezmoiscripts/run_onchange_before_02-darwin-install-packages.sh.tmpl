@@ -95,9 +95,9 @@ fi
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.universal.mas -}}
-{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
+{{ if ne .id $xcode_id -}}
 mas {{ .name | quote }}, id: {{ .id }}
-{{- end -}}
+{{ end -}}
 {{ end -}}
 EOF
 )
@@ -210,9 +210,9 @@ fi
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.work.mas -}}
-{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
+{{ if ne .id $xcode_id -}}
 mas {{ .name | quote }}, id: {{ .id }}
-{{- end -}}
+{{ end -}}
 {{ end -}}
 EOF
 )
@@ -325,9 +325,9 @@ fi
 # Generate the mas Brewfile content dynamically and store it in a variable
 brewfile_content=$(cat <<EOF
 {{ range .packages.darwin.personal.mas -}}
-{{- if ne .id $xcode_id -}} # Exclude the xcode package with id 497799835
+{{ if ne .id $xcode_id -}}
 mas {{ .name | quote }}, id: {{ .id }}
-{{- end -}}
+{{ end -}}
 {{ end -}}
 EOF
 )
