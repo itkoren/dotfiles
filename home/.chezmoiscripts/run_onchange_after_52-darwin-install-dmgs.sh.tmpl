@@ -5,7 +5,7 @@ read -p "Going to install downloaded dmg files! skip? (y/n): " yn
 if [[ "$yn" =~ ^[Yy]$ ]]; then
     echo "Skipping..."
 else
-    source "{{ .chezmoi.sourceDir }}/dot_config/zsh/conf.d/functions/dot_dmg.sh"
+    source "$HOME/.config/zsh/conf.d/functions/.dmg.sh"
 
     # Path to the Downloads directory
     downloads_dir=~/Downloads
