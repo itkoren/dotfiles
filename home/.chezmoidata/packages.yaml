@@ -128,6 +128,7 @@ packages:
             #- "hashicorp/security/tsccr-helper"
             #- "hashicorp/tap/copywrite"
         casks:
+            - "intellij-idea"
             #- "deskpad"
             #- "notion-calendar"
             #- "postico"
