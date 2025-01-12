@@ -4,7 +4,7 @@
 {{- $workingTree := .chezmoi.workingTree -}}
 
 # apps.yaml hash: {{ include ".chezmoidata/apps.yaml" | sha256sum }}
-source "$HOME/.config/age/.public
+source "$HOME/.config/age/.public"
 source "$HOME/.config/zsh/conf.d/functions/.age.sh"
 
 read -p "Going to install apps! skip? (y/n): " yn
