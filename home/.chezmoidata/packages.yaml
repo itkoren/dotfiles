@@ -57,6 +57,7 @@ packages:
             - "arc"
             - "paw"
             - "proxyman"
+            - "lasso"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
