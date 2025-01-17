@@ -1,0 +1,11 @@
+{
+	"ignored_packages":
+	[
+		"Sync Settings",
+		"Vintage",
+	],
+	"color_scheme": "Solarized (dark).sublime-color-scheme",
+	"dark_color_scheme": "Solarized (light).sublime-color-scheme",
+	"light_color_scheme": "Solarized (dark).sublime-color-scheme",
+	"theme": "Solarized (dark).sublime-theme",
+}
