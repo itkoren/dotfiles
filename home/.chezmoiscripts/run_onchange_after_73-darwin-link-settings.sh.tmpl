@@ -1,7 +1,12 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
+if [ ! -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
+  if [ -d "$HOME/Library/Application Support/Sublime Text" ]; then
+    mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
+  fi
+fi
 if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
-  if [ -L /path/to/folder ]; then
+  if [ -L "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
     echo "sublime text settings already linked"
   else
     echo "going to create sublime text settings link"
