@@ -9,7 +9,7 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   if [ -L "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
     echo "sublime text settings already linked"
   else
-    echo "going to create sublime text settings link"
+    echo "going to create sublime text settings symbolic link"
     rm -r "$HOME/Library/Application Support/Sublime Text/Packages/User"
     ln -s "$HOME/.config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
     echo "sublime text settings linked"
