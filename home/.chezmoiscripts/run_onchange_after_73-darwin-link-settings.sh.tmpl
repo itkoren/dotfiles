@@ -11,7 +11,7 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   else
     echo "going to create sublime text settings symbolic link"
     rm -r "$HOME/Library/Application Support/Sublime Text/Packages/User"
-    ln -s "$HOME/.config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
+    ln -s "{{ .chezmoi.sourceDir }}/dot_config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
     echo "sublime text settings linked"
   fi
 fi
