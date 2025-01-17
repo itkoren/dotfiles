@@ -12,6 +12,7 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
     echo "going to create sublime text settings link"
     rm -r "$HOME/Library/Application Support/Sublime Text/Packages/User"
     ln -s "$HOME/.config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
+    echo "sublime text settings linked"
   fi
 fi
 {{ end -}}
