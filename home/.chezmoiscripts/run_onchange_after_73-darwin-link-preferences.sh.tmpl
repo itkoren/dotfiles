@@ -1,7 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
-echo "sublime text settings"
-{{- $workingTree := .chezmoi.workingTree -}}
+{{- $workingTree := .chezmoi.workingTree }}
 
 if [ ! -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   if [ -d "$HOME/Library/Application Support/Sublime Text" ]; then
