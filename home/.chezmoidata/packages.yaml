@@ -92,7 +92,9 @@ packages:
                   - "latest"
     personal:
         taps:
+          - "ttscoff/thelab"
         brews:
+          - "gather-cli"
         casks:
           - "bartender"
           - "wavebox"
