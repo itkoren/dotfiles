@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
+echo "sublime text settings"
 if [ ! -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   if [ -d "$HOME/Library/Application Support/Sublime Text" ]; then
     mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
