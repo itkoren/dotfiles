@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"0x0",
+		"A File Icon",
+		"AdvancedNewFile",
+		"BracketHighlighter",
+		"Bunch",
+		"Compare Side-By-Side",
+		"CoolBase64",
+		"GitSavvy",
+		"JWT Decode",
+		"MarkdownPreview",
+		"Origami",
+		"PackagesUI",
+		"SideBarEnhancements",
+		"SideBarTools",
+		"Solarized Color Scheme",
+		"Sync Settings",
+		"Tabnine",
+		"Terminus",
+		"TodoReview",
+		"WordingStatus",
+	],
+}
