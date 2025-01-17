@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+rm -r "$HOME/Library/Application Support/Sublime Text/Packages/User"
+ln -s "$HOME/.config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/User"
+{{ end -}}
