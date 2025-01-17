@@ -32,6 +32,15 @@ if [ -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; t
     rm -r "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences"
     ln -s "{{ $workingTree }}/preferences/alfred/Alfred.alfredpreferences" "$HOME/Library/Application Support/Alfred/"
     echo "alfred settings linked"
+
+    echo -n "after you'll hit enter, open alfred and paste the license and continue"
+    open -a "Alfred 5"
+    # Wait for 2 seconds
+    sleep 2
+    osascript -e 'tell application "System Events" to keystroke "," using {command down}'
+    open "$HOME/content/licenses/alfred.license.txt"
+    read
+
   fi
 fi
 {{ end -}}
