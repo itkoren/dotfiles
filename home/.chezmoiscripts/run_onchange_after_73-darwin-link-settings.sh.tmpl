@@ -1,6 +1,8 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
 echo "sublime text settings"
+{{- $workingTree := .chezmoi.workingTree -}}
+
 if [ ! -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   if [ -d "$HOME/Library/Application Support/Sublime Text" ]; then
     mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
@@ -12,8 +14,24 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   else
     echo "going to create sublime text settings symbolic link"
     rm -r "$HOME/Library/Application Support/Sublime Text/Packages/User"
-    ln -s "{{ .chezmoi.sourceDir }}/dot_config/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
+    ln -s "{{ $workingTree }}/preferences/sublime/User" "$HOME/Library/Application Support/Sublime Text/Packages/"
     echo "sublime text settings linked"
+  fi
+fi
+
+if [ ! -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; then
+  if [ -d "$HOME/Library/Application Support/Alfred" ]; then
+    mkdir -p "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences"
+  fi
+fi
+if [ -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; then
+  if [ -L "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; then
+    echo "alfred settings already linked"
+  else
+    echo "going to create alfred settings symbolic link"
+    rm -r "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences"
+    ln -s "{{ $workingTree }}/preferences/alfred/Alfred.alfredpreferences" "$HOME/Library/Application Support/Alfred/"
+    echo "alfred settings linked"
   fi
 fi
 {{ end -}}
