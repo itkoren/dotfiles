@@ -3,14 +3,15 @@
 {{- $workingTree := .chezmoi.workingTree }}
 
 if [ ! -d "$HOME/Library/Application Support/Sublime Text" ]; then
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "**** Sublime Text App will be opened when you press the Enter button   ****"
-  echo "**** Please wait for it to load and then close the application         ****"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
+  echo "****************************************************************************"
+  echo "****************************************************************************"
+  echo "****************************************************************************"
+  echo "**** Sublime Text App will be opened when you press the Enter button    ****"
+  echo "**** Please click Tools->Command Palette & type Install Package Control ****"
+  echo "**** After installation completes quite the applications                ****"
+  echo "****************************************************************************"
+  echo "****************************************************************************"
+  echo "****************************************************************************"
   open "/Applications/Sublime Text.app"
   read -p "Press any key to continue." -n 1 -r
 fi
@@ -32,15 +33,15 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
 fi
 
 if [ ! -d "$HOME/Library/Application Support/Alfred" ]; then
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "**** Alfred 5 App will be opened when you press the Enter button       ****"
-  echo "**** Please wait for it to load and then paste the license             ****"
-  echo "**** in the application continue and then close the application        ****"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
-  echo "***************************************************************************"
+  echo "*******************************************************************************"
+  echo "*******************************************************************************"
+  echo "*******************************************************************************"
+  echo "**** Alfred 5 App will be opened when you press the Enter button           ****"
+  echo "**** Please click Configure & paste the opened license contents & continue ****"
+  echo "**** Then click Quit                                                       ****"
+  echo "*******************************************************************************"
+  echo "*******************************************************************************"
+  echo "*******************************************************************************"
   open "/Applications/Alfred 5.app"
   # Wait for 2 seconds
   sleep 2
