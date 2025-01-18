@@ -32,8 +32,8 @@ if [ -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; t
     ln -s "{{ $workingTree }}/preferences/alfred/Alfred.alfredpreferences" "$HOME/Library/Application Support/Alfred/"
     echo "alfred settings linked"
 
-    echo -n "after you'll hit enter, open alfred and paste the license and continue"
-    open -a "Alfred 5"
+    echo -n "after you'll hit enter, alfred openes - paste the license and continue"
+    open -a "/Applications/Alfred 5"
     # Wait for 2 seconds
     sleep 2
     osascript -e 'tell application "System Events" to keystroke "," using {command down}'
