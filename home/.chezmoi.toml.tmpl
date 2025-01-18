@@ -112,6 +112,9 @@ encryption = "age"
 {{ if eq .chezmoi.os "darwin" }}
 [hooks.read-source-state.pre]
   command = "{{- .chezmoi.workingTree -}}/.darwin-install-prerequisites.sh"
+{{ else if eq .chezmoi.os "linux" -}}
+[hooks.read-source-state.pre]
+  command = "{{- .chezmoi.workingTree -}}/.linux-install-prerequisites.sh"
 {{ end }}
 
 [git]
