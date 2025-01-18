@@ -10,6 +10,7 @@ licenses:
         - "licenses/encrypted.alfred.license.txt"
         - "licenses/encrypted.transmit.license.txt"
         - "licenses/encrypted.pastepal.license.txt"
+        - "licenses/encrypted.Itai Koren.moomupgradelicense"
     personal:
         - "licenses/encrypted.522779.mountainducklicense"
         - "licenses/encrypted.bartender.license.txt"
