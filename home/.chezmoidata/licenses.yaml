@@ -20,5 +20,6 @@ licenses:
         - "licenses/encrypted.royaltsx.license.txt"
         - "licenses/encrypted.softorino.license.txt"
         - "licenses/encrypted.tabfinder.license.txt"
-        - "licenses/encrypted.triploai.license.txt"        
+        - "licenses/encrypted.triploai.license.txt" 
+        - "licenses/encrypted.cloudmounter.license.txt"
     work:
