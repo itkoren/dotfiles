@@ -11,6 +11,7 @@ licenses:
         - "licenses/encrypted.transmit.license.txt"
         - "licenses/encrypted.pastepal.license.txt"
         - "licenses/encrypted.Itai Koren.moomupgradelicense"
+        - "licenses/encrypted.lasso.license.txt"
     personal:
         - "licenses/encrypted.522779.mountainducklicense"
         - "licenses/encrypted.bartender.license.txt"
@@ -22,5 +23,4 @@ licenses:
         - "licenses/encrypted.tabfinder.license.txt"
         - "licenses/encrypted.triploai.license.txt" 
         - "licenses/encrypted.cloudmounter.license.txt"
-        - "licenses/encrypted.lasso.license.txt"
     work:
