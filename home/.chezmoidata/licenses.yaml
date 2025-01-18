@@ -22,4 +22,5 @@ licenses:
         - "licenses/encrypted.tabfinder.license.txt"
         - "licenses/encrypted.triploai.license.txt" 
         - "licenses/encrypted.cloudmounter.license.txt"
+        - "licenses/encrypted.lasso.license.txt"
     work:
