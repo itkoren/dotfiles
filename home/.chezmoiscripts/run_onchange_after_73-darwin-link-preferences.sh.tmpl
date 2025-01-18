@@ -2,7 +2,7 @@
 #!{{ lookPath "sh" }}
 {{- $workingTree := .chezmoi.workingTree }}
 
-if [ ! -d "$HOME/Library/Application Support/Sublime Text"]; then
+if [ ! -d "$HOME/Library/Application Support/Sublime Text" ]; then
   echo "***************************************************************************"
   echo "***************************************************************************"
   echo "***************************************************************************"
@@ -31,7 +31,7 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   fi
 fi
 
-if [ ! -d "$HOME/Library/Application Support/Alfred"]; then
+if [ ! -d "$HOME/Library/Application Support/Alfred" ]; then
   echo "***************************************************************************"
   echo "***************************************************************************"
   echo "***************************************************************************"
