@@ -59,6 +59,7 @@ packages:
             - "proxyman"
             - "lasso"
             - "moom"
+            - "devpod"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
