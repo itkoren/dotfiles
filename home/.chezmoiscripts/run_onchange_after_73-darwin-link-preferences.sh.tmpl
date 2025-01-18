@@ -2,6 +2,19 @@
 #!{{ lookPath "sh" }}
 {{- $workingTree := .chezmoi.workingTree }}
 
+if [ ! -d "$HOME/Library/Application Support/Sublime Text"]; then
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "**** Sublime Text App will be opened when you press the Enter button   ****"
+  echo "**** Please wait for it to load and then close the application         ****"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  open "/Applications/Sublime Text.app"
+  read -p "Press any key to continue." -n 1 -r
+fi
+
 if [ ! -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   if [ -d "$HOME/Library/Application Support/Sublime Text" ]; then
     mkdir -p "$HOME/Library/Application Support/Sublime Text/Packages/User"
@@ -18,6 +31,20 @@ if [ -d "$HOME/Library/Application Support/Sublime Text/Packages/User" ]; then
   fi
 fi
 
+if [ ! -d "$HOME/Library/Application Support/Alfred"]; then
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "**** Alfred 5 App will be opened when you press the Enter button       ****"
+  echo "**** Please wait for it to load and then paste the license             ****"
+  echo "**** in the application continue and then close the application        ****"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  echo "***************************************************************************"
+  open "/Applications/Alfred 5"
+  open "$HOME/content/licenses/alfred.license.txt"
+  read -p "Press any key to continue." -n 1 -r
+fi
 if [ ! -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; then
   if [ -d "$HOME/Library/Application Support/Alfred" ]; then
     mkdir -p "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences"
