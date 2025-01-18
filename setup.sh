@@ -247,7 +247,11 @@ function initialize_os_macos() {
 }
 
 function initialize_os_linux() {
-    :
+    if which nix; then
+        echo 'Nix is already installed'
+    else
+        sh <(curl -L https://nixos.org/nix/install) --daemon
+    fi
 }
 
 function initialize_os_env() {
