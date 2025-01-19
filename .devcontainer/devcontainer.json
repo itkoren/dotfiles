@@ -1,0 +1,29 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "features": {
+    "ghcr.io/rio/features/chezmoi:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers/features/nix:1": {}
+  },
+  "containerEnv": {
+		"WORKSPACE_PATH": "${localWorkspaceFolder}",
+		"WORKSPACE_NAME": "${localWorkspaceFolderBasename}"
+	},
+  "mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=devcontainer-bashhistory,target=/commandhistory,type=volume"
+	],
+  "dockerComposeFile": ["../docker-compose.yml", "./docker-compose.yml"],
+  "onCreateCommand": "sudo chsh -s /usr/bin/zsh $USER",
+  "shutdownAction": "stopContainer",
+  "postCreateCommand": "/tmp/chezmoi-install.sh", // Tips: This script is mounted as a volume in the docker-compose file
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/usr/bin/zsh"
+      }
+    }
+  }
+}
