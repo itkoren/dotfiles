@@ -1,0 +1,19 @@
+contexts:
+  default:
+    defaultProvider: docker
+    providers:
+      docker:
+        creationTimestamp: {{ time.Now().Format(time.RFC3339) | quote }}
+        initialized: true
+        options:
+          DOCKER_BUILDER:
+            userProvided: true
+          DOCKER_HOST:
+            userProvided: true
+          DOCKER_PATH:
+            userProvided: true
+            value: docker
+          INACTIVITY_TIMEOUT:
+            userProvided: true
+        singleMachine: true
+defaultContext: default
