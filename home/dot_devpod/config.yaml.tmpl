@@ -3,7 +3,7 @@ contexts:
     defaultProvider: docker
     providers:
       docker:
-        creationTimestamp: {{ time.Now().Format(time.RFC3339) | quote }}
+        creationTimestamp: {{ now | date "2006-01-02T15:04:05Z07:00" }}
         initialized: true
         options:
           DOCKER_BUILDER:
