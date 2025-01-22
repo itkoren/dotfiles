@@ -61,6 +61,7 @@ packages:
             - "moom"
             - "devpod"
             - "fleet"
+            - "jetbrains-toolbox"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
