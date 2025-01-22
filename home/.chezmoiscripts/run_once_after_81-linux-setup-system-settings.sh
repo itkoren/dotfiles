@@ -12,4 +12,11 @@ if [ "$SHELL" != "/bin/zsh" ]; then
     sudo chsh -s $(which zsh) $USER
     source .zshrc
 fi
+{{ else if eq .chezmoi.os "darwin" -}}
+#!{{ lookPath "sh" }}
+
+set -ex
+
+# Setup zsh shell for macOS
+echo "> Using zsh shell on macOS by default"
 {{ end -}}
