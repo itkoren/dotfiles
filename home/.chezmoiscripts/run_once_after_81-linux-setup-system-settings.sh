@@ -15,7 +15,7 @@ fi
 {{ else if eq .chezmoi.os "darwin" -}}
 #!{{ lookPath "sh" }}
 
-set -ex
+set -eufo pipefail
 
 # Setup zsh shell for macOS
 echo "> Using zsh shell on macOS by default"
