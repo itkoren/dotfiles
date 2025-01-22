@@ -3,7 +3,7 @@ contexts:
     defaultProvider: docker
     providers:
       docker:
-        creationTimestamp: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        creationTimestamp: {{ output "date" "+%Y-%m-%dT%H:%M:%SZ" | trim }}
         initialized: true
         options:
           DOCKER_BUILDER:
