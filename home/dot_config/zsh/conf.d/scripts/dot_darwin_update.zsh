@@ -125,7 +125,7 @@ function check_internet() {
   return 0
 }
 
-update_all() {
+function update_all() {
   # Check if internet is available
   if ! check_internet; then
       exit 1
