@@ -49,6 +49,14 @@ alias lx='eza -lbhHigUmuSa@'
 alias lt='eza --tree'
 alias tree='eza --tree'
 
+{{- if eq .chezmoi.os "darwin" }}
+alias check_internet='zsh -c "source ./scripts/darwin_update.zsh; check_internet"'
+alias update_brew='zsh -c "source ./scripts/darwin_update.zsh; update_brew"'
+alias update_app_store='zsh -c "source ./scripts/darwin_update.zsh; update_app_store"'
+alias update_macos='zsh -c "source ./scripts/darwin_update.zsh; update_macos"'
+alias update_all='zsh -c "source ./scripts/darwin_update.zsh; update_all"'
+{{- end }}
+
 {{- else }}
 
 {{- end }}
