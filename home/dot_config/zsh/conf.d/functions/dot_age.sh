@@ -69,8 +69,6 @@ function age_compress_encrypt {
 
 # Example usage: compress_and_encrypt_with_age "/path/to/your/app/file.app" "output_filename.age" "your-public-key"
 
-#!/bin/bash
-
 # Function to decrypt and extract a compressed file using age
 function age_decrypt_extract {
     if [ $# -ne 2 ]; then
