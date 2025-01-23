@@ -295,6 +295,10 @@ function run_chezmoi() {
     local chezmoi_cmd
     local no_tty_option
     local remove_chezmoi
+    local ostype
+    
+    ostype="$(get_os_type)"
+    
     echo "going to check chezmoi requirements"
     # Check if chezmoi is installed
     if ! is_chezmoi_exists; then
