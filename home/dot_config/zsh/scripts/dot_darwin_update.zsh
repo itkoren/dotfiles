@@ -89,7 +89,9 @@ function update_app_store() {
 function update_macos() {
   # macOS
   println "Checking macOS updates..."
-  updates=$(softwareupdate -l)
+  
+  # Run softwareupdate -l and capture the output
+  updates=$(softwareupdate -l 2>&1)
 
   if echo "$updates" | grep -q "No new software"; then
     println $updates
