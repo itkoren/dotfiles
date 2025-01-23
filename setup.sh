@@ -312,12 +312,19 @@ function run_chezmoi() {
             chezmoi_cmd="./bin/chezmoi"
             remove_chezmoi=1
             echo "chezmoi binary downloaded to $chezmoi_cmd"
-        else
+        elif [ "${ostype}" == "Darwin" ]; then
             # Install chezmoi using brew
             echo '👊  Installing chezmoi'
             brew install chezmoi
             chezmoi_cmd=$(which chezmoi)
             echo "chezmoi installed via brew, path: $chezmoi_cmd"
+        elif [ "${ostype}" == "Linux" ]; then
+            nix-env -i chezmoi
+            chezmoi_cmd=$(which chezmoi)
+            echo "chezmoi installed via nix, path: $chezmoi_cmd"
+        else
+            echo "Invalid OS type: ${ostype}" >&2
+            exit 1
         fi
     else
         echo "chezmoi is already installed"
