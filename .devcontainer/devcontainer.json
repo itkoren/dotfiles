@@ -14,7 +14,7 @@
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
 		"source=devcontainer-bashhistory,target=/commandhistory,type=volume"
 	],
-  "dockerComposeFile": ["../docker-compose.yml", "./docker-compose.yml"],
+  "dockerComposeFile": ["./docker-compose.yml", "../docker-compose.yml"],
   "onCreateCommand": "sudo chsh -s /usr/bin/zsh $USER",
   "shutdownAction": "stopContainer",
   "postCreateCommand": "/tmp/chezmoi-install.sh", // Tips: This script is mounted as a volume in the docker-compose file
