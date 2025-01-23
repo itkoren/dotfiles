@@ -89,12 +89,17 @@ function update_app_store() {
 function update_macos() {
   # macOS
   println "Checking macOS updates..."
-  softwareupdate -l
-  
-  println "Install macOS updates, if any? (y/n)" 
-  read answer
+  updates=$(softwareupdate -l)
+
+  if echo "$updates" | grep -q "No new software"; then
+    println $updates
+  else
+    println $updates
+    println "Install macOS updates, if any? (y/n)" 
+    read answer
     if echo "$answer" | grep -iq "^y" ; then
-    sudo softwareupdate -i -a && println "macOS updates done! You may need to reboot..."
+      sudo softwareupdate -i -a && println "macOS updates done! You may need to reboot..."
+    fi
   fi
 }
 
