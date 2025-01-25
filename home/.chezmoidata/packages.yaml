@@ -48,6 +48,7 @@ packages:
             - "orbstack"
             - "raindropio"
             - "sf-symbols"
+            - "ente-auth"
             - "spotify"
             - "popclip"
             - "lens"
