@@ -57,6 +57,7 @@ packages:
             - "google-chrome"
             - "arc"
             - "paw"
+            - "mitmproxy"
             - "proxyman"
             - "lasso"
             - "moom"
