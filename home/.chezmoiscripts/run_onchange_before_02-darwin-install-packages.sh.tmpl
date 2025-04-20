@@ -32,11 +32,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ if .brewcasks -}}
@@ -59,11 +59,11 @@ if [[ -n "$brewfile_cask_content" ]]; then
     echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -103,11 +103,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ range .packages.darwin.universal.asdf -}}
@@ -147,11 +147,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ if .brewcasks -}}
@@ -174,11 +174,11 @@ if [[ -n "$brewfile_cask_content" ]]; then
     echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -218,11 +218,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ range .packages.darwin.work.asdf -}}
@@ -262,11 +262,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ if .brewcasks -}}
@@ -289,11 +289,11 @@ if [[ -n "$brewfile_cask_content" ]]; then
     echo "Casks to install or update: $casks_to_install_or_update"
 
     # Step 1: Check if the casks are already installed using `brew bundle check`
-    echo "$casks_to_install_or_update" | brew bundle check --no-lock --file=/dev/stdin
+    echo "$casks_to_install_or_update" | brew bundle check --file=/dev/stdin
 
     # Step 2: If some casks are missing or outdated, install them
     if [[ $? -ne 0 ]]; then
-        echo "$casks_to_install_or_update" | brew bundle --no-lock --force --file=/dev/stdin
+        echo "$casks_to_install_or_update" | brew bundle --force --file=/dev/stdin
     fi
 else
     echo "No missing or outdated casks to install."
@@ -333,11 +333,11 @@ EOF
 )
 
 # Step 1: Check if all packages are already installed using `brew bundle check`
-echo "$brewfile_content" | brew bundle check --no-lock --file=/dev/stdin
+echo "$brewfile_content" | brew bundle check --file=/dev/stdin
 
 # Step 2: If some packages are missing, install them
 if [[ $? -ne 0 ]]; then
-    echo "$brewfile_content" | brew bundle --no-lock --file=/dev/stdin
+    echo "$brewfile_content" | brew bundle --file=/dev/stdin
 fi
 
 {{ range .packages.darwin.personal.asdf -}}
