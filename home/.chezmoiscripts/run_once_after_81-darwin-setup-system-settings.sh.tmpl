@@ -13,7 +13,8 @@ if [[ "$yn" =~ ^[Yy]$ ]]; then
         echo "Skipping..."
     else
         # Calculate seconds
-        seconds=$(echo "$hours * 3600" | bc)
+        # Multiply hours by 3600 and round to the nearest integer
+        seconds=$(awk "BEGIN { printf \"%d\", ($hours * 3600 + 0.5) }")
     
         # Output the result
         echo "$hours hour(s) is equal to $seconds seconds."
