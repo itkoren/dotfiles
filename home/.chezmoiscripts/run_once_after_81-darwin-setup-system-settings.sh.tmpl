@@ -13,7 +13,7 @@ if [[ "$yn" =~ ^[Yy]$ ]]; then
         echo "Skipping..."
     else
         # Calculate seconds
-        seconds=$((hours * 3600))
+        seconds=$(echo "$hours * 3600" | bc)
     
         # Output the result
         echo "$hours hour(s) is equal to $seconds seconds."
