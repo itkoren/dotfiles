@@ -118,6 +118,7 @@ packages:
           - "imazing"
           - "command-tab-plus"
           - "dockview"
+          - "macpilot"
         mas:
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
