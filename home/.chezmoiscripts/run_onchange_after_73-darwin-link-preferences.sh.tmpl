@@ -71,4 +71,49 @@ if [ -d "$HOME/Library/Application Support/Alfred/Alfred.alfredpreferences" ]; t
     read
   fi
 fi
+
+# List of keywords to search for
+KEYWORDS="bitdefender netgeararmor netgear"
+
+# Check Applications folder
+armor_check_applications() {
+  for keyword in $KEYWORDS; do
+    if ls /Applications 2>/dev/null | grep -i "$keyword" >/dev/null; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Check running processes
+armor_check_processes() {
+  for keyword in $KEYWORDS; do
+    if ps aux | grep -i "$keyword" | grep -v grep >/dev/null; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Check installed packages
+armor_check_packages() {
+  for keyword in $KEYWORDS; do
+    if pkgutil --pkgs 2>/dev/null | grep -i "$keyword" >/dev/null; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Run all checks
+armor_check_applications || armor_check_processes || armor_check_packages
+IS_INSTALLED=$?
+
+# Action based on check result
+if [ "$IS_INSTALLED" -eq 0 ]; then
+  echo "✅ Netgear Armor or Bitdefender appears to be installed."
+else
+  echo "❌ Netgear Armor is not installed. Opening browser..."
+  echo "{{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/2fismakc6pygghrwkf6g5jrvkm/credential" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}" | open "https://armor.netgear.com/download_protection?install_code={{ onepasswordRead "op://jdc3emtdvytbu3zz7q3iebne4q/2fismakc6pygghrwkf6g5jrvkm/credential" "C4SXB3KJ45CXLDMVFFD3WPQC7U" }}&cid=ipl%7Cc%7Ccentral_web%7Cdeploy_flow&lang=en_US&product=protection"
+fi
 {{ end -}}
