@@ -66,6 +66,7 @@ packages:
             - "devpod"
             - "jetbrains-toolbox"
             - "fleet"
+            - "intellij-idea"
         mas:
             - name: "Snippety - Snippets Manager"
               id: "1530751461"
@@ -140,7 +141,7 @@ packages:
             #- "hashicorp/security/tsccr-helper"
             #- "hashicorp/tap/copywrite"
         casks:
-            - "intellij-idea"
+            #- "intellij-idea"
             #- "deskpad"
             #- "notion-calendar"
             #- "postico"
