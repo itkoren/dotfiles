@@ -120,6 +120,7 @@ packages:
           - "command-tab-plus"
           - "dockview"
           - "macpilot"
+          - "tailscale-app"
         mas:
           - name: "Xnip - Screenshot & Annotation"
             id: "1221250572"
