@@ -102,8 +102,10 @@ packages:
     personal:
         taps:
           - "ttscoff/thelab"
+          - "smithclay/tap"
         brews:
           - "gather-cli"
+          - "claudetainer"
         casks:
           - "bartender"
           - "wavebox"
