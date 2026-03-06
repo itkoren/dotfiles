@@ -63,6 +63,8 @@ packages:
             - "proxyman"
             - "lasso"
             - "moom"
+            - "claude-code"
+            - "antigravity"
             - "devpod"
             - "jetbrains-toolbox"
             - "fleet"
