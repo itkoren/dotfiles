@@ -37,6 +37,7 @@ packages:
         casks:
             - "iterm2"
             - "docker"
+            - "utm"
             #- "flux"
             #- "font-fira-code"
             #- "font-hack"
@@ -109,6 +110,7 @@ packages:
           - "gather-cli"
           - "claudetainer"
         casks:
+          - "lulu"
           - "bartender"
           - "wavebox"
           - "clop"
