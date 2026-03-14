@@ -26,6 +26,7 @@ packages:
             - "asdf"
             - "peco"
             - "stern"
+            - "lume"
             - "pinentry-mac"
             #- "mise"
             #- "ripgrep"
