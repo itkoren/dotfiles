@@ -90,6 +90,8 @@ packages:
               id: "1596283165"
             - name: "Boop"
               id: "1518425043"
+            - name: "Jump Desktop (RDP, VNC, Fluid)"
+              id: "524141863"
         asdf:
             - plugin: "nodejs"
               versions:
