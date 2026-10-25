@@ -7,4 +7,11 @@ if [[ "$yn" =~ ^[Yy]$ ]]; then
 else
     curl -fsSL https://get.jetify.com/devbox | bash
 fi
+
+read -p "Going to install delta! skip? (y/n): " yn
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    echo "Skipping..."
+else
+    curl -fsSL https://delta.dev/install.sh | bash
+fi
 {{ end -}}
